@@ -136,9 +136,12 @@ If your map shows clusters of tasks you can double-tap or "pinch-to-zoom" in and
 The task list shows the tasks assigned to a given field worker, or, if the user has the "manager" role, then all tasks will be displayed.  Tapping on a tasks will reveal the task detail screen.  Managers (as shown here) have the ability to edit tasks by tapping the "Edit" button.
 <center> <img src="Graphics/TeamWork-Tasks-Manager.png" width="310" height="552" />  <img src="Graphics/TeamWork-TaskDetail.png" width="310" height="552" /><br/>Tasks - Manager's View</center><br>
 
-
-<img src="Graphics/Teamwork-Tasks-selectTeam.png" width="310" height="552" />
 <img src="Graphics/Teamwork-tasks-master-list.png" width="310" height="552" />
+
+alternatively a specific team vuew can be selected:
+<img src="Graphics/Teamwork-Tasks-selectTeam.png" width="310" height="552" />
+
+
 
 
 # New Task Creation
@@ -159,7 +162,7 @@ Teamwork supports the concept of Teams.  A team can have as am memeber as neede 
 <img src="Graphics/Teamwork-tasks-by-team.png" width="310" height="552" />
 
 
-# People List and Detail
+## People List and Detail
 
 Another manager feature is the ability to look at all the people in the TeamWork system and get a capsule summary of their upcoming and overdue tasks.
 
