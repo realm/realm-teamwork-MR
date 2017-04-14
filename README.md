@@ -144,22 +144,23 @@ alternatively a specific team vuew can be selected:
 
 
 
-# New Task Creation
+## New Task Creation
 
 Managers can create new tasks. These have a title, a detail description and can be assigned a work location by either typing an address, or directly by manipulating the map to find the desired location. Scrolling to the bottom of the task editor (not shown in this screen shot) it is possible to assign a due date and a field worker to accomplish the task.
 <center> <img src="Graphics/TeamWork-NewTask.png" width="310" height="552" /><br/>New Task Entry</center><br>
 
-# Team list
+## Team list
 
-Teamwork supports the concept of Teams.  A team can have as am memeber as neede and peple can be on multiple teams.
+Teamwork supports the concept of Teams.  A team can have as many memeber as needed; people can also be on multiple teams.
 
-<center> <img src="Graphics/Teamwork-teams.png" width="310" height="552" />
-<img src="Graphics/Teamwork-team-detail.png" width="310" height="552" />
+<center> <img src="Graphics/Teamwork-teams.png" width="310" height="552" />  </center>
+
+
+  <center><img src="Graphics/Teamwork-team-detail.png" width="310" height="552" />
   </center>
+The team assignements are also refected in the tasks list where the team and/or team member assigned is shown in the summary.
 
-
-
-<img src="Graphics/Teamwork-tasks-by-team.png" width="310" height="552" />
+<center><img src="Graphics/Teamwork-tasks-by-team.png" width="310" height="552" /></center>
 
 
 ## People List and Detail
@@ -204,6 +205,8 @@ These simple models are composed into a multi-Realm system that looks like this:
 TeamWork is (clearly) not designed to be a full-blown field services / logisitics management application; but it does show the power of the Realm Mobile platform for allowing application developers to focus on the core business problems in their application rather than the minutea of infrastrucure and difference between mobile platform implementations.
 
 The fact that these three very limited models have the ability to express the key business drivers of such as user maagement, task creation assignement, taks/user location visualization, display of ontime/late sevices delivery, etc  shows that the Realm Mobile Platform can greatly accelerate the development of mobile apps while simultaneously reducing app complexity.  The alternative is developing not just the business logic of your app, but in fact all of the delivery mechanics of data sychronization, data integrity, conflict resoultion and so on right down to the hardware layer not just for your infrastructure but every mobile platform your app runs on.
+
+Other isuses and limitations are describted in the GitHub Issues page for this repo.
 
  ## Contributing
 
