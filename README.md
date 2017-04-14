@@ -23,7 +23,8 @@ Some of the goals for this app are:
     - A location which defines a specific place the task is to be performed
     - A due-date for the task
     - A completed date (the date a task was marked as done)
-    - An assigned worker/field agent who is tasks with "completing" this task
+    - A tream to which this teask is assigned.  If not assigned to a specific teram it's a "free floating" task.
+    - An assigned worker/field agent who is tasks with "completing" this task - if not assigned to a specific worker, yet is assgned to the term it's a team task that can be worked on by any team member (these distinctions show up in the various views of tasks).
 
 1. Ability to have workers receive new tasks that show up in their list of assigned tasks.
 
@@ -49,6 +50,8 @@ This application demonstrates features of the [Realm Mobile Platform](http://lre
 The following modules will be installed as part of the Cocoapods setup:
 
  - [ActionSheetPicker](https://github.com/skywinder/ActionSheetPicker-3.0) for selection of dates by Petr Korolev
+
+ - [BTNavigationDropdownMenu](https://github.com/realm-demos/BTNavigationDropdownMenu) a dropdown nemu for UINavigationBar by Pham Ba Tho
 
  - [Eureka](https://github.com/xmartlabs/Eureka) a formbuilder for iOS in Swift by xmartlabs
 
@@ -105,7 +108,8 @@ The TeamWork app is a classic "tab bar" application - that is to say it supports
 
 These are:
  * A Map view
- * A Tasks List
+ * A Tasks List - for Admins the defaut is a listing of al tasks in the system; a pull down menu (availabne to all users) lsts available teams.  Selecting a team makes it the default team view and will change what the map view displays.
+ * A Teams List - Admins create/edtit teams as well as see all teasm; regualr users can see teams they are on.
  * A list of people in the system (this view is restricted to user with a "manager" role)
  * A Profile view where personal details (name, profile image) can be set
 
@@ -133,11 +137,30 @@ The task list shows the tasks assigned to a given field worker, or, if the user 
 <center> <img src="Graphics/TeamWork-Tasks-Manager.png" width="310" height="552" />  <img src="Graphics/TeamWork-TaskDetail.png" width="310" height="552" /><br/>Tasks - Manager's View</center><br>
 
 
+<img src="Graphics/Teamwork-Tasks-selectTeam.png" width="310" height="552" />
+<img src="Graphics/Teamwork-tasks-master-list.png" width="310" height="552" />
+
+
 # New Task Creation
+
 Managers can create new tasks. These have a title, a detail description and can be assigned a work location by either typing an address, or directly by manipulating the map to find the desired location. Scrolling to the bottom of the task editor (not shown in this screen shot) it is possible to assign a due date and a field worker to accomplish the task.
 <center> <img src="Graphics/TeamWork-NewTask.png" width="310" height="552" /><br/>New Task Entry</center><br>
 
+# Team list
+
+Teamwork supports the concept of Teams.  A team can have as am memeber as neede and peple can be on multiple teams.
+
+<center> <img src="Graphics/Teamwork-teams.png" width="310" height="552" />
+<img src="Graphics/Teamwork-team-detail.png" width="310" height="552" />
+  </center>
+
+
+
+<img src="Graphics/Teamwork-tasks-by-team.png" width="310" height="552" />
+
+
 # People List and Detail
+
 Another manager feature is the ability to look at all the people in the TeamWork system and get a capsule summary of their upcoming and overdue tasks.
 
 <center> <img src="Graphics/TeamWork-People.png" width="310" height="552" /><br/>Person Detail View</center><br>
@@ -164,6 +187,7 @@ These simple models are composed into a multi-Realm system that looks like this:
 <center> <img src="Graphics/TeamWork-Multi-Realm-Overview.png"/><br/>TeamWork Model Overview</center><br>
 
 ## The Admin/Manager model/Realm Flow
+
 <center> <img src="Graphics/TeamWork-Multi-Realm-manager-paths.png"  /><br/>TeamWork Admin/Manager  Flow</center><br>
 
 ## The Worker model/Realm Flow
