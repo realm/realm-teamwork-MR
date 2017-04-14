@@ -377,7 +377,6 @@
 				TargetAttributes = {
 					8B5CB3611DB2DF1F00319DB1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4XL3X97RQ3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -705,7 +704,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Teamwork/Teamwork.entitlements;
-				DEVELOPMENT_TEAM = 4XL3X97RQ3;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -727,7 +726,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Teamwork/Teamwork.entitlements;
-				DEVELOPMENT_TEAM = 4XL3X97RQ3;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
