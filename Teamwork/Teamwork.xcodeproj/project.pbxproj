@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4911575B46FD1DD3F9DEC6FD /* Pods_TeamworkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA3B3222CD533E8760011AD /* Pods_TeamworkUITests.framework */; };
+		8806B2F24B7886B78FBBF9D6 /* Pods_Teamwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868A4DBA58769BDB02410D11 /* Pods_Teamwork.framework */; };
+		8B4319A71E930333000EFFAB /* PersonDetails2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319A61E930333000EFFAB /* PersonDetails2ViewController.swift */; };
+		8B4319AD1E934493000EFFAB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319A81E934493000EFFAB /* Location.swift */; };
+		8B4319AE1E934493000EFFAB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319A91E934493000EFFAB /* Person.swift */; };
+		8B4319AF1E934493000EFFAB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319AA1E934493000EFFAB /* Task.swift */; };
+		8B4319B01E934493000EFFAB /* TaskHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319AB1E934493000EFFAB /* TaskHistory.swift */; };
+		8B4319B11E934493000EFFAB /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319AC1E934493000EFFAB /* Team.swift */; };
+		8B5028041E8AF5510014C62C /* TeamworkPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5028031E8AF5510014C62C /* TeamworkPreferences.swift */; };
+		8B5C6E751DBB052B0029B589 /* Color+Uilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5C6E741DBB052B0029B589 /* Color+Uilities.swift */; };
+		8B5CB3661DB2DF1F00319DB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CB3651DB2DF1F00319DB1 /* AppDelegate.swift */; };
+		8B5CB36D1DB2DF1F00319DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5CB36B1DB2DF1F00319DB1 /* Main.storyboard */; };
+		8B5CB36F1DB2DF1F00319DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5CB36E1DB2DF1F00319DB1 /* Assets.xcassets */; };
+		8B5CB3721DB2DF1F00319DB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5CB3701DB2DF1F00319DB1 /* LaunchScreen.storyboard */; };
+		8B5CB37D1DB2DF1F00319DB1 /* TeamworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CB37C1DB2DF1F00319DB1 /* TeamworkUITests.swift */; };
+		8B5CB38E1DB3020100319DB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B5CB38D1DB3020100319DB1 /* Foundation.framework */; };
+		8B5CB39C1DB3480800319DB1 /* TeamworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CB39B1DB3480800319DB1 /* TeamworkConstants.swift */; };
+		8B620DC21E8447B100C161DF /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B620DC11E8447B100C161DF /* TeamDetailViewController.swift */; };
+		8B620DC41E849C5700C161DF /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B620DC31E849C5700C161DF /* TeamTableViewController.swift */; };
+		8B777E2C1E0313D700762355 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B777E2B1E0313D700762355 /* PersonTableViewCell.swift */; };
+		8B77AF521DB7E76F004A2877 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF4C1DB7E76F004A2877 /* MapViewController.swift */; };
+		8B77AF681DB7F4A5004A2877 /* Image+Utilties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF641DB7F4A5004A2877 /* Image+Utilties.swift */; };
+		8B77AF691DB7F4A5004A2877 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF651DB7F4A5004A2877 /* String+Utilities.swift */; };
+		8B77AF6A1DB7F4A5004A2877 /* View+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF661DB7F4A5004A2877 /* View+Utilities.swift */; };
+		8B77AF6C1DB81636004A2877 /* TextField+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */; };
+		8B77AF7A1DB98BB5004A2877 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B77AF791DB98BB5004A2877 /* UIKit.framework */; };
+		8B983AA81E328D63004E78AC /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B983AA71E328D63004E78AC /* UserProfileTableViewController.swift */; };
+		8B9FA3AC1DD3D32D00FA29C3 /* CLManagerShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FA3AB1DD3D32D00FA29C3 /* CLManagerShim.swift */; };
+		8B9FA3AE1DD550ED00FA29C3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FA3AD1DD550ED00FA29C3 /* PeopleViewController.swift */; };
+		8BAAB1941E1EDFFF00C28F11 /* SortOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAAB1931E1EDFFF00C28F11 /* SortOptionsTableViewController.swift */; };
+		8BDEF0E51E34569900E5EEE6 /* RKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEF0E41E34569900E5EEE6 /* RKLoginViewController.swift */; };
+		8BF511791DCAA4C60094E8D4 /* ViewEditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF511781DCAA4C60094E8D4 /* ViewEditTaskViewController.swift */; };
+		8BF7B8131DCB96DA00161109 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7B8121DCB96DA00161109 /* TasksTableViewController.swift */; };
+		8BF7B8151DCB976F00161109 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7B8141DCB976F00161109 /* TasksTableViewCell.swift */; };
+		F94FE2A71E2DD82600BDB35C /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94FE2A61E2DD82600BDB35C /* CustomCells.swift */; };
+		F94FE2A91E2DD89100BDB35C /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94FE2A81E2DD89100BDB35C /* FloatLabelTextField.swift */; };
+		F9C3DE481E2DD5F100154676 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3DE471E2DD5F100154676 /* TaskViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B5CB3791DB2DF1F00319DB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B5CB35A1DB2DF1F00319DB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B5CB3611DB2DF1F00319DB1;
+			remoteInfo = Teamwork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B77AF751DB86FDB004A2877 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00C6B12638035C00AF0B636C /* Pods-TeamworkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamworkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamworkUITests/Pods-TeamworkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1259F2AD1A459A6860F86203 /* Pods-Teamwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teamwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Teamwork/Pods-Teamwork.release.xcconfig"; sourceTree = "<group>"; };
+		20C2F915BAFDA0DA1F987D64 /* Pods_Fieldwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fieldwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		392A56337E8B110D4D7DC98C /* Pods-Fieldwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fieldwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fieldwork/Pods-Fieldwork.release.xcconfig"; sourceTree = "<group>"; };
+		4B57690F1B0F7FB5782797B7 /* Pods-TeamworkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamworkUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamworkUITests/Pods-TeamworkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		868A4DBA58769BDB02410D11 /* Pods_Teamwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teamwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B4319A61E930333000EFFAB /* PersonDetails2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDetails2ViewController.swift; path = Views/People/PersonDetails2ViewController.swift; sourceTree = SOURCE_ROOT; };
+		8B4319A81E934493000EFFAB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8B4319A91E934493000EFFAB /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8B4319AA1E934493000EFFAB /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		8B4319AB1E934493000EFFAB /* TaskHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskHistory.swift; sourceTree = "<group>"; };
+		8B4319AC1E934493000EFFAB /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		8B5028031E8AF5510014C62C /* TeamworkPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamworkPreferences.swift; sourceTree = "<group>"; };
+		8B5C6E741DBB052B0029B589 /* Color+Uilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Color+Uilities.swift"; path = "Extensions/Color+Uilities.swift"; sourceTree = SOURCE_ROOT; };
+		8B5CB3621DB2DF1F00319DB1 /* Teamwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teamwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B5CB3651DB2DF1F00319DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B5CB36C1DB2DF1F00319DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B5CB36E1DB2DF1F00319DB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B5CB3711DB2DF1F00319DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B5CB3731DB2DF1F00319DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B5CB3781DB2DF1F00319DB1 /* TeamworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B5CB37C1DB2DF1F00319DB1 /* TeamworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkUITests.swift; sourceTree = "<group>"; };
+		8B5CB37E1DB2DF1F00319DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B5CB38D1DB3020100319DB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8B5CB39B1DB3480800319DB1 /* TeamworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamworkConstants.swift; sourceTree = SOURCE_ROOT; };
+		8B620DC11E8447B100C161DF /* TeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
+		8B620DC31E849C5700C161DF /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewController.swift; path = Views/Teams/TeamTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		8B777E2B1E0313D700762355 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		8B77AF4C1DB7E76F004A2877 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8B77AF641DB7F4A5004A2877 /* Image+Utilties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Utilties.swift"; sourceTree = "<group>"; };
+		8B77AF651DB7F4A5004A2877 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		8B77AF661DB7F4A5004A2877 /* View+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Utilities.swift"; sourceTree = "<group>"; };
+		8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Utilities.swift"; sourceTree = "<group>"; };
+		8B77AF791DB98BB5004A2877 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8B983AA71E328D63004E78AC /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileTableViewController.swift; path = Views/Settings/UserProfileTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		8B9FA3AB1DD3D32D00FA29C3 /* CLManagerShim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLManagerShim.swift; sourceTree = "<group>"; };
+		8B9FA3AD1DD550ED00FA29C3 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		8BAAB1931E1EDFFF00C28F11 /* SortOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOptionsTableViewController.swift; sourceTree = "<group>"; };
+		8BD404541DDBAD96005E9C4B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8BDEF0E41E34569900E5EEE6 /* RKLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKLoginViewController.swift; sourceTree = "<group>"; };
+		8BF511781DCAA4C60094E8D4 /* ViewEditTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewEditTaskViewController.swift; path = Views/Tasks/ViewEditTaskViewController.swift; sourceTree = SOURCE_ROOT; };
+		8BF63B581DBE756600E649CB /* Teamwork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Teamwork.entitlements; sourceTree = "<group>"; };
+		8BF7B8121DCB96DA00161109 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		8BF7B8141DCB976F00161109 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		8F7266D2A22E7B39BC982F5F /* Pods-Teamwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teamwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teamwork/Pods-Teamwork.debug.xcconfig"; sourceTree = "<group>"; };
+		A47B24EDFAA3D21AECD7DAA0 /* Pods-Fieldwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fieldwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fieldwork/Pods-Fieldwork.debug.xcconfig"; sourceTree = "<group>"; };
+		F94FE2A61E2DD82600BDB35C /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
+		F94FE2A81E2DD89100BDB35C /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
+		F9C3DE471E2DD5F100154676 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		FAA3B3222CD533E8760011AD /* Pods_TeamworkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamworkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B5CB35F1DB2DF1F00319DB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B77AF7A1DB98BB5004A2877 /* UIKit.framework in Frameworks */,
+				8B5CB38E1DB3020100319DB1 /* Foundation.framework in Frameworks */,
+				8806B2F24B7886B78FBBF9D6 /* Pods_Teamwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B5CB3751DB2DF1F00319DB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4911575B46FD1DD3F9DEC6FD /* Pods_TeamworkUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30B0A112D308B90CF494B1BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F7266D2A22E7B39BC982F5F /* Pods-Teamwork.debug.xcconfig */,
+				1259F2AD1A459A6860F86203 /* Pods-Teamwork.release.xcconfig */,
+				4B57690F1B0F7FB5782797B7 /* Pods-TeamworkUITests.debug.xcconfig */,
+				00C6B12638035C00AF0B636C /* Pods-TeamworkUITests.release.xcconfig */,
+				A47B24EDFAA3D21AECD7DAA0 /* Pods-Fieldwork.debug.xcconfig */,
+				392A56337E8B110D4D7DC98C /* Pods-Fieldwork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B5CB3591DB2DF1F00319DB1 = {
+			isa = PBXGroup;
+			children = (
+				8BD404541DDBAD96005E9C4B /* README.md */,
+				8B77AF621DB7F4A5004A2877 /* Extensions */,
+				8B77AF461DB7E76F004A2877 /* Views */,
+				8B5CB3921DB3393900319DB1 /* Models */,
+				8B5CB3641DB2DF1F00319DB1 /* Teamwork */,
+				8B5CB37B1DB2DF1F00319DB1 /* TeamworkUITests */,
+				8B5CB3631DB2DF1F00319DB1 /* Products */,
+				8B5CB38C1DB3020100319DB1 /* Frameworks */,
+				30B0A112D308B90CF494B1BD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		8B5CB3631DB2DF1F00319DB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B5CB3621DB2DF1F00319DB1 /* Teamwork.app */,
+				8B5CB3781DB2DF1F00319DB1 /* TeamworkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B5CB3641DB2DF1F00319DB1 /* Teamwork */ = {
+			isa = PBXGroup;
+			children = (
+				8BF63B581DBE756600E649CB /* Teamwork.entitlements */,
+				8B5CB39B1DB3480800319DB1 /* TeamworkConstants.swift */,
+				8B5CB3651DB2DF1F00319DB1 /* AppDelegate.swift */,
+				8B5CB36B1DB2DF1F00319DB1 /* Main.storyboard */,
+				8B5CB3701DB2DF1F00319DB1 /* LaunchScreen.storyboard */,
+				8B5CB3731DB2DF1F00319DB1 /* Info.plist */,
+				8B5CB36E1DB2DF1F00319DB1 /* Assets.xcassets */,
+			);
+			path = Teamwork;
+			sourceTree = "<group>";
+		};
+		8B5CB37B1DB2DF1F00319DB1 /* TeamworkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8B5CB37C1DB2DF1F00319DB1 /* TeamworkUITests.swift */,
+				8B5CB37E1DB2DF1F00319DB1 /* Info.plist */,
+			);
+			path = TeamworkUITests;
+			sourceTree = "<group>";
+		};
+		8B5CB38C1DB3020100319DB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B77AF791DB98BB5004A2877 /* UIKit.framework */,
+				8B5CB38D1DB3020100319DB1 /* Foundation.framework */,
+				868A4DBA58769BDB02410D11 /* Pods_Teamwork.framework */,
+				FAA3B3222CD533E8760011AD /* Pods_TeamworkUITests.framework */,
+				20C2F915BAFDA0DA1F987D64 /* Pods_Fieldwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B5CB3921DB3393900319DB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B4319A81E934493000EFFAB /* Location.swift */,
+				8B4319A91E934493000EFFAB /* Person.swift */,
+				8B4319AA1E934493000EFFAB /* Task.swift */,
+				8B4319AB1E934493000EFFAB /* TaskHistory.swift */,
+				8B4319AC1E934493000EFFAB /* Team.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B5E5A3B1DD048AC0071A688 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				8B4319A61E930333000EFFAB /* PersonDetails2ViewController.swift */,
+				8B777E2B1E0313D700762355 /* PersonTableViewCell.swift */,
+				8B9FA3AD1DD550ED00FA29C3 /* PeopleViewController.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		8B620DC01E84479900C161DF /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				8B620DC31E849C5700C161DF /* TeamTableViewController.swift */,
+				8B620DC11E8447B100C161DF /* TeamDetailViewController.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		8B77AF461DB7E76F004A2877 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B77AF491DB7E76F004A2877 /* Login */,
+				8B77AF4B1DB7E76F004A2877 /* Map */,
+				8B5E5A3B1DD048AC0071A688 /* People */,
+				8B77AF4F1DB7E76F004A2877 /* Settings */,
+				8B879C991DC1D84400D049D7 /* Tasks */,
+				8B620DC01E84479900C161DF /* Teams */,
+				8BAAB1921E1EDFFF00C28F11 /* Utility */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8B77AF491DB7E76F004A2877 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8BDEF0E41E34569900E5EEE6 /* RKLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8B77AF4B1DB7E76F004A2877 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8B77AF4C1DB7E76F004A2877 /* MapViewController.swift */,
+				8B9FA3AB1DD3D32D00FA29C3 /* CLManagerShim.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		8B77AF4F1DB7E76F004A2877 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8B983AA71E328D63004E78AC /* UserProfileTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8B77AF621DB7F4A5004A2877 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */,
+				8B77AF641DB7F4A5004A2877 /* Image+Utilties.swift */,
+				8B77AF651DB7F4A5004A2877 /* String+Utilities.swift */,
+				8B5C6E741DBB052B0029B589 /* Color+Uilities.swift */,
+				8B77AF661DB7F4A5004A2877 /* View+Utilities.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B879C991DC1D84400D049D7 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				F94FE2A61E2DD82600BDB35C /* CustomCells.swift */,
+				F94FE2A81E2DD89100BDB35C /* FloatLabelTextField.swift */,
+				8BF7B8141DCB976F00161109 /* TasksTableViewCell.swift */,
+				8BF7B8121DCB96DA00161109 /* TasksTableViewController.swift */,
+				F9C3DE471E2DD5F100154676 /* TaskViewController.swift */,
+				8BF511781DCAA4C60094E8D4 /* ViewEditTaskViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		8BAAB1921E1EDFFF00C28F11 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8BAAB1931E1EDFFF00C28F11 /* SortOptionsTableViewController.swift */,
+				8B5028031E8AF5510014C62C /* TeamworkPreferences.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B5CB3611DB2DF1F00319DB1 /* Teamwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B5CB3811DB2DF1F00319DB1 /* Build configuration list for PBXNativeTarget "Teamwork" */;
+			buildPhases = (
+				4AFAD73104703324C1E6CCD1 /* [CP] Check Pods Manifest.lock */,
+				8B5CB35E1DB2DF1F00319DB1 /* Sources */,
+				8B5CB35F1DB2DF1F00319DB1 /* Frameworks */,
+				8B5CB3601DB2DF1F00319DB1 /* Resources */,
+				8B77AF751DB86FDB004A2877 /* Embed Frameworks */,
+				061C8D10F88DDD59B19C30B6 /* [CP] Embed Pods Frameworks */,
+				7AAAAA5B9285C8F6CA583588 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Teamwork;
+			productName = Teamwork;
+			productReference = 8B5CB3621DB2DF1F00319DB1 /* Teamwork.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B5CB3771DB2DF1F00319DB1 /* TeamworkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B5CB3841DB2DF1F00319DB1 /* Build configuration list for PBXNativeTarget "TeamworkUITests" */;
+			buildPhases = (
+				E4A710C69A7517F96DE5A71F /* [CP] Check Pods Manifest.lock */,
+				8B5CB3741DB2DF1F00319DB1 /* Sources */,
+				8B5CB3751DB2DF1F00319DB1 /* Frameworks */,
+				8B5CB3761DB2DF1F00319DB1 /* Resources */,
+				4F7FD13FDB1AAEBDECE39464 /* [CP] Embed Pods Frameworks */,
+				8AB4427C5C786C5AB2A048E3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B5CB37A1DB2DF1F00319DB1 /* PBXTargetDependency */,
+			);
+			name = TeamworkUITests;
+			productName = TeamworkUITests;
+			productReference = 8B5CB3781DB2DF1F00319DB1 /* TeamworkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B5CB35A1DB2DF1F00319DB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Zeitgeist;
+				TargetAttributes = {
+					8B5CB3611DB2DF1F00319DB1 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4XL3X97RQ3;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					8B5CB3771DB2DF1F00319DB1 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 44BZ688M8V;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8B5CB3611DB2DF1F00319DB1;
+					};
+				};
+			};
+			buildConfigurationList = 8B5CB35D1DB2DF1F00319DB1 /* Build configuration list for PBXProject "Teamwork" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B5CB3591DB2DF1F00319DB1;
+			productRefGroup = 8B5CB3631DB2DF1F00319DB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B5CB3611DB2DF1F00319DB1 /* Teamwork */,
+				8B5CB3771DB2DF1F00319DB1 /* TeamworkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B5CB3601DB2DF1F00319DB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B5CB3721DB2DF1F00319DB1 /* LaunchScreen.storyboard in Resources */,
+				8B5CB36F1DB2DF1F00319DB1 /* Assets.xcassets in Resources */,
+				8B5CB36D1DB2DF1F00319DB1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B5CB3761DB2DF1F00319DB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		061C8D10F88DDD59B19C30B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Teamwork/Pods-Teamwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AFAD73104703324C1E6CCD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4F7FD13FDB1AAEBDECE39464 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeamworkUITests/Pods-TeamworkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AAAAA5B9285C8F6CA583588 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Teamwork/Pods-Teamwork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB4427C5C786C5AB2A048E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeamworkUITests/Pods-TeamworkUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A710C69A7517F96DE5A71F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B5CB35E1DB2DF1F00319DB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B4319AF1E934493000EFFAB /* Task.swift in Sources */,
+				8B77AF681DB7F4A5004A2877 /* Image+Utilties.swift in Sources */,
+				8BAAB1941E1EDFFF00C28F11 /* SortOptionsTableViewController.swift in Sources */,
+				F94FE2A71E2DD82600BDB35C /* CustomCells.swift in Sources */,
+				8B983AA81E328D63004E78AC /* UserProfileTableViewController.swift in Sources */,
+				F94FE2A91E2DD89100BDB35C /* FloatLabelTextField.swift in Sources */,
+				8B4319B11E934493000EFFAB /* Team.swift in Sources */,
+				8B9FA3AE1DD550ED00FA29C3 /* PeopleViewController.swift in Sources */,
+				8B77AF6A1DB7F4A5004A2877 /* View+Utilities.swift in Sources */,
+				8B4319A71E930333000EFFAB /* PersonDetails2ViewController.swift in Sources */,
+				8B5CB39C1DB3480800319DB1 /* TeamworkConstants.swift in Sources */,
+				8B77AF6C1DB81636004A2877 /* TextField+Utilities.swift in Sources */,
+				F9C3DE481E2DD5F100154676 /* TaskViewController.swift in Sources */,
+				8BF7B8131DCB96DA00161109 /* TasksTableViewController.swift in Sources */,
+				8B620DC21E8447B100C161DF /* TeamDetailViewController.swift in Sources */,
+				8B4319AD1E934493000EFFAB /* Location.swift in Sources */,
+				8B620DC41E849C5700C161DF /* TeamTableViewController.swift in Sources */,
+				8B77AF691DB7F4A5004A2877 /* String+Utilities.swift in Sources */,
+				8B4319AE1E934493000EFFAB /* Person.swift in Sources */,
+				8B777E2C1E0313D700762355 /* PersonTableViewCell.swift in Sources */,
+				8B5CB3661DB2DF1F00319DB1 /* AppDelegate.swift in Sources */,
+				8BDEF0E51E34569900E5EEE6 /* RKLoginViewController.swift in Sources */,
+				8B9FA3AC1DD3D32D00FA29C3 /* CLManagerShim.swift in Sources */,
+				8BF511791DCAA4C60094E8D4 /* ViewEditTaskViewController.swift in Sources */,
+				8B5028041E8AF5510014C62C /* TeamworkPreferences.swift in Sources */,
+				8BF7B8151DCB976F00161109 /* TasksTableViewCell.swift in Sources */,
+				8B4319B01E934493000EFFAB /* TaskHistory.swift in Sources */,
+				8B77AF521DB7E76F004A2877 /* MapViewController.swift in Sources */,
+				8B5C6E751DBB052B0029B589 /* Color+Uilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B5CB3741DB2DF1F00319DB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B5CB37D1DB2DF1F00319DB1 /* TeamworkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B5CB37A1DB2DF1F00319DB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B5CB3611DB2DF1F00319DB1 /* Teamwork */;
+			targetProxy = 8B5CB3791DB2DF1F00319DB1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B5CB36B1DB2DF1F00319DB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B5CB36C1DB2DF1F00319DB1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B5CB3701DB2DF1F00319DB1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B5CB3711DB2DF1F00319DB1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B5CB37F1DB2DF1F00319DB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B5CB3801DB2DF1F00319DB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B5CB3821DB2DF1F00319DB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F7266D2A22E7B39BC982F5F /* Pods-Teamwork.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Teamwork/Teamwork.entitlements;
+				DEVELOPMENT_TEAM = 4XL3X97RQ3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Teamwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.realm.TeamworkMR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8B5CB3831DB2DF1F00319DB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1259F2AD1A459A6860F86203 /* Pods-Teamwork.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Teamwork/Teamwork.entitlements;
+				DEVELOPMENT_TEAM = 4XL3X97RQ3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Teamwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.realm.TeamworkMR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8B5CB3851DB2DF1F00319DB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B57690F1B0F7FB5782797B7 /* Pods-TeamworkUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 44BZ688M8V;
+				INFOPLIST_FILE = TeamworkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeitgeist.TeamworkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Teamwork;
+			};
+			name = Debug;
+		};
+		8B5CB3861DB2DF1F00319DB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C6B12638035C00AF0B636C /* Pods-TeamworkUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 44BZ688M8V;
+				INFOPLIST_FILE = TeamworkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeitgeist.TeamworkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Teamwork;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B5CB35D1DB2DF1F00319DB1 /* Build configuration list for PBXProject "Teamwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B5CB37F1DB2DF1F00319DB1 /* Debug */,
+				8B5CB3801DB2DF1F00319DB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B5CB3811DB2DF1F00319DB1 /* Build configuration list for PBXNativeTarget "Teamwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B5CB3821DB2DF1F00319DB1 /* Debug */,
+				8B5CB3831DB2DF1F00319DB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B5CB3841DB2DF1F00319DB1 /* Build configuration list for PBXNativeTarget "TeamworkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B5CB3851DB2DF1F00319DB1 /* Debug */,
+				8B5CB3861DB2DF1F00319DB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B5CB35A1DB2DF1F00319DB1 /* Project object */;
+}

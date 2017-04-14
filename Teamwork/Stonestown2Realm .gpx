@@ -1,0 +1,2407 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="37.7280313" lon="-122.477088">
+  <name>Stonestown Galleria, 20th Avenue, San Francisco, CA</name>
+</wpt>
+<wpt lat="37.7798657" lon="-122.3919903">
+  <name>148 Townsend Street, San Francisco, CA</name>
+</wpt>
+<wpt lat="37.72806" lon="-122.47769">
+  <desc>&lt;b>trackpoint #1&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7280600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4776900&#176;</desc>
+</wpt>
+<wpt lat="37.72792" lon="-122.4777">
+  <desc>&lt;b>trackpoint #2&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7279200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4777000&#176;</desc>
+</wpt>
+<wpt lat="37.72785" lon="-122.4777">
+  <desc>&lt;b>trackpoint #3&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7278500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4777000&#176;</desc>
+</wpt>
+<wpt lat="37.72778" lon="-122.47769">
+  <desc>&lt;b>trackpoint #4&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7277800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4776900&#176;</desc>
+</wpt>
+<wpt lat="37.72775" lon="-122.47771">
+  <desc>&lt;b>trackpoint #5&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7277500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4777100&#176;</desc>
+</wpt>
+<wpt lat="37.72772" lon="-122.47773">
+  <desc>&lt;b>trackpoint #6&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7277200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4777300&#176;</desc>
+</wpt>
+<wpt lat="37.7277" lon="-122.47784">
+  <desc>&lt;b>trackpoint #7&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7277000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4778400&#176;</desc>
+</wpt>
+<wpt lat="37.72767" lon="-122.47789">
+  <desc>&lt;b>trackpoint #8&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7276700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4778900&#176;</desc>
+</wpt>
+<wpt lat="37.72763" lon="-122.47791">
+  <desc>&lt;b>trackpoint #9&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7276300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779100&#176;</desc>
+</wpt>
+<wpt lat="37.72758" lon="-122.47791">
+  <desc>&lt;b>trackpoint #10&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779100&#176;</desc>
+</wpt>
+<wpt lat="37.72755" lon="-122.47791">
+  <desc>&lt;b>trackpoint #11&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779100&#176;</desc>
+</wpt>
+<wpt lat="37.7275" lon="-122.47791">
+  <desc>&lt;b>trackpoint #12&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779100&#176;</desc>
+</wpt>
+<wpt lat="37.72745" lon="-122.47792">
+  <desc>&lt;b>trackpoint #13&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779200&#176;</desc>
+</wpt>
+<wpt lat="37.72741" lon="-122.47793">
+  <desc>&lt;b>trackpoint #14&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779300&#176;</desc>
+</wpt>
+<wpt lat="37.72738" lon="-122.47797">
+  <desc>&lt;b>trackpoint #15&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7273800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779700&#176;</desc>
+</wpt>
+<wpt lat="37.72736" lon="-122.47801">
+  <desc>&lt;b>trackpoint #16&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7273600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4780100&#176;</desc>
+</wpt>
+<wpt lat="37.72735" lon="-122.47811">
+  <desc>&lt;b>trackpoint #17&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7273500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4781100&#176;</desc>
+</wpt>
+<wpt lat="37.72736" lon="-122.47819">
+  <desc>&lt;b>trackpoint #18&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7273600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4781900&#176;</desc>
+</wpt>
+<wpt lat="37.72738" lon="-122.47823">
+  <desc>&lt;b>trackpoint #19&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7273800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4782300&#176;</desc>
+</wpt>
+<wpt lat="37.72743" lon="-122.47829">
+  <desc>&lt;b>trackpoint #20&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4782900&#176;</desc>
+</wpt>
+<wpt lat="37.72746" lon="-122.47831">
+  <desc>&lt;b>trackpoint #21&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783100&#176;</desc>
+</wpt>
+<wpt lat="37.72751" lon="-122.47834">
+  <desc>&lt;b>trackpoint #22&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783400&#176;</desc>
+</wpt>
+<wpt lat="37.72757" lon="-122.47836">
+  <desc>&lt;b>trackpoint #23&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783600&#176;</desc>
+</wpt>
+<wpt lat="37.72765" lon="-122.47839">
+  <desc>&lt;b>trackpoint #24&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7276500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783900&#176;</desc>
+</wpt>
+<wpt lat="37.72796" lon="-122.47838">
+  <desc>&lt;b>trackpoint #25&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7279600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783800&#176;</desc>
+</wpt>
+<wpt lat="37.72808" lon="-122.47838">
+  <desc>&lt;b>trackpoint #26&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7280800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783800&#176;</desc>
+</wpt>
+<wpt lat="37.72822" lon="-122.47836">
+  <desc>&lt;b>trackpoint #27&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7282200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783600&#176;</desc>
+</wpt>
+<wpt lat="37.72834" lon="-122.47834">
+  <desc>&lt;b>trackpoint #28&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7283400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783400&#176;</desc>
+</wpt>
+<wpt lat="37.72871" lon="-122.47828">
+  <desc>&lt;b>trackpoint #29&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7287100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4782800&#176;</desc>
+</wpt>
+<wpt lat="37.72871" lon="-122.47828">
+  <desc>&lt;b>trackpoint #30&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7287100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4782800&#176;</desc>
+</wpt>
+<wpt lat="37.72872" lon="-122.47844">
+  <desc>&lt;b>trackpoint #31&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7287200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4784400&#176;</desc>
+</wpt>
+<wpt lat="37.72872" lon="-122.47844">
+  <desc>&lt;b>trackpoint #32&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7287200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4784400&#176;</desc>
+</wpt>
+<wpt lat="37.72872" lon="-122.47853">
+  <desc>&lt;b>trackpoint #33&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7287200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785300&#176;</desc>
+</wpt>
+<wpt lat="37.72869" lon="-122.47853">
+  <desc>&lt;b>trackpoint #34&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7286900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785300&#176;</desc>
+</wpt>
+<wpt lat="37.72865" lon="-122.47852">
+  <desc>&lt;b>trackpoint #35&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7286500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72863" lon="-122.47852">
+  <desc>&lt;b>trackpoint #36&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7286300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72861" lon="-122.47852">
+  <desc>&lt;b>trackpoint #37&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7286100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72858" lon="-122.47852">
+  <desc>&lt;b>trackpoint #38&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7285800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72857" lon="-122.47852">
+  <desc>&lt;b>trackpoint #39&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7285700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72855" lon="-122.47852">
+  <desc>&lt;b>trackpoint #40&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7285500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72854" lon="-122.47852">
+  <desc>&lt;b>trackpoint #41&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7285400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72853" lon="-122.47852">
+  <desc>&lt;b>trackpoint #42&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7285300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72851" lon="-122.47853">
+  <desc>&lt;b>trackpoint #43&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7285100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785300&#176;</desc>
+</wpt>
+<wpt lat="37.7285" lon="-122.47853">
+  <desc>&lt;b>trackpoint #44&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7285000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785300&#176;</desc>
+</wpt>
+<wpt lat="37.72848" lon="-122.47854">
+  <desc>&lt;b>trackpoint #45&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7284800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785400&#176;</desc>
+</wpt>
+<wpt lat="37.72847" lon="-122.47856">
+  <desc>&lt;b>trackpoint #46&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7284700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785600&#176;</desc>
+</wpt>
+<wpt lat="37.72836" lon="-122.47867">
+  <desc>&lt;b>trackpoint #47&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7283600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786700&#176;</desc>
+</wpt>
+<wpt lat="37.72831" lon="-122.47872">
+  <desc>&lt;b>trackpoint #48&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7283100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4787200&#176;</desc>
+</wpt>
+<wpt lat="37.72831" lon="-122.47872">
+  <desc>&lt;b>trackpoint #49&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7283100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4787200&#176;</desc>
+</wpt>
+<wpt lat="37.72824" lon="-122.47877">
+  <desc>&lt;b>trackpoint #50&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7282400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4787700&#176;</desc>
+</wpt>
+<wpt lat="37.72817" lon="-122.47874">
+  <desc>&lt;b>trackpoint #51&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7281700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4787400&#176;</desc>
+</wpt>
+<wpt lat="37.72814" lon="-122.47872">
+  <desc>&lt;b>trackpoint #52&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7281400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4787200&#176;</desc>
+</wpt>
+<wpt lat="37.72808" lon="-122.4787">
+  <desc>&lt;b>trackpoint #53&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7280800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4787000&#176;</desc>
+</wpt>
+<wpt lat="37.72802" lon="-122.47868">
+  <desc>&lt;b>trackpoint #54&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7280200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786800&#176;</desc>
+</wpt>
+<wpt lat="37.72798" lon="-122.47867">
+  <desc>&lt;b>trackpoint #55&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7279800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786700&#176;</desc>
+</wpt>
+<wpt lat="37.72795" lon="-122.47867">
+  <desc>&lt;b>trackpoint #56&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7279500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786700&#176;</desc>
+</wpt>
+<wpt lat="37.72789" lon="-122.47867">
+  <desc>&lt;b>trackpoint #57&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7278900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786700&#176;</desc>
+</wpt>
+<wpt lat="37.72779" lon="-122.47868">
+  <desc>&lt;b>trackpoint #58&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7277900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786800&#176;</desc>
+</wpt>
+<wpt lat="37.72775" lon="-122.47868">
+  <desc>&lt;b>trackpoint #59&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7277500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786800&#176;</desc>
+</wpt>
+<wpt lat="37.7277" lon="-122.47868">
+  <desc>&lt;b>trackpoint #60&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7277000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786800&#176;</desc>
+</wpt>
+<wpt lat="37.72758" lon="-122.47867">
+  <desc>&lt;b>trackpoint #61&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786700&#176;</desc>
+</wpt>
+<wpt lat="37.72756" lon="-122.47867">
+  <desc>&lt;b>trackpoint #62&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786700&#176;</desc>
+</wpt>
+<wpt lat="37.72753" lon="-122.47867">
+  <desc>&lt;b>trackpoint #63&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786700&#176;</desc>
+</wpt>
+<wpt lat="37.7275" lon="-122.47866">
+  <desc>&lt;b>trackpoint #64&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7275000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786600&#176;</desc>
+</wpt>
+<wpt lat="37.72748" lon="-122.47866">
+  <desc>&lt;b>trackpoint #65&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786600&#176;</desc>
+</wpt>
+<wpt lat="37.72747" lon="-122.47866">
+  <desc>&lt;b>trackpoint #66&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786600&#176;</desc>
+</wpt>
+<wpt lat="37.72745" lon="-122.47865">
+  <desc>&lt;b>trackpoint #67&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786500&#176;</desc>
+</wpt>
+<wpt lat="37.7274" lon="-122.47862">
+  <desc>&lt;b>trackpoint #68&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7274000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4786200&#176;</desc>
+</wpt>
+<wpt lat="37.72735" lon="-122.47859">
+  <desc>&lt;b>trackpoint #69&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7273500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785900&#176;</desc>
+</wpt>
+<wpt lat="37.7273" lon="-122.47856">
+  <desc>&lt;b>trackpoint #70&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7273000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785600&#176;</desc>
+</wpt>
+<wpt lat="37.72726" lon="-122.47852">
+  <desc>&lt;b>trackpoint #71&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4785200&#176;</desc>
+</wpt>
+<wpt lat="37.72721" lon="-122.47847">
+  <desc>&lt;b>trackpoint #72&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4784700&#176;</desc>
+</wpt>
+<wpt lat="37.72717" lon="-122.47842">
+  <desc>&lt;b>trackpoint #73&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7271700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4784200&#176;</desc>
+</wpt>
+<wpt lat="37.72713" lon="-122.47836">
+  <desc>&lt;b>trackpoint #74&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7271300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783600&#176;</desc>
+</wpt>
+<wpt lat="37.72711" lon="-122.47833">
+  <desc>&lt;b>trackpoint #75&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7271100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4783300&#176;</desc>
+</wpt>
+<wpt lat="37.72708" lon="-122.47827">
+  <desc>&lt;b>trackpoint #76&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4782700&#176;</desc>
+</wpt>
+<wpt lat="37.72706" lon="-122.47823">
+  <desc>&lt;b>trackpoint #77&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4782300&#176;</desc>
+</wpt>
+<wpt lat="37.72705" lon="-122.4782">
+  <desc>&lt;b>trackpoint #78&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4782000&#176;</desc>
+</wpt>
+<wpt lat="37.72704" lon="-122.47818">
+  <desc>&lt;b>trackpoint #79&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4781800&#176;</desc>
+</wpt>
+<wpt lat="37.72703" lon="-122.47812">
+  <desc>&lt;b>trackpoint #80&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4781200&#176;</desc>
+</wpt>
+<wpt lat="37.72701" lon="-122.47808">
+  <desc>&lt;b>trackpoint #81&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4780800&#176;</desc>
+</wpt>
+<wpt lat="37.72701" lon="-122.47806">
+  <desc>&lt;b>trackpoint #82&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4780600&#176;</desc>
+</wpt>
+<wpt lat="37.727" lon="-122.47803">
+  <desc>&lt;b>trackpoint #83&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4780300&#176;</desc>
+</wpt>
+<wpt lat="37.727" lon="-122.47801">
+  <desc>&lt;b>trackpoint #84&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4780100&#176;</desc>
+</wpt>
+<wpt lat="37.727" lon="-122.47799">
+  <desc>&lt;b>trackpoint #85&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779900&#176;</desc>
+</wpt>
+<wpt lat="37.72699" lon="-122.47797">
+  <desc>&lt;b>trackpoint #86&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779700&#176;</desc>
+</wpt>
+<wpt lat="37.72699" lon="-122.47795">
+  <desc>&lt;b>trackpoint #87&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779500&#176;</desc>
+</wpt>
+<wpt lat="37.72699" lon="-122.47792">
+  <desc>&lt;b>trackpoint #88&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4779200&#176;</desc>
+</wpt>
+<wpt lat="37.72694" lon="-122.4766">
+  <desc>&lt;b>trackpoint #89&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4766000&#176;</desc>
+</wpt>
+<wpt lat="37.72693" lon="-122.47606">
+  <desc>&lt;b>trackpoint #90&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4760600&#176;</desc>
+</wpt>
+<wpt lat="37.72689" lon="-122.47532">
+  <desc>&lt;b>trackpoint #91&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4753200&#176;</desc>
+</wpt>
+<wpt lat="37.72688" lon="-122.47505">
+  <desc>&lt;b>trackpoint #92&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4750500&#176;</desc>
+</wpt>
+<wpt lat="37.72687" lon="-122.47493">
+  <desc>&lt;b>trackpoint #93&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4749300&#176;</desc>
+</wpt>
+<wpt lat="37.72687" lon="-122.47484">
+  <desc>&lt;b>trackpoint #94&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4748400&#176;</desc>
+</wpt>
+<wpt lat="37.72686" lon="-122.47478">
+  <desc>&lt;b>trackpoint #95&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4747800&#176;</desc>
+</wpt>
+<wpt lat="37.72692" lon="-122.47471">
+  <desc>&lt;b>trackpoint #96&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4747100&#176;</desc>
+</wpt>
+<wpt lat="37.72691" lon="-122.4745">
+  <desc>&lt;b>trackpoint #97&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4745000&#176;</desc>
+</wpt>
+<wpt lat="37.7269" lon="-122.47425">
+  <desc>&lt;b>trackpoint #98&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4742500&#176;</desc>
+</wpt>
+<wpt lat="37.72688" lon="-122.47379">
+  <desc>&lt;b>trackpoint #99&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4737900&#176;</desc>
+</wpt>
+<wpt lat="37.72686" lon="-122.47334">
+  <desc>&lt;b>trackpoint #100&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4733400&#176;</desc>
+</wpt>
+<wpt lat="37.72683" lon="-122.47238">
+  <desc>&lt;b>trackpoint #101&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4723800&#176;</desc>
+</wpt>
+<wpt lat="37.72683" lon="-122.47238">
+  <desc>&lt;b>trackpoint #102&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4723800&#176;</desc>
+</wpt>
+<wpt lat="37.72682" lon="-122.47216">
+  <desc>&lt;b>trackpoint #103&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4721600&#176;</desc>
+</wpt>
+<wpt lat="37.72681" lon="-122.47198">
+  <desc>&lt;b>trackpoint #104&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4719800&#176;</desc>
+</wpt>
+<wpt lat="37.7268" lon="-122.47171">
+  <desc>&lt;b>trackpoint #105&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4717100&#176;</desc>
+</wpt>
+<wpt lat="37.72679" lon="-122.47115">
+  <desc>&lt;b>trackpoint #106&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7267900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4711500&#176;</desc>
+</wpt>
+<wpt lat="37.7268" lon="-122.47097">
+  <desc>&lt;b>trackpoint #107&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4709700&#176;</desc>
+</wpt>
+<wpt lat="37.7268" lon="-122.47097">
+  <desc>&lt;b>trackpoint #108&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4709700&#176;</desc>
+</wpt>
+<wpt lat="37.72662" lon="-122.47069">
+  <desc>&lt;b>trackpoint #109&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7266200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4706900&#176;</desc>
+</wpt>
+<wpt lat="37.72658" lon="-122.47062">
+  <desc>&lt;b>trackpoint #110&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7265800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4706200&#176;</desc>
+</wpt>
+<wpt lat="37.72654" lon="-122.47054">
+  <desc>&lt;b>trackpoint #111&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7265400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4705400&#176;</desc>
+</wpt>
+<wpt lat="37.7265" lon="-122.47046">
+  <desc>&lt;b>trackpoint #112&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7265000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4704600&#176;</desc>
+</wpt>
+<wpt lat="37.72648" lon="-122.4704">
+  <desc>&lt;b>trackpoint #113&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7264800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4704000&#176;</desc>
+</wpt>
+<wpt lat="37.72644" lon="-122.47029">
+  <desc>&lt;b>trackpoint #114&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7264400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4702900&#176;</desc>
+</wpt>
+<wpt lat="37.72641" lon="-122.4702">
+  <desc>&lt;b>trackpoint #115&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7264100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4702000&#176;</desc>
+</wpt>
+<wpt lat="37.72639" lon="-122.47014">
+  <desc>&lt;b>trackpoint #116&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4701400&#176;</desc>
+</wpt>
+<wpt lat="37.72638" lon="-122.47009">
+  <desc>&lt;b>trackpoint #117&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4700900&#176;</desc>
+</wpt>
+<wpt lat="37.72636" lon="-122.47002">
+  <desc>&lt;b>trackpoint #118&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4700200&#176;</desc>
+</wpt>
+<wpt lat="37.72635" lon="-122.46995">
+  <desc>&lt;b>trackpoint #119&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4699500&#176;</desc>
+</wpt>
+<wpt lat="37.72634" lon="-122.46988">
+  <desc>&lt;b>trackpoint #120&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4698800&#176;</desc>
+</wpt>
+<wpt lat="37.72633" lon="-122.46978">
+  <desc>&lt;b>trackpoint #121&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4697800&#176;</desc>
+</wpt>
+<wpt lat="37.72633" lon="-122.4697">
+  <desc>&lt;b>trackpoint #122&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4697000&#176;</desc>
+</wpt>
+<wpt lat="37.72632" lon="-122.46963">
+  <desc>&lt;b>trackpoint #123&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4696300&#176;</desc>
+</wpt>
+<wpt lat="37.72632" lon="-122.46945">
+  <desc>&lt;b>trackpoint #124&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4694500&#176;</desc>
+</wpt>
+<wpt lat="37.72631" lon="-122.46937">
+  <desc>&lt;b>trackpoint #125&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4693700&#176;</desc>
+</wpt>
+<wpt lat="37.72631" lon="-122.46922">
+  <desc>&lt;b>trackpoint #126&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4692200&#176;</desc>
+</wpt>
+<wpt lat="37.72631" lon="-122.46907">
+  <desc>&lt;b>trackpoint #127&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4690700&#176;</desc>
+</wpt>
+<wpt lat="37.72631" lon="-122.46887">
+  <desc>&lt;b>trackpoint #128&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4688700&#176;</desc>
+</wpt>
+<wpt lat="37.72632" lon="-122.46872">
+  <desc>&lt;b>trackpoint #129&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4687200&#176;</desc>
+</wpt>
+<wpt lat="37.72635" lon="-122.46857">
+  <desc>&lt;b>trackpoint #130&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4685700&#176;</desc>
+</wpt>
+<wpt lat="37.72637" lon="-122.46842">
+  <desc>&lt;b>trackpoint #131&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7263700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4684200&#176;</desc>
+</wpt>
+<wpt lat="37.72641" lon="-122.46825">
+  <desc>&lt;b>trackpoint #132&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7264100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4682500&#176;</desc>
+</wpt>
+<wpt lat="37.72644" lon="-122.46811">
+  <desc>&lt;b>trackpoint #133&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7264400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4681100&#176;</desc>
+</wpt>
+<wpt lat="37.7265" lon="-122.46793">
+  <desc>&lt;b>trackpoint #134&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7265000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4679300&#176;</desc>
+</wpt>
+<wpt lat="37.72655" lon="-122.46779">
+  <desc>&lt;b>trackpoint #135&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7265500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4677900&#176;</desc>
+</wpt>
+<wpt lat="37.72659" lon="-122.46769">
+  <desc>&lt;b>trackpoint #136&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7265900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4676900&#176;</desc>
+</wpt>
+<wpt lat="37.72667" lon="-122.46751">
+  <desc>&lt;b>trackpoint #137&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7266700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4675100&#176;</desc>
+</wpt>
+<wpt lat="37.72675" lon="-122.46736">
+  <desc>&lt;b>trackpoint #138&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7267500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4673600&#176;</desc>
+</wpt>
+<wpt lat="37.72682" lon="-122.46723">
+  <desc>&lt;b>trackpoint #139&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7268200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4672300&#176;</desc>
+</wpt>
+<wpt lat="37.72694" lon="-122.46703">
+  <desc>&lt;b>trackpoint #140&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7269400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4670300&#176;</desc>
+</wpt>
+<wpt lat="37.72705" lon="-122.46685">
+  <desc>&lt;b>trackpoint #141&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7270500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4668500&#176;</desc>
+</wpt>
+<wpt lat="37.7271" lon="-122.46678">
+  <desc>&lt;b>trackpoint #142&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7271000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4667800&#176;</desc>
+</wpt>
+<wpt lat="37.72715" lon="-122.46672">
+  <desc>&lt;b>trackpoint #143&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7271500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4667200&#176;</desc>
+</wpt>
+<wpt lat="37.72718" lon="-122.46671">
+  <desc>&lt;b>trackpoint #144&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7271800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4667100&#176;</desc>
+</wpt>
+<wpt lat="37.72721" lon="-122.4667">
+  <desc>&lt;b>trackpoint #145&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4667000&#176;</desc>
+</wpt>
+<wpt lat="37.72723" lon="-122.46668">
+  <desc>&lt;b>trackpoint #146&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4666800&#176;</desc>
+</wpt>
+<wpt lat="37.72723" lon="-122.46668">
+  <desc>&lt;b>trackpoint #147&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4666800&#176;</desc>
+</wpt>
+<wpt lat="37.72726" lon="-122.46667">
+  <desc>&lt;b>trackpoint #148&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4666700&#176;</desc>
+</wpt>
+<wpt lat="37.72727" lon="-122.46665">
+  <desc>&lt;b>trackpoint #149&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4666500&#176;</desc>
+</wpt>
+<wpt lat="37.72728" lon="-122.46664">
+  <desc>&lt;b>trackpoint #150&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4666400&#176;</desc>
+</wpt>
+<wpt lat="37.72729" lon="-122.46664">
+  <desc>&lt;b>trackpoint #151&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7272900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4666400&#176;</desc>
+</wpt>
+<wpt lat="37.72769" lon="-122.46619">
+  <desc>&lt;b>trackpoint #152&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7276900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4661900&#176;</desc>
+</wpt>
+<wpt lat="37.72799" lon="-122.46586">
+  <desc>&lt;b>trackpoint #153&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7279900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4658600&#176;</desc>
+</wpt>
+<wpt lat="37.72821" lon="-122.46567">
+  <desc>&lt;b>trackpoint #154&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7282100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4656700&#176;</desc>
+</wpt>
+<wpt lat="37.72848" lon="-122.46544">
+  <desc>&lt;b>trackpoint #155&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7284800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4654400&#176;</desc>
+</wpt>
+<wpt lat="37.7288" lon="-122.46521">
+  <desc>&lt;b>trackpoint #156&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7288000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4652100&#176;</desc>
+</wpt>
+<wpt lat="37.72899" lon="-122.46508">
+  <desc>&lt;b>trackpoint #157&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7289900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4650800&#176;</desc>
+</wpt>
+<wpt lat="37.72939" lon="-122.46489">
+  <desc>&lt;b>trackpoint #158&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7293900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4648900&#176;</desc>
+</wpt>
+<wpt lat="37.72954" lon="-122.46482">
+  <desc>&lt;b>trackpoint #159&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7295400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4648200&#176;</desc>
+</wpt>
+<wpt lat="37.72958" lon="-122.46481">
+  <desc>&lt;b>trackpoint #160&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7295800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4648100&#176;</desc>
+</wpt>
+<wpt lat="37.72983" lon="-122.46471">
+  <desc>&lt;b>trackpoint #161&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7298300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4647100&#176;</desc>
+</wpt>
+<wpt lat="37.72996" lon="-122.46467">
+  <desc>&lt;b>trackpoint #162&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7299600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4646700&#176;</desc>
+</wpt>
+<wpt lat="37.73016" lon="-122.4646">
+  <desc>&lt;b>trackpoint #163&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7301600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4646000&#176;</desc>
+</wpt>
+<wpt lat="37.73019" lon="-122.46459">
+  <desc>&lt;b>trackpoint #164&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7301900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4645900&#176;</desc>
+</wpt>
+<wpt lat="37.7303" lon="-122.46457">
+  <desc>&lt;b>trackpoint #165&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7303000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4645700&#176;</desc>
+</wpt>
+<wpt lat="37.73044" lon="-122.46454">
+  <desc>&lt;b>trackpoint #166&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7304400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4645400&#176;</desc>
+</wpt>
+<wpt lat="37.73054" lon="-122.46451">
+  <desc>&lt;b>trackpoint #167&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7305400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4645100&#176;</desc>
+</wpt>
+<wpt lat="37.73063" lon="-122.4645">
+  <desc>&lt;b>trackpoint #168&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7306300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4645000&#176;</desc>
+</wpt>
+<wpt lat="37.73082" lon="-122.46445">
+  <desc>&lt;b>trackpoint #169&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7308200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4644500&#176;</desc>
+</wpt>
+<wpt lat="37.73094" lon="-122.46443">
+  <desc>&lt;b>trackpoint #170&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7309400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4644300&#176;</desc>
+</wpt>
+<wpt lat="37.73133" lon="-122.46403">
+  <desc>&lt;b>trackpoint #171&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4640300&#176;</desc>
+</wpt>
+<wpt lat="37.73139" lon="-122.46397">
+  <desc>&lt;b>trackpoint #172&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4639700&#176;</desc>
+</wpt>
+<wpt lat="37.73142" lon="-122.46393">
+  <desc>&lt;b>trackpoint #173&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4639300&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.46377">
+  <desc>&lt;b>trackpoint #174&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4637700&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.46377">
+  <desc>&lt;b>trackpoint #175&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4637700&#176;</desc>
+</wpt>
+<wpt lat="37.73128" lon="-122.46367">
+  <desc>&lt;b>trackpoint #176&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4636700&#176;</desc>
+</wpt>
+<wpt lat="37.73118" lon="-122.46363">
+  <desc>&lt;b>trackpoint #177&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4636300&#176;</desc>
+</wpt>
+<wpt lat="37.73108" lon="-122.4636">
+  <desc>&lt;b>trackpoint #178&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7310800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4636000&#176;</desc>
+</wpt>
+<wpt lat="37.73099" lon="-122.46356">
+  <desc>&lt;b>trackpoint #179&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7309900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4635600&#176;</desc>
+</wpt>
+<wpt lat="37.73091" lon="-122.46353">
+  <desc>&lt;b>trackpoint #180&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7309100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4635300&#176;</desc>
+</wpt>
+<wpt lat="37.73084" lon="-122.46348">
+  <desc>&lt;b>trackpoint #181&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7308400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4634800&#176;</desc>
+</wpt>
+<wpt lat="37.73077" lon="-122.46342">
+  <desc>&lt;b>trackpoint #182&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4634200&#176;</desc>
+</wpt>
+<wpt lat="37.73069" lon="-122.46334">
+  <desc>&lt;b>trackpoint #183&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7306900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4633400&#176;</desc>
+</wpt>
+<wpt lat="37.73063" lon="-122.46324">
+  <desc>&lt;b>trackpoint #184&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7306300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4632400&#176;</desc>
+</wpt>
+<wpt lat="37.73056" lon="-122.46311">
+  <desc>&lt;b>trackpoint #185&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7305600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4631100&#176;</desc>
+</wpt>
+<wpt lat="37.73048" lon="-122.46298">
+  <desc>&lt;b>trackpoint #186&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7304800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4629800&#176;</desc>
+</wpt>
+<wpt lat="37.73042" lon="-122.46288">
+  <desc>&lt;b>trackpoint #187&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7304200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4628800&#176;</desc>
+</wpt>
+<wpt lat="37.73035" lon="-122.46275">
+  <desc>&lt;b>trackpoint #188&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7303500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4627500&#176;</desc>
+</wpt>
+<wpt lat="37.73029" lon="-122.46264">
+  <desc>&lt;b>trackpoint #189&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7302900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4626400&#176;</desc>
+</wpt>
+<wpt lat="37.73025" lon="-122.46258">
+  <desc>&lt;b>trackpoint #190&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7302500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4625800&#176;</desc>
+</wpt>
+<wpt lat="37.73023" lon="-122.46255">
+  <desc>&lt;b>trackpoint #191&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7302300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4625500&#176;</desc>
+</wpt>
+<wpt lat="37.73016" lon="-122.46241">
+  <desc>&lt;b>trackpoint #192&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7301600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4624100&#176;</desc>
+</wpt>
+<wpt lat="37.73012" lon="-122.46232">
+  <desc>&lt;b>trackpoint #193&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7301200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4623200&#176;</desc>
+</wpt>
+<wpt lat="37.73009" lon="-122.46225">
+  <desc>&lt;b>trackpoint #194&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4622500&#176;</desc>
+</wpt>
+<wpt lat="37.73007" lon="-122.46218">
+  <desc>&lt;b>trackpoint #195&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4621800&#176;</desc>
+</wpt>
+<wpt lat="37.73005" lon="-122.46211">
+  <desc>&lt;b>trackpoint #196&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4621100&#176;</desc>
+</wpt>
+<wpt lat="37.73004" lon="-122.46207">
+  <desc>&lt;b>trackpoint #197&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4620700&#176;</desc>
+</wpt>
+<wpt lat="37.73001" lon="-122.4619">
+  <desc>&lt;b>trackpoint #198&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4619000&#176;</desc>
+</wpt>
+<wpt lat="37.72999" lon="-122.46172">
+  <desc>&lt;b>trackpoint #199&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7299900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4617200&#176;</desc>
+</wpt>
+<wpt lat="37.72999" lon="-122.46157">
+  <desc>&lt;b>trackpoint #200&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7299900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4615700&#176;</desc>
+</wpt>
+<wpt lat="37.73001" lon="-122.46147">
+  <desc>&lt;b>trackpoint #201&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4614700&#176;</desc>
+</wpt>
+<wpt lat="37.73004" lon="-122.4613">
+  <desc>&lt;b>trackpoint #202&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4613000&#176;</desc>
+</wpt>
+<wpt lat="37.73008" lon="-122.46116">
+  <desc>&lt;b>trackpoint #203&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7300800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4611600&#176;</desc>
+</wpt>
+<wpt lat="37.73015" lon="-122.46098">
+  <desc>&lt;b>trackpoint #204&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7301500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4609800&#176;</desc>
+</wpt>
+<wpt lat="37.73028" lon="-122.46074">
+  <desc>&lt;b>trackpoint #205&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7302800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4607400&#176;</desc>
+</wpt>
+<wpt lat="37.73036" lon="-122.46063">
+  <desc>&lt;b>trackpoint #206&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7303600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4606300&#176;</desc>
+</wpt>
+<wpt lat="37.73041" lon="-122.46054">
+  <desc>&lt;b>trackpoint #207&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7304100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4605400&#176;</desc>
+</wpt>
+<wpt lat="37.73053" lon="-122.46035">
+  <desc>&lt;b>trackpoint #208&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7305300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4603500&#176;</desc>
+</wpt>
+<wpt lat="37.73058" lon="-122.46022">
+  <desc>&lt;b>trackpoint #209&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7305800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4602200&#176;</desc>
+</wpt>
+<wpt lat="37.73063" lon="-122.4601">
+  <desc>&lt;b>trackpoint #210&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7306300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4601000&#176;</desc>
+</wpt>
+<wpt lat="37.73068" lon="-122.45995">
+  <desc>&lt;b>trackpoint #211&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7306800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4599500&#176;</desc>
+</wpt>
+<wpt lat="37.73072" lon="-122.45979">
+  <desc>&lt;b>trackpoint #212&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4597900&#176;</desc>
+</wpt>
+<wpt lat="37.73075" lon="-122.45967">
+  <desc>&lt;b>trackpoint #213&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4596700&#176;</desc>
+</wpt>
+<wpt lat="37.73077" lon="-122.45951">
+  <desc>&lt;b>trackpoint #214&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4595100&#176;</desc>
+</wpt>
+<wpt lat="37.73078" lon="-122.45927">
+  <desc>&lt;b>trackpoint #215&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4592700&#176;</desc>
+</wpt>
+<wpt lat="37.73077" lon="-122.45878">
+  <desc>&lt;b>trackpoint #216&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4587800&#176;</desc>
+</wpt>
+<wpt lat="37.73077" lon="-122.45835">
+  <desc>&lt;b>trackpoint #217&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4583500&#176;</desc>
+</wpt>
+<wpt lat="37.73077" lon="-122.45831">
+  <desc>&lt;b>trackpoint #218&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4583100&#176;</desc>
+</wpt>
+<wpt lat="37.73078" lon="-122.45819">
+  <desc>&lt;b>trackpoint #219&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7307800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4581900&#176;</desc>
+</wpt>
+<wpt lat="37.73085" lon="-122.458">
+  <desc>&lt;b>trackpoint #220&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7308500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4580000&#176;</desc>
+</wpt>
+<wpt lat="37.73089" lon="-122.45781">
+  <desc>&lt;b>trackpoint #221&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7308900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4578100&#176;</desc>
+</wpt>
+<wpt lat="37.73096" lon="-122.45753">
+  <desc>&lt;b>trackpoint #222&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7309600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4575300&#176;</desc>
+</wpt>
+<wpt lat="37.73098" lon="-122.45742">
+  <desc>&lt;b>trackpoint #223&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7309800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4574200&#176;</desc>
+</wpt>
+<wpt lat="37.73117" lon="-122.45661">
+  <desc>&lt;b>trackpoint #224&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4566100&#176;</desc>
+</wpt>
+<wpt lat="37.73121" lon="-122.45641">
+  <desc>&lt;b>trackpoint #225&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4564100&#176;</desc>
+</wpt>
+<wpt lat="37.73123" lon="-122.45633">
+  <desc>&lt;b>trackpoint #226&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4563300&#176;</desc>
+</wpt>
+<wpt lat="37.73126" lon="-122.45619">
+  <desc>&lt;b>trackpoint #227&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4561900&#176;</desc>
+</wpt>
+<wpt lat="37.73129" lon="-122.45601">
+  <desc>&lt;b>trackpoint #228&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4560100&#176;</desc>
+</wpt>
+<wpt lat="37.7313" lon="-122.45595">
+  <desc>&lt;b>trackpoint #229&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4559500&#176;</desc>
+</wpt>
+<wpt lat="37.73133" lon="-122.45576">
+  <desc>&lt;b>trackpoint #230&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4557600&#176;</desc>
+</wpt>
+<wpt lat="37.73135" lon="-122.45567">
+  <desc>&lt;b>trackpoint #231&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4556700&#176;</desc>
+</wpt>
+<wpt lat="37.73137" lon="-122.45554">
+  <desc>&lt;b>trackpoint #232&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4555400&#176;</desc>
+</wpt>
+<wpt lat="37.73138" lon="-122.45546">
+  <desc>&lt;b>trackpoint #233&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4554600&#176;</desc>
+</wpt>
+<wpt lat="37.7314" lon="-122.45526">
+  <desc>&lt;b>trackpoint #234&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4552600&#176;</desc>
+</wpt>
+<wpt lat="37.73142" lon="-122.45513">
+  <desc>&lt;b>trackpoint #235&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4551300&#176;</desc>
+</wpt>
+<wpt lat="37.73145" lon="-122.4549">
+  <desc>&lt;b>trackpoint #236&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4549000&#176;</desc>
+</wpt>
+<wpt lat="37.73145" lon="-122.45479">
+  <desc>&lt;b>trackpoint #237&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4547900&#176;</desc>
+</wpt>
+<wpt lat="37.73146" lon="-122.45468">
+  <desc>&lt;b>trackpoint #238&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4546800&#176;</desc>
+</wpt>
+<wpt lat="37.73148" lon="-122.45448">
+  <desc>&lt;b>trackpoint #239&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4544800&#176;</desc>
+</wpt>
+<wpt lat="37.73148" lon="-122.45434">
+  <desc>&lt;b>trackpoint #240&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4543400&#176;</desc>
+</wpt>
+<wpt lat="37.73149" lon="-122.45415">
+  <desc>&lt;b>trackpoint #241&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4541500&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.45408">
+  <desc>&lt;b>trackpoint #242&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4540800&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.45397">
+  <desc>&lt;b>trackpoint #243&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4539700&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.45373">
+  <desc>&lt;b>trackpoint #244&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4537300&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.45362">
+  <desc>&lt;b>trackpoint #245&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4536200&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.45342">
+  <desc>&lt;b>trackpoint #246&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4534200&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.45297">
+  <desc>&lt;b>trackpoint #247&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4529700&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.45229">
+  <desc>&lt;b>trackpoint #248&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4522900&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.45117">
+  <desc>&lt;b>trackpoint #249&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4511700&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.45031">
+  <desc>&lt;b>trackpoint #250&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4503100&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.44964">
+  <desc>&lt;b>trackpoint #251&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4496400&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.44929">
+  <desc>&lt;b>trackpoint #252&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4492900&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.44889">
+  <desc>&lt;b>trackpoint #253&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4488900&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.44854">
+  <desc>&lt;b>trackpoint #254&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4485400&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.44844">
+  <desc>&lt;b>trackpoint #255&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4484400&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.44743">
+  <desc>&lt;b>trackpoint #256&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4474300&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.44731">
+  <desc>&lt;b>trackpoint #257&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4473100&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.4472">
+  <desc>&lt;b>trackpoint #258&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4472000&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.44696">
+  <desc>&lt;b>trackpoint #259&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4469600&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.44688">
+  <desc>&lt;b>trackpoint #260&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4468800&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.44673">
+  <desc>&lt;b>trackpoint #261&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4467300&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.44661">
+  <desc>&lt;b>trackpoint #262&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4466100&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.44552">
+  <desc>&lt;b>trackpoint #263&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4455200&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.44449">
+  <desc>&lt;b>trackpoint #264&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4444900&#176;</desc>
+</wpt>
+<wpt lat="37.73153" lon="-122.44439">
+  <desc>&lt;b>trackpoint #265&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4443900&#176;</desc>
+</wpt>
+<wpt lat="37.73153" lon="-122.44434">
+  <desc>&lt;b>trackpoint #266&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4443400&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.4441">
+  <desc>&lt;b>trackpoint #267&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4441000&#176;</desc>
+</wpt>
+<wpt lat="37.73153" lon="-122.44205">
+  <desc>&lt;b>trackpoint #268&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4420500&#176;</desc>
+</wpt>
+<wpt lat="37.73154" lon="-122.44089">
+  <desc>&lt;b>trackpoint #269&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4408900&#176;</desc>
+</wpt>
+<wpt lat="37.73154" lon="-122.43977">
+  <desc>&lt;b>trackpoint #270&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4397700&#176;</desc>
+</wpt>
+<wpt lat="37.73155" lon="-122.43944">
+  <desc>&lt;b>trackpoint #271&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4394400&#176;</desc>
+</wpt>
+<wpt lat="37.73155" lon="-122.43894">
+  <desc>&lt;b>trackpoint #272&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4389400&#176;</desc>
+</wpt>
+<wpt lat="37.73155" lon="-122.43858">
+  <desc>&lt;b>trackpoint #273&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4385800&#176;</desc>
+</wpt>
+<wpt lat="37.73155" lon="-122.43813">
+  <desc>&lt;b>trackpoint #274&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4381300&#176;</desc>
+</wpt>
+<wpt lat="37.73155" lon="-122.43794">
+  <desc>&lt;b>trackpoint #275&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4379400&#176;</desc>
+</wpt>
+<wpt lat="37.73154" lon="-122.43775">
+  <desc>&lt;b>trackpoint #276&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4377500&#176;</desc>
+</wpt>
+<wpt lat="37.73155" lon="-122.43761">
+  <desc>&lt;b>trackpoint #277&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4376100&#176;</desc>
+</wpt>
+<wpt lat="37.73154" lon="-122.43748">
+  <desc>&lt;b>trackpoint #278&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4374800&#176;</desc>
+</wpt>
+<wpt lat="37.73154" lon="-122.43716">
+  <desc>&lt;b>trackpoint #279&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4371600&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.43685">
+  <desc>&lt;b>trackpoint #280&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4368500&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.4367">
+  <desc>&lt;b>trackpoint #281&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4367000&#176;</desc>
+</wpt>
+<wpt lat="37.73152" lon="-122.4367">
+  <desc>&lt;b>trackpoint #282&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4367000&#176;</desc>
+</wpt>
+<wpt lat="37.73151" lon="-122.4365">
+  <desc>&lt;b>trackpoint #283&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4365000&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.43633">
+  <desc>&lt;b>trackpoint #284&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4363300&#176;</desc>
+</wpt>
+<wpt lat="37.73149" lon="-122.43618">
+  <desc>&lt;b>trackpoint #285&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4361800&#176;</desc>
+</wpt>
+<wpt lat="37.73148" lon="-122.43613">
+  <desc>&lt;b>trackpoint #286&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4361300&#176;</desc>
+</wpt>
+<wpt lat="37.73146" lon="-122.43605">
+  <desc>&lt;b>trackpoint #287&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4360500&#176;</desc>
+</wpt>
+<wpt lat="37.73143" lon="-122.43597">
+  <desc>&lt;b>trackpoint #288&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4359700&#176;</desc>
+</wpt>
+<wpt lat="37.73139" lon="-122.43589">
+  <desc>&lt;b>trackpoint #289&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4358900&#176;</desc>
+</wpt>
+<wpt lat="37.73136" lon="-122.43582">
+  <desc>&lt;b>trackpoint #290&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4358200&#176;</desc>
+</wpt>
+<wpt lat="37.7313" lon="-122.4357">
+  <desc>&lt;b>trackpoint #291&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4357000&#176;</desc>
+</wpt>
+<wpt lat="37.73126" lon="-122.43563">
+  <desc>&lt;b>trackpoint #292&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4356300&#176;</desc>
+</wpt>
+<wpt lat="37.73123" lon="-122.43556">
+  <desc>&lt;b>trackpoint #293&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4355600&#176;</desc>
+</wpt>
+<wpt lat="37.73121" lon="-122.4355">
+  <desc>&lt;b>trackpoint #294&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4355000&#176;</desc>
+</wpt>
+<wpt lat="37.7312" lon="-122.43546">
+  <desc>&lt;b>trackpoint #295&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4354600&#176;</desc>
+</wpt>
+<wpt lat="37.73118" lon="-122.43542">
+  <desc>&lt;b>trackpoint #296&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4354200&#176;</desc>
+</wpt>
+<wpt lat="37.73118" lon="-122.43535">
+  <desc>&lt;b>trackpoint #297&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4353500&#176;</desc>
+</wpt>
+<wpt lat="37.73116" lon="-122.4353">
+  <desc>&lt;b>trackpoint #298&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4353000&#176;</desc>
+</wpt>
+<wpt lat="37.73115" lon="-122.43525">
+  <desc>&lt;b>trackpoint #299&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4352500&#176;</desc>
+</wpt>
+<wpt lat="37.73114" lon="-122.43514">
+  <desc>&lt;b>trackpoint #300&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4351400&#176;</desc>
+</wpt>
+<wpt lat="37.73114" lon="-122.4351">
+  <desc>&lt;b>trackpoint #301&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4351000&#176;</desc>
+</wpt>
+<wpt lat="37.73114" lon="-122.43505">
+  <desc>&lt;b>trackpoint #302&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4350500&#176;</desc>
+</wpt>
+<wpt lat="37.73114" lon="-122.43499">
+  <desc>&lt;b>trackpoint #303&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4349900&#176;</desc>
+</wpt>
+<wpt lat="37.73115" lon="-122.43493">
+  <desc>&lt;b>trackpoint #304&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4349300&#176;</desc>
+</wpt>
+<wpt lat="37.73116" lon="-122.43486">
+  <desc>&lt;b>trackpoint #305&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4348600&#176;</desc>
+</wpt>
+<wpt lat="37.73117" lon="-122.4348">
+  <desc>&lt;b>trackpoint #306&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4348000&#176;</desc>
+</wpt>
+<wpt lat="37.73118" lon="-122.43474">
+  <desc>&lt;b>trackpoint #307&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4347400&#176;</desc>
+</wpt>
+<wpt lat="37.73119" lon="-122.43469">
+  <desc>&lt;b>trackpoint #308&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7311900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4346900&#176;</desc>
+</wpt>
+<wpt lat="37.73121" lon="-122.43461">
+  <desc>&lt;b>trackpoint #309&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7312100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4346100&#176;</desc>
+</wpt>
+<wpt lat="37.73133" lon="-122.43427">
+  <desc>&lt;b>trackpoint #310&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4342700&#176;</desc>
+</wpt>
+<wpt lat="37.73159" lon="-122.43351">
+  <desc>&lt;b>trackpoint #311&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4335100&#176;</desc>
+</wpt>
+<wpt lat="37.73183" lon="-122.43278">
+  <desc>&lt;b>trackpoint #312&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4327800&#176;</desc>
+</wpt>
+<wpt lat="37.73186" lon="-122.43268">
+  <desc>&lt;b>trackpoint #313&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4326800&#176;</desc>
+</wpt>
+<wpt lat="37.73187" lon="-122.43267">
+  <desc>&lt;b>trackpoint #314&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4326700&#176;</desc>
+</wpt>
+<wpt lat="37.73187" lon="-122.43265">
+  <desc>&lt;b>trackpoint #315&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4326500&#176;</desc>
+</wpt>
+<wpt lat="37.73189" lon="-122.43264">
+  <desc>&lt;b>trackpoint #316&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4326400&#176;</desc>
+</wpt>
+<wpt lat="37.7319" lon="-122.43263">
+  <desc>&lt;b>trackpoint #317&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7319000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4326300&#176;</desc>
+</wpt>
+<wpt lat="37.73196" lon="-122.43259">
+  <desc>&lt;b>trackpoint #318&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7319600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4325900&#176;</desc>
+</wpt>
+<wpt lat="37.73196" lon="-122.43259">
+  <desc>&lt;b>trackpoint #319&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7319600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4325900&#176;</desc>
+</wpt>
+<wpt lat="37.73204" lon="-122.43216">
+  <desc>&lt;b>trackpoint #320&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7320400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4321600&#176;</desc>
+</wpt>
+<wpt lat="37.73209" lon="-122.43188">
+  <desc>&lt;b>trackpoint #321&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7320900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4318800&#176;</desc>
+</wpt>
+<wpt lat="37.7321" lon="-122.43183">
+  <desc>&lt;b>trackpoint #322&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4318300&#176;</desc>
+</wpt>
+<wpt lat="37.73211" lon="-122.43177">
+  <desc>&lt;b>trackpoint #323&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4317700&#176;</desc>
+</wpt>
+<wpt lat="37.73211" lon="-122.43174">
+  <desc>&lt;b>trackpoint #324&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4317400&#176;</desc>
+</wpt>
+<wpt lat="37.73214" lon="-122.4314">
+  <desc>&lt;b>trackpoint #325&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4314000&#176;</desc>
+</wpt>
+<wpt lat="37.73215" lon="-122.43133">
+  <desc>&lt;b>trackpoint #326&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4313300&#176;</desc>
+</wpt>
+<wpt lat="37.73216" lon="-122.43125">
+  <desc>&lt;b>trackpoint #327&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4312500&#176;</desc>
+</wpt>
+<wpt lat="37.73217" lon="-122.43112">
+  <desc>&lt;b>trackpoint #328&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4311200&#176;</desc>
+</wpt>
+<wpt lat="37.73218" lon="-122.4309">
+  <desc>&lt;b>trackpoint #329&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4309000&#176;</desc>
+</wpt>
+<wpt lat="37.73218" lon="-122.43077">
+  <desc>&lt;b>trackpoint #330&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4307700&#176;</desc>
+</wpt>
+<wpt lat="37.73218" lon="-122.43065">
+  <desc>&lt;b>trackpoint #331&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4306500&#176;</desc>
+</wpt>
+<wpt lat="37.73218" lon="-122.43052">
+  <desc>&lt;b>trackpoint #332&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4305200&#176;</desc>
+</wpt>
+<wpt lat="37.73217" lon="-122.43038">
+  <desc>&lt;b>trackpoint #333&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4303800&#176;</desc>
+</wpt>
+<wpt lat="37.73216" lon="-122.43016">
+  <desc>&lt;b>trackpoint #334&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4301600&#176;</desc>
+</wpt>
+<wpt lat="37.73213" lon="-122.42985">
+  <desc>&lt;b>trackpoint #335&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4298500&#176;</desc>
+</wpt>
+<wpt lat="37.73208" lon="-122.42947">
+  <desc>&lt;b>trackpoint #336&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7320800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4294700&#176;</desc>
+</wpt>
+<wpt lat="37.73201" lon="-122.42903">
+  <desc>&lt;b>trackpoint #337&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7320100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4290300&#176;</desc>
+</wpt>
+<wpt lat="37.73188" lon="-122.42838">
+  <desc>&lt;b>trackpoint #338&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4283800&#176;</desc>
+</wpt>
+<wpt lat="37.73184" lon="-122.4282">
+  <desc>&lt;b>trackpoint #339&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4282000&#176;</desc>
+</wpt>
+<wpt lat="37.73184" lon="-122.42819">
+  <desc>&lt;b>trackpoint #340&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4281900&#176;</desc>
+</wpt>
+<wpt lat="37.73184" lon="-122.42818">
+  <desc>&lt;b>trackpoint #341&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4281800&#176;</desc>
+</wpt>
+<wpt lat="37.73179" lon="-122.42796">
+  <desc>&lt;b>trackpoint #342&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7317900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4279600&#176;</desc>
+</wpt>
+<wpt lat="37.73168" lon="-122.42742">
+  <desc>&lt;b>trackpoint #343&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7316800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4274200&#176;</desc>
+</wpt>
+<wpt lat="37.73154" lon="-122.42668">
+  <desc>&lt;b>trackpoint #344&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4266800&#176;</desc>
+</wpt>
+<wpt lat="37.7315" lon="-122.4264">
+  <desc>&lt;b>trackpoint #345&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4264000&#176;</desc>
+</wpt>
+<wpt lat="37.73144" lon="-122.42598">
+  <desc>&lt;b>trackpoint #346&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4259800&#176;</desc>
+</wpt>
+<wpt lat="37.7314" lon="-122.42564">
+  <desc>&lt;b>trackpoint #347&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4256400&#176;</desc>
+</wpt>
+<wpt lat="37.73137" lon="-122.42518">
+  <desc>&lt;b>trackpoint #348&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4251800&#176;</desc>
+</wpt>
+<wpt lat="37.73136" lon="-122.42503">
+  <desc>&lt;b>trackpoint #349&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4250300&#176;</desc>
+</wpt>
+<wpt lat="37.73136" lon="-122.42486">
+  <desc>&lt;b>trackpoint #350&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4248600&#176;</desc>
+</wpt>
+<wpt lat="37.73135" lon="-122.42428">
+  <desc>&lt;b>trackpoint #351&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4242800&#176;</desc>
+</wpt>
+<wpt lat="37.73135" lon="-122.42406">
+  <desc>&lt;b>trackpoint #352&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4240600&#176;</desc>
+</wpt>
+<wpt lat="37.73135" lon="-122.42391">
+  <desc>&lt;b>trackpoint #353&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4239100&#176;</desc>
+</wpt>
+<wpt lat="37.73137" lon="-122.42353">
+  <desc>&lt;b>trackpoint #354&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7313700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4235300&#176;</desc>
+</wpt>
+<wpt lat="37.7314" lon="-122.42326">
+  <desc>&lt;b>trackpoint #355&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4232600&#176;</desc>
+</wpt>
+<wpt lat="37.73142" lon="-122.42305">
+  <desc>&lt;b>trackpoint #356&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4230500&#176;</desc>
+</wpt>
+<wpt lat="37.73143" lon="-122.42287">
+  <desc>&lt;b>trackpoint #357&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7314300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4228700&#176;</desc>
+</wpt>
+<wpt lat="37.73156" lon="-122.422">
+  <desc>&lt;b>trackpoint #358&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7315600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4220000&#176;</desc>
+</wpt>
+<wpt lat="37.7316" lon="-122.42171">
+  <desc>&lt;b>trackpoint #359&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7316000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4217100&#176;</desc>
+</wpt>
+<wpt lat="37.73176" lon="-122.42066">
+  <desc>&lt;b>trackpoint #360&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7317600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4206600&#176;</desc>
+</wpt>
+<wpt lat="37.73176" lon="-122.42065">
+  <desc>&lt;b>trackpoint #361&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7317600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4206500&#176;</desc>
+</wpt>
+<wpt lat="37.73181" lon="-122.42027">
+  <desc>&lt;b>trackpoint #362&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4202700&#176;</desc>
+</wpt>
+<wpt lat="37.73185" lon="-122.41981">
+  <desc>&lt;b>trackpoint #363&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4198100&#176;</desc>
+</wpt>
+<wpt lat="37.73186" lon="-122.41936">
+  <desc>&lt;b>trackpoint #364&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4193600&#176;</desc>
+</wpt>
+<wpt lat="37.73186" lon="-122.4186">
+  <desc>&lt;b>trackpoint #365&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4186000&#176;</desc>
+</wpt>
+<wpt lat="37.73184" lon="-122.41725">
+  <desc>&lt;b>trackpoint #366&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4172500&#176;</desc>
+</wpt>
+<wpt lat="37.73184" lon="-122.41678">
+  <desc>&lt;b>trackpoint #367&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4167800&#176;</desc>
+</wpt>
+<wpt lat="37.73185" lon="-122.41656">
+  <desc>&lt;b>trackpoint #368&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4165600&#176;</desc>
+</wpt>
+<wpt lat="37.73189" lon="-122.4161">
+  <desc>&lt;b>trackpoint #369&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7318900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4161000&#176;</desc>
+</wpt>
+<wpt lat="37.7319" lon="-122.41597">
+  <desc>&lt;b>trackpoint #370&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7319000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4159700&#176;</desc>
+</wpt>
+<wpt lat="37.73199" lon="-122.41538">
+  <desc>&lt;b>trackpoint #371&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7319900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4153800&#176;</desc>
+</wpt>
+<wpt lat="37.73207" lon="-122.415">
+  <desc>&lt;b>trackpoint #372&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7320700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4150000&#176;</desc>
+</wpt>
+<wpt lat="37.73217" lon="-122.41462">
+  <desc>&lt;b>trackpoint #373&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4146200&#176;</desc>
+</wpt>
+<wpt lat="37.73218" lon="-122.41457">
+  <desc>&lt;b>trackpoint #374&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7321800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4145700&#176;</desc>
+</wpt>
+<wpt lat="37.73229" lon="-122.41423">
+  <desc>&lt;b>trackpoint #375&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7322900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4142300&#176;</desc>
+</wpt>
+<wpt lat="37.73237" lon="-122.41403">
+  <desc>&lt;b>trackpoint #376&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7323700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4140300&#176;</desc>
+</wpt>
+<wpt lat="37.73268" lon="-122.41332">
+  <desc>&lt;b>trackpoint #377&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7326800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4133200&#176;</desc>
+</wpt>
+<wpt lat="37.73297" lon="-122.41266">
+  <desc>&lt;b>trackpoint #378&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7329700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4126600&#176;</desc>
+</wpt>
+<wpt lat="37.73339" lon="-122.41169">
+  <desc>&lt;b>trackpoint #379&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7333900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4116900&#176;</desc>
+</wpt>
+<wpt lat="37.73339" lon="-122.41169">
+  <desc>&lt;b>trackpoint #380&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7333900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4116900&#176;</desc>
+</wpt>
+<wpt lat="37.73351" lon="-122.41128">
+  <desc>&lt;b>trackpoint #381&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7335100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4112800&#176;</desc>
+</wpt>
+<wpt lat="37.73369" lon="-122.41084">
+  <desc>&lt;b>trackpoint #382&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7336900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4108400&#176;</desc>
+</wpt>
+<wpt lat="37.73386" lon="-122.41041">
+  <desc>&lt;b>trackpoint #383&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7338600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4104100&#176;</desc>
+</wpt>
+<wpt lat="37.73404" lon="-122.40999">
+  <desc>&lt;b>trackpoint #384&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7340400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4099900&#176;</desc>
+</wpt>
+<wpt lat="37.73428" lon="-122.4094">
+  <desc>&lt;b>trackpoint #385&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7342800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4094000&#176;</desc>
+</wpt>
+<wpt lat="37.7345" lon="-122.40883">
+  <desc>&lt;b>trackpoint #386&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7345000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4088300&#176;</desc>
+</wpt>
+<wpt lat="37.7347" lon="-122.40829">
+  <desc>&lt;b>trackpoint #387&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7347000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4082900&#176;</desc>
+</wpt>
+<wpt lat="37.73483" lon="-122.40791">
+  <desc>&lt;b>trackpoint #388&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7348300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4079100&#176;</desc>
+</wpt>
+<wpt lat="37.73503" lon="-122.40727">
+  <desc>&lt;b>trackpoint #389&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7350300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4072700&#176;</desc>
+</wpt>
+<wpt lat="37.73518" lon="-122.4068">
+  <desc>&lt;b>trackpoint #390&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7351800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4068000&#176;</desc>
+</wpt>
+<wpt lat="37.7355" lon="-122.40582">
+  <desc>&lt;b>trackpoint #391&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7355000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4058200&#176;</desc>
+</wpt>
+<wpt lat="37.73555" lon="-122.40566">
+  <desc>&lt;b>trackpoint #392&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7355500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4056600&#176;</desc>
+</wpt>
+<wpt lat="37.7356" lon="-122.40551">
+  <desc>&lt;b>trackpoint #393&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7356000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4055100&#176;</desc>
+</wpt>
+<wpt lat="37.73566" lon="-122.40537">
+  <desc>&lt;b>trackpoint #394&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7356600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4053700&#176;</desc>
+</wpt>
+<wpt lat="37.73573" lon="-122.4052">
+  <desc>&lt;b>trackpoint #395&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7357300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4052000&#176;</desc>
+</wpt>
+<wpt lat="37.73579" lon="-122.40506">
+  <desc>&lt;b>trackpoint #396&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7357900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4050600&#176;</desc>
+</wpt>
+<wpt lat="37.73585" lon="-122.40493">
+  <desc>&lt;b>trackpoint #397&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7358500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4049300&#176;</desc>
+</wpt>
+<wpt lat="37.73591" lon="-122.4048">
+  <desc>&lt;b>trackpoint #398&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7359100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4048000&#176;</desc>
+</wpt>
+<wpt lat="37.73599" lon="-122.40465">
+  <desc>&lt;b>trackpoint #399&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7359900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4046500&#176;</desc>
+</wpt>
+<wpt lat="37.73606" lon="-122.40452">
+  <desc>&lt;b>trackpoint #400&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7360600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4045200&#176;</desc>
+</wpt>
+<wpt lat="37.73613" lon="-122.4044">
+  <desc>&lt;b>trackpoint #401&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7361300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4044000&#176;</desc>
+</wpt>
+<wpt lat="37.7362" lon="-122.40428">
+  <desc>&lt;b>trackpoint #402&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7362000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4042800&#176;</desc>
+</wpt>
+<wpt lat="37.73633" lon="-122.40406">
+  <desc>&lt;b>trackpoint #403&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7363300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4040600&#176;</desc>
+</wpt>
+<wpt lat="37.73646" lon="-122.40382">
+  <desc>&lt;b>trackpoint #404&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7364600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4038200&#176;</desc>
+</wpt>
+<wpt lat="37.73661" lon="-122.40355">
+  <desc>&lt;b>trackpoint #405&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7366100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4035500&#176;</desc>
+</wpt>
+<wpt lat="37.73668" lon="-122.40342">
+  <desc>&lt;b>trackpoint #406&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7366800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4034200&#176;</desc>
+</wpt>
+<wpt lat="37.73676" lon="-122.40324">
+  <desc>&lt;b>trackpoint #407&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7367600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4032400&#176;</desc>
+</wpt>
+<wpt lat="37.7371" lon="-122.40274">
+  <desc>&lt;b>trackpoint #408&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7371000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4027400&#176;</desc>
+</wpt>
+<wpt lat="37.73712" lon="-122.40271">
+  <desc>&lt;b>trackpoint #409&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7371200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4027100&#176;</desc>
+</wpt>
+<wpt lat="37.73718" lon="-122.40263">
+  <desc>&lt;b>trackpoint #410&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7371800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4026300&#176;</desc>
+</wpt>
+<wpt lat="37.73719" lon="-122.4026">
+  <desc>&lt;b>trackpoint #411&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7371900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4026000&#176;</desc>
+</wpt>
+<wpt lat="37.73721" lon="-122.40257">
+  <desc>&lt;b>trackpoint #412&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7372100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4025700&#176;</desc>
+</wpt>
+<wpt lat="37.73747" lon="-122.40223">
+  <desc>&lt;b>trackpoint #413&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7374700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4022300&#176;</desc>
+</wpt>
+<wpt lat="37.73772" lon="-122.4019">
+  <desc>&lt;b>trackpoint #414&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7377200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4019000&#176;</desc>
+</wpt>
+<wpt lat="37.73833" lon="-122.40117">
+  <desc>&lt;b>trackpoint #415&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7383300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.4011700&#176;</desc>
+</wpt>
+<wpt lat="37.74007" lon="-122.39957">
+  <desc>&lt;b>trackpoint #416&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7400700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3995700&#176;</desc>
+</wpt>
+<wpt lat="37.74054" lon="-122.39913">
+  <desc>&lt;b>trackpoint #417&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7405400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3991300&#176;</desc>
+</wpt>
+<wpt lat="37.74101" lon="-122.3987">
+  <desc>&lt;b>trackpoint #418&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7410100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3987000&#176;</desc>
+</wpt>
+<wpt lat="37.74123" lon="-122.3985">
+  <desc>&lt;b>trackpoint #419&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7412300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3985000&#176;</desc>
+</wpt>
+<wpt lat="37.74189" lon="-122.39791">
+  <desc>&lt;b>trackpoint #420&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7418900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3979100&#176;</desc>
+</wpt>
+<wpt lat="37.74202" lon="-122.3978">
+  <desc>&lt;b>trackpoint #421&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7420200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3978000&#176;</desc>
+</wpt>
+<wpt lat="37.74214" lon="-122.39769">
+  <desc>&lt;b>trackpoint #422&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7421400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3976900&#176;</desc>
+</wpt>
+<wpt lat="37.74238" lon="-122.39747">
+  <desc>&lt;b>trackpoint #423&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7423800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3974700&#176;</desc>
+</wpt>
+<wpt lat="37.74262" lon="-122.39725">
+  <desc>&lt;b>trackpoint #424&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7426200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3972500&#176;</desc>
+</wpt>
+<wpt lat="37.74272" lon="-122.39715">
+  <desc>&lt;b>trackpoint #425&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7427200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3971500&#176;</desc>
+</wpt>
+<wpt lat="37.74282" lon="-122.39706">
+  <desc>&lt;b>trackpoint #426&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7428200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3970600&#176;</desc>
+</wpt>
+<wpt lat="37.74296" lon="-122.39693">
+  <desc>&lt;b>trackpoint #427&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7429600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3969300&#176;</desc>
+</wpt>
+<wpt lat="37.7431" lon="-122.3968">
+  <desc>&lt;b>trackpoint #428&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7431000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3968000&#176;</desc>
+</wpt>
+<wpt lat="37.74318" lon="-122.39674">
+  <desc>&lt;b>trackpoint #429&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7431800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3967400&#176;</desc>
+</wpt>
+<wpt lat="37.74319" lon="-122.39673">
+  <desc>&lt;b>trackpoint #430&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7431900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3967300&#176;</desc>
+</wpt>
+<wpt lat="37.74321" lon="-122.39671">
+  <desc>&lt;b>trackpoint #431&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7432100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3967100&#176;</desc>
+</wpt>
+<wpt lat="37.74332" lon="-122.39661">
+  <desc>&lt;b>trackpoint #432&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7433200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3966100&#176;</desc>
+</wpt>
+<wpt lat="37.74354" lon="-122.39642">
+  <desc>&lt;b>trackpoint #433&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7435400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3964200&#176;</desc>
+</wpt>
+<wpt lat="37.74371" lon="-122.39623">
+  <desc>&lt;b>trackpoint #434&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7437100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3962300&#176;</desc>
+</wpt>
+<wpt lat="37.74418" lon="-122.39568">
+  <desc>&lt;b>trackpoint #435&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7441800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3956800&#176;</desc>
+</wpt>
+<wpt lat="37.74447" lon="-122.39538">
+  <desc>&lt;b>trackpoint #436&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7444700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3953800&#176;</desc>
+</wpt>
+<wpt lat="37.74477" lon="-122.39509">
+  <desc>&lt;b>trackpoint #437&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7447700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3950900&#176;</desc>
+</wpt>
+<wpt lat="37.74519" lon="-122.39471">
+  <desc>&lt;b>trackpoint #438&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7451900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3947100&#176;</desc>
+</wpt>
+<wpt lat="37.74546" lon="-122.39449">
+  <desc>&lt;b>trackpoint #439&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7454600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3944900&#176;</desc>
+</wpt>
+<wpt lat="37.74573" lon="-122.39428">
+  <desc>&lt;b>trackpoint #440&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7457300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3942800&#176;</desc>
+</wpt>
+<wpt lat="37.746" lon="-122.39406">
+  <desc>&lt;b>trackpoint #441&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7460000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3940600&#176;</desc>
+</wpt>
+<wpt lat="37.74622" lon="-122.39392">
+  <desc>&lt;b>trackpoint #442&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7462200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3939200&#176;</desc>
+</wpt>
+<wpt lat="37.74643" lon="-122.39378">
+  <desc>&lt;b>trackpoint #443&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7464300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3937800&#176;</desc>
+</wpt>
+<wpt lat="37.74691" lon="-122.3935">
+  <desc>&lt;b>trackpoint #444&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7469100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3935000&#176;</desc>
+</wpt>
+<wpt lat="37.74738" lon="-122.39323">
+  <desc>&lt;b>trackpoint #445&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7473800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3932300&#176;</desc>
+</wpt>
+<wpt lat="37.7476" lon="-122.39311">
+  <desc>&lt;b>trackpoint #446&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7476000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3931100&#176;</desc>
+</wpt>
+<wpt lat="37.74781" lon="-122.39298">
+  <desc>&lt;b>trackpoint #447&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7478100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3929800&#176;</desc>
+</wpt>
+<wpt lat="37.74797" lon="-122.3929">
+  <desc>&lt;b>trackpoint #448&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7479700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3929000&#176;</desc>
+</wpt>
+<wpt lat="37.74812" lon="-122.39281">
+  <desc>&lt;b>trackpoint #449&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7481200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3928100&#176;</desc>
+</wpt>
+<wpt lat="37.74838" lon="-122.39266">
+  <desc>&lt;b>trackpoint #450&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7483800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3926600&#176;</desc>
+</wpt>
+<wpt lat="37.74852" lon="-122.39259">
+  <desc>&lt;b>trackpoint #451&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7485200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3925900&#176;</desc>
+</wpt>
+<wpt lat="37.74872" lon="-122.39248">
+  <desc>&lt;b>trackpoint #452&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7487200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3924800&#176;</desc>
+</wpt>
+<wpt lat="37.74909" lon="-122.39228">
+  <desc>&lt;b>trackpoint #453&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7490900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922800&#176;</desc>
+</wpt>
+<wpt lat="37.7497" lon="-122.39194">
+  <desc>&lt;b>trackpoint #454&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7497000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3919400&#176;</desc>
+</wpt>
+<wpt lat="37.75002" lon="-122.39177">
+  <desc>&lt;b>trackpoint #455&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7500200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3917700&#176;</desc>
+</wpt>
+<wpt lat="37.75014" lon="-122.39171">
+  <desc>&lt;b>trackpoint #456&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7501400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3917100&#176;</desc>
+</wpt>
+<wpt lat="37.75016" lon="-122.3917">
+  <desc>&lt;b>trackpoint #457&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7501600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3917000&#176;</desc>
+</wpt>
+<wpt lat="37.7504" lon="-122.39159">
+  <desc>&lt;b>trackpoint #458&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7504000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3915900&#176;</desc>
+</wpt>
+<wpt lat="37.75054" lon="-122.39154">
+  <desc>&lt;b>trackpoint #459&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7505400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3915400&#176;</desc>
+</wpt>
+<wpt lat="37.75097" lon="-122.3914">
+  <desc>&lt;b>trackpoint #460&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7509700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3914000&#176;</desc>
+</wpt>
+<wpt lat="37.75123" lon="-122.39133">
+  <desc>&lt;b>trackpoint #461&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7512300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3913300&#176;</desc>
+</wpt>
+<wpt lat="37.75145" lon="-122.39129">
+  <desc>&lt;b>trackpoint #462&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7514500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912900&#176;</desc>
+</wpt>
+<wpt lat="37.75167" lon="-122.39127">
+  <desc>&lt;b>trackpoint #463&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7516700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912700&#176;</desc>
+</wpt>
+<wpt lat="37.75184" lon="-122.39125">
+  <desc>&lt;b>trackpoint #464&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7518400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912500&#176;</desc>
+</wpt>
+<wpt lat="37.75214" lon="-122.39124">
+  <desc>&lt;b>trackpoint #465&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7521400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912400&#176;</desc>
+</wpt>
+<wpt lat="37.7522" lon="-122.39124">
+  <desc>&lt;b>trackpoint #466&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7522000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912400&#176;</desc>
+</wpt>
+<wpt lat="37.75236" lon="-122.39124">
+  <desc>&lt;b>trackpoint #467&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7523600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912400&#176;</desc>
+</wpt>
+<wpt lat="37.75252" lon="-122.39125">
+  <desc>&lt;b>trackpoint #468&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7525200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912500&#176;</desc>
+</wpt>
+<wpt lat="37.75262" lon="-122.39125">
+  <desc>&lt;b>trackpoint #469&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7526200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912500&#176;</desc>
+</wpt>
+<wpt lat="37.7527" lon="-122.39126">
+  <desc>&lt;b>trackpoint #470&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7527000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912600&#176;</desc>
+</wpt>
+<wpt lat="37.75281" lon="-122.39127">
+  <desc>&lt;b>trackpoint #471&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7528100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912700&#176;</desc>
+</wpt>
+<wpt lat="37.75302" lon="-122.39129">
+  <desc>&lt;b>trackpoint #472&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7530200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3912900&#176;</desc>
+</wpt>
+<wpt lat="37.75336" lon="-122.39136">
+  <desc>&lt;b>trackpoint #473&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7533600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3913600&#176;</desc>
+</wpt>
+<wpt lat="37.75359" lon="-122.39143">
+  <desc>&lt;b>trackpoint #474&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7535900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3914300&#176;</desc>
+</wpt>
+<wpt lat="37.75364" lon="-122.39144">
+  <desc>&lt;b>trackpoint #475&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7536400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3914400&#176;</desc>
+</wpt>
+<wpt lat="37.75386" lon="-122.39151">
+  <desc>&lt;b>trackpoint #476&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7538600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3915100&#176;</desc>
+</wpt>
+<wpt lat="37.75404" lon="-122.39157">
+  <desc>&lt;b>trackpoint #477&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7540400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3915700&#176;</desc>
+</wpt>
+<wpt lat="37.75508" lon="-122.39195">
+  <desc>&lt;b>trackpoint #478&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7550800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3919500&#176;</desc>
+</wpt>
+<wpt lat="37.75516" lon="-122.39197">
+  <desc>&lt;b>trackpoint #479&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7551600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3919700&#176;</desc>
+</wpt>
+<wpt lat="37.75517" lon="-122.39197">
+  <desc>&lt;b>trackpoint #480&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7551700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3919700&#176;</desc>
+</wpt>
+<wpt lat="37.75534" lon="-122.39202">
+  <desc>&lt;b>trackpoint #481&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7553400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3920200&#176;</desc>
+</wpt>
+<wpt lat="37.75561" lon="-122.39208">
+  <desc>&lt;b>trackpoint #482&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7556100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3920800&#176;</desc>
+</wpt>
+<wpt lat="37.75585" lon="-122.39213">
+  <desc>&lt;b>trackpoint #483&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7558500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3921300&#176;</desc>
+</wpt>
+<wpt lat="37.75605" lon="-122.39217">
+  <desc>&lt;b>trackpoint #484&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7560500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3921700&#176;</desc>
+</wpt>
+<wpt lat="37.7561" lon="-122.39218">
+  <desc>&lt;b>trackpoint #485&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7561000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3921800&#176;</desc>
+</wpt>
+<wpt lat="37.75635" lon="-122.3922">
+  <desc>&lt;b>trackpoint #486&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7563500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922000&#176;</desc>
+</wpt>
+<wpt lat="37.75648" lon="-122.39221">
+  <desc>&lt;b>trackpoint #487&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7564800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922100&#176;</desc>
+</wpt>
+<wpt lat="37.75665" lon="-122.39222">
+  <desc>&lt;b>trackpoint #488&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7566500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922200&#176;</desc>
+</wpt>
+<wpt lat="37.75677" lon="-122.39221">
+  <desc>&lt;b>trackpoint #489&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7567700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922100&#176;</desc>
+</wpt>
+<wpt lat="37.75722" lon="-122.39222">
+  <desc>&lt;b>trackpoint #490&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7572200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922200&#176;</desc>
+</wpt>
+<wpt lat="37.75735" lon="-122.39223">
+  <desc>&lt;b>trackpoint #491&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7573500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922300&#176;</desc>
+</wpt>
+<wpt lat="37.75748" lon="-122.39223">
+  <desc>&lt;b>trackpoint #492&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7574800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922300&#176;</desc>
+</wpt>
+<wpt lat="37.75772" lon="-122.39222">
+  <desc>&lt;b>trackpoint #493&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7577200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922200&#176;</desc>
+</wpt>
+<wpt lat="37.75789" lon="-122.39223">
+  <desc>&lt;b>trackpoint #494&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7578900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922300&#176;</desc>
+</wpt>
+<wpt lat="37.75831" lon="-122.39222">
+  <desc>&lt;b>trackpoint #495&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7583100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922200&#176;</desc>
+</wpt>
+<wpt lat="37.75905" lon="-122.39222">
+  <desc>&lt;b>trackpoint #496&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7590500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922200&#176;</desc>
+</wpt>
+<wpt lat="37.75958" lon="-122.39224">
+  <desc>&lt;b>trackpoint #497&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7595800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922400&#176;</desc>
+</wpt>
+<wpt lat="37.7597" lon="-122.39224">
+  <desc>&lt;b>trackpoint #498&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7597000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922400&#176;</desc>
+</wpt>
+<wpt lat="37.76026" lon="-122.39228">
+  <desc>&lt;b>trackpoint #499&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7602600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922800&#176;</desc>
+</wpt>
+<wpt lat="37.76027" lon="-122.39228">
+  <desc>&lt;b>trackpoint #500&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7602700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922800&#176;</desc>
+</wpt>
+<wpt lat="37.76033" lon="-122.39229">
+  <desc>&lt;b>trackpoint #501&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7603300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922900&#176;</desc>
+</wpt>
+<wpt lat="37.76098" lon="-122.39239">
+  <desc>&lt;b>trackpoint #502&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7609800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3923900&#176;</desc>
+</wpt>
+<wpt lat="37.76137" lon="-122.39242">
+  <desc>&lt;b>trackpoint #503&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7613700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3924200&#176;</desc>
+</wpt>
+<wpt lat="37.76269" lon="-122.39256">
+  <desc>&lt;b>trackpoint #504&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7626900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3925600&#176;</desc>
+</wpt>
+<wpt lat="37.76332" lon="-122.39262">
+  <desc>&lt;b>trackpoint #505&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7633200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3926200&#176;</desc>
+</wpt>
+<wpt lat="37.76352" lon="-122.39264">
+  <desc>&lt;b>trackpoint #506&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7635200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3926400&#176;</desc>
+</wpt>
+<wpt lat="37.76375" lon="-122.39268">
+  <desc>&lt;b>trackpoint #507&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7637500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3926800&#176;</desc>
+</wpt>
+<wpt lat="37.76388" lon="-122.39271">
+  <desc>&lt;b>trackpoint #508&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7638800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927100&#176;</desc>
+</wpt>
+<wpt lat="37.76401" lon="-122.39273">
+  <desc>&lt;b>trackpoint #509&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7640100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927300&#176;</desc>
+</wpt>
+<wpt lat="37.76408" lon="-122.39276">
+  <desc>&lt;b>trackpoint #510&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7640800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927600&#176;</desc>
+</wpt>
+<wpt lat="37.76421" lon="-122.39279">
+  <desc>&lt;b>trackpoint #511&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7642100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927900&#176;</desc>
+</wpt>
+<wpt lat="37.76436" lon="-122.39284">
+  <desc>&lt;b>trackpoint #512&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7643600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3928400&#176;</desc>
+</wpt>
+<wpt lat="37.76448" lon="-122.39288">
+  <desc>&lt;b>trackpoint #513&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7644800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3928800&#176;</desc>
+</wpt>
+<wpt lat="37.76458" lon="-122.39292">
+  <desc>&lt;b>trackpoint #514&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7645800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3929200&#176;</desc>
+</wpt>
+<wpt lat="37.7647" lon="-122.39296">
+  <desc>&lt;b>trackpoint #515&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7647000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3929600&#176;</desc>
+</wpt>
+<wpt lat="37.76474" lon="-122.39298">
+  <desc>&lt;b>trackpoint #516&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7647400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3929800&#176;</desc>
+</wpt>
+<wpt lat="37.76495" lon="-122.39308">
+  <desc>&lt;b>trackpoint #517&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7649500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3930800&#176;</desc>
+</wpt>
+<wpt lat="37.76532" lon="-122.3933">
+  <desc>&lt;b>trackpoint #518&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7653200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3933000&#176;</desc>
+</wpt>
+<wpt lat="37.76537" lon="-122.39334">
+  <desc>&lt;b>trackpoint #519&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7653700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3933400&#176;</desc>
+</wpt>
+<wpt lat="37.76562" lon="-122.39351">
+  <desc>&lt;b>trackpoint #520&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7656200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3935100&#176;</desc>
+</wpt>
+<wpt lat="37.76583" lon="-122.39368">
+  <desc>&lt;b>trackpoint #521&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7658300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3936800&#176;</desc>
+</wpt>
+<wpt lat="37.76611" lon="-122.39393">
+  <desc>&lt;b>trackpoint #522&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7661100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3939300&#176;</desc>
+</wpt>
+<wpt lat="37.76635" lon="-122.39417">
+  <desc>&lt;b>trackpoint #523&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7663500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3941700&#176;</desc>
+</wpt>
+<wpt lat="37.76658" lon="-122.39444">
+  <desc>&lt;b>trackpoint #524&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7665800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3944400&#176;</desc>
+</wpt>
+<wpt lat="37.76673" lon="-122.39463">
+  <desc>&lt;b>trackpoint #525&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7667300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3946300&#176;</desc>
+</wpt>
+<wpt lat="37.76708" lon="-122.39507">
+  <desc>&lt;b>trackpoint #526&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7670800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3950700&#176;</desc>
+</wpt>
+<wpt lat="37.76751" lon="-122.39562">
+  <desc>&lt;b>trackpoint #527&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7675100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3956200&#176;</desc>
+</wpt>
+<wpt lat="37.7677" lon="-122.39586">
+  <desc>&lt;b>trackpoint #528&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7677000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3958600&#176;</desc>
+</wpt>
+<wpt lat="37.76778" lon="-122.39602">
+  <desc>&lt;b>trackpoint #529&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7677800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3960200&#176;</desc>
+</wpt>
+<wpt lat="37.76791" lon="-122.39618">
+  <desc>&lt;b>trackpoint #530&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7679100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3961800&#176;</desc>
+</wpt>
+<wpt lat="37.76815" lon="-122.39647">
+  <desc>&lt;b>trackpoint #531&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7681500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3964700&#176;</desc>
+</wpt>
+<wpt lat="37.76832" lon="-122.39668">
+  <desc>&lt;b>trackpoint #532&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7683200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3966800&#176;</desc>
+</wpt>
+<wpt lat="37.76853" lon="-122.3969">
+  <desc>&lt;b>trackpoint #533&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7685300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3969000&#176;</desc>
+</wpt>
+<wpt lat="37.76864" lon="-122.39702">
+  <desc>&lt;b>trackpoint #534&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7686400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3970200&#176;</desc>
+</wpt>
+<wpt lat="37.76882" lon="-122.39719">
+  <desc>&lt;b>trackpoint #535&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7688200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3971900&#176;</desc>
+</wpt>
+<wpt lat="37.76897" lon="-122.39729">
+  <desc>&lt;b>trackpoint #536&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7689700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3972900&#176;</desc>
+</wpt>
+<wpt lat="37.76919" lon="-122.39743">
+  <desc>&lt;b>trackpoint #537&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7691900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3974300&#176;</desc>
+</wpt>
+<wpt lat="37.76929" lon="-122.39748">
+  <desc>&lt;b>trackpoint #538&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7692900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3974800&#176;</desc>
+</wpt>
+<wpt lat="37.76942" lon="-122.39753">
+  <desc>&lt;b>trackpoint #539&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7694200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3975300&#176;</desc>
+</wpt>
+<wpt lat="37.76968" lon="-122.39763">
+  <desc>&lt;b>trackpoint #540&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7696800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3976300&#176;</desc>
+</wpt>
+<wpt lat="37.77002" lon="-122.39768">
+  <desc>&lt;b>trackpoint #541&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7700200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3976800&#176;</desc>
+</wpt>
+<wpt lat="37.77019" lon="-122.3977">
+  <desc>&lt;b>trackpoint #542&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7701900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3977000&#176;</desc>
+</wpt>
+<wpt lat="37.77047" lon="-122.39774">
+  <desc>&lt;b>trackpoint #543&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7704700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3977400&#176;</desc>
+</wpt>
+<wpt lat="37.77078" lon="-122.39778">
+  <desc>&lt;b>trackpoint #544&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7707800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3977800&#176;</desc>
+</wpt>
+<wpt lat="37.77136" lon="-122.39786">
+  <desc>&lt;b>trackpoint #545&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7713600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3978600&#176;</desc>
+</wpt>
+<wpt lat="37.77167" lon="-122.3979">
+  <desc>&lt;b>trackpoint #546&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7716700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3979000&#176;</desc>
+</wpt>
+<wpt lat="37.77208" lon="-122.39795">
+  <desc>&lt;b>trackpoint #547&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7720800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3979500&#176;</desc>
+</wpt>
+<wpt lat="37.77222" lon="-122.39795">
+  <desc>&lt;b>trackpoint #548&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7722200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3979500&#176;</desc>
+</wpt>
+<wpt lat="37.77247" lon="-122.39792">
+  <desc>&lt;b>trackpoint #549&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7724700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3979200&#176;</desc>
+</wpt>
+<wpt lat="37.77254" lon="-122.3979">
+  <desc>&lt;b>trackpoint #550&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7725400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3979000&#176;</desc>
+</wpt>
+<wpt lat="37.77267" lon="-122.39787">
+  <desc>&lt;b>trackpoint #551&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7726700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3978700&#176;</desc>
+</wpt>
+<wpt lat="37.77288" lon="-122.39779">
+  <desc>&lt;b>trackpoint #552&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7728800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3977900&#176;</desc>
+</wpt>
+<wpt lat="37.77303" lon="-122.39773">
+  <desc>&lt;b>trackpoint #553&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7730300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3977300&#176;</desc>
+</wpt>
+<wpt lat="37.77307" lon="-122.3977">
+  <desc>&lt;b>trackpoint #554&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7730700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3977000&#176;</desc>
+</wpt>
+<wpt lat="37.77324" lon="-122.3976">
+  <desc>&lt;b>trackpoint #555&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7732400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3976000&#176;</desc>
+</wpt>
+<wpt lat="37.77337" lon="-122.3975">
+  <desc>&lt;b>trackpoint #556&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7733700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3975000&#176;</desc>
+</wpt>
+<wpt lat="37.77347" lon="-122.39742">
+  <desc>&lt;b>trackpoint #557&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7734700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3974200&#176;</desc>
+</wpt>
+<wpt lat="37.7737" lon="-122.3972">
+  <desc>&lt;b>trackpoint #558&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7737000&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3972000&#176;</desc>
+</wpt>
+<wpt lat="37.77382" lon="-122.39706">
+  <desc>&lt;b>trackpoint #559&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7738200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3970600&#176;</desc>
+</wpt>
+<wpt lat="37.77389" lon="-122.39697">
+  <desc>&lt;b>trackpoint #560&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7738900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3969700&#176;</desc>
+</wpt>
+<wpt lat="37.77414" lon="-122.39665">
+  <desc>&lt;b>trackpoint #561&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7741400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3966500&#176;</desc>
+</wpt>
+<wpt lat="37.77422" lon="-122.39655">
+  <desc>&lt;b>trackpoint #562&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7742200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3965500&#176;</desc>
+</wpt>
+<wpt lat="37.77433" lon="-122.3964">
+  <desc>&lt;b>trackpoint #563&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7743300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3964000&#176;</desc>
+</wpt>
+<wpt lat="37.77451" lon="-122.39617">
+  <desc>&lt;b>trackpoint #564&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7745100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3961700&#176;</desc>
+</wpt>
+<wpt lat="37.77451" lon="-122.39617">
+  <desc>&lt;b>trackpoint #565&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7745100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3961700&#176;</desc>
+</wpt>
+<wpt lat="37.77472" lon="-122.3959">
+  <desc>&lt;b>trackpoint #566&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7747200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3959000&#176;</desc>
+</wpt>
+<wpt lat="37.77486" lon="-122.39573">
+  <desc>&lt;b>trackpoint #567&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7748600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3957300&#176;</desc>
+</wpt>
+<wpt lat="37.77495" lon="-122.39561">
+  <desc>&lt;b>trackpoint #568&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7749500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3956100&#176;</desc>
+</wpt>
+<wpt lat="37.77506" lon="-122.39547">
+  <desc>&lt;b>trackpoint #569&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7750600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3954700&#176;</desc>
+</wpt>
+<wpt lat="37.77515" lon="-122.39535">
+  <desc>&lt;b>trackpoint #570&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7751500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3953500&#176;</desc>
+</wpt>
+<wpt lat="37.77523" lon="-122.39525">
+  <desc>&lt;b>trackpoint #571&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7752300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3952500&#176;</desc>
+</wpt>
+<wpt lat="37.77532" lon="-122.39512">
+  <desc>&lt;b>trackpoint #572&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7753200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3951200&#176;</desc>
+</wpt>
+<wpt lat="37.77537" lon="-122.39504">
+  <desc>&lt;b>trackpoint #573&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7753700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3950400&#176;</desc>
+</wpt>
+<wpt lat="37.77564" lon="-122.39468">
+  <desc>&lt;b>trackpoint #574&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7756400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3946800&#176;</desc>
+</wpt>
+<wpt lat="37.77568" lon="-122.39463">
+  <desc>&lt;b>trackpoint #575&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7756800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3946300&#176;</desc>
+</wpt>
+<wpt lat="37.77583" lon="-122.39445">
+  <desc>&lt;b>trackpoint #576&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7758300&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3944500&#176;</desc>
+</wpt>
+<wpt lat="37.77619" lon="-122.394">
+  <desc>&lt;b>trackpoint #577&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7761900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3940000&#176;</desc>
+</wpt>
+<wpt lat="37.77622" lon="-122.39397">
+  <desc>&lt;b>trackpoint #578&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7762200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3939700&#176;</desc>
+</wpt>
+<wpt lat="37.77629" lon="-122.39388">
+  <desc>&lt;b>trackpoint #579&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7762900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3938800&#176;</desc>
+</wpt>
+<wpt lat="37.77632" lon="-122.39385">
+  <desc>&lt;b>trackpoint #580&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7763200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3938500&#176;</desc>
+</wpt>
+<wpt lat="37.77685" lon="-122.39319">
+  <desc>&lt;b>trackpoint #581&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7768500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3931900&#176;</desc>
+</wpt>
+<wpt lat="37.77694" lon="-122.39308">
+  <desc>&lt;b>trackpoint #582&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7769400&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3930800&#176;</desc>
+</wpt>
+<wpt lat="37.77708" lon="-122.39289">
+  <desc>&lt;b>trackpoint #583&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7770800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3928900&#176;</desc>
+</wpt>
+<wpt lat="37.77711" lon="-122.39285">
+  <desc>&lt;b>trackpoint #584&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7771100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3928500&#176;</desc>
+</wpt>
+<wpt lat="37.77716" lon="-122.39277">
+  <desc>&lt;b>trackpoint #585&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7771600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927700&#176;</desc>
+</wpt>
+<wpt lat="37.77722" lon="-122.39271">
+  <desc>&lt;b>trackpoint #586&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7772200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927100&#176;</desc>
+</wpt>
+<wpt lat="37.77735" lon="-122.39255">
+  <desc>&lt;b>trackpoint #587&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7773500&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3925500&#176;</desc>
+</wpt>
+<wpt lat="37.77801" lon="-122.39172">
+  <desc>&lt;b>trackpoint #588&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7780100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3917200&#176;</desc>
+</wpt>
+<wpt lat="37.77801" lon="-122.39172">
+  <desc>&lt;b>trackpoint #589&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7780100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3917200&#176;</desc>
+</wpt>
+<wpt lat="37.77809" lon="-122.39182">
+  <desc>&lt;b>trackpoint #590&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7780900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3918200&#176;</desc>
+</wpt>
+<wpt lat="37.77812" lon="-122.39185">
+  <desc>&lt;b>trackpoint #591&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7781200&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3918500&#176;</desc>
+</wpt>
+<wpt lat="37.77819" lon="-122.39193">
+  <desc>&lt;b>trackpoint #592&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7781900&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3919300&#176;</desc>
+</wpt>
+<wpt lat="37.77841" lon="-122.39221">
+  <desc>&lt;b>trackpoint #593&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7784100&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922100&#176;</desc>
+</wpt>
+<wpt lat="37.77886" lon="-122.39277">
+  <desc>&lt;b>trackpoint #594&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7788600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927700&#176;</desc>
+</wpt>
+<wpt lat="37.77886" lon="-122.39277">
+  <desc>&lt;b>trackpoint #595&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7788600&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3927700&#176;</desc>
+</wpt>
+<wpt lat="37.77908" lon="-122.39251">
+  <desc>&lt;b>trackpoint #596&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7790800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3925100&#176;</desc>
+</wpt>
+<wpt lat="37.77928" lon="-122.39226">
+  <desc>&lt;b>trackpoint #597&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7792800&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3922600&#176;</desc>
+</wpt>
+<wpt lat="37.77967" lon="-122.39175">
+  <desc>&lt;b>trackpoint #598&lt;/b>&lt;br/> &lt;i>Latitude:&lt;/i> 37.7796700&#176;&lt;br/> &lt;i>Longitude:&lt;/i> -122.3917500&#176;</desc>
+</wpt>
+<trk>
+  <name>Stonestown Galleria, 20th Avenue, San Francisco, CA - 148 Townsend Street, San Francisco, CA</name>
+  <desc>8.3 mi, 0:23</desc>
+  <trkseg>
+    <trkpt lat="37.72806" lon="-122.47769"></trkpt>
+    <trkpt lat="37.72792" lon="-122.4777"></trkpt>
+    <trkpt lat="37.72785" lon="-122.4777"></trkpt>
+    <trkpt lat="37.72778" lon="-122.47769"></trkpt>
+    <trkpt lat="37.72775" lon="-122.47771"></trkpt>
+    <trkpt lat="37.72772" lon="-122.47773"></trkpt>
+    <trkpt lat="37.7277" lon="-122.47784"></trkpt>
+    <trkpt lat="37.72767" lon="-122.47789"></trkpt>
+    <trkpt lat="37.72763" lon="-122.47791"></trkpt>
+    <trkpt lat="37.72758" lon="-122.47791"></trkpt>
+    <trkpt lat="37.72755" lon="-122.47791"></trkpt>
+    <trkpt lat="37.7275" lon="-122.47791"></trkpt>
+    <trkpt lat="37.72745" lon="-122.47792"></trkpt>
+    <trkpt lat="37.72741" lon="-122.47793"></trkpt>
+    <trkpt lat="37.72738" lon="-122.47797"></trkpt>
+    <trkpt lat="37.72736" lon="-122.47801"></trkpt>
+    <trkpt lat="37.72735" lon="-122.47811"></trkpt>
+    <trkpt lat="37.72736" lon="-122.47819"></trkpt>
+    <trkpt lat="37.72738" lon="-122.47823"></trkpt>
+    <trkpt lat="37.72743" lon="-122.47829"></trkpt>
+    <trkpt lat="37.72746" lon="-122.47831"></trkpt>
+    <trkpt lat="37.72751" lon="-122.47834"></trkpt>
+    <trkpt lat="37.72757" lon="-122.47836"></trkpt>
+    <trkpt lat="37.72765" lon="-122.47839"></trkpt>
+    <trkpt lat="37.72796" lon="-122.47838"></trkpt>
+    <trkpt lat="37.72808" lon="-122.47838"></trkpt>
+    <trkpt lat="37.72822" lon="-122.47836"></trkpt>
+    <trkpt lat="37.72834" lon="-122.47834"></trkpt>
+    <trkpt lat="37.72871" lon="-122.47828"></trkpt>
+    <trkpt lat="37.72871" lon="-122.47828"></trkpt>
+    <trkpt lat="37.72872" lon="-122.47844"></trkpt>
+    <trkpt lat="37.72872" lon="-122.47844"></trkpt>
+    <trkpt lat="37.72872" lon="-122.47853"></trkpt>
+    <trkpt lat="37.72869" lon="-122.47853"></trkpt>
+    <trkpt lat="37.72865" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72863" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72861" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72858" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72857" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72855" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72854" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72853" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72851" lon="-122.47853"></trkpt>
+    <trkpt lat="37.7285" lon="-122.47853"></trkpt>
+    <trkpt lat="37.72848" lon="-122.47854"></trkpt>
+    <trkpt lat="37.72847" lon="-122.47856"></trkpt>
+    <trkpt lat="37.72836" lon="-122.47867"></trkpt>
+    <trkpt lat="37.72831" lon="-122.47872"></trkpt>
+    <trkpt lat="37.72831" lon="-122.47872"></trkpt>
+    <trkpt lat="37.72824" lon="-122.47877"></trkpt>
+    <trkpt lat="37.72817" lon="-122.47874"></trkpt>
+    <trkpt lat="37.72814" lon="-122.47872"></trkpt>
+    <trkpt lat="37.72808" lon="-122.4787"></trkpt>
+    <trkpt lat="37.72802" lon="-122.47868"></trkpt>
+    <trkpt lat="37.72798" lon="-122.47867"></trkpt>
+    <trkpt lat="37.72795" lon="-122.47867"></trkpt>
+    <trkpt lat="37.72789" lon="-122.47867"></trkpt>
+    <trkpt lat="37.72779" lon="-122.47868"></trkpt>
+    <trkpt lat="37.72775" lon="-122.47868"></trkpt>
+    <trkpt lat="37.7277" lon="-122.47868"></trkpt>
+    <trkpt lat="37.72758" lon="-122.47867"></trkpt>
+    <trkpt lat="37.72756" lon="-122.47867"></trkpt>
+    <trkpt lat="37.72753" lon="-122.47867"></trkpt>
+    <trkpt lat="37.7275" lon="-122.47866"></trkpt>
+    <trkpt lat="37.72748" lon="-122.47866"></trkpt>
+    <trkpt lat="37.72747" lon="-122.47866"></trkpt>
+    <trkpt lat="37.72745" lon="-122.47865"></trkpt>
+    <trkpt lat="37.7274" lon="-122.47862"></trkpt>
+    <trkpt lat="37.72735" lon="-122.47859"></trkpt>
+    <trkpt lat="37.7273" lon="-122.47856"></trkpt>
+    <trkpt lat="37.72726" lon="-122.47852"></trkpt>
+    <trkpt lat="37.72721" lon="-122.47847"></trkpt>
+    <trkpt lat="37.72717" lon="-122.47842"></trkpt>
+    <trkpt lat="37.72713" lon="-122.47836"></trkpt>
+    <trkpt lat="37.72711" lon="-122.47833"></trkpt>
+    <trkpt lat="37.72708" lon="-122.47827"></trkpt>
+    <trkpt lat="37.72706" lon="-122.47823"></trkpt>
+    <trkpt lat="37.72705" lon="-122.4782"></trkpt>
+    <trkpt lat="37.72704" lon="-122.47818"></trkpt>
+    <trkpt lat="37.72703" lon="-122.47812"></trkpt>
+    <trkpt lat="37.72701" lon="-122.47808"></trkpt>
+    <trkpt lat="37.72701" lon="-122.47806"></trkpt>
+    <trkpt lat="37.727" lon="-122.47803"></trkpt>
+    <trkpt lat="37.727" lon="-122.47801"></trkpt>
+    <trkpt lat="37.727" lon="-122.47799"></trkpt>
+    <trkpt lat="37.72699" lon="-122.47797"></trkpt>
+    <trkpt lat="37.72699" lon="-122.47795"></trkpt>
+    <trkpt lat="37.72699" lon="-122.47792"></trkpt>
+    <trkpt lat="37.72694" lon="-122.4766"></trkpt>
+    <trkpt lat="37.72693" lon="-122.47606"></trkpt>
+    <trkpt lat="37.72689" lon="-122.47532"></trkpt>
+    <trkpt lat="37.72688" lon="-122.47505"></trkpt>
+    <trkpt lat="37.72687" lon="-122.47493"></trkpt>
+    <trkpt lat="37.72687" lon="-122.47484"></trkpt>
+    <trkpt lat="37.72686" lon="-122.47478"></trkpt>
+    <trkpt lat="37.72692" lon="-122.47471"></trkpt>
+    <trkpt lat="37.72691" lon="-122.4745"></trkpt>
+    <trkpt lat="37.7269" lon="-122.47425"></trkpt>
+    <trkpt lat="37.72688" lon="-122.47379"></trkpt>
+    <trkpt lat="37.72686" lon="-122.47334"></trkpt>
+    <trkpt lat="37.72683" lon="-122.47238"></trkpt>
+    <trkpt lat="37.72683" lon="-122.47238"></trkpt>
+    <trkpt lat="37.72682" lon="-122.47216"></trkpt>
+    <trkpt lat="37.72681" lon="-122.47198"></trkpt>
+    <trkpt lat="37.7268" lon="-122.47171"></trkpt>
+    <trkpt lat="37.72679" lon="-122.47115"></trkpt>
+    <trkpt lat="37.7268" lon="-122.47097"></trkpt>
+    <trkpt lat="37.7268" lon="-122.47097"></trkpt>
+    <trkpt lat="37.72662" lon="-122.47069"></trkpt>
+    <trkpt lat="37.72658" lon="-122.47062"></trkpt>
+    <trkpt lat="37.72654" lon="-122.47054"></trkpt>
+    <trkpt lat="37.7265" lon="-122.47046"></trkpt>
+    <trkpt lat="37.72648" lon="-122.4704"></trkpt>
+    <trkpt lat="37.72644" lon="-122.47029"></trkpt>
+    <trkpt lat="37.72641" lon="-122.4702"></trkpt>
+    <trkpt lat="37.72639" lon="-122.47014"></trkpt>
+    <trkpt lat="37.72638" lon="-122.47009"></trkpt>
+    <trkpt lat="37.72636" lon="-122.47002"></trkpt>
+    <trkpt lat="37.72635" lon="-122.46995"></trkpt>
+    <trkpt lat="37.72634" lon="-122.46988"></trkpt>
+    <trkpt lat="37.72633" lon="-122.46978"></trkpt>
+    <trkpt lat="37.72633" lon="-122.4697"></trkpt>
+    <trkpt lat="37.72632" lon="-122.46963"></trkpt>
+    <trkpt lat="37.72632" lon="-122.46945"></trkpt>
+    <trkpt lat="37.72631" lon="-122.46937"></trkpt>
+    <trkpt lat="37.72631" lon="-122.46922"></trkpt>
+    <trkpt lat="37.72631" lon="-122.46907"></trkpt>
+    <trkpt lat="37.72631" lon="-122.46887"></trkpt>
+    <trkpt lat="37.72632" lon="-122.46872"></trkpt>
+    <trkpt lat="37.72635" lon="-122.46857"></trkpt>
+    <trkpt lat="37.72637" lon="-122.46842"></trkpt>
+    <trkpt lat="37.72641" lon="-122.46825"></trkpt>
+    <trkpt lat="37.72644" lon="-122.46811"></trkpt>
+    <trkpt lat="37.7265" lon="-122.46793"></trkpt>
+    <trkpt lat="37.72655" lon="-122.46779"></trkpt>
+    <trkpt lat="37.72659" lon="-122.46769"></trkpt>
+    <trkpt lat="37.72667" lon="-122.46751"></trkpt>
+    <trkpt lat="37.72675" lon="-122.46736"></trkpt>
+    <trkpt lat="37.72682" lon="-122.46723"></trkpt>
+    <trkpt lat="37.72694" lon="-122.46703"></trkpt>
+    <trkpt lat="37.72705" lon="-122.46685"></trkpt>
+    <trkpt lat="37.7271" lon="-122.46678"></trkpt>
+    <trkpt lat="37.72715" lon="-122.46672"></trkpt>
+    <trkpt lat="37.72718" lon="-122.46671"></trkpt>
+    <trkpt lat="37.72721" lon="-122.4667"></trkpt>
+    <trkpt lat="37.72723" lon="-122.46668"></trkpt>
+    <trkpt lat="37.72723" lon="-122.46668"></trkpt>
+    <trkpt lat="37.72726" lon="-122.46667"></trkpt>
+    <trkpt lat="37.72727" lon="-122.46665"></trkpt>
+    <trkpt lat="37.72728" lon="-122.46664"></trkpt>
+    <trkpt lat="37.72729" lon="-122.46664"></trkpt>
+    <trkpt lat="37.72769" lon="-122.46619"></trkpt>
+    <trkpt lat="37.72799" lon="-122.46586"></trkpt>
+    <trkpt lat="37.72821" lon="-122.46567"></trkpt>
+    <trkpt lat="37.72848" lon="-122.46544"></trkpt>
+    <trkpt lat="37.7288" lon="-122.46521"></trkpt>
+    <trkpt lat="37.72899" lon="-122.46508"></trkpt>
+    <trkpt lat="37.72939" lon="-122.46489"></trkpt>
+    <trkpt lat="37.72954" lon="-122.46482"></trkpt>
+    <trkpt lat="37.72958" lon="-122.46481"></trkpt>
+    <trkpt lat="37.72983" lon="-122.46471"></trkpt>
+    <trkpt lat="37.72996" lon="-122.46467"></trkpt>
+    <trkpt lat="37.73016" lon="-122.4646"></trkpt>
+    <trkpt lat="37.73019" lon="-122.46459"></trkpt>
+    <trkpt lat="37.7303" lon="-122.46457"></trkpt>
+    <trkpt lat="37.73044" lon="-122.46454"></trkpt>
+    <trkpt lat="37.73054" lon="-122.46451"></trkpt>
+    <trkpt lat="37.73063" lon="-122.4645"></trkpt>
+    <trkpt lat="37.73082" lon="-122.46445"></trkpt>
+    <trkpt lat="37.73094" lon="-122.46443"></trkpt>
+    <trkpt lat="37.73133" lon="-122.46403"></trkpt>
+    <trkpt lat="37.73139" lon="-122.46397"></trkpt>
+    <trkpt lat="37.73142" lon="-122.46393"></trkpt>
+    <trkpt lat="37.73151" lon="-122.46377"></trkpt>
+    <trkpt lat="37.73151" lon="-122.46377"></trkpt>
+    <trkpt lat="37.73128" lon="-122.46367"></trkpt>
+    <trkpt lat="37.73118" lon="-122.46363"></trkpt>
+    <trkpt lat="37.73108" lon="-122.4636"></trkpt>
+    <trkpt lat="37.73099" lon="-122.46356"></trkpt>
+    <trkpt lat="37.73091" lon="-122.46353"></trkpt>
+    <trkpt lat="37.73084" lon="-122.46348"></trkpt>
+    <trkpt lat="37.73077" lon="-122.46342"></trkpt>
+    <trkpt lat="37.73069" lon="-122.46334"></trkpt>
+    <trkpt lat="37.73063" lon="-122.46324"></trkpt>
+    <trkpt lat="37.73056" lon="-122.46311"></trkpt>
+    <trkpt lat="37.73048" lon="-122.46298"></trkpt>
+    <trkpt lat="37.73042" lon="-122.46288"></trkpt>
+    <trkpt lat="37.73035" lon="-122.46275"></trkpt>
+    <trkpt lat="37.73029" lon="-122.46264"></trkpt>
+    <trkpt lat="37.73025" lon="-122.46258"></trkpt>
+    <trkpt lat="37.73023" lon="-122.46255"></trkpt>
+    <trkpt lat="37.73016" lon="-122.46241"></trkpt>
+    <trkpt lat="37.73012" lon="-122.46232"></trkpt>
+    <trkpt lat="37.73009" lon="-122.46225"></trkpt>
+    <trkpt lat="37.73007" lon="-122.46218"></trkpt>
+    <trkpt lat="37.73005" lon="-122.46211"></trkpt>
+    <trkpt lat="37.73004" lon="-122.46207"></trkpt>
+    <trkpt lat="37.73001" lon="-122.4619"></trkpt>
+    <trkpt lat="37.72999" lon="-122.46172"></trkpt>
+    <trkpt lat="37.72999" lon="-122.46157"></trkpt>
+    <trkpt lat="37.73001" lon="-122.46147"></trkpt>
+    <trkpt lat="37.73004" lon="-122.4613"></trkpt>
+    <trkpt lat="37.73008" lon="-122.46116"></trkpt>
+    <trkpt lat="37.73015" lon="-122.46098"></trkpt>
+    <trkpt lat="37.73028" lon="-122.46074"></trkpt>
+    <trkpt lat="37.73036" lon="-122.46063"></trkpt>
+    <trkpt lat="37.73041" lon="-122.46054"></trkpt>
+    <trkpt lat="37.73053" lon="-122.46035"></trkpt>
+    <trkpt lat="37.73058" lon="-122.46022"></trkpt>
+    <trkpt lat="37.73063" lon="-122.4601"></trkpt>
+    <trkpt lat="37.73068" lon="-122.45995"></trkpt>
+    <trkpt lat="37.73072" lon="-122.45979"></trkpt>
+    <trkpt lat="37.73075" lon="-122.45967"></trkpt>
+    <trkpt lat="37.73077" lon="-122.45951"></trkpt>
+    <trkpt lat="37.73078" lon="-122.45927"></trkpt>
+    <trkpt lat="37.73077" lon="-122.45878"></trkpt>
+    <trkpt lat="37.73077" lon="-122.45835"></trkpt>
+    <trkpt lat="37.73077" lon="-122.45831"></trkpt>
+    <trkpt lat="37.73078" lon="-122.45819"></trkpt>
+    <trkpt lat="37.73085" lon="-122.458"></trkpt>
+    <trkpt lat="37.73089" lon="-122.45781"></trkpt>
+    <trkpt lat="37.73096" lon="-122.45753"></trkpt>
+    <trkpt lat="37.73098" lon="-122.45742"></trkpt>
+    <trkpt lat="37.73117" lon="-122.45661"></trkpt>
+    <trkpt lat="37.73121" lon="-122.45641"></trkpt>
+    <trkpt lat="37.73123" lon="-122.45633"></trkpt>
+    <trkpt lat="37.73126" lon="-122.45619"></trkpt>
+    <trkpt lat="37.73129" lon="-122.45601"></trkpt>
+    <trkpt lat="37.7313" lon="-122.45595"></trkpt>
+    <trkpt lat="37.73133" lon="-122.45576"></trkpt>
+    <trkpt lat="37.73135" lon="-122.45567"></trkpt>
+    <trkpt lat="37.73137" lon="-122.45554"></trkpt>
+    <trkpt lat="37.73138" lon="-122.45546"></trkpt>
+    <trkpt lat="37.7314" lon="-122.45526"></trkpt>
+    <trkpt lat="37.73142" lon="-122.45513"></trkpt>
+    <trkpt lat="37.73145" lon="-122.4549"></trkpt>
+    <trkpt lat="37.73145" lon="-122.45479"></trkpt>
+    <trkpt lat="37.73146" lon="-122.45468"></trkpt>
+    <trkpt lat="37.73148" lon="-122.45448"></trkpt>
+    <trkpt lat="37.73148" lon="-122.45434"></trkpt>
+    <trkpt lat="37.73149" lon="-122.45415"></trkpt>
+    <trkpt lat="37.7315" lon="-122.45408"></trkpt>
+    <trkpt lat="37.7315" lon="-122.45397"></trkpt>
+    <trkpt lat="37.7315" lon="-122.45373"></trkpt>
+    <trkpt lat="37.73151" lon="-122.45362"></trkpt>
+    <trkpt lat="37.7315" lon="-122.45342"></trkpt>
+    <trkpt lat="37.7315" lon="-122.45297"></trkpt>
+    <trkpt lat="37.7315" lon="-122.45229"></trkpt>
+    <trkpt lat="37.7315" lon="-122.45117"></trkpt>
+    <trkpt lat="37.73151" lon="-122.45031"></trkpt>
+    <trkpt lat="37.73151" lon="-122.44964"></trkpt>
+    <trkpt lat="37.73151" lon="-122.44929"></trkpt>
+    <trkpt lat="37.73151" lon="-122.44889"></trkpt>
+    <trkpt lat="37.7315" lon="-122.44854"></trkpt>
+    <trkpt lat="37.7315" lon="-122.44844"></trkpt>
+    <trkpt lat="37.73151" lon="-122.44743"></trkpt>
+    <trkpt lat="37.73151" lon="-122.44731"></trkpt>
+    <trkpt lat="37.73152" lon="-122.4472"></trkpt>
+    <trkpt lat="37.73152" lon="-122.44696"></trkpt>
+    <trkpt lat="37.73152" lon="-122.44688"></trkpt>
+    <trkpt lat="37.73152" lon="-122.44673"></trkpt>
+    <trkpt lat="37.73151" lon="-122.44661"></trkpt>
+    <trkpt lat="37.73152" lon="-122.44552"></trkpt>
+    <trkpt lat="37.73152" lon="-122.44449"></trkpt>
+    <trkpt lat="37.73153" lon="-122.44439"></trkpt>
+    <trkpt lat="37.73153" lon="-122.44434"></trkpt>
+    <trkpt lat="37.73152" lon="-122.4441"></trkpt>
+    <trkpt lat="37.73153" lon="-122.44205"></trkpt>
+    <trkpt lat="37.73154" lon="-122.44089"></trkpt>
+    <trkpt lat="37.73154" lon="-122.43977"></trkpt>
+    <trkpt lat="37.73155" lon="-122.43944"></trkpt>
+    <trkpt lat="37.73155" lon="-122.43894"></trkpt>
+    <trkpt lat="37.73155" lon="-122.43858"></trkpt>
+    <trkpt lat="37.73155" lon="-122.43813"></trkpt>
+    <trkpt lat="37.73155" lon="-122.43794"></trkpt>
+    <trkpt lat="37.73154" lon="-122.43775"></trkpt>
+    <trkpt lat="37.73155" lon="-122.43761"></trkpt>
+    <trkpt lat="37.73154" lon="-122.43748"></trkpt>
+    <trkpt lat="37.73154" lon="-122.43716"></trkpt>
+    <trkpt lat="37.73152" lon="-122.43685"></trkpt>
+    <trkpt lat="37.73152" lon="-122.4367"></trkpt>
+    <trkpt lat="37.73152" lon="-122.4367"></trkpt>
+    <trkpt lat="37.73151" lon="-122.4365"></trkpt>
+    <trkpt lat="37.7315" lon="-122.43633"></trkpt>
+    <trkpt lat="37.73149" lon="-122.43618"></trkpt>
+    <trkpt lat="37.73148" lon="-122.43613"></trkpt>
+    <trkpt lat="37.73146" lon="-122.43605"></trkpt>
+    <trkpt lat="37.73143" lon="-122.43597"></trkpt>
+    <trkpt lat="37.73139" lon="-122.43589"></trkpt>
+    <trkpt lat="37.73136" lon="-122.43582"></trkpt>
+    <trkpt lat="37.7313" lon="-122.4357"></trkpt>
+    <trkpt lat="37.73126" lon="-122.43563"></trkpt>
+    <trkpt lat="37.73123" lon="-122.43556"></trkpt>
+    <trkpt lat="37.73121" lon="-122.4355"></trkpt>
+    <trkpt lat="37.7312" lon="-122.43546"></trkpt>
+    <trkpt lat="37.73118" lon="-122.43542"></trkpt>
+    <trkpt lat="37.73118" lon="-122.43535"></trkpt>
+    <trkpt lat="37.73116" lon="-122.4353"></trkpt>
+    <trkpt lat="37.73115" lon="-122.43525"></trkpt>
+    <trkpt lat="37.73114" lon="-122.43514"></trkpt>
+    <trkpt lat="37.73114" lon="-122.4351"></trkpt>
+    <trkpt lat="37.73114" lon="-122.43505"></trkpt>
+    <trkpt lat="37.73114" lon="-122.43499"></trkpt>
+    <trkpt lat="37.73115" lon="-122.43493"></trkpt>
+    <trkpt lat="37.73116" lon="-122.43486"></trkpt>
+    <trkpt lat="37.73117" lon="-122.4348"></trkpt>
+    <trkpt lat="37.73118" lon="-122.43474"></trkpt>
+    <trkpt lat="37.73119" lon="-122.43469"></trkpt>
+    <trkpt lat="37.73121" lon="-122.43461"></trkpt>
+    <trkpt lat="37.73133" lon="-122.43427"></trkpt>
+    <trkpt lat="37.73159" lon="-122.43351"></trkpt>
+    <trkpt lat="37.73183" lon="-122.43278"></trkpt>
+    <trkpt lat="37.73186" lon="-122.43268"></trkpt>
+    <trkpt lat="37.73187" lon="-122.43267"></trkpt>
+    <trkpt lat="37.73187" lon="-122.43265"></trkpt>
+    <trkpt lat="37.73189" lon="-122.43264"></trkpt>
+    <trkpt lat="37.7319" lon="-122.43263"></trkpt>
+    <trkpt lat="37.73196" lon="-122.43259"></trkpt>
+    <trkpt lat="37.73196" lon="-122.43259"></trkpt>
+    <trkpt lat="37.73204" lon="-122.43216"></trkpt>
+    <trkpt lat="37.73209" lon="-122.43188"></trkpt>
+    <trkpt lat="37.7321" lon="-122.43183"></trkpt>
+    <trkpt lat="37.73211" lon="-122.43177"></trkpt>
+    <trkpt lat="37.73211" lon="-122.43174"></trkpt>
+    <trkpt lat="37.73214" lon="-122.4314"></trkpt>
+    <trkpt lat="37.73215" lon="-122.43133"></trkpt>
+    <trkpt lat="37.73216" lon="-122.43125"></trkpt>
+    <trkpt lat="37.73217" lon="-122.43112"></trkpt>
+    <trkpt lat="37.73218" lon="-122.4309"></trkpt>
+    <trkpt lat="37.73218" lon="-122.43077"></trkpt>
+    <trkpt lat="37.73218" lon="-122.43065"></trkpt>
+    <trkpt lat="37.73218" lon="-122.43052"></trkpt>
+    <trkpt lat="37.73217" lon="-122.43038"></trkpt>
+    <trkpt lat="37.73216" lon="-122.43016"></trkpt>
+    <trkpt lat="37.73213" lon="-122.42985"></trkpt>
+    <trkpt lat="37.73208" lon="-122.42947"></trkpt>
+    <trkpt lat="37.73201" lon="-122.42903"></trkpt>
+    <trkpt lat="37.73188" lon="-122.42838"></trkpt>
+    <trkpt lat="37.73184" lon="-122.4282"></trkpt>
+    <trkpt lat="37.73184" lon="-122.42819"></trkpt>
+    <trkpt lat="37.73184" lon="-122.42818"></trkpt>
+    <trkpt lat="37.73179" lon="-122.42796"></trkpt>
+    <trkpt lat="37.73168" lon="-122.42742"></trkpt>
+    <trkpt lat="37.73154" lon="-122.42668"></trkpt>
+    <trkpt lat="37.7315" lon="-122.4264"></trkpt>
+    <trkpt lat="37.73144" lon="-122.42598"></trkpt>
+    <trkpt lat="37.7314" lon="-122.42564"></trkpt>
+    <trkpt lat="37.73137" lon="-122.42518"></trkpt>
+    <trkpt lat="37.73136" lon="-122.42503"></trkpt>
+    <trkpt lat="37.73136" lon="-122.42486"></trkpt>
+    <trkpt lat="37.73135" lon="-122.42428"></trkpt>
+    <trkpt lat="37.73135" lon="-122.42406"></trkpt>
+    <trkpt lat="37.73135" lon="-122.42391"></trkpt>
+    <trkpt lat="37.73137" lon="-122.42353"></trkpt>
+    <trkpt lat="37.7314" lon="-122.42326"></trkpt>
+    <trkpt lat="37.73142" lon="-122.42305"></trkpt>
+    <trkpt lat="37.73143" lon="-122.42287"></trkpt>
+    <trkpt lat="37.73156" lon="-122.422"></trkpt>
+    <trkpt lat="37.7316" lon="-122.42171"></trkpt>
+    <trkpt lat="37.73176" lon="-122.42066"></trkpt>
+    <trkpt lat="37.73176" lon="-122.42065"></trkpt>
+    <trkpt lat="37.73181" lon="-122.42027"></trkpt>
+    <trkpt lat="37.73185" lon="-122.41981"></trkpt>
+    <trkpt lat="37.73186" lon="-122.41936"></trkpt>
+    <trkpt lat="37.73186" lon="-122.4186"></trkpt>
+    <trkpt lat="37.73184" lon="-122.41725"></trkpt>
+    <trkpt lat="37.73184" lon="-122.41678"></trkpt>
+    <trkpt lat="37.73185" lon="-122.41656"></trkpt>
+    <trkpt lat="37.73189" lon="-122.4161"></trkpt>
+    <trkpt lat="37.7319" lon="-122.41597"></trkpt>
+    <trkpt lat="37.73199" lon="-122.41538"></trkpt>
+    <trkpt lat="37.73207" lon="-122.415"></trkpt>
+    <trkpt lat="37.73217" lon="-122.41462"></trkpt>
+    <trkpt lat="37.73218" lon="-122.41457"></trkpt>
+    <trkpt lat="37.73229" lon="-122.41423"></trkpt>
+    <trkpt lat="37.73237" lon="-122.41403"></trkpt>
+    <trkpt lat="37.73268" lon="-122.41332"></trkpt>
+    <trkpt lat="37.73297" lon="-122.41266"></trkpt>
+    <trkpt lat="37.73339" lon="-122.41169"></trkpt>
+    <trkpt lat="37.73339" lon="-122.41169"></trkpt>
+    <trkpt lat="37.73351" lon="-122.41128"></trkpt>
+    <trkpt lat="37.73369" lon="-122.41084"></trkpt>
+    <trkpt lat="37.73386" lon="-122.41041"></trkpt>
+    <trkpt lat="37.73404" lon="-122.40999"></trkpt>
+    <trkpt lat="37.73428" lon="-122.4094"></trkpt>
+    <trkpt lat="37.7345" lon="-122.40883"></trkpt>
+    <trkpt lat="37.7347" lon="-122.40829"></trkpt>
+    <trkpt lat="37.73483" lon="-122.40791"></trkpt>
+    <trkpt lat="37.73503" lon="-122.40727"></trkpt>
+    <trkpt lat="37.73518" lon="-122.4068"></trkpt>
+    <trkpt lat="37.7355" lon="-122.40582"></trkpt>
+    <trkpt lat="37.73555" lon="-122.40566"></trkpt>
+    <trkpt lat="37.7356" lon="-122.40551"></trkpt>
+    <trkpt lat="37.73566" lon="-122.40537"></trkpt>
+    <trkpt lat="37.73573" lon="-122.4052"></trkpt>
+    <trkpt lat="37.73579" lon="-122.40506"></trkpt>
+    <trkpt lat="37.73585" lon="-122.40493"></trkpt>
+    <trkpt lat="37.73591" lon="-122.4048"></trkpt>
+    <trkpt lat="37.73599" lon="-122.40465"></trkpt>
+    <trkpt lat="37.73606" lon="-122.40452"></trkpt>
+    <trkpt lat="37.73613" lon="-122.4044"></trkpt>
+    <trkpt lat="37.7362" lon="-122.40428"></trkpt>
+    <trkpt lat="37.73633" lon="-122.40406"></trkpt>
+    <trkpt lat="37.73646" lon="-122.40382"></trkpt>
+    <trkpt lat="37.73661" lon="-122.40355"></trkpt>
+    <trkpt lat="37.73668" lon="-122.40342"></trkpt>
+    <trkpt lat="37.73676" lon="-122.40324"></trkpt>
+    <trkpt lat="37.7371" lon="-122.40274"></trkpt>
+    <trkpt lat="37.73712" lon="-122.40271"></trkpt>
+    <trkpt lat="37.73718" lon="-122.40263"></trkpt>
+    <trkpt lat="37.73719" lon="-122.4026"></trkpt>
+    <trkpt lat="37.73721" lon="-122.40257"></trkpt>
+    <trkpt lat="37.73747" lon="-122.40223"></trkpt>
+    <trkpt lat="37.73772" lon="-122.4019"></trkpt>
+    <trkpt lat="37.73833" lon="-122.40117"></trkpt>
+    <trkpt lat="37.74007" lon="-122.39957"></trkpt>
+    <trkpt lat="37.74054" lon="-122.39913"></trkpt>
+    <trkpt lat="37.74101" lon="-122.3987"></trkpt>
+    <trkpt lat="37.74123" lon="-122.3985"></trkpt>
+    <trkpt lat="37.74189" lon="-122.39791"></trkpt>
+    <trkpt lat="37.74202" lon="-122.3978"></trkpt>
+    <trkpt lat="37.74214" lon="-122.39769"></trkpt>
+    <trkpt lat="37.74238" lon="-122.39747"></trkpt>
+    <trkpt lat="37.74262" lon="-122.39725"></trkpt>
+    <trkpt lat="37.74272" lon="-122.39715"></trkpt>
+    <trkpt lat="37.74282" lon="-122.39706"></trkpt>
+    <trkpt lat="37.74296" lon="-122.39693"></trkpt>
+    <trkpt lat="37.7431" lon="-122.3968"></trkpt>
+    <trkpt lat="37.74318" lon="-122.39674"></trkpt>
+    <trkpt lat="37.74319" lon="-122.39673"></trkpt>
+    <trkpt lat="37.74321" lon="-122.39671"></trkpt>
+    <trkpt lat="37.74332" lon="-122.39661"></trkpt>
+    <trkpt lat="37.74354" lon="-122.39642"></trkpt>
+    <trkpt lat="37.74371" lon="-122.39623"></trkpt>
+    <trkpt lat="37.74418" lon="-122.39568"></trkpt>
+    <trkpt lat="37.74447" lon="-122.39538"></trkpt>
+    <trkpt lat="37.74477" lon="-122.39509"></trkpt>
+    <trkpt lat="37.74519" lon="-122.39471"></trkpt>
+    <trkpt lat="37.74546" lon="-122.39449"></trkpt>
+    <trkpt lat="37.74573" lon="-122.39428"></trkpt>
+    <trkpt lat="37.746" lon="-122.39406"></trkpt>
+    <trkpt lat="37.74622" lon="-122.39392"></trkpt>
+    <trkpt lat="37.74643" lon="-122.39378"></trkpt>
+    <trkpt lat="37.74691" lon="-122.3935"></trkpt>
+    <trkpt lat="37.74738" lon="-122.39323"></trkpt>
+    <trkpt lat="37.7476" lon="-122.39311"></trkpt>
+    <trkpt lat="37.74781" lon="-122.39298"></trkpt>
+    <trkpt lat="37.74797" lon="-122.3929"></trkpt>
+    <trkpt lat="37.74812" lon="-122.39281"></trkpt>
+    <trkpt lat="37.74838" lon="-122.39266"></trkpt>
+    <trkpt lat="37.74852" lon="-122.39259"></trkpt>
+    <trkpt lat="37.74872" lon="-122.39248"></trkpt>
+    <trkpt lat="37.74909" lon="-122.39228"></trkpt>
+    <trkpt lat="37.7497" lon="-122.39194"></trkpt>
+    <trkpt lat="37.75002" lon="-122.39177"></trkpt>
+    <trkpt lat="37.75014" lon="-122.39171"></trkpt>
+    <trkpt lat="37.75016" lon="-122.3917"></trkpt>
+    <trkpt lat="37.7504" lon="-122.39159"></trkpt>
+    <trkpt lat="37.75054" lon="-122.39154"></trkpt>
+    <trkpt lat="37.75097" lon="-122.3914"></trkpt>
+    <trkpt lat="37.75123" lon="-122.39133"></trkpt>
+    <trkpt lat="37.75145" lon="-122.39129"></trkpt>
+    <trkpt lat="37.75167" lon="-122.39127"></trkpt>
+    <trkpt lat="37.75184" lon="-122.39125"></trkpt>
+    <trkpt lat="37.75214" lon="-122.39124"></trkpt>
+    <trkpt lat="37.7522" lon="-122.39124"></trkpt>
+    <trkpt lat="37.75236" lon="-122.39124"></trkpt>
+    <trkpt lat="37.75252" lon="-122.39125"></trkpt>
+    <trkpt lat="37.75262" lon="-122.39125"></trkpt>
+    <trkpt lat="37.7527" lon="-122.39126"></trkpt>
+    <trkpt lat="37.75281" lon="-122.39127"></trkpt>
+    <trkpt lat="37.75302" lon="-122.39129"></trkpt>
+    <trkpt lat="37.75336" lon="-122.39136"></trkpt>
+    <trkpt lat="37.75359" lon="-122.39143"></trkpt>
+    <trkpt lat="37.75364" lon="-122.39144"></trkpt>
+    <trkpt lat="37.75386" lon="-122.39151"></trkpt>
+    <trkpt lat="37.75404" lon="-122.39157"></trkpt>
+    <trkpt lat="37.75508" lon="-122.39195"></trkpt>
+    <trkpt lat="37.75516" lon="-122.39197"></trkpt>
+    <trkpt lat="37.75517" lon="-122.39197"></trkpt>
+    <trkpt lat="37.75534" lon="-122.39202"></trkpt>
+    <trkpt lat="37.75561" lon="-122.39208"></trkpt>
+    <trkpt lat="37.75585" lon="-122.39213"></trkpt>
+    <trkpt lat="37.75605" lon="-122.39217"></trkpt>
+    <trkpt lat="37.7561" lon="-122.39218"></trkpt>
+    <trkpt lat="37.75635" lon="-122.3922"></trkpt>
+    <trkpt lat="37.75648" lon="-122.39221"></trkpt>
+    <trkpt lat="37.75665" lon="-122.39222"></trkpt>
+    <trkpt lat="37.75677" lon="-122.39221"></trkpt>
+    <trkpt lat="37.75722" lon="-122.39222"></trkpt>
+    <trkpt lat="37.75735" lon="-122.39223"></trkpt>
+    <trkpt lat="37.75748" lon="-122.39223"></trkpt>
+    <trkpt lat="37.75772" lon="-122.39222"></trkpt>
+    <trkpt lat="37.75789" lon="-122.39223"></trkpt>
+    <trkpt lat="37.75831" lon="-122.39222"></trkpt>
+    <trkpt lat="37.75905" lon="-122.39222"></trkpt>
+    <trkpt lat="37.75958" lon="-122.39224"></trkpt>
+    <trkpt lat="37.7597" lon="-122.39224"></trkpt>
+    <trkpt lat="37.76026" lon="-122.39228"></trkpt>
+    <trkpt lat="37.76027" lon="-122.39228"></trkpt>
+    <trkpt lat="37.76033" lon="-122.39229"></trkpt>
+    <trkpt lat="37.76098" lon="-122.39239"></trkpt>
+    <trkpt lat="37.76137" lon="-122.39242"></trkpt>
+    <trkpt lat="37.76269" lon="-122.39256"></trkpt>
+    <trkpt lat="37.76332" lon="-122.39262"></trkpt>
+    <trkpt lat="37.76352" lon="-122.39264"></trkpt>
+    <trkpt lat="37.76375" lon="-122.39268"></trkpt>
+    <trkpt lat="37.76388" lon="-122.39271"></trkpt>
+    <trkpt lat="37.76401" lon="-122.39273"></trkpt>
+    <trkpt lat="37.76408" lon="-122.39276"></trkpt>
+    <trkpt lat="37.76421" lon="-122.39279"></trkpt>
+    <trkpt lat="37.76436" lon="-122.39284"></trkpt>
+    <trkpt lat="37.76448" lon="-122.39288"></trkpt>
+    <trkpt lat="37.76458" lon="-122.39292"></trkpt>
+    <trkpt lat="37.7647" lon="-122.39296"></trkpt>
+    <trkpt lat="37.76474" lon="-122.39298"></trkpt>
+    <trkpt lat="37.76495" lon="-122.39308"></trkpt>
+    <trkpt lat="37.76532" lon="-122.3933"></trkpt>
+    <trkpt lat="37.76537" lon="-122.39334"></trkpt>
+    <trkpt lat="37.76562" lon="-122.39351"></trkpt>
+    <trkpt lat="37.76583" lon="-122.39368"></trkpt>
+    <trkpt lat="37.76611" lon="-122.39393"></trkpt>
+    <trkpt lat="37.76635" lon="-122.39417"></trkpt>
+    <trkpt lat="37.76658" lon="-122.39444"></trkpt>
+    <trkpt lat="37.76673" lon="-122.39463"></trkpt>
+    <trkpt lat="37.76708" lon="-122.39507"></trkpt>
+    <trkpt lat="37.76751" lon="-122.39562"></trkpt>
+    <trkpt lat="37.7677" lon="-122.39586"></trkpt>
+    <trkpt lat="37.76778" lon="-122.39602"></trkpt>
+    <trkpt lat="37.76791" lon="-122.39618"></trkpt>
+    <trkpt lat="37.76815" lon="-122.39647"></trkpt>
+    <trkpt lat="37.76832" lon="-122.39668"></trkpt>
+    <trkpt lat="37.76853" lon="-122.3969"></trkpt>
+    <trkpt lat="37.76864" lon="-122.39702"></trkpt>
+    <trkpt lat="37.76882" lon="-122.39719"></trkpt>
+    <trkpt lat="37.76897" lon="-122.39729"></trkpt>
+    <trkpt lat="37.76919" lon="-122.39743"></trkpt>
+    <trkpt lat="37.76929" lon="-122.39748"></trkpt>
+    <trkpt lat="37.76942" lon="-122.39753"></trkpt>
+    <trkpt lat="37.76968" lon="-122.39763"></trkpt>
+    <trkpt lat="37.77002" lon="-122.39768"></trkpt>
+    <trkpt lat="37.77019" lon="-122.3977"></trkpt>
+    <trkpt lat="37.77047" lon="-122.39774"></trkpt>
+    <trkpt lat="37.77078" lon="-122.39778"></trkpt>
+    <trkpt lat="37.77136" lon="-122.39786"></trkpt>
+    <trkpt lat="37.77167" lon="-122.3979"></trkpt>
+    <trkpt lat="37.77208" lon="-122.39795"></trkpt>
+    <trkpt lat="37.77222" lon="-122.39795"></trkpt>
+    <trkpt lat="37.77247" lon="-122.39792"></trkpt>
+    <trkpt lat="37.77254" lon="-122.3979"></trkpt>
+    <trkpt lat="37.77267" lon="-122.39787"></trkpt>
+    <trkpt lat="37.77288" lon="-122.39779"></trkpt>
+    <trkpt lat="37.77303" lon="-122.39773"></trkpt>
+    <trkpt lat="37.77307" lon="-122.3977"></trkpt>
+    <trkpt lat="37.77324" lon="-122.3976"></trkpt>
+    <trkpt lat="37.77337" lon="-122.3975"></trkpt>
+    <trkpt lat="37.77347" lon="-122.39742"></trkpt>
+    <trkpt lat="37.7737" lon="-122.3972"></trkpt>
+    <trkpt lat="37.77382" lon="-122.39706"></trkpt>
+    <trkpt lat="37.77389" lon="-122.39697"></trkpt>
+    <trkpt lat="37.77414" lon="-122.39665"></trkpt>
+    <trkpt lat="37.77422" lon="-122.39655"></trkpt>
+    <trkpt lat="37.77433" lon="-122.3964"></trkpt>
+    <trkpt lat="37.77451" lon="-122.39617"></trkpt>
+    <trkpt lat="37.77451" lon="-122.39617"></trkpt>
+    <trkpt lat="37.77472" lon="-122.3959"></trkpt>
+    <trkpt lat="37.77486" lon="-122.39573"></trkpt>
+    <trkpt lat="37.77495" lon="-122.39561"></trkpt>
+    <trkpt lat="37.77506" lon="-122.39547"></trkpt>
+    <trkpt lat="37.77515" lon="-122.39535"></trkpt>
+    <trkpt lat="37.77523" lon="-122.39525"></trkpt>
+    <trkpt lat="37.77532" lon="-122.39512"></trkpt>
+    <trkpt lat="37.77537" lon="-122.39504"></trkpt>
+    <trkpt lat="37.77564" lon="-122.39468"></trkpt>
+    <trkpt lat="37.77568" lon="-122.39463"></trkpt>
+    <trkpt lat="37.77583" lon="-122.39445"></trkpt>
+    <trkpt lat="37.77619" lon="-122.394"></trkpt>
+    <trkpt lat="37.77622" lon="-122.39397"></trkpt>
+    <trkpt lat="37.77629" lon="-122.39388"></trkpt>
+    <trkpt lat="37.77632" lon="-122.39385"></trkpt>
+    <trkpt lat="37.77685" lon="-122.39319"></trkpt>
+    <trkpt lat="37.77694" lon="-122.39308"></trkpt>
+    <trkpt lat="37.77708" lon="-122.39289"></trkpt>
+    <trkpt lat="37.77711" lon="-122.39285"></trkpt>
+    <trkpt lat="37.77716" lon="-122.39277"></trkpt>
+    <trkpt lat="37.77722" lon="-122.39271"></trkpt>
+    <trkpt lat="37.77735" lon="-122.39255"></trkpt>
+    <trkpt lat="37.77801" lon="-122.39172"></trkpt>
+    <trkpt lat="37.77801" lon="-122.39172"></trkpt>
+    <trkpt lat="37.77809" lon="-122.39182"></trkpt>
+    <trkpt lat="37.77812" lon="-122.39185"></trkpt>
+    <trkpt lat="37.77819" lon="-122.39193"></trkpt>
+    <trkpt lat="37.77841" lon="-122.39221"></trkpt>
+    <trkpt lat="37.77886" lon="-122.39277"></trkpt>
+    <trkpt lat="37.77886" lon="-122.39277"></trkpt>
+    <trkpt lat="37.77908" lon="-122.39251"></trkpt>
+    <trkpt lat="37.77928" lon="-122.39226"></trkpt>
+    <trkpt lat="37.77967" lon="-122.39175"></trkpt>
+  </trkseg>
+</trk>
+</gpx>

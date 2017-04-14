@@ -1,0 +1,36 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+
+
+target 'Teamwork' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+# Pods for Teamwork
+
+pod 'RealmSwift'
+pod 'Realm'
+pod 'RealmMapView', :git => 'https://github.com/bigfish24/ABFRealmMapView.git'
+pod 'RealmLoginKit'
+
+pod 'Eureka', '~> 2.0.0-beta.1'
+pod 'ImageRow', '~> 1.0'
+pod 'PermissionScope', :git => 'https://github.com/nickoneill/PermissionScope.git'
+pod 'JVFloatLabeledTextField'
+pod 'ImagePicker'
+pod 'ActionSheetPicker-3.0'
+pod 'ISHHoverBar'
+
+#pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
+
+# this has the code from commit: https://github.com/PhamBaTho/BTNavigationDropdownMenu/pull/108/commits/0139a13bb1fe4130d5f035da709dcc70f8052177 from the origial source
+pod 'BTNavigationDropdownMenu', :git => 'https://github.com/realm-demos/BTNavigationDropdownMenu', :branch => 'swift-3.0'
+
+
+  target 'TeamworkUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
