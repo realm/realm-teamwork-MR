@@ -172,7 +172,7 @@ Tapping on the record for a person will reveal detail about that person's assign
 
 # Application Architecture
 
-TeamWork implemented an idealized, minimal model that describes the the basic types needed to implement or field service style application:
+TeamWork implements an idealized model that describes the the basic types needed to implement or field service style application:
  <center> <img src="Graphics/Teamwork-Model-Multi-Realm.png"/><br/>TeamWork Models</center><br>
 
 The basic architecture describes 3 business entities and a role mechanism:
@@ -185,7 +185,10 @@ The basic architecture describes 3 business entities and a role mechanism:
 - The *Role* model implements an application specific system for deciding who can see what objects inside TeamWork. This is something application specific, so Realm does not impose any hardcoded defaults on how your app and your users data access should be managed.  Here in TeamWork _manager_ users are effectively "super users" who can see all tasks, other users and cna create or modify any object in the system, while "workers" are limited to seeing only their own  assigned tasks.
 
 - The *Teams* model implements an index Realm for Admin/Manager users where they can create and manage
+
+
 These simple models are composed into a multi-Realm system that looks like this:
+
 <center> <img src="Graphics/TeamWork-Multi-Realm-Overview.png"/><br/>TeamWork Model Overview</center><br>
 
 ## The Admin/Manager Model/Realm Flow
