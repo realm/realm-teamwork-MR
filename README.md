@@ -19,12 +19,13 @@ Some of the goals for this app are:
 1. Ability to have 1 or more "manager" role users and an arbitrary number of workers/remote operators.
 
 1. Ability for "manager" role owners to create work items ("tasks") and assign them to "workers."  These tasks can have:
+
     - A title
     - A location which defines a specific place the task is to be performed
     - A due-date for the task
     - A completed date (the date a task was marked as done)
-    - A tream to which this teask is assigned.  If not assigned to a specific teram it's a "free floating" task.
-    - An assigned worker/field agent who is tasks with "completing" this task - if not assigned to a specific worker, yet is assgned to the term it's a team task that can be worked on by any team member (these distinctions show up in the various views of tasks).
+    - A team to which this task is assigned.  If not assigned to a specific team it's a "free floating" task.
+    - An assigned worker/field agent who is tasked with "completing" this task - if not assigned to a specific worker, yet is assgned to the team it's a "team task" that can be worked on by any team member (these distinctions show up in the various views of tasks).
 
 1. Ability to have workers receive new tasks that show up in their list of assigned tasks.
 
@@ -75,10 +76,7 @@ You create new users (and give them admin rights) on this screen.
 You can set the admin rights for existing users by clicking-through to the user's profile page and checking the "can administer this server" checkbox:
 ![ROS Dashboard User Listing](/Graphics/ROS-User-Detail.png)
 
-
 Once you have created or selected an admin user to use, you can proceed with compiling and running TeamWork.
-
-
 
 ## Compiling & Running the Application
 
@@ -100,13 +98,13 @@ Adding users can be done either via the Realm Dashboard, or by adding users usin
 <center> <img src="Graphics/TeamWork-signup.png" width="310" height="552" /></center><br>
 
 
-
 ## Navigating TeamWork
 The TeamWork app is a classic "tab bar" application - that is to say it supports a number of main views that are accessible at all times:
 
 <center> <img src="Graphics/TeamWork-TabBar.png" width="621" height="71.5"/><br/>Tab Bar</center> <br/>
 
 These are:
+
  * A Map view
  * A Tasks List - for Admins the defaut is a listing of al tasks in the system; a pull down menu (availabne to all users) lsts available teams.  Selecting a team makes it the default team view and will change what the map view displays.
  * A Teams List - Admins create/edtit teams as well as see all teasm; regualr users can see teams they are on.
@@ -150,13 +148,11 @@ Managers can create new tasks. These have a title, a detail description and can 
 
 ## Team list
 
-Teamwork supports the concept of Teams.  A team can have as many memeber as needed; people can also be on multiple teams.
+Teamwork supports the concept of Teams.  A team can have as many members as needed; people can also be on multiple teams.
 
 <center> <img src="Graphics/Teamwork-teams.png" width="310" height="552" /> <img src="Graphics/Teamwork-team-detail.png" width="310" height="552" /><br>Teams and Task/Team Assignment </br> </center>
 
-
-The team assignements are also refected in the tasks list where the team and/or team member assigned is shown in the summary:
-
+The team assignements are also reflected in the tasks list where the team and/or team member assigned is shown in the summary:
 
 <center><img src="Graphics/Teamwork-tasks-by-team.png" width="310" height="552" /></center>
 
@@ -176,6 +172,7 @@ TeamWork implements an idealized model that describes the the basic types needed
  <center> <img src="Graphics/Teamwork-Model-Multi-Realm.png"/><br/>TeamWork Models</center><br>
 
 The basic architecture describes 3 business entities and a role mechanism:
+
  - The *Person* model describes all users of the system; since Realm itself is acdgnitic on user meta data (it track only the autentication info - username and password) this class is here to alow the application to add more color to the user's profile (name, profile image), as well as map the role of the user to what they do inside the system (manager or worker).
 
  - The *Task* model is the crux of the system - it's the stuff that needs to be done. Tasks are, of course, done by people and usually have to be done at a specificed place and completed by a specified time. The properties of this model cover both the basics of describing a task and allows for the task to be tied to a given person who will be responsible for fulfilling it and the place where the work is to be done.
@@ -199,7 +196,6 @@ These simple models are composed into a multi-Realm system that looks like this:
 
 ## The Worker model/Realm Flow
 <center> <img src="Graphics/TeamWork-Multi-Realm-user-flow.png"/><br/>TeamWork Worker Models</center><br>
-
 
 
 ### Limitations
