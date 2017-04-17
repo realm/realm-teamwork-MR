@@ -180,6 +180,8 @@ The basic architecture describes 3 business entities and a role mechanism:
 
  - The *Task* model is the crux of the system - it's the stuff that needs to be done. Tasks are, of course, done by people and usually have to be done at a specificed place and completed by a specified time. The properties of this model cover both the basics of describing a task and allows for the task to be tied to a given person who will be responsible for fulfilling it and place.
 
+ The tasks _model_ is used twice - once for the master tasks list which is accessible to admin users where tasks are created and then assigned, and again in Team Task Lists which support copies of tasks visible and actionable by the teams to which specific tasks are assigned.
+
  - The *Location* model serves two purposes - it's objects will be linked to the location where a a tsask needs to be performed, but it also allows the locations of field workers to be recorded.   The logic of the app, proviing the user has granded access for location servies, will create a ingle location object per user and updated that whenever the user has the app open.   The end resut is that managers can use the map view to see both the locations of tasks pending completion, as well as the last-known locations of field workers.
 
 - The *Role* model implements an application specific system for deciding who can see what objects inside TeamWork. This is something application specific, so Realm does not impose any hardcoded defaults on how your app and your users data access should be managed.  Here in TeamWork _manager_ users are effectively "super users" who can see all tasks, other users and cna create or modify any object in the system, while "workers" are limited to seeing only their own  assigned tasks.
