@@ -178,7 +178,7 @@ TeamWork implements an idealized model that describes the the basic types needed
 The basic architecture describes 3 business entities and a role mechanism:
  - The *Person* model describes all users of the system; since Realm itself is acdgnitic on user meta data (it track only the autentication info - username and password) this class is here to alow the application to add more color to the user's profile (name, profile image), as well as map the role of the user to what they do inside the system (manager or worker).
 
- - The *Task* model is the crux of the system - it's the stuff that needs to be done. Tasks are, of course, done by people and usually have to be done at a specificed place and completed by a specified time. The properties of this model cover both the basics of describing a task and allows for the task to be tied to a given person who will be responsible for fulfilling it and place.
+ - The *Task* model is the crux of the system - it's the stuff that needs to be done. Tasks are, of course, done by people and usually have to be done at a specificed place and completed by a specified time. The properties of this model cover both the basics of describing a task and allows for the task to be tied to a given person who will be responsible for fulfilling it and the place where the work is to be done.
 
  The tasks _model_ is used twice - once for the master tasks list which is accessible to admin users where tasks are created and then assigned, and again in Team Task Lists which support copies of tasks visible and actionable by the teams to which specific tasks are assigned.
 
