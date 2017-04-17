@@ -202,11 +202,11 @@ These simple models are composed into a multi-Realm system that looks like this:
 
 ### Limitations
 
-TeamWork is (_clearly_) not designed to be a full-blown field services / logisitics management application; but it does show the power of the Realm Mobile platform for allowing application developers to focus on the core business problems in their application rather than the minutea of infrastructure and differences between mobile platform implementations.
+TeamWork is (_clearly_) not designed to be a full-blown field services / logisitics management application; but it does show the power of the Realm Mobile Platform to allow application developers to focus on the core business problems in their application, rather than the minutea of infrastructure and differences between mobile platform implementations.
 
-The fact that these three very limited models have the ability to express the key business drivers of such as user maagement, task creation assignement, taks/user location visualization, display of ontime/late sevices delivery, etc  shows that the Realm Mobile Platform can greatly accelerate the development of mobile apps while simultaneously reducing app complexity.  The alternative is developing not just the business logic of your app, but in fact all of the delivery mechanics of data sychronization, data integrity, conflict resoultion and so on right down to the hardware layer not just for your infrastructure but every mobile platform your app runs on.
+The fact that these three very limited models have the ability to express the key business drivers of such as user maagement, task creation assignement, taks/user location visualization, display of on-time/late sevices delivery, etc  shows that the Realm Mobile Platform can greatly accelerate the development of mobile apps while simultaneously reducing app complexity.  The alternative -- which is the status-quo today -- is developing not just the business logic of your app, but in fact all of the data delivery mechanics of data sychronization, data integrity, conflict resoultion and so on ...right down to the hardware layer not just for your infrastructure but every mobile platform your app runs on.
 
-Other isuses and limitations are describted in the GitHub Issues page for this repo.
+Other isuses and limitations are described in the GitHub Issues page for this repo.
 
  ## Contributing
 
