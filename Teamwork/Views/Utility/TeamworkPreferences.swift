@@ -27,5 +27,10 @@ class TeamworkPreferences: NSObject {
     class func selectedTeam() -> String? {
         return UserDefaults.standard.string(forKey: TeamWorkConstants.kSelectedTeamPrefsKey)
     }
+    
+    class func clearSelectedTeam()  {
+        return UserDefaults.standard.removeObject(forKey: TeamWorkConstants.kSelectedTeamPrefsKey)
+    }
 
+    
 } // of TeamworkPreferences

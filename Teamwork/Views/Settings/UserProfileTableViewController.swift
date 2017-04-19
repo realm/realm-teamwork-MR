@@ -154,7 +154,8 @@ class UserProfileViewController: FormViewController {
         // Logout button
         let OKAction = UIAlertAction(title: NSLocalizedString("Logout", comment: "logout"), style: .default) { (action:UIAlertAction!) in
             print("Logout button tapped");
-            
+            CLManagerShim.sharedInstance.stop()
+            TeamworkPreferences.clearSelectedTeam()
             SyncUser.current?.logOut()
             //Now we need to segue to the login view controller
             self.performSegue(withIdentifier: "segueToLogin", sender: self)

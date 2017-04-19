@@ -136,13 +136,14 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         self.restortEntries()
         
         // every time we show this view the user could have changed their default team view (in the Teams view),
-        // whihc is saved in UserDefaults, so we try to keep up by pointing to the right team here.  If there is 
+        // which is saved in UserDefaults, so we try to keep up by pointing to the right team here.  If there is
         // no preferred team, just look at the first one in the list.
         
         if let savedTeamId = TeamworkPreferences.selectedTeam()  {
             let theTeamName = Team.teamNameForIdentifier(id:savedTeamId)
-            let index = self.teamNameitems.index(of: theTeamName)
-            menuView.selectItem(index!)
+            if let index = self.teamNameitems.index(of: theTeamName) {
+                menuView.selectItem(index)
+            }
         } else {
             menuView.selectItem(0)
         }

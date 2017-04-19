@@ -71,6 +71,12 @@ class Task : Object {
     class func getTitleForTask(taskId:String, teamId: String?) -> String? {
         var rv: String?
         
+        // this is a little ugly but its a belt&suspenders thing in case the location mamager is still running
+        // after a user logs out.
+        if SyncUser.current == nil {
+            return ""
+        }
+        
         let currentUserId = SyncUser.current?.identity
         let commonRealm = try! Realm()
         let currentUser = commonRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", currentUserId!)).first
