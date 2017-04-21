@@ -71,50 +71,13 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         // BTNavigationDropdownMenu
         teamNameitems = (myPersonRecord?.teams.map({$0.name}))!     // Get the team names
         if isAdmin == true { teamNameitems.insert("All", at: 0) }  // And, prepend "All" for the special case of the admin user who can see the master task list
+        
+        // Instantiate the dropdown menu view
         menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: NSLocalizedString("Teams", comment: "Teams"), items: teamNameitems as [AnyObject])
         
-        // This is the closure that processes changes to the menu
-
-        self.navigationItem.titleView = menuView
-        
-        
-        
-        notificationToken = tasks?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
-            guard let tableView = self?.tableView else { return }
-            switch changes {
-            case .initial:
-                // Results are now populated and can be accessed without blocking the UI
-                tableView.reloadData()
-                break
-            case .update(_, let deletions, let insertions, let modifications):
-                // Query results have changed, so apply them to the UITableView
-                tableView.beginUpdates()
-                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
-                                     with: .automatic)
-                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
-                                     with: .automatic)
-                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
-                                     with: .automatic)
-                tableView.endUpdates()
-                
-                self?.grayTasksInViewOnCompletion(indexes: modifications)
-                
-                break
-            case .error(let error):
-                // An error occurred while opening the Realm file on the background worker thread
-                fatalError("\(error)")
-                break
-            }
-        }
-        
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // need
+        // This is the closure that processes changes to the dropdown menu
         menuView.didSelectItemAtIndexHandler = {[weak self] (indexPath: Int) -> () in
-            print("Did select item at index: \(indexPath)")
+            //print("Did select item at index: \(indexPath)")
             let teamName = self!.teamNameitems[indexPath]
             
             if teamName == "All" {
@@ -127,18 +90,29 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
                 self?.tasksRealm = Team.realmForTeamName(name: teamName)
                 self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
             }
-            print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm)), found \(self?.tasks?.count ?? 0) tasks\n\n")
+            print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm!)), found \(self?.tasks?.count ?? 0) tasks\n\n")
             self?.tableView.reloadData()
+            
+            self!.notificationToken != nil ? self!.notificationToken?.stop() : ()    // make sure we stop the old token
+            self!.notificationToken = self!.setupNotificationToken()                  // and now set it back up with the new tasks
         }
-        if let selectedRow = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedRow, animated: true)
-        }
-        self.restortEntries()
+        
+        // lastly, this sets the navitem to actually have the drop down as its title
+        self.navigationItem.titleView = menuView
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // every time we show this view the user could have changed their default team view (in the Teams view),
         // which is saved in UserDefaults, so we try to keep up by pointing to the right team here.  If there is
         // no preferred team, just look at the first one in the list.
         
+        // regardless, when the user selects an item, or we restore a previous selection selecting the menu item
+        // will cause the BTDropdowMenu to call the menu handler whihch will cause the tasks to be re-calulcated (and the 
+        // appropriate Realm to be opened)
         if let savedTeamId = TeamworkPreferences.selectedTeam()  {
             let theTeamName = Team.teamNameForIdentifier(id:savedTeamId)
             if let index = self.teamNameitems.index(of: theTeamName) {
@@ -147,6 +121,17 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         } else {
             menuView.selectItem(0)
         }
+        
+       
+        // turn off ay pre-existing menu selections
+        if let selectedRow = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedRow, animated: true)
+        }
+        
+        
+
+        self.restortEntries()
+        
         tableView.reloadData()
     }
     
@@ -290,6 +275,37 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         self.restortEntries()
     }
     
+    
+    func setupNotificationToken() -> NotificationToken? {
+        return tasks?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+            guard (self?.tableView) != nil else { return }
+            switch changes {
+            case .initial:
+                // Results are now populated and can be accessed without blocking the UI
+                self?.tableView.reloadData()
+                break
+            case .update(_, let deletions, let insertions, let modifications):
+                // Query results have changed, so apply them to the UITableView
+                self?.tableView.beginUpdates()
+                self?.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                self?.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .automatic)
+                self?.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                self?.tableView.endUpdates()
+                
+                self?.grayTasksInViewOnCompletion(indexes: modifications)
+                
+                break
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+                break
+            }
+        } // of notification handler
+
+    }
     
     // MARK: - Navigation
     

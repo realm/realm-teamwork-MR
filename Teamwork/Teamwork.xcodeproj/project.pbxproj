@@ -38,7 +38,6 @@
 		8B9FA3AE1DD550ED00FA29C3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FA3AD1DD550ED00FA29C3 /* PeopleViewController.swift */; };
 		8BAAB1941E1EDFFF00C28F11 /* SortOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAAB1931E1EDFFF00C28F11 /* SortOptionsTableViewController.swift */; };
 		8BDEF0E51E34569900E5EEE6 /* RKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEF0E41E34569900E5EEE6 /* RKLoginViewController.swift */; };
-		8BF511791DCAA4C60094E8D4 /* ViewEditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF511781DCAA4C60094E8D4 /* ViewEditTaskViewController.swift */; };
 		8BF7B8131DCB96DA00161109 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7B8121DCB96DA00161109 /* TasksTableViewController.swift */; };
 		8BF7B8151DCB976F00161109 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7B8141DCB976F00161109 /* TasksTableViewCell.swift */; };
 		F94FE2A71E2DD82600BDB35C /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94FE2A61E2DD82600BDB35C /* CustomCells.swift */; };
@@ -110,7 +109,6 @@
 		8BAAB1931E1EDFFF00C28F11 /* SortOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOptionsTableViewController.swift; sourceTree = "<group>"; };
 		8BD404541DDBAD96005E9C4B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8BDEF0E41E34569900E5EEE6 /* RKLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKLoginViewController.swift; sourceTree = "<group>"; };
-		8BF511781DCAA4C60094E8D4 /* ViewEditTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewEditTaskViewController.swift; path = Views/Tasks/ViewEditTaskViewController.swift; sourceTree = SOURCE_ROOT; };
 		8BF63B581DBE756600E649CB /* Teamwork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Teamwork.entitlements; sourceTree = "<group>"; };
 		8BF7B8121DCB96DA00161109 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		8BF7B8141DCB976F00161109 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 				8BF7B8141DCB976F00161109 /* TasksTableViewCell.swift */,
 				8BF7B8121DCB96DA00161109 /* TasksTableViewController.swift */,
 				F9C3DE471E2DD5F100154676 /* TaskViewController.swift */,
-				8BF511781DCAA4C60094E8D4 /* ViewEditTaskViewController.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -377,6 +374,7 @@
 				TargetAttributes = {
 					8B5CB3611DB2DF1F00319DB1 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4XL3X97RQ3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -555,7 +553,6 @@
 				8B5CB3661DB2DF1F00319DB1 /* AppDelegate.swift in Sources */,
 				8BDEF0E51E34569900E5EEE6 /* RKLoginViewController.swift in Sources */,
 				8B9FA3AC1DD3D32D00FA29C3 /* CLManagerShim.swift in Sources */,
-				8BF511791DCAA4C60094E8D4 /* ViewEditTaskViewController.swift in Sources */,
 				8B5028041E8AF5510014C62C /* TeamworkPreferences.swift in Sources */,
 				8BF7B8151DCB976F00161109 /* TasksTableViewCell.swift in Sources */,
 				8B4319B01E934493000EFFAB /* TaskHistory.swift in Sources */,
@@ -704,7 +701,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Teamwork/Teamwork.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4XL3X97RQ3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -726,7 +723,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Teamwork/Teamwork.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4XL3X97RQ3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
