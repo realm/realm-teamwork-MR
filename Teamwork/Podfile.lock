@@ -14,9 +14,9 @@ PODS:
   - RBQSafeRealmObject (1.1):
     - Realm (>= 0.99.1)
     - RealmUtilities (>= 0.2.1)
-  - Realm (2.5.1):
-    - Realm/Headers (= 2.5.1)
-  - Realm/Headers (2.5.1)
+  - Realm (2.6.2):
+    - Realm/Headers (= 2.6.2)
+  - Realm/Headers (2.6.2)
   - RealmLoginKit (0.0.12):
     - Realm
     - TORoundedTableView
@@ -24,8 +24,8 @@ PODS:
     - ABFRealmMapView (>= 2.1.3)
     - RBQSafeRealmObject
     - RealmSwift (>= 2.1.1)
-  - RealmSwift (2.5.1):
-    - Realm (= 2.5.1)
+  - RealmSwift (2.6.2):
+    - Realm (= 2.6.2)
   - RealmUtilities (0.4):
     - Realm (>= 0.95)
   - TORoundedTableView (0.0.3)
@@ -55,7 +55,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BTNavigationDropdownMenu:
-    :commit: 65f2b16186498f31985567fc484537301421bc1c
+    :commit: 27aa97e7c753750eee41234444a17e7c0c5ecd38
     :git: https://github.com/realm-demos/BTNavigationDropdownMenu
   PermissionScope:
     :commit: b2469e24bca52f14b3af6a19ac8d83abb0c29708
@@ -67,7 +67,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ABFRealmMapView: 52566666a6e3206631150da747d9a5e52750a468
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
-  BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
+  BTNavigationDropdownMenu: '093f3cbfad1572f2c222bdf8d17584d1e13380d4'
   Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
   ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
   ImageRow: 1e37db26f61a0c4ad3bc9a3a803c32d968782857
@@ -75,13 +75,13 @@ SPEC CHECKSUMS:
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   RBQSafeRealmObject: 128e6ece2acceeb7dea9d00b8fa40ba4c489c3fa
-  Realm: 32f86104d37c8521f864d4274050b38ba6190733
+  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   RealmLoginKit: f3a498de5e6ab60b361f8e4ca6d6736a8055628e
   RealmMapView: 78f56f8e8bbcd739832741ea53ef5cbfb674943c
-  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
   RealmUtilities: bd4d18141e62a6cdcfa1859f1f090a27ab282628
   TORoundedTableView: 4155565233135d81d6626a0c4ecfba27991cf2b1
 
 PODFILE CHECKSUM: e554f8266c234785758d00b09162055cbac063d0
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.0.beta.1
