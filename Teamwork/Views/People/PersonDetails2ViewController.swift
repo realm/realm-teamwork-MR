@@ -20,51 +20,46 @@ class PersonDetails2ViewController: FormViewController {
     var realm = try! Realm()
     var personId: String?
     var thePersonRecord: Person?
+    var currentPersonRecord: Person?
     var isAdmin = false
-    
+    var currentUserIsAdmin = false
     let myIdentity = SyncUser.current?.identity!
     let genericAvatarImage = UIImage(named: "Circled User Male_30")
     
     var token : NotificationToken?
     let dateFormatter = DateFormatter()
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let identityPredicate = NSPredicate(format: "id = %@", personId!)
-        let asigneePredicate = NSPredicate(format: "assignee.id = %@", personId!)
         
-        thePersonRecord = realm.objects(Person.self).filter(identityPredicate).first //get the person
-        isAdmin = (thePersonRecord!.role == Role.Admin || thePersonRecord!.role == Role.Manager) // are they an admin?
+        
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
+
+        //let asigneePredicate = NSPredicate(format: "assignee.id = %@", personId!)
         
-        // Lastly, set a notificaiton for any team changes:
-        //        token = thePersonRecord!.teams.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
-        //            guard let tableView = self?.tableView else { return }
-        //            switch changes {
-        //            case .initial:
-        //                // Results are now populated and can be accessed without blocking the UI
-        //                tableView.reloadData()
-        //                break
-        //            case .update(_, let deletions, let insertions, let modifications):
-        //                // Query results have changed, so apply them to the UITableView
-        //                tableView.beginUpdates()
-        //                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
-        //                                     with: .automatic)
-        //                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
-        //                                     with: .automatic)
-        //                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
-        //                                     with: .automatic)
-        //                tableView.endUpdates()
-        //                break
-        //            case .error(let error):
-        //                // An error occurred while opening the Realm file on the background worker thread
-        //                fatalError("\(error)")
-        //                break
-        //            }
-        //        }// of notification token
+        // get the status of the current user
+        currentPersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first
+        currentUserIsAdmin = (currentPersonRecord!.role == Role.Admin || currentPersonRecord!.role == Role.Manager) // are they an admin?
+
+    } // of viewDidLoad
+    
+    override func viewWillAppear(_ animated: Bool) {
+        form = createForm()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    // MARK:  Form
+    func createForm() -> Form {
+        // get the status of the targeted user
+        thePersonRecord = realm.objects(Person.self).filter( NSPredicate(format: "id = %@", self.personId!)).first
+        isAdmin = (thePersonRecord!.role == Role.Admin || thePersonRecord!.role == Role.Manager)
         
         // finally, the form itself
         var fullName = ""
@@ -74,12 +69,13 @@ class PersonDetails2ViewController: FormViewController {
             fullName = "\(thePersonRecord!.firstName) \(thePersonRecord!.lastName)"
         }
         
-        form +++ Section(){ section in
+
+        let form = Form()
+        
+            form +++ Section(){ section in
             section.header = {
                 var header = HeaderFooterView<UIView>(.callback({
-                    //let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
                     let view = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-                    //view.layer.cornerRadius = view.frame.size.width / 2
                     view.clipsToBounds = true
                     view.contentMode = .scaleAspectFit
                     view.backgroundColor = .white
@@ -142,27 +138,18 @@ class PersonDetails2ViewController: FormViewController {
         } // of team loop
         
         
-        // this is the last, botton row of the form; if they're an admin, add an "Edit User" button
-        if isAdmin == true {
+        // this is the last, botton row of the form; if they're an admin, and tjis record isn't their own record
+        // (they can go to the settings menu...) add an "Edit User" button
+        if currentUserIsAdmin == true && currentPersonRecord!.id != thePersonRecord!.id {
             form +++ Section()
                 <<< ButtonRow(){
                     $0.title = NSLocalizedString("Edit User", comment:"Edit User")
-            }
+                    }.onCellSelection({ (cell, row) in
+                        self.performSegue(withIdentifier: self.kPersonDetailToEditProfileSegue, sender: self)
+                    })
         }
-        
-        
-        
-    } // of viewDidLoad
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        return form
     }
-    
-    
     // MARK: Utilties
     func taskRowsForTeam(teamTasks: Results<Task>) -> Array<TextRow> {
         var rv = Array<TextRow>()
