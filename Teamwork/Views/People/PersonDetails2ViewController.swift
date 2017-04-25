@@ -12,10 +12,11 @@ import RealmSwift
 import Eureka
 import ImageRow
 
-let kPersonDetailToEditProfileSegue       = "personDetailToEditProfileSegue"
-let kShowTaskDetailSegue                  = "personDetailToShowTaskDetailSegue"
 
 class PersonDetails2ViewController: FormViewController {
+    let kPersonDetailToEditProfileSegue       = "personDetailToEditProfileSegue"
+    let kPersonTasksDetailToTaskDetail        = "personTasksDetailToTaskDetail"
+
     var realm = try! Realm()
     var personId: String?
     var thePersonRecord: Person?
@@ -26,6 +27,8 @@ class PersonDetails2ViewController: FormViewController {
     
     var token : NotificationToken?
     let dateFormatter = DateFormatter()
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +124,12 @@ class PersonDetails2ViewController: FormViewController {
                         let dueDateString = task.dueDate != nil ? dateFormatter.string(from: task.dueDate! as Date) : NSLocalizedString("TBD", comment: "due date not set")
                         let annotation = task.assignee == thePersonRecord!.id ? "👤 " : "👥 " // el cheapo way of indicating the task is assigned to this person
                         row.title = ("\(annotation)\(task.title) due: \(dueDateString)")
+                        row.tag = task.id
+                        row.disabled = true
+                        }.onCellSelection(){ cell, row in
+                            print("Tap in row \(String(describing: row.title))")
+                            let dict = ["teamId": task.team, "taskId": task.id]
+                            self.performSegue(withIdentifier: self.kPersonTasksDetailToTaskDetail, sender: dict)
                     }
                 }// of task row
             }
@@ -172,13 +181,21 @@ class PersonDetails2ViewController: FormViewController {
         }
         
         // @FIXME since this is no longer a table view but a Eureka form, we need a way to get the selected row
-        //if segue.identifier == kShowTaskDetailSegue {
-        //    let indexPath = tableview.indexPathForSelectedRow
-        //    self.navigationController?.setNavigationBarHidden(false, animated: false)
-        //    let vc = segue.destination as? TaskViewController
-        //    vc!.hidesBottomBarWhenPushed = true
-        //    vc!.taskId = self.tasks![indexPath!.row].id
-        //}
+        if segue.identifier == kPersonTasksDetailToTaskDetail {
+            let dict:Dictionary<String, Any> = sender as! Dictionary<String, Any>
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+            
+            let vc = segue.destination as! TaskViewController
+            //let indexPath = self.tableView?.indexPathForSelectedRow
+            //vc.taskId = tasks![indexPath!.row].id
+            //vc.teamId = tasks![indexPath!.row].team
+
+            vc.taskId = dict["taskId"] as? String
+            vc.teamId = dict["teamId"] as? String
+
+            vc.isAdmin = isAdmin
+            vc.hidesBottomBarWhenPushed = true
+        }
         
     }
     

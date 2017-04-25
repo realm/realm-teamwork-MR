@@ -24,6 +24,9 @@ import ImageRow
  dynamic var realmURL = ""
  */
 class TeamDetailViewController: FormViewController {
+    
+    let kTeamTaskListToTaskDetails = "teamTaskListToTaskDetails"
+
     var theTeamRecord: Team?
     var teamId : String?
     
@@ -167,14 +170,14 @@ class TeamDetailViewController: FormViewController {
         
         if let tasksRealm = theTeamRecord?.openTeamTaskRealm() {
             print("Opened \(tasksRealm.configuration.description)")
-            let tasks = tasksRealm.objects(Task.self).sorted(byKeyPath: "dueDate", ascending: true)
+            /* let */ tasks = tasksRealm.objects(Task.self).sorted(byKeyPath: "dueDate", ascending: true)
 
             form +++ Section(NSLocalizedString("Assigned Tasks", comment: "name of this section"))
-            if tasks.count > 0 {
+            if tasks!.count > 0 {
                 let df = DateFormatter()
                 df.dateStyle = .short
                 df.timeStyle = .none
-                for task in tasks {
+                for task in tasks! {
                     form.last!
                         <<< TextRow() {
                             var dateString = NSLocalizedString("No Due Date", comment: "No due date set")
@@ -182,6 +185,10 @@ class TeamDetailViewController: FormViewController {
                                 dateString = df.string(from: task.dueDate!)
                             }
                             $0.title = "\(task.title) due: \(dateString)"
+                            $0.disabled = true
+                            }.onCellSelection(){ cell, row in
+                                print("Tap in row \(String(describing: row.title))")
+                                self.performSegue(withIdentifier: self.kTeamTaskListToTaskDetails, sender: self)
                     }
                 }
             } else { // there are no tasks in this TeamTasksRealm. However...
@@ -336,5 +343,18 @@ class TeamDetailViewController: FormViewController {
             }
     }
 
+    
+    //MARK: Navigatiopmn
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kTeamTaskListToTaskDetails {
+            let indexPath = self.tableView?.indexPathForSelectedRow
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
 
+            let vc = segue.destination as! TaskViewController
+            vc.taskId = tasks![indexPath!.row].id
+            vc.teamId = tasks![indexPath!.row].team
+            vc.isAdmin = isAdmin
+            vc.hidesBottomBarWhenPushed = true
+        }
+    }
 } // of TeamDetaiulViewController
