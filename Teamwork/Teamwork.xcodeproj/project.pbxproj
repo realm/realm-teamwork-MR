@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4911575B46FD1DD3F9DEC6FD /* Pods_TeamworkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA3B3222CD533E8760011AD /* Pods_TeamworkUITests.framework */; };
 		8806B2F24B7886B78FBBF9D6 /* Pods_Teamwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868A4DBA58769BDB02410D11 /* Pods_Teamwork.framework */; };
+		8B0E24151EAEEF2300133476 /* Bundle+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0E24141EAEEF2300133476 /* Bundle+Utilities.swift */; };
 		8B4319A71E930333000EFFAB /* PersonDetails2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319A61E930333000EFFAB /* PersonDetails2ViewController.swift */; };
 		8B4319AD1E934493000EFFAB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319A81E934493000EFFAB /* Location.swift */; };
 		8B4319AE1E934493000EFFAB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4319A91E934493000EFFAB /* Person.swift */; };
@@ -75,6 +76,7 @@
 		392A56337E8B110D4D7DC98C /* Pods-Fieldwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fieldwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fieldwork/Pods-Fieldwork.release.xcconfig"; sourceTree = "<group>"; };
 		4B57690F1B0F7FB5782797B7 /* Pods-TeamworkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamworkUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamworkUITests/Pods-TeamworkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		868A4DBA58769BDB02410D11 /* Pods_Teamwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teamwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B0E24141EAEEF2300133476 /* Bundle+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Utilities.swift"; sourceTree = "<group>"; };
 		8B4319A61E930333000EFFAB /* PersonDetails2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDetails2ViewController.swift; path = Views/People/PersonDetails2ViewController.swift; sourceTree = SOURCE_ROOT; };
 		8B4319A81E934493000EFFAB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8B4319A91E934493000EFFAB /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		8B77AF621DB7F4A5004A2877 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B0E24141EAEEF2300133476 /* Bundle+Utilities.swift */,
 				8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */,
 				8B77AF641DB7F4A5004A2877 /* Image+Utilties.swift */,
 				8B77AF651DB7F4A5004A2877 /* String+Utilities.swift */,
@@ -331,6 +334,7 @@
 				8B77AF751DB86FDB004A2877 /* Embed Frameworks */,
 				061C8D10F88DDD59B19C30B6 /* [CP] Embed Pods Frameworks */,
 				7AAAAA5B9285C8F6CA583588 /* [CP] Copy Pods Resources */,
+				8B0E24131EAEEE3A00133476 /* Update Build Number/Date */,
 			);
 			buildRules = (
 			);
@@ -508,6 +512,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeamworkUITests/Pods-TeamworkUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8B0E24131EAEEE3A00133476 /* Update Build Number/Date */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update Build Number/Date";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "builddate=`date`\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nif [[ -n \"$builddate\" ]]; then\n# if BuildDateString doesn't exist, add it\n/usr/libexec/PlistBuddy -c \"Add :CFBuildDate date $builddate\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n# and if BuildDateString already existed, update it\n/usr/libexec/PlistBuddy -c \"Set :CFBuildDate $builddate\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi\n";
+		};
 		E4A710C69A7517F96DE5A71F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,6 +560,7 @@
 				8B4319A71E930333000EFFAB /* PersonDetails2ViewController.swift in Sources */,
 				8B5CB39C1DB3480800319DB1 /* TeamworkConstants.swift in Sources */,
 				8B77AF6C1DB81636004A2877 /* TextField+Utilities.swift in Sources */,
+				8B0E24151EAEEF2300133476 /* Bundle+Utilities.swift in Sources */,
 				F9C3DE481E2DD5F100154676 /* TaskViewController.swift in Sources */,
 				8BF7B8131DCB96DA00161109 /* TasksTableViewController.swift in Sources */,
 				8B620DC21E8447B100C161DF /* TeamDetailViewController.swift in Sources */,
