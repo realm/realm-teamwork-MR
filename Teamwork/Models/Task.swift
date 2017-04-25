@@ -112,6 +112,14 @@ class Task : Object {
         return rv
     }
     
+    func deleteTaskFromTeam() {
+        if self.team?.isEmpty == false {
+            if let targetTeam = Team.getTeamForID(id: self.team) {
+                targetTeam.removeTask(id:self.id)
+            }
+        }
+    }
+
     
     private static var stringFormatter: DateFormatter = {
         let formatter = DateFormatter()

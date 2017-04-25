@@ -179,6 +179,37 @@ class Location : Object {
         return nil
     }
 
+    
+    
+    class func getLocationForTaskID(id: String?) -> Location? {
+        guard id == nil else {
+            let commonRealm = try! Realm()
+            let identityPredicate = NSPredicate(format: "task = %@", id!)
+            return commonRealm.objects(Location.self).filter(identityPredicate).first //get the person
+        }
+        return nil
+    }
+    
+    
+    class func getLocationForLocationID(id: String?) -> Location? {
+        guard id == nil else {
+            let commonRealm = try! Realm()
+            let identityPredicate = NSPredicate(format: "id = %@", id!)
+            return commonRealm.objects(Location.self).filter(identityPredicate).first //get the person
+        }
+        return nil
+    }
+    
+    
+    class func deleteTask(taskId: String) {
+        let commonRealm = try! Realm()
+        if let locationRecordForTask = commonRealm.objects(Location.self).filter(NSPredicate(format: "task = %@", taskId)).first {
+            try! commonRealm.write {
+                commonRealm.delete(locationRecordForTask)
+            }
+        }
+    }
+
 } // of Location
 
 

@@ -114,7 +114,7 @@ class TaskViewController: FormViewController {
                 let team = commonRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", self.task!.team!)).first // get the teams task realm
                 team!.addOrUpdateTask(taskId:self.task!.id)
             }
-
+            
             _ = navigationController?.popViewController(animated: true)
         }
     }
@@ -157,10 +157,10 @@ class TaskViewController: FormViewController {
             
             tasksRealm?.add(self.task!, update: true)
             
-           let commonRealm = try! Realm()
+            let commonRealm = try! Realm()
             try! commonRealm.write {
                 tmpLocation!.task = self.task?.id
-            }            
+            }
         } // of write to masterTaskList
         
         
@@ -365,7 +365,6 @@ class TaskViewController: FormViewController {
                         }
                     })
                 <<< PushRow<String>() { row in
-
                     row.title = NSLocalizedString("Field Agent", comment: "Field Agent")
                     row.selectorTitle = NSLocalizedString("Select Field Agent", comment:"select field agent")
                     row.tag = "AsigneeSelector"
@@ -396,21 +395,17 @@ class TaskViewController: FormViewController {
                             }
                         }
                     }).cellUpdate { cell, row in
-                            let TeamSelectorRow = self.form.rowBy(tag: "TeamSelector")
-
-                            // this gets called if the Team is changed in edit mode. First reset the row:
-                            // ...and then force the selector to contain either ALL users (if no team is selected)
-                            // or the members of the selected team.
-                            if TeamSelectorRow?.baseValue == nil { // set up so we select from *any* users
-                                row.options = self.realm.objects(Person.self).map{$0.id}
-                            } else {  // set up so we only pick memebers ofd the selected team
-                                
-                                // @FIXME - this is a bug: there are times when
-                                let team = self.realm.objects(Team.self).filter(NSPredicate(format: "id = %@", TeamSelectorRow?.baseValue as! String)).first // was task!.team!
-                                row.options = (team?.members.map{$0.id})!
-                            }
-                        
-                      
+                        let TeamSelectorRow = self.form.rowBy(tag: "TeamSelector")
+                        // this gets called if the Team is changed in edit mode. First reset the row:
+                        // ...and then force the selector to contain either ALL users (if no team is selected)
+                        // or the members of the selected team.
+                        if TeamSelectorRow?.baseValue == nil { // set up so we select from *any* users
+                            row.options = self.realm.objects(Person.self).map{$0.id}
+                        } else {  // set up so we only pick memebers ofd the selected team
+                            // @FIXME - this is a bug: there are times when
+                            let team = self.realm.objects(Team.self).filter(NSPredicate(format: "id = %@", TeamSelectorRow?.baseValue as! String)).first // was task!.team!
+                            row.options = (team?.members.map{$0.id})!
+                        }
                 }
                 
                 <<< DateRow(){ [weak self] row in
@@ -452,8 +447,61 @@ class TaskViewController: FormViewController {
                             }
                         }
                     })
+        if isAdmin == true && editable == true {
+            form +++ Section(NSLocalizedString("Actions", comment: "Actions"))
+                <<< ButtonRow(){ row in
+                    row.title = NSLocalizedString("Delete This Task...", comment: "")
+                    }.onCellSelection({ (sectionName, rowName) in
+                        self.confirmDeleteTask(sender: self)
+                    }).cellSetup() {cell, row in
+                        cell.backgroundColor = UIColor.red
+                        cell.tintColor = UIColor.black
+            }
+        }
+        
         return form
     }
+    
+    
+    // MARK: Task deletion
+    
+    func confirmDeleteTask(sender: Any) {
+        let alert = UIAlertController(title: NSLocalizedString("Delete Task?", comment: "Delete Task"),
+                                      message: NSLocalizedString("The task will be permanently deleted from all groups and cannot be undone", comment: "effects warning"),
+                                      preferredStyle: .alert)
+        
+        // Delete button
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete Task", comment: "delete"), style: .default) { (action:UIAlertAction!) in
+            print("delete task button tapped");
+            self.performDeleteTask()
+            //Now we need to segue back to the tasks view controller
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(deleteAction)
+        
+        // Cancel button
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
+            print("Cancel button tapped");
+        }
+        alert.addAction(cancelAction)
+        
+        // Present Dialog message
+        present(alert, animated: true, completion:nil)
+        
+    }
+    
+    
+    // MARK:  the actual delete
+    func performDeleteTask() {
+        self.task?.deleteTaskFromTeam()                 // first make sure we delete it from any team(s)
+        Location.deleteTask(taskId: self.task!.id)      // and its location record, if any
+        
+        try! self.tasksRealm?.write {                   // (Note: this is be the masterTasksRealm
+            self.tasksRealm?.delete(self.task!)         // and finally delete the master task record itself.
+        }
+    }
+    
+    
     
     // MARK: - Misc
     
