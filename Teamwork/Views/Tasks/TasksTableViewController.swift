@@ -95,24 +95,12 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             
             self!.notificationToken != nil ? self!.notificationToken?.stop() : ()    // make sure we stop the old token
             self!.notificationToken = self!.setupNotificationToken()                  // and now set it back up with the new tasks
-        }
+        } // of enuView selection handler
         
         // lastly, this sets the navitem to actually have the drop down as its title
         self.navigationItem.titleView = menuView
-        
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // every time we show this view the user could have changed their default team view (in the Teams view),
-        // which is saved in UserDefaults, so we try to keep up by pointing to the right team here.  If there is
-        // no preferred team, just look at the first one in the list.
-        
-        // regardless, when the user selects an item, or we restore a previous selection selecting the menu item
-        // will cause the BTDropdowMenu to call the menu handler whihch will cause the tasks to be re-calulcated (and the 
-        // appropriate Realm to be opened)
+
+        // recover saved menu choice of team
         if let savedTeamId = TeamworkPreferences.selectedTeam()  {
             let theTeamName = Team.teamNameForIdentifier(id:savedTeamId)
             if let index = self.teamNameitems.index(of: theTeamName) {
@@ -121,17 +109,19 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         } else {
             menuView.selectItem(0)
         }
+
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-       
         // turn off ay pre-existing menu selections
         if let selectedRow = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedRow, animated: true)
         }
-        
-        
-
+    
         self.restortEntries()
-        
         tableView.reloadData()
     }
     
