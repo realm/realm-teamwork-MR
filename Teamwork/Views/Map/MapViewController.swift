@@ -59,8 +59,14 @@ class MapViewController: UIViewController {
     var defaultTeam: String?
     var clShim : CLManagerShim?
     
+    var adminTabViews = [UIViewController]()
+    var workerTabViews = [UIViewController]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.saveTabBarViews()
+        
         mapView.delegate = self
         
         teamLabel.isHidden = true // only if a specific team is selected is this visible
@@ -93,10 +99,12 @@ class MapViewController: UIViewController {
             clShim!.identity = currentUser?.identity!
         }
         
-        if myPersonRecord?.role == Role.Worker {
-            removePeopleTab()
+        if (myPersonRecord?.role == Role.Worker) || SyncUser.current?.isAdmin == false {
+            //removePeopleTab()
+            self.tabBarController?.viewControllers = self.workerTabViews
         } else {
             print("need to replace the people bar")
+            self.tabBarController?.viewControllers = self.adminTabViews
         }
     }
     
@@ -257,7 +265,6 @@ class MapViewController: UIViewController {
                showTasksPredicate = NSPredicate(format: "person = nil AND task != nil")
             
             
-            
             // The version below checks to see if the user has a team selected and the predicate should then only return
             // tasks that are assigned to that team.
             //
@@ -290,6 +297,24 @@ class MapViewController: UIViewController {
     // UITabBar elements should be in a dictionary and be nameable, but.... ¯\_(ツ)_/¯
     
     // @FIXME need to make this a utility method somethere that takes a tabbar and an index....
+    func saveTabBarViews() {
+        self.adminTabViews = self.tabBarController!.viewControllers! // the get all tabs
+        
+        
+        self.workerTabViews = self.tabBarController!.viewControllers! // they don't get the people tab
+        let indexToRemove = TeamWorkConstants.peopleViewTag // Index 0 is the map, index 1 is tasks, index 2 is people
+        
+        if self.workerTabViews.count < 4 {
+            return
+        }
+        
+        if indexToRemove < self.workerTabViews.count {
+            self.workerTabViews.remove(at: indexToRemove)
+        }
+
+    }
+    
+    
     func removePeopleTab() {
         if let tabBarController = self.tabBarController {
             var viewControllers = tabBarController.viewControllers
