@@ -44,7 +44,8 @@ class Task : Object {
         return "id"
     }
     
-
+    // MARK: Task Creation
+    
     convenience init(taskTitle:String?, taskDescription: String?, assignee: Person?)  {
         self.init()
         // a minimal task has to have a title and a description; an assignee is optional as
@@ -57,7 +58,19 @@ class Task : Object {
         }
     }
     
+
+    class func createNewTask() -> Task {
+        var newTask: Task?
+        let tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
+        try! tasksRealm.write {
+            newTask = tasksRealm.create(Task.self, value: ["id": NSUUID().uuidString, "creationDate": Date()])
+            tasksRealm.add(newTask!, update:true)
+        }
+        return newTask!
+    }
+
     
+    // MARK: MIsc useful utilties
     class func openTasksForUser(userID:String) -> [Task]? {
         // NB: a bad userID is just and instance of no tasks for that user... so no an error
         return nil
@@ -67,6 +80,9 @@ class Task : Object {
     class func stringFromDate(date: Date) -> String {
         return self.stringFormatter.string(from: date as Date)
     }
+    
+    
+
     
     class func getTitleForTask(taskId:String, teamId: String?) -> String? {
         var rv: String?

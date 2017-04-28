@@ -130,10 +130,12 @@ class UserProfileViewController: FormViewController {
         
         form  +++ Section(NSLocalizedString("About \(String(describing: Bundle.main.displayName!))...", comment: "App info"))
             <<< TextRow(){ row in
+                row.disabled = true
                 row.title = NSLocalizedString("Version/Build", comment: "version")
                 row.value = "\(String(describing: Bundle.main.vesionNumber!)) (\(String(describing: Bundle.main.buildNumber!)))"
             }
             <<< TextRow(){ row in
+                row.disabled = true
                 row.title = NSLocalizedString("Build Date", comment: "build date")
                 row.value = DateFormatter.localizedString(from: Bundle.main.buildDate!, dateStyle: .medium, timeStyle: .short)
         }

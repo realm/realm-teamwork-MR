@@ -39,8 +39,8 @@ class Location : Object {
     dynamic var lastUpdatedDate: Date?
     dynamic var lookupStatus = -1          // Resolvable to an NSError relating to Reverse Geo Lookup
     dynamic var haveLatLon = false
-    dynamic var latitude  = -999.0
-    dynamic var longitude = -999.0
+    dynamic var latitude  = 37.787958
+    dynamic var longitude = -122.407498
     dynamic var elevation = 0.0
     dynamic var streetAddress : String?
     dynamic var city : String?
@@ -157,7 +157,16 @@ class Location : Object {
         }
     }
 
-    
+    class func  createNewLocationWithTask(taskId: String, coordinate:CLLocationCoordinate2D) -> Location {
+        var newLocation: Location?
+        let commonRealm = try! Realm()
+        try! commonRealm.write {
+            newLocation = commonRealm.create(Location.self, value: ["id": NSUUID().uuidString, "task": taskId, "creationDate": Date(), "haveLatLon": true, "latitude": coordinate.latitude, "longitude": coordinate.longitude])
+            commonRealm.add(newLocation!, update: true)
+        }
+        return newLocation!
+    }
+
     class func updateTaskLocation(taskId: String, teamId: String?) {
         let commonRealm = try! Realm()
         if let locationRecordForTask = commonRealm.objects(Location.self).filter(NSPredicate(format: "task = %@", taskId)).first {
