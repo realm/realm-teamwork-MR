@@ -85,7 +85,7 @@ enum CLManagerShimStatus{
         // ID here. we see if it waas set by one of the other controllers who use us.
         if realmIdentity != nil && self.identity == nil {
             self.identity = realmIdentity!
-            print("CLShim: Setting identity to \(self.identity)")
+            print("CLShim: Setting identity to \(String(describing: self.identity))")
         } else {
             print("CLShim: Starting - but identity was nil")
         }
@@ -142,9 +142,9 @@ enum CLManagerShimStatus{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastLocation = locations.last?.coordinate
         
-        let location2d = CLLocation(latitude: lastLocation!.latitude, longitude: lastLocation!.longitude)
         lastUpdatedAt = Date()
         
+        //let location2d = CLLocation(latitude: lastLocation!.latitude, longitude: lastLocation!.longitude)
         // the ability to reverse the the lat/lon is a nice to have - however if you use it too much,
         // Apple will cut off your access with an exponential back-off until you are finally actually blocked.
         //
@@ -221,7 +221,7 @@ enum CLManagerShimStatus{
              */
             if (placemarks?.count)! > 0 {
                 let pm = placemarks?[0]
-                rv = "\(pm?.locality!), \(pm?.administrativeArea!) "
+                rv = "\(String(describing: pm?.locality!)), \(String(describing: pm?.administrativeArea!)) "
             }
         })
         return rv

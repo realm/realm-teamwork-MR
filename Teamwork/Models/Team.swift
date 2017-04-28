@@ -195,17 +195,17 @@ class Team : Object  {
         } // of check for update to an existing TeamTaskRealm task
         else { //nope - looks like were adding this record to this
             try! teamTaskRealm?.write {
-                let taskValues: Dictionary<String, Any> = ["id": taskToCopy!.id,
+                let taskValues = ["id": taskToCopy!.id,
                                  "creationDate": taskToCopy!.creationDate,
-                                 "dueDate": taskToCopy!.dueDate,
-                                 "completionDate": taskToCopy!.completionDate,
+                                 "dueDate": taskToCopy!.dueDate as Any,
+                                 "completionDate": taskToCopy!.completionDate as Any,
                                  "title": taskToCopy!.title,
                                  "taskDescription": taskToCopy!.taskDescription,
                                  "isCompleted": taskToCopy!.isCompleted,
-                                 "assignee": taskToCopy!.assignee,
-                                 "signedOffBy": taskToCopy!.signedOffBy,
-                                 "location": taskToCopy!.location,
-                                 "team": taskToCopy!.team]
+                                 "assignee": taskToCopy!.assignee as Any,
+                                 "signedOffBy": taskToCopy!.signedOffBy as Any,
+                                 "location": taskToCopy!.location as Any,
+                                 "team": taskToCopy!.team as Any] as [String : Any]
                 
                 let taskRecordInTeamTasksRealm = teamTaskRealm?.create(Task.self, value: taskValues)
                 teamTaskRealm?.add(taskRecordInTeamTasksRealm!, update: true)
