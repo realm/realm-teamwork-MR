@@ -21,6 +21,7 @@ pod 'JVFloatLabeledTextField'
 pod 'ImagePicker'
 pod 'ActionSheetPicker-3.0'
 pod 'ISHHoverBar'
+pod 'ReachabilitySwift', '~> 3'
 
 #pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
 
