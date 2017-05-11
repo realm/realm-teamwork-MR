@@ -21,8 +21,11 @@ import UIKit
 import MapKit
 import Eureka
 import RealmSwift
+import ReachabilitySwift
+
 
 class TaskViewController: FormViewController {
+    var reachability: Reachability?
     
     var newTaskMode = false
     var editMode = false
@@ -251,6 +254,7 @@ class TaskViewController: FormViewController {
                 <<< LocationRow(){ [weak self] row in
                     editable == false ? row.disabled = true : ()
                     row.title = "Select On Map"
+                    row.tag = "SelectOnMap"
                     if let coordinate = self?.taskCoordinate(task: task) {
                         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
                         row.value = location
@@ -273,7 +277,6 @@ class TaskViewController: FormViewController {
                         }
                     })
                 }
-                
                 
                 +++ Section("Address")
                 <<< TextRow("Street") { row in
@@ -623,5 +626,44 @@ class TaskViewController: FormViewController {
                 print("No CLPlacemarks received from geocoder")
             }
         })
+    }
+
+    func ensableMapSelection() {
+        let mapSelectorRow = form.rowBy(tag: "SelectOnMap")
+        mapSelectorRow?.disabled = false
+    }
+
+    func disableMapSelection() {
+        let mapSelectorRow = form.rowBy(tag: "SelectOnMap")
+        mapSelectorRow?.disabled = true
+        mapSelectorRow?.title = "Map Offline: Please enter full address..."
+    }
+    
+    func startReachabilityCHecking() {
+        self.reachability = Reachability()!
+        let mapSelectorRow = form.rowBy(tag: "SelectOnMap")
+
+        reachability?.whenReachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                mapSelectorRow?.disabled = false
+                self.tableView?.reloadData()
+                //if reachability.isReachableViaWiFi() {
+                //    print("Reachable via WiFi")
+                //} else {
+                //    print("Reachable via Cellular")
+                //}
+            }
+        }
+        reachability?.whenUnreachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                mapSelectorRow?.disabled = true
+                //print("Not reachable")
+            }
+        }
+
     }
 }
