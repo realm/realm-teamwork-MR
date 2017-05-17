@@ -21,10 +21,12 @@ pod 'JVFloatLabeledTextField'
 pod 'ImagePicker'
 pod 'ActionSheetPicker-3.0'
 pod 'ISHHoverBar'
+pod 'ReachabilitySwift'
+
 
 #pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
-
-# this has the code from commit: https://github.com/PhamBaTho/BTNavigationDropdownMenu/pull/108/commits/0139a13bb1fe4130d5f035da709dcc70f8052177 from the origial source
+# We forked this to support manual selection of menu items - which includes foxes/competion of #code from
+# commit: https://github.com/PhamBaTho/BTNavigationDropdownMenu/pull/108/commits/0139a13bb1fe4130d5f035da709dcc70f8052177 
 pod 'BTNavigationDropdownMenu', :git => 'https://github.com/realm-demos/BTNavigationDropdownMenu', :branch => 'swift-3.0'
 
 

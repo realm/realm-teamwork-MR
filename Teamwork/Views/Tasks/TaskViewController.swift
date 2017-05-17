@@ -21,6 +21,8 @@ import UIKit
 import MapKit
 import Eureka
 import RealmSwift
+import ReachabilitySwift
+
 
 class TaskViewController: FormViewController {
     
@@ -37,6 +39,8 @@ class TaskViewController: FormViewController {
     var location: Location? // this is the location referred to by this task - we may need to update it
     var tasksRealm: Realm? // In a muti-Realm world, the tasks are managed in a separate Realm
     let commonRealm = try! Realm()
+
+    let reachability = Reachability()!
 
     //let realm = try! Realm()
     var teams: Results<Team>?

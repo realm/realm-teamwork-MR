@@ -24,6 +24,7 @@ import RealmSwift
 import RealmMapView
 import PermissionScope
 import ISHHoverBar
+import ReachabilitySwift
 
 class MapViewController: UIViewController {
     enum MapDisplayModes {
@@ -51,7 +52,8 @@ class MapViewController: UIViewController {
     var tasksBarButton: UIBarButtonItem!
     
     let pscope = PermissionScope()
-    
+    let reachability = Reachability()!
+
     var mapDisplayMode = MapDisplayModes.tasks
     var showTasksPredicate:NSPredicate?
     var showPeoplePredicate: NSPredicate?
