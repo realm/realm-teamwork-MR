@@ -14,21 +14,25 @@ PODS:
   - RBQSafeRealmObject (1.1):
     - Realm (>= 0.99.1)
     - RealmUtilities (>= 0.2.1)
-  - Realm (2.6.2):
-    - Realm/Headers (= 2.6.2)
-  - Realm/Headers (2.6.2)
-  - RealmLoginKit (0.0.12):
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmLoginKit (0.1.1):
+    - Realm
+    - RealmLoginKit/Core (= 0.1.1)
+    - TORoundedTableView
+  - RealmLoginKit/Core (0.1.1):
     - Realm
     - TORoundedTableView
   - RealmMapView (2.1.3):
     - ABFRealmMapView (>= 2.1.3)
     - RBQSafeRealmObject
     - RealmSwift (>= 2.1.1)
-  - RealmSwift (2.6.2):
-    - Realm (= 2.6.2)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
   - RealmUtilities (0.4):
     - Realm (>= 0.95)
-  - TORoundedTableView (0.0.3)
+  - TORoundedTableView (0.1.2)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
@@ -75,12 +79,12 @@ SPEC CHECKSUMS:
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   RBQSafeRealmObject: 128e6ece2acceeb7dea9d00b8fa40ba4c489c3fa
-  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
-  RealmLoginKit: f3a498de5e6ab60b361f8e4ca6d6736a8055628e
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmLoginKit: c904029a7640daae5e83c9ca37d662cfa678f969
   RealmMapView: 78f56f8e8bbcd739832741ea53ef5cbfb674943c
-  RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   RealmUtilities: bd4d18141e62a6cdcfa1859f1f090a27ab282628
-  TORoundedTableView: 4155565233135d81d6626a0c4ecfba27991cf2b1
+  TORoundedTableView: 31217495487ec13b9a2750b36e3e49223b0f23cb
 
 PODFILE CHECKSUM: e554f8266c234785758d00b09162055cbac063d0
 
