@@ -60,7 +60,7 @@ class TaskViewController: FormViewController {
         // See if this is a new task, or viewing/editing an exsisting one:
         if newTaskMode {
             // new one!
-            // first, set up the UI to the rigt new task configuration...
+            // first, set up the UI to the right new task configuration...
             let leftButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .plain, target: self, action: #selector(BackCancelPressed) as Selector?)
             let rightButton = UIBarButtonItem(title: NSLocalizedString("Save", comment: "Save"), style: .plain, target: self, action: #selector(SavePressed))
             self.navigationItem.leftBarButtonItem = leftButton
@@ -229,30 +229,35 @@ class TaskViewController: FormViewController {
                 }
                 
                 +++ Section("Work Location") { section in
-                    section.header = {
-                        var header = HeaderFooterView<UIView>(.callback({
-                            let view = MKMapView()
-                            view.isScrollEnabled = false
-                            view.isRotateEnabled = false
-                            view.isZoomEnabled = false
-                            let coordinate = CLLocationCoordinate2D(latitude: self.location!.latitude, longitude: self.location!.longitude)  //self.taskCoordinate(task: task)
-                            view.region = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.01, 0.01))
-                            
-                            if let task = self.task {
-                                let pin = MKPointAnnotation()
-                                pin.coordinate = coordinate
-                                pin.title = task.title
-                                view.removeAnnotations(view.annotations)
-                                view.addAnnotation(pin)
-                            }
-                            return view
-                        }))
-                        header.height = { 250 }
-                        return header
-                    }()
+                    if self.reachability.isReachable == true {
+                        section.header = {
+                            var header = HeaderFooterView<UIView>(.callback({
+                                let view = MKMapView()
+                                view.isScrollEnabled = false
+                                view.isRotateEnabled = false
+                                view.isZoomEnabled = false
+                                let coordinate = CLLocationCoordinate2D(latitude: self.location!.latitude, longitude: self.location!.longitude)  //self.taskCoordinate(task: task)
+                                view.region = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.01, 0.01))
+                                
+                                if let task = self.task {
+                                    let pin = MKPointAnnotation()
+                                    pin.coordinate = coordinate
+                                    pin.title = task.title
+                                    view.removeAnnotations(view.annotations)
+                                    view.addAnnotation(pin)
+                                }
+                                return view
+                            }))
+                            header.height = { 250 }
+                            return header
+                        }()
+                        
+                    }
                     section.tag = "Work Location"
-                }
-                <<< LocationRow(){ [weak self] row in
+        }
+        
+        if self.reachability.isReachable == true {
+                form +++ LocationRow(){ [weak self] row in
                     editable == false ? row.disabled = true : ()
                     row.title = "Select On Map"
                     if let coordinate = self?.taskCoordinate(task: task) {
@@ -277,9 +282,16 @@ class TaskViewController: FormViewController {
                         }
                     })
                 }
+        } else {
+            // show a special row stating in off line mode addressed need to be manually entered
+            form +++ TextRow() { row in
+                row.disabled = true
+                row.title = NSLocalizedString("Offline: Enter address manually", comment: "")
+            }
+        }
+        
                 
-                
-                +++ Section("Address")
+               form +++ Section("Address")
                 <<< TextRow("Street") { row in
                     editable == false ? row.disabled = true : ()
                     row.tag = "Street"
@@ -627,5 +639,40 @@ class TaskViewController: FormViewController {
                 print("No CLPlacemarks received from geocoder")
             }
         })
+    }
+    
+    
+    // MARK: Reachability handling
+    func installReachabilityHandlers() {
+        reachability.whenReachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                // force task view/editor to redraw
+            }
+        }
+        reachability.whenUnreachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                print("Not reachable")
+                // force task view/editor to redraw, disabling the map view
+                // this might need to be conditional  in that if the address is in fact already set the we can show the map
+                // ... if we are in new mode or in edit mode we definately have to disable the map
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+    }
+    
+    func removeReachabilityHandlers() {
+        self.reachability.stopNotifier()
+        self.reachability.whenReachable = nil
+        self.reachability.whenUnreachable = nil
     }
 }
