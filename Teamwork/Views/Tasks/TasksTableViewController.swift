@@ -97,8 +97,6 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm!)), found \(self?.tasks?.count ?? 0) tasks\n\n")
             self?.tableView.reloadData()
             
-            self!.notificationToken != nil ? self!.notificationToken?.stop() : ()    // make sure we stop the old token
-            self!.notificationToken = self!.setupNotificationToken()                  // and now set it back up with the new tasks
         } // of enuView selection handler
         
         // lastly, this sets the navitem to actually have the drop down as its title
@@ -119,8 +117,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // turn off ay pre-existing menu selections
+        self.notificationToken = self.setupNotificationToken()
+
+        // turn off any pre-existing menu selections
         if let selectedRow = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedRow, animated: true)
         }
@@ -180,11 +179,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath as IndexPath) as! TasksTableViewCell
         
         let task = tasks![indexPath.row]
-        let taskLocation = Location.getLocationForID(id: task.location!)
+        let taskLocation = Location.getLocationForID(id: task.location)
         if taskLocation != nil && taskLocation?.haveLatLon == true {
-            
-            
-            
             
             if let existingImage = taskLocation?.mapImage {
                 cell.mapEnclosure.image =  UIImage(data:existingImage as Data)
@@ -197,6 +193,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
                 }
             }
         }
+        
         
         cell.titleLabel.text = task.title
         cell.descriptionLabel.text = task.taskDescription
@@ -238,6 +235,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     
     func setupNotificationToken() -> NotificationToken? {
+        
+        self.notificationToken != nil ? self.notificationToken?.stop() : ()    // make sure we stop any old token
+
         return tasks?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
             guard (self?.tableView) != nil else { return }
             switch changes {
@@ -281,6 +281,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             vc!.teamId = tasks![indexPath!.row].team
             vc!.isAdmin = isAdmin
             vc!.hidesBottomBarWhenPushed = true
+            
+            self.notificationToken?.stop()
         }
         
         if segue.identifier == kNewTaskSegue {
@@ -290,6 +292,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             vc!.newTaskMode = true
             vc?.navigationItem.title = NSLocalizedString("New Task", comment: "New Task")
             vc!.hidesBottomBarWhenPushed = true
+
+            self.notificationToken?.stop()
         }
         
         if segue.identifier == kSortingPopoverSegue {
