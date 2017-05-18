@@ -338,6 +338,7 @@
 				061C8D10F88DDD59B19C30B6 /* [CP] Embed Pods Frameworks */,
 				7AAAAA5B9285C8F6CA583588 /* [CP] Copy Pods Resources */,
 				8B0E24131EAEEE3A00133476 /* Update Build Number/Date */,
+				8B80EF451ECE69BD0026CD0F /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -528,6 +529,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "builddate=`date`\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nif [[ -n \"$builddate\" ]]; then\n# if BuildDateString doesn't exist, add it\n/usr/libexec/PlistBuddy -c \"Add :CFBuildDate date $builddate\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n# and if BuildDateString already existed, update it\n/usr/libexec/PlistBuddy -c \"Set :CFBuildDate $builddate\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi\n";
+		};
+		8B80EF451ECE69BD0026CD0F /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3554900a64cd0622a8340bf2f1c3d9b63476a7e9 86e278827bd2f026c4e24498f117ccdcf9cbfd68d9aa8719f13a4b5ac325927c";
 		};
 		E4A710C69A7517F96DE5A71F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
