@@ -19,6 +19,8 @@
 
 import UIKit
 import MapKit
+
+import Alertift
 import Eureka
 import RealmSwift
 import ReachabilitySwift
@@ -53,7 +55,16 @@ class TaskViewController: FormViewController {
             tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
         } else {
             if let savedTeamId = TeamworkPreferences.selectedTeam() {
-                tasksRealm = Team.realmForTeamID(teamId: savedTeamId)
+                var error: Error?
+                // @TODO needs to check to see if this returns an actual realm -- the underlying realForteamID call
+                // uses async open to we migh need a spinner here too
+                (tasksRealm, error) = Team.realmForTeamID(teamId: savedTeamId)
+                if tasksRealm == nil {
+                    let errorContent = error != nil ? error?.localizedDescription : "Error opening "
+                    Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
+                        .action(.cancel("Cancel"))
+                        .show()
+                }
             }
         }
         

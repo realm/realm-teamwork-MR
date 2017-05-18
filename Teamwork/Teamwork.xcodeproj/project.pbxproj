@@ -34,6 +34,7 @@
 		8B77AF6A1DB7F4A5004A2877 /* View+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF661DB7F4A5004A2877 /* View+Utilities.swift */; };
 		8B77AF6C1DB81636004A2877 /* TextField+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */; };
 		8B77AF7A1DB98BB5004A2877 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B77AF791DB98BB5004A2877 /* UIKit.framework */; };
+		8B80EF441ECE62900026CD0F /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80EF431ECE62900026CD0F /* RealmUtils.swift */; };
 		8B983AA81E328D63004E78AC /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B983AA71E328D63004E78AC /* UserProfileTableViewController.swift */; };
 		8B9FA3AC1DD3D32D00FA29C3 /* CLManagerShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FA3AB1DD3D32D00FA29C3 /* CLManagerShim.swift */; };
 		8B9FA3AE1DD550ED00FA29C3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FA3AD1DD550ED00FA29C3 /* PeopleViewController.swift */; };
@@ -105,6 +106,7 @@
 		8B77AF661DB7F4A5004A2877 /* View+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Utilities.swift"; sourceTree = "<group>"; };
 		8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Utilities.swift"; sourceTree = "<group>"; };
 		8B77AF791DB98BB5004A2877 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8B80EF431ECE62900026CD0F /* RealmUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUtils.swift; sourceTree = "<group>"; };
 		8B983AA71E328D63004E78AC /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileTableViewController.swift; path = Views/Settings/UserProfileTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		8B9FA3AB1DD3D32D00FA29C3 /* CLManagerShim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLManagerShim.swift; sourceTree = "<group>"; };
 		8B9FA3AD1DD550ED00FA29C3 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				8B5CB3701DB2DF1F00319DB1 /* LaunchScreen.storyboard */,
 				8B5CB3731DB2DF1F00319DB1 /* Info.plist */,
 				8B5CB36E1DB2DF1F00319DB1 /* Assets.xcassets */,
+				8B80EF431ECE62900026CD0F /* RealmUtils.swift */,
 			);
 			path = Teamwork;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				8B4319AD1E934493000EFFAB /* Location.swift in Sources */,
 				8B620DC41E849C5700C161DF /* TeamTableViewController.swift in Sources */,
 				8B77AF691DB7F4A5004A2877 /* String+Utilities.swift in Sources */,
+				8B80EF441ECE62900026CD0F /* RealmUtils.swift in Sources */,
 				8B4319AE1E934493000EFFAB /* Person.swift in Sources */,
 				8B777E2C1E0313D700762355 /* PersonTableViewCell.swift in Sources */,
 				8B5CB3661DB2DF1F00319DB1 /* AppDelegate.swift in Sources */,

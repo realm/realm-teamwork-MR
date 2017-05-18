@@ -20,12 +20,12 @@
 import UIKit
 import RealmSwift
 import RealmLoginKit
-
+import Alertift
 
 class RKLoginViewController: UIViewController {
     let loginToTabViewSegue         = "loginToTabViewSegue"
     var token: NotificationToken!
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .darkGray
@@ -48,26 +48,37 @@ class RKLoginViewController: UIViewController {
             // Set a closure that will be called on successful login
             loginViewController.loginSuccessfulHandler = { user in
                 DispatchQueue.main.async {
-                    self.completeLogin(user: user) //  connects the realm and looks up or creates a profile
-                    loginViewController.dismiss(animated: true, completion: nil)
-                    self.performSegue(withIdentifier: self.loginToTabViewSegue, sender: nil)
-                }
+                    Realm.asyncOpen(configuration: TeamWorkConstants.commonRealmConfig) { realm, error in
+                        if let realm = realm {
+                            self.completeLogin(user: user) //  connects the realm and looks up or creates a profile
+                            loginViewController.dismiss(animated: true, completion: nil)
+                            self.performSegue(withIdentifier: self.loginToTabViewSegue, sender: nil)
+                        } else if let error = error {
+                            Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("Code: \(error) - please try later", comment: "Code: \(error) - please try later"))
+                                .action(.cancel("Cancel"))
+                                .show()
+                        } // of error case
+                    } // of asyncOpen()
+                } // of DispatchAsync
             }
-
-            present(loginViewController, animated: true, completion: nil)
+            self.present(loginViewController, animated: true, completion: nil)
         }
+        
     }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-
-     // MARK: - Navigation
+    
+    // MARK: - Navigation
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == loginToTabViewSegue {
-
+            
         }
     }
     
@@ -93,7 +104,7 @@ class RKLoginViewController: UIViewController {
         
         // @TODO:  As soon as permission_read API is available and only set it needed (and if we're an admin/manager)
         //if myPersonRecord!.role == .Manager || myPersonRecord!.role == .Admin {
-            setupDefaultGlobalPermissions(user: user)
+        setupDefaultGlobalPermissions(user: user)
         //}
         // the CoreLocation shim will periodically get the users location, if they allowed the acces;
         // setting the identity property tells it which person record to update
@@ -118,7 +129,7 @@ class RKLoginViewController: UIViewController {
             mayWrite: true,    // Grant write access
             mayManage: false)  // Grant management access
         
-          token = managementRealm.objects(SyncPermissionChange.self).filter("id = %@", permissionChange.id).addNotificationBlock { notification in
+        token = managementRealm.objects(SyncPermissionChange.self).filter("id = %@", permissionChange.id).addNotificationBlock { notification in
             if case .update(let changes, _, _, _) = notification, let change = changes.first {
                 // Object Server processed the permission change operation
                 switch change.status {
@@ -141,8 +152,8 @@ class RKLoginViewController: UIViewController {
             managementRealm.add(permissionChange)
         }
     }
-
-// MARK: Admin Settinng
+    
+    // MARK: Admin Settinng
     func setAdminPriv() {
         let rlm = try! Realm()
         var myPersonRecord = rlm.objects(Person.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first
@@ -152,7 +163,7 @@ class RKLoginViewController: UIViewController {
         }
     }
     
-// MARK: Realm Connection Utils
+    // MARK: Realm Connection Utils
     func configureDefaultRealm() -> Bool {
         if let user = SyncUser.current {
             setDefaultRealmConfigurationWithUser(user: user)
@@ -165,7 +176,7 @@ class RKLoginViewController: UIViewController {
     func setDefaultRealmConfigurationWithUser(user: SyncUser) {
         Realm.Configuration.defaultConfiguration = TeamWorkConstants.commonRealmConfig
     }
-
+    
     // MARK: Error Handlers
     
     func setupErrorHandler(){
@@ -183,5 +194,5 @@ class RKLoginViewController: UIViewController {
             }
         }
     }
-
+    
 }

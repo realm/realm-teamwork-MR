@@ -254,12 +254,12 @@ class Team : Object  {
     }
     
     // given a teamId return the Realm
-    class func realmForTeamID(teamId:String) -> Realm? {
-        var theTaskRealm: Realm? = nil
+    class func realmForTeamID(teamId:String) -> (Realm?, Error?) {
         let teamURL = URL(string: "\(TeamWorkConstants.TeamTasksPartialPath)\(teamId)")
         let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL!))
-        theTaskRealm = try! Realm(configuration: config)
-        return theTaskRealm
+        let (theTaskRealm, returnedError) = openRealmAsync(config: config)
+
+        return (theTaskRealm, returnedError)
     }
     
     // given a team name, return the realm

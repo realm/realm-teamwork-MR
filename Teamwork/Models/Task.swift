@@ -19,6 +19,7 @@
 import Foundation
 import CoreLocation
 
+import Alertift
 import Realm
 import RealmSwift
 
@@ -111,12 +112,21 @@ class Task : Object {
                 }
             } else {
                 if teamIds!.contains(teamId!) {
-                    let taskTeamRealm = Team.realmForTeamID(teamId: teamId!)
-                    if let theTask = taskTeamRealm?.objects(Task.self).filter(NSPredicate(format: "id = %@", taskId)).first {
-                        rv = theTask.title
+                    // try to open the realm - realmForTeamID does this with AsyncOpen, so its possible it could fail if the 
+                    // realm isn;t aready sync'd
+                    let (taskTeamRealm, error) = Team.realmForTeamID(teamId: teamId!)
+                    if  taskTeamRealm != nil {
+                        if let theTask = taskTeamRealm?.objects(Task.self).filter(NSPredicate(format: "id = %@", taskId)).first {
+                            rv = theTask.title
+                        } else {
+                            let teamName = Team.teamNameForIdentifier(id: teamId!)
+                            rv = "can't get title for task \(taskId) in team \(teamName)"
+                        }
                     } else {
-                        let teamName = Team.teamNameForIdentifier(id: teamId!)
-                        rv = "can't get title for task \(taskId) in team \(teamName)"
+                        let errorContent = error != nil ? error?.localizedDescription : "Error opening "
+                        Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
+                            .action(.cancel("Cancel"))
+                            .show()
                     }
                 } else {
                     // whoa! we were asked for info on a tesk in a team this used isn't part of

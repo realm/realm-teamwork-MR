@@ -3,6 +3,7 @@ PODS:
     - RBQSafeRealmObject
     - Realm (>= 0.98)
   - ActionSheetPicker-3.0 (2.2.0)
+  - Alertift (1.3)
   - BTNavigationDropdownMenu (0.4.1)
   - Eureka (2.0.1)
   - ImagePicker (2.1.1)
@@ -37,6 +38,7 @@ PODS:
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - Alertift (~> 1.0)
   - BTNavigationDropdownMenu (from `https://github.com/realm-demos/BTNavigationDropdownMenu`, branch `swift-3.0`)
   - Eureka (~> 2.0.0-beta.1)
   - ImagePicker
@@ -73,6 +75,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ABFRealmMapView: 52566666a6e3206631150da747d9a5e52750a468
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  Alertift: e9a2d1e31af55f8f44d4153d84fdf0f4657bad24
   BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
   Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
   ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
@@ -89,6 +92,6 @@ SPEC CHECKSUMS:
   RealmUtilities: bd4d18141e62a6cdcfa1859f1f090a27ab282628
   TORoundedTableView: 31217495487ec13b9a2750b36e3e49223b0f23cb
 
-PODFILE CHECKSUM: a04503a4a7f446efca596b6d07b711da1889fbc5
+PODFILE CHECKSUM: 9bdc17de89a105a90b4e4bc6e67b2af37738a064
 
 COCOAPODS: 1.2.0
