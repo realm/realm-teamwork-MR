@@ -183,12 +183,13 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         if taskLocation != nil && taskLocation?.haveLatLon == true {
             
             if let existingImage = taskLocation?.mapImage {
-                cell.mapEnclosure.image =  UIImage(data:existingImage as Data)
+                cell.mapEnclosure.image =   UIImage(data:existingImage as Data)
             } else {
-                
                 if reachability.isReachable == true {
+                    // this will get a new map snapshot if it;s missing, and we're online
+                    // of course if several people do this at the same time the last writer wins.
                     self.makeSnapshot(cell: cell, taskLocation: taskLocation)
-                } else {
+                } else { // else throw in a place holder.
                     self.placeHolderForMapImage(cell: cell)
                 }
             }
@@ -420,7 +421,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
 
     
     func placeHolderForMapImage(cell: TasksTableViewCell) {
-        // need some clever placeholder image here... 
+        // need some clever placeholder image here...
+        cell.mapEnclosure.image = UIImage(named: "Map-Location_32")
     }
 }
 
