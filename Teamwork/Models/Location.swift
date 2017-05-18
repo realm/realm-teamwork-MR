@@ -49,7 +49,7 @@ class Location : Object {
     dynamic var postalCode : String?
     dynamic var title : String?
     dynamic var subtitle : String?
-
+    dynamic var mapImage: Data?
     dynamic var person : Person?
     dynamic var task : String?      // Note - here in the multi-Realm version of Teamwork we have to use the primary key (read: id) of
                                     // Task objects in order to keep these references since we cannot create cross-Realm object references
@@ -219,6 +219,15 @@ class Location : Object {
         }
     }
 
+    
+     func UpdateSavedMapImage(image:UIImage?) {
+        if let image = image {
+            let commonRealm = try! Realm()
+            try! commonRealm.write {
+                self.mapImage = UIImagePNGRepresentation(image) as Data?
+            }
+        }
+    }
 } // of Location
 
 

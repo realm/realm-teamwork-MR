@@ -23,6 +23,7 @@ import MapKit
 import UIKit
 import UserNotifications
 import BTNavigationDropdownMenu
+import ReachabilitySwift
 
 import RealmSwift
 
@@ -38,7 +39,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     var notificationToken: NotificationToken? = nil
     
     // this will cache the map image snapshots so we're not constantly recreating iamges
-    let mapCache = NSCache<NSString, UIImage>()
+    //let mapCache = NSCache<NSString, UIImage>()
+    
+    
     let center = UNUserNotificationCenter.current()
     
     let myIdentity = SyncUser.current?.identity!
@@ -50,7 +53,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     var sortProperty = "dueDate"
     var sortAscending = true
     var df = DateFormatter()
-    
+    let reachability = Reachability()!
+
     // Dropdown menu
     var teamNameitems = [String]()
     
@@ -93,8 +97,6 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm!)), found \(self?.tasks?.count ?? 0) tasks\n\n")
             self?.tableView.reloadData()
             
-            self!.notificationToken != nil ? self!.notificationToken?.stop() : ()    // make sure we stop the old token
-            self!.notificationToken = self!.setupNotificationToken()                  // and now set it back up with the new tasks
         } // of enuView selection handler
         
         // lastly, this sets the navitem to actually have the drop down as its title
@@ -115,8 +117,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // turn off ay pre-existing menu selections
+        self.notificationToken = self.setupNotificationToken()
+
+        // turn off any pre-existing menu selections
         if let selectedRow = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedRow, animated: true)
         }
@@ -176,56 +179,22 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath as IndexPath) as! TasksTableViewCell
         
         let task = tasks![indexPath.row]
-        let taskLocation = Location.getLocationForID(id: task.location!)
+        let taskLocation = Location.getLocationForID(id: task.location)
         if taskLocation != nil && taskLocation?.haveLatLon == true {
             
-            
-            let center = CLLocationCoordinate2D(latitude: taskLocation!.latitude, longitude: taskLocation!.longitude)
-            let latLongString = self.latLongString(coordinate: center)
-            
-            if let existingImage = mapCache.object(forKey: latLongString as NSString) {
-                cell.mapEnclosure.image = (existingImage) // The only thing in this cache is images
+            if let existingImage = taskLocation?.mapImage {
+                cell.mapEnclosure.image =   UIImage(data:existingImage as Data)
             } else {
-                let options = MKMapSnapshotOptions()
-                options.region = MKCoordinateRegionMake(center, MKCoordinateSpanMake(0.01, 0.01))
-                options.size = cell.mapEnclosure.frame.size
-                options.scale = UIScreen.main.scale
-                options.mapType = .hybrid
-                
-                let snapshotter = MKMapSnapshotter(options: options)
-                cell.activityIndicator.startAnimating()
-                
-                snapshotter.start(with: DispatchQueue.global(), completionHandler: { [weak self] (snapshot, error) in
-                    if error == nil {
-                        DispatchQueue.main.async {
-                            //if we're here we had no cached image: set the cell, then save the image
-                            /* Annotation Drawing */
-                            let image = snapshot?.image
-                            let pin = MKPinAnnotationView(annotation: nil, reuseIdentifier: "")
-                            let pinImage = pin.image
-                            UIGraphicsBeginImageContextWithOptions(image!.size, true, image!.scale)
-                            image?.draw(at: CGPoint(x: 0, y: 0))
-                            var point = snapshot?.point(for: center)
-                            let pinCenterOffset = pin.centerOffset
-                            point!.x -= pin.bounds.size.width / 2.0
-                            point!.y -= pin.bounds.size.height / 2.0
-                            point!.x += pinCenterOffset.x
-                            point!.y += pinCenterOffset.y
-                            pinImage?.draw(at: CGPoint(x: image!.size.width/2, y: image!.size.height/2))
-                            let finalImage = UIGraphicsGetImageFromCurrentImageContext()
-                            UIGraphicsEndImageContext()
-                            /* end of Annotation*/
-                            
-                            cell.activityIndicator.stopAnimating()
-                            cell.mapEnclosure.image = finalImage        // was: snapshot?.image
-                            
-                            // Save the snapshot
-                            self?.mapCache.setObject(finalImage!, forKey: latLongString as NSString)  // was:  snaphsot?.image
-                        }
-                    }
-                })
+                if reachability.isReachable == true {
+                    // this will get a new map snapshot if it;s missing, and we're online
+                    // of course if several people do this at the same time the last writer wins.
+                    self.makeSnapshot(cell: cell, taskLocation: taskLocation)
+                } else { // else throw in a place holder.
+                    self.placeHolderForMapImage(cell: cell)
+                }
             }
         }
+        
         
         cell.titleLabel.text = task.title
         cell.descriptionLabel.text = task.taskDescription
@@ -267,6 +236,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     
     func setupNotificationToken() -> NotificationToken? {
+        
+        self.notificationToken != nil ? self.notificationToken?.stop() : ()    // make sure we stop any old token
+
         return tasks?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
             guard (self?.tableView) != nil else { return }
             switch changes {
@@ -310,6 +282,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             vc!.teamId = tasks![indexPath!.row].team
             vc!.isAdmin = isAdmin
             vc!.hidesBottomBarWhenPushed = true
+            
+            self.notificationToken?.stop()
         }
         
         if segue.identifier == kNewTaskSegue {
@@ -319,6 +293,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             vc!.newTaskMode = true
             vc?.navigationItem.title = NSLocalizedString("New Task", comment: "New Task")
             vc!.hidesBottomBarWhenPushed = true
+
+            self.notificationToken?.stop()
         }
         
         if segue.identifier == kSortingPopoverSegue {
@@ -399,6 +375,54 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         self.navigationItem.leftBarButtonItem?.title = NSLocalizedString("by \(self.sortProperty)", comment: "'Sorted by' interpolation with user selection of sorting Title")
         tasks = self.tasks?.sorted(byKeyPath: self.sortProperty, ascending: self.sortAscending ? true : false)
         tableView.reloadData()
+    }
+
+    
+    // MARK: Saving map snaphots
+    func makeSnapshot(cell: TasksTableViewCell, taskLocation: Location?) {
+        let center = CLLocationCoordinate2D(latitude: taskLocation!.latitude, longitude: taskLocation!.longitude)
+        let options = MKMapSnapshotOptions()
+        options.region = MKCoordinateRegionMake(center, MKCoordinateSpanMake(0.01, 0.01))
+        options.size = cell.mapEnclosure.frame.size
+        options.scale = UIScreen.main.scale
+        options.mapType = .hybrid
+        
+        let snapshotter = MKMapSnapshotter(options: options)
+        cell.activityIndicator.startAnimating()
+        
+        snapshotter.start(with: DispatchQueue.global(), completionHandler: { [weak self] (snapshot, error) in
+            if error == nil {
+                DispatchQueue.main.async {
+                    //if we're here we had no cached image: set the cell, then save the image
+                    /* Annotation Drawing */
+                    let image = snapshot?.image
+                    let pin = MKPinAnnotationView(annotation: nil, reuseIdentifier: "")
+                    let pinImage = pin.image
+                    UIGraphicsBeginImageContextWithOptions(image!.size, true, image!.scale)
+                    image?.draw(at: CGPoint(x: 0, y: 0))
+                    var point = snapshot?.point(for: center)
+                    let pinCenterOffset = pin.centerOffset
+                    point!.x -= pin.bounds.size.width / 2.0
+                    point!.y -= pin.bounds.size.height / 2.0
+                    point!.x += pinCenterOffset.x
+                    point!.y += pinCenterOffset.y
+                    pinImage?.draw(at: CGPoint(x: image!.size.width/2, y: image!.size.height/2))
+                    let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+                    UIGraphicsEndImageContext()
+                    /* end of Annotation*/
+                    
+                    cell.activityIndicator.stopAnimating()
+                    cell.mapEnclosure.image = finalImage
+                    taskLocation?.UpdateSavedMapImage(image:finalImage) // and save it...
+                }
+            }
+        })
+    }
+
+    
+    func placeHolderForMapImage(cell: TasksTableViewCell) {
+        // need some clever placeholder image here...
+        cell.mapEnclosure.image = UIImage(named: "Map-Location_32")
     }
 }
 
