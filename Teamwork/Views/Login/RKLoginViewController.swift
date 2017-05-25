@@ -44,7 +44,7 @@ class RKLoginViewController: UIViewController {
             // show the RealmLoginKit controller
             let loginViewController = LoginViewController(style: .lightOpaque)
             loginViewController.serverURL = TeamWorkConstants.syncHost
-            
+            loginViewController.isServerURLFieldHidden = true
             // Set a closure that will be called on successful login
             loginViewController.loginSuccessfulHandler = { user in
                 DispatchQueue.main.async {
