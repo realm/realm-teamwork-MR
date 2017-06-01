@@ -171,7 +171,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     }
     
     override  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.0
+        return 225.0
     }
     
     
@@ -206,14 +206,13 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         }
         assignee != nil ? (cell.assigneeLabel.text = assignee!.fullName().isEmpty ? "\(teamName)(no name) \(assignee!.id)" : "\(teamName)\(assignee!.fullName())") : (cell.assigneeLabel.text = NSLocalizedString("\(teamName)(unassigned)", comment: "Not yet aassigned"))
         
-        //task.assignee != nil ? (cell.assigneeLabel.text = task.assignee!.fullName().isEmpty ? "(no name) \(task.assignee!.id)" : "\(task.assignee!.fullName())") : (cell.assigneeLabel.text = NSLocalizedString("(unassigned)", comment: "Not yet aassigned"))
         
         
         if task.completionDate !=  nil {
             cell.completionDateLabel.text = NSLocalizedString("Complete:", comment: "completion date") + df.string(from:task.completionDate!)
         } else {
             if task.dueDate != nil {
-                cell.completionDateLabel.text = " - "
+                cell.completionDateLabel.text = ""
             } else {
                 cell.completionDateLabel.text = ""
             }

@@ -284,7 +284,9 @@ class TaskViewController: FormViewController {
                             }
                             
                             // Reverse geocode
-                            self?.reverseGeocodeFor(coordinate: location.coordinate)
+                            if self?.reverseGeocodeFor(coordinate: location.coordinate) == true {
+                                self?.location?.lookupStatus = 0
+                            }
                         }
                     })
                 }
@@ -294,24 +296,20 @@ class TaskViewController: FormViewController {
                 <<< TextRow("Street") { row in
                     editable == false ? row.disabled = true : ()
                     row.tag = "Street"
-                    if let location = Location.getLocationForID(id: task!.id) {
-                        row.value = location.streetAddress
-                    }
                     }.cellSetup { cell, row in
                         row.title = "Street"
                         cell.textField.placeholder = row.tag
+                        row.value = self.location?.streetAddress ?? row.tag
                     }.onCellHighlightChanged({ (cell, row) in
                         self.attemptForwardGeocode()
                     })
                 <<< TextRow("City") { row in
                     editable == false ? row.disabled = true : ()
                     row.tag = "City"
-                    if let location = Location.getLocationForID(id: task!.id) {
-                        row.value = location.city
-                    }
                     }.cellSetup { cell, row in
                         row.title = "City"
                         cell.textField.placeholder = row.tag
+                        row.value = self.location?.city ?? row.tag
                     }.onCellHighlightChanged({ (cell, row) in
                         self.attemptForwardGeocode()
                     })
@@ -319,9 +317,8 @@ class TaskViewController: FormViewController {
                     row.title = row.tag
                     row.options = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]
                     
-                    if let location = Location.getLocationForID(id: task!.id) {
-                        row.value = location.stateProvince
-                    }
+                        row.value = self.location?.stateProvince ?? row.tag
+                
                     if editable == false {
                         row.disabled = true
                     }
@@ -334,9 +331,10 @@ class TaskViewController: FormViewController {
                     row.tag = "Zip"
                     row.title = NSLocalizedString("Zip Code", comment:"select postal code")
                     
-                    if let location = Location.getLocationForID(id: task!.id) {
-                        row.value = location.postalCode
-                    }
+                    }.cellSetup { cell, row in
+
+                        row.value = self.location?.postalCode ?? row.tag
+                        
                     }.onCellHighlightChanged({ (cell, row) in
                         self.attemptForwardGeocode()
                     })
@@ -531,6 +529,7 @@ class TaskViewController: FormViewController {
     // MARK: - Misc
     
     func attemptForwardGeocode() {
+        
         let streetRow = form.rowBy(tag: "Street") as? TextRow
         let cityRow = form.rowBy(tag: "City") as? TextRow
         let stateRow = form.rowBy(tag: "State") as? PickerInlineRow<String>
@@ -617,26 +616,29 @@ class TaskViewController: FormViewController {
         cityRow?.updateCell()
         stateRow?.updateCell()
         zipRow?.updateCell()
+        
     }
     
     // And (vice-versa): given a lat/lon, try to get the street address
-    func reverseGeocodeFor(coordinate: CLLocationCoordinate2D){
+    func reverseGeocodeFor(coordinate: CLLocationCoordinate2D) -> Bool {
+        var rv = false
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: { [weak self] (placemarks, error) -> Void in
             
             if error != nil {
                 print("Reverse geocoder failed with error " + error!.localizedDescription)
-                return
             }
             
             if placemarks!.count > 0 {
                 let pm: CLPlacemark = placemarks![0]
                 self?.updateTask(placemark: pm)
                 self?.updateAddressFields(placemark: pm)
+                rv = true
             }
             else {
                 print("No CLPlacemarks received from geocoder")
             }
         })
+        return rv
     }
 }
