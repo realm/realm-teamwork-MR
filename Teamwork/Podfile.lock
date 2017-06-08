@@ -44,7 +44,7 @@ DEPENDENCIES:
   - Alertift (~> 1.0)
   - BTNavigationDropdownMenu (from `https://github.com/realm-demos/BTNavigationDropdownMenu`, branch `swift-3.0`)
   - Crashlytics
-  - Eureka (~> 2.0.0-beta.1)
+  - Eureka
   - Fabric
   - ImagePicker
   - ImageRow (~> 1.0)
@@ -99,6 +99,6 @@ SPEC CHECKSUMS:
   RealmUtilities: bd4d18141e62a6cdcfa1859f1f090a27ab282628
   TORoundedTableView: 31217495487ec13b9a2750b36e3e49223b0f23cb
 
-PODFILE CHECKSUM: e25c657bbec903e1aa75840b9bde07916042faec
+PODFILE CHECKSUM: 16871dc1d3ee4f3587038dc1ea2deef0e6cb1922
 
 COCOAPODS: 1.2.0

@@ -14,7 +14,7 @@ pod 'Realm'
 pod 'RealmMapView', :git => 'https://github.com/bigfish24/ABFRealmMapView.git'
 pod 'RealmLoginKit'
 
-pod 'Eureka', '~> 2.0.0-beta.1'
+pod 'Eureka'
 pod 'ImageRow', '~> 1.0'
 pod 'PermissionScope', :git => 'https://github.com/nickoneill/PermissionScope.git'
 pod 'JVFloatLabeledTextField'

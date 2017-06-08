@@ -109,7 +109,13 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
                 menuView.selectItem(index)
             }
         } else {
-            menuView.selectItem(0)
+            // NB: Admin users will always have "all" (a pseudo team that represents alll tasks) 
+            //     even if they have no tream membership. It is possible for non-admin users to 
+            //     not have any teams. If this is true they literally have no entries in this 
+            //     menu... so don't try to select one.
+            if teamNameitems.count > 0 {
+                menuView.selectItem(0)
+            }
         }
 
     }
