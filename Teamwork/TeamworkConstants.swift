@@ -40,11 +40,17 @@ enum TeamRealmStatus: Int {
 }
 
 
+
+func commonRealmConfig(user: SyncUser) -> Realm.Configuration  {
+    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.commonRealmURL), objectTypes: [Location.self, Person.self, Team.self])
+    return config
+}
+
 struct TeamWorkConstants {
     static let appID = Bundle.main.bundleIdentifier!
     
     // @TODO: Needs to point to either a local host or give directions to user on how to set up RMP Pro Edition
-    static let syncHost                 = "127.0.0.1"// "192.241.218.72" //"127.0.0.1"
+    static let syncHost                 = "192.241.218.72"        //"104.131.145.124"  //"127.0.0.1"// "192.241.218.72" //"127.0.0.1"
     static let ApplicationName          = "TeamworkMR"
     static let syncRealmPath            = "teamwork"
     static let kSelectedTeamPrefsKey    = "TeamworkSelectedTeam"
@@ -62,8 +68,12 @@ struct TeamWorkConstants {
     
     // This is the master list of People, Teams and Locations - Opened by everyone
     static let commonRealmURL = URL(string: "realm://\(syncHost):9080/\(ApplicationName)-CommonRealm")!
-    static let commonRealmConfig = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: commonRealmURL),
-                                                        objectTypes: [Location.self, Person.self, Team.self])
+//    static let commonRealmConfig = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: commonRealmURL),
+//                                                        objectTypes: [Location.self, Person.self, Team.self])
+    
+    
+
+
     
     // This is the master list of Tasks - only opened by admins/managers
     static let managerRealmURL = URL(string: "realm://\(syncHost):9080/\(ApplicationName)-ManagerRealm")!

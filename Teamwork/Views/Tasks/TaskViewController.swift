@@ -41,71 +41,117 @@ class TaskViewController: FormViewController {
     var location: Location? // this is the location referred to by this task - we may need to update it
     var tasksRealm: Realm? // In a muti-Realm world, the tasks are managed in a separate Realm
     let commonRealm = try! Realm()
-
+    var taskRealmConfig:  Realm.Configuration?
     let reachability = Reachability()!
 
-    //let realm = try! Realm()
     var teams: Results<Team>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         teams = self.commonRealm.objects(Team.self).sorted(byKeyPath: "name", ascending:true)
         
+        // get the right realm config depenidn  on who the user is...
         if isAdmin {
-            tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
+            taskRealmConfig = TeamWorkConstants.managerRealmsConfig
         } else {
             if let savedTeamId = TeamworkPreferences.selectedTeam() {
-                var error: Error?
-                // @TODO needs to check to see if this returns an actual realm -- the underlying realForteamID call
-                // uses async open to we migh need a spinner here too
-                (tasksRealm, error) = Team.realmForTeamID(teamId: savedTeamId)
-                if tasksRealm == nil {
+                taskRealmConfig = Team.realmConfigForTeamID(savedTeamId)
+            }
+        }
+        
+        // Now, as long as we have a Realm config, try to open it asynchronously...
+        if taskRealmConfig != nil {
+            openRealmAsync(config: self.taskRealmConfig!, completionHandler: { (realm, error) in
+                if let realm = realm {  // opened the realm
+                    self.setupFormAfterOpen(realm:realm)
+                } else { // an error occurred
                     let errorContent = error != nil ? error?.localizedDescription : "Error opening "
                     Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
                         .action(.cancel("Cancel"))
                         .show()
-                }
-            }
-        }
-        
-        // See if this is a new task, or viewing/editing an exsisting one:
-        if newTaskMode {
-            // new one!
-            // first, set up the UI to the rigt new task configuration...
-            let leftButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .plain, target: self, action: #selector(BackCancelPressed) as Selector?)
-            let rightButton = UIBarButtonItem(title: NSLocalizedString("Save", comment: "Save"), style: .plain, target: self, action: #selector(SavePressed))
-            self.navigationItem.leftBarButtonItem = leftButton
-            self.navigationItem.rightBarButtonItem = rightButton
+                } // of ese
+                
+            }) // of AsyncOpen
             
-            // now create the actual new task:  This is a three-step process .. make a new task, then a new location, and then  tied the location into the task
-            var newCoord: CLLocationCoordinate2D?
-            task = Task.createNewTask()
+        } //of test for a valid config
+    } // of viewDidLoad
+    
+         func setupFormAfterOpen(realm: Realm?) {
+            self.tasksRealm = realm
             
-            if let deviceCoord = CLManagerShim.sharedInstance.lastLocation { // get the device coordinat, if possible
-                newCoord = deviceCoord
-            } else {// just make something up...
-                newCoord = CLLocationCoordinate2D(latitude: 37.787958, longitude: -122.407498) // center of Union Square in SF.
-            }
-            
-            self.location = Location.createNewLocationWithTask(taskId: task!.id, coordinate:newCoord!)
-            try! tasksRealm?.write {
-                task?.location = self.location!.id // the Location object already refers back to us by the task's id string... so do the same going the other way.
-            }
-
-        } else {
-            // this is an existing task - so we're in view only mode
-            // if the user has the 'manager' role, the "edit" button will be visible
-            // then we'll let them edit the task location and the assigned agent/worker
-            if isAdmin == true {
-                let rightButton = UIBarButtonItem(title: NSLocalizedString("Edit", comment: "Edit"), style: .plain, target: self, action: #selector(EditTaskPressed))
+            // See if this is a new task, or viewing/editing an exsisting one:
+            if self.isAdmin && self.newTaskMode {
+                // new one!
+                // first, set up the UI to the rigt new task configuration...
+                let leftButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .plain, target: self, action: #selector(self.BackCancelPressed) as Selector?)
+                let rightButton = UIBarButtonItem(title: NSLocalizedString("Save", comment: "Save"), style: .plain, target: self, action: #selector(self.SavePressed))
+                self.navigationItem.leftBarButtonItem = leftButton
                 self.navigationItem.rightBarButtonItem = rightButton
+                
+                // now create the actual new task:  This is a three-step process .. make a new task, then a new location, and then  tied the location into the task
+                var newCoord: CLLocationCoordinate2D?
+                self.task = Task.createNewTask()
+                
+                if let deviceCoord = CLManagerShim.sharedInstance.lastLocation { // get the device coordinat, if possible
+                    newCoord = deviceCoord
+                } else {// just make something up...
+                    newCoord = CLLocationCoordinate2D(latitude: 37.787958, longitude: -122.407498) // center of Union Square in SF.
+                }
+                
+                self.location = Location.createNewLocationWithTask(taskId: self.task!.id, coordinate:newCoord!)
+                try! self.tasksRealm?.write {
+                    self.task?.location = self.location!.id // the Location object already refers back to us by the task's id string... so do the same going the other way.
+                }
+                
+            } else {
+                // this is an existing task - so we're in view only mode
+                // if the user has the 'manager' role, the "edit" button will be visible
+                // then we'll let them edit the task location and the assigned agent/worker
+                if self.isAdmin == true {
+                    let rightButton = UIBarButtonItem(title: NSLocalizedString("Edit", comment: "Edit"), style: .plain, target: self, action: #selector(self.EditTaskPressed))
+                    self.navigationItem.rightBarButtonItem = rightButton
+                }
+                self.task = self.tasksRealm!.objects(Task.self).filter("id = %@", self.taskId!).first
+                self.location = Location.getLocationForLocationID(id:self.task!.location)
             }
-            self.task = tasksRealm!.objects(Task.self).filter("id = %@", taskId!).first
-            self.location = Location.getLocationForLocationID(id:self.task!.location)
+            
+            form = createForm(editable: formIsEditable(), task: self.task)        // See if this is a new task, or viewing/editing an exsisting one:
+            if self.isAdmin && self.newTaskMode {
+                // new one!
+                // first, set up the UI to the rigt new task configuration...
+                self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .plain, target: self, action: #selector(self.BackCancelPressed) as Selector?)
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Save", comment: "Save"), style: .plain, target: self, action: #selector(self.SavePressed))
+                
+                // now create the actual new task:  This is a three-step process .. make a new task, then a new location, and then  tied the location into the task
+                var newCoord: CLLocationCoordinate2D?
+                self.task = Task.createNewTask()
+                
+                if let deviceCoord = CLManagerShim.sharedInstance.lastLocation { // get the device coordinat, if possible
+                    newCoord = deviceCoord
+                } else {// just make something up...
+                    newCoord = CLLocationCoordinate2D(latitude: 37.787958, longitude: -122.407498) // center of Union Square in SF.
+                }
+                
+                self.location = Location.createNewLocationWithTask(taskId: self.task!.id, coordinate:newCoord!)
+                try! self.tasksRealm?.write {
+                    self.task?.location = self.location!.id // the Location object already refers back to us by the task's id string... so do the same going the other way.
+                }
+                
+            } else {
+                // this is an existing task - so we're in view only mode
+                // if the user has the 'manager' role, the "edit" button will be visible
+                // then we'll let them edit the task location and the assigned agent/worker
+                if self.isAdmin == true {
+                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Edit", comment: "Edit"), style: .plain, target: self, action: #selector(self.EditTaskPressed))
+                }
+                self.task = self.tasksRealm!.objects(Task.self).filter("id = %@", self.taskId!).first
+                self.location = Location.getLocationForLocationID(id:self.task!.location)
+            }
+            self.form = createForm(editable: formIsEditable(), task: self.task)
         }
-        
-        form = createForm(editable: formIsEditable(), task: task)
-    }
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

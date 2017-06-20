@@ -35,6 +35,7 @@ let kSortingPopoverSegue    =   "SortByPopover"
 class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate, SortOptionsSelectionProtocol {
     
     var realm = try! Realm()
+    var teamTasksConfig: Realm.Configuration?
     var tasksRealm: Realm?
     var notificationToken: NotificationToken? = nil
     
@@ -84,20 +85,38 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             //print("Did select item at index: \(indexPath)")
             let teamName = self!.teamNameitems[indexPath]
             
+            
+            
             if teamName == "All" {
-                self!.tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
-                self!.tasks = self!.tasksRealm?.objects(Task.self).sorted(byKeyPath: self!.sortProperty, ascending: self!.sortAscending ? true : false)
+                self?.teamTasksConfig = TeamWorkConstants.managerRealmsConfig
+                //self!.tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
+                //self!.tasks = self!.tasksRealm?.objects(Task.self).sorted(byKeyPath: self!.sortProperty, ascending: self!.sortAscending ? true : false)
             } else {
                 if let theTeamRecord = self?.realm.objects(Team.self).filter(NSPredicate(format: "name = %@", teamName)).first {
                     TeamworkPreferences.updateSelectedTeam(id: theTeamRecord.id)
                 }
-                self?.tasksRealm = Team.realmForTeamName(name: teamName)
-                self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
+                //self?.tasksRealm = Team.realmForTeamName(name: teamName)
+                //self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
+                self?.teamTasksConfig = Team.realmConfigForTeamID(teamName)
             }
-            print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm!)), found \(self?.tasks?.count ?? 0) tasks\n\n")
-            self?.tableView.reloadData()
             
-        } // of enuView selection handler
+            if self?.teamTasksConfig != nil {
+                openRealmAsync(config: self!.teamTasksConfig!, completionHandler: { (realm, error) in
+                    if let realm = realm {
+                        self?.tasksRealm = realm
+                        self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
+                        print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm!)), found \(self?.tasks?.count ?? 0) tasks\n\n")
+                        self?.tableView.reloadData()
+                    }
+                })
+            } else {
+                print("teamTasksConfig was nil - user has no assigned teams? ...and we can't read the master task realm as a non-Admin user")
+            }
+
+            
+            
+            
+        } // of menuView selection handler
         
         // lastly, this sets the navitem to actually have the drop down as its title
         self.navigationItem.titleView = menuView

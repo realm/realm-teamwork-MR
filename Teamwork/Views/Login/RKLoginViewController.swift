@@ -48,12 +48,13 @@ class RKLoginViewController: UIViewController {
             // Set a closure that will be called on successful login
             loginViewController.loginSuccessfulHandler = { user in
                 DispatchQueue.main.async {
-                    Realm.asyncOpen(configuration: TeamWorkConstants.commonRealmConfig) { realm, error in
+                    Realm.asyncOpen(configuration: commonRealmConfig(user:SyncUser.current!)) { realm, error in
                         if let realm = realm {
-                            self.completeLogin(user: user) //  connects the realm and looks up or creates a profile
+                            self.completeLogin(user: user, realm: realm) //  connects the realm and looks up or creates a profile
                             loginViewController.dismiss(animated: true, completion: nil)
                             self.performSegue(withIdentifier: self.loginToTabViewSegue, sender: nil)
                         } else if let error = error {
+                            print("Error while traing to AsyncOpen) the commom realm. Error: \(error.localizedDescription)")
                             Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("Code: \(error) - please try later", comment: "Code: \(error) - please try later"))
                                 .action(.cancel("Cancel"))
                                 .show()
@@ -83,7 +84,7 @@ class RKLoginViewController: UIViewController {
     }
     
     
-    func completeLogin(user: SyncUser?) {
+    func completeLogin(user: SyncUser?, realm: Realm?) {
         //DispatchQueue.main.async {
         setDefaultRealmConfigurationWithUser(user: user!)
         
@@ -102,10 +103,9 @@ class RKLoginViewController: UIViewController {
             }
         }
         
-        // @TODO:  As soon as permission_read API is available and only set it needed (and if we're an admin/manager)
-        //if myPersonRecord!.role == .Manager || myPersonRecord!.role == .Admin {
-        setupDefaultGlobalPermissions(user: user)
-        //}
+        if SyncUser.current?.isAdmin == true {
+            setPermissionForRealm(realm, accessLevel: .write, personID: "*" )  // we, as an admin are granting global read/write to the common realm
+        }
         // the CoreLocation shim will periodically get the users location, if they allowed the acces;
         // setting the identity property tells it which person record to update
         if CLManagerShim.sharedInstance.currentState != .running {
@@ -118,45 +118,13 @@ class RKLoginViewController: UIViewController {
     }
     
     
-    func setupDefaultGlobalPermissions(user: SyncUser?) {
-        
-        let managementRealm = try! user!.managementRealm()
-        let theURL = TeamWorkConstants.commonRealmURL.absoluteString
-        
-        let permissionChange = SyncPermissionChange(realmURL: theURL,    // The remote Realm URL on which to apply the changes
-            userID: "*",       // The user ID for which these permission changes should be applied
-            mayRead: true,     // Grant read access
-            mayWrite: true,    // Grant write access
-            mayManage: false)  // Grant management access
-        
-        token = managementRealm.objects(SyncPermissionChange.self).filter("id = %@", permissionChange.id).addNotificationBlock { notification in
-            if case .update(let changes, _, _, _) = notification, let change = changes.first {
-                // Object Server processed the permission change operation
-                switch change.status {
-                case .notProcessed:
-                    print("not processed.")
-                case .success:
-                    print("succeeded.")
-                    // basically if you have privs on the sever, set privs in the app.
-                    // this isn't really idea, but until we have the new permission API it'll suffice
-                    self.setAdminPriv()
-                case .error:
-                    print("Error.")
-                }
-                print("change notification: \(change.debugDescription)")
-            }
-        }
-        
-        try! managementRealm.write {
-            print("Launching permission change request id: \(permissionChange.id)")
-            managementRealm.add(permissionChange)
-        }
-    }
+    
+
     
     // MARK: Admin Settinng
     func setAdminPriv() {
         let rlm = try! Realm()
-        var myPersonRecord = rlm.objects(Person.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first
+        let myPersonRecord = rlm.objects(Person.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first
         try! rlm.write {
             myPersonRecord?.role = .Manager
             rlm.add(myPersonRecord!, update: true)
@@ -174,7 +142,7 @@ class RKLoginViewController: UIViewController {
     
     
     func setDefaultRealmConfigurationWithUser(user: SyncUser) {
-        Realm.Configuration.defaultConfiguration = TeamWorkConstants.commonRealmConfig
+        Realm.Configuration.defaultConfiguration = commonRealmConfig(user: user)
     }
     
     // MARK: Error Handlers

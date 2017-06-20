@@ -242,36 +242,48 @@ class Team : Object  {
     class func checkForTeam(name: String) -> Bool {
         var exists = false
         if SyncUser.current != nil {
-            let defaultRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
+            let commonRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
             let identity = (SyncUser.current!.identity)!
-            let myPersonRecord = defaultRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", identity)).first
+            let myPersonRecord = commonRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", identity)).first
             if myPersonRecord!.role == Role.Admin || myPersonRecord!.role == Role.Manager {
-            let matches = defaultRealm.objects(Team.self).filter("name LIKE[c] '%@'", name)
+            let matches = commonRealm.objects(Team.self).filter("name LIKE[c] '%@'", name)
                 exists =  matches.count > 0
             }
         }
         return exists
     }
     
+    
+    class func realmConfigForTeamID(_ teamID: String) -> Realm.Configuration? {
+        var rv: Realm.Configuration?
+        
+        if let teamURL = URL(string: "\(TeamWorkConstants.TeamTasksPartialPath)\(teamID)") {
+            rv = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL))
+        }
+        return rv
+    }
+    
     // given a teamId return the Realm
-    class func realmForTeamID(teamId:String) -> (Realm?, Error?) {
+    class func realmForTeamID(teamId:String, completionHandler: @escaping(Realm?, Error?) -> Void)  {
         let teamURL = URL(string: "\(TeamWorkConstants.TeamTasksPartialPath)\(teamId)")
         let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL!))
-        let (theTaskRealm, returnedError) = openRealmAsync(config: config)
-
-        return (theTaskRealm, returnedError)
+        openRealmAsync(config: config) { (realm, error) in
+            completionHandler(realm, error)
+        }
     }
     
     // given a team name, return the realm
-    class func realmForTeamName(name:String) -> Realm? {
-        var theTaskRealm: Realm? = nil
-        let defaultRealm = try! Realm() //  the default Realm - which includes the Team objects
+    class func realmForTeamName(name:String, completionHandler: @escaping(Realm?, Error?) -> Void)  {
+        let commonRealm = try! Realm() //  the default Realm - which includes the Team objects
 
-        if let teamRecord = defaultRealm.objects(Team.self).filter(NSPredicate(format: "name = %@", name)).first {
+        if let teamRecord = commonRealm.objects(Team.self).filter(NSPredicate(format: "name = %@", name)).first {
             let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: URL(string:teamRecord.realmURL)!))
-            theTaskRealm = try! Realm(configuration: config)
+            openRealmAsync(config: config) { (realm, error) in
+                completionHandler(realm, error)
+            }
+        } else {
+            completionHandler(nil, NSError(domain: "Teamwork", code: NSFileNoSuchFileError, userInfo: ["description":"No such file or team"]))
         }
-        return theTaskRealm
     }
     
     
@@ -279,15 +291,15 @@ class Team : Object  {
         guard id != nil else {
             return nil
         }
-        let realm = try! Realm()
+        let commonRealm = try! Realm()
         let identityPredicate = NSPredicate(format: "id = %@", id!)
-        return realm.objects(Team.self).filter(identityPredicate).first
+        return commonRealm.objects(Team.self).filter(identityPredicate).first
     }
 
     class func teamNameForIdentifier(id:String) -> String {
         var rv = ""
-        let defaultRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
-        if let teamRecord = defaultRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", id)).first {
+        let commonRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
+        if let teamRecord = commonRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", id)).first {
                 rv = teamRecord.name
         }
         return rv
@@ -299,11 +311,11 @@ class Team : Object  {
     class func allTeamURLs(withUser user:String? = nil) -> Array<String>? {
         var rv: Array<String>?
         if SyncUser.current != nil {
-            let defaultRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
+            let commonRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
             let identity = (SyncUser.current!.identity)!
-            let myPersonRecord = defaultRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", identity)).first
+            let myPersonRecord = commonRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", identity)).first
             if myPersonRecord!.role == Role.Admin || myPersonRecord!.role == Role.Manager {
-                rv = defaultRealm.objects(Team.self).map{$0.realmURL}
+                rv = commonRealm.objects(Team.self).map{$0.realmURL}
             }
         }
         return rv

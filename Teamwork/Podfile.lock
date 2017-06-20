@@ -52,10 +52,9 @@ DEPENDENCIES:
   - JVFloatLabeledTextField
   - PermissionScope (from `https://github.com/nickoneill/PermissionScope.git`)
   - ReachabilitySwift
-  - Realm
   - RealmLoginKit
   - RealmMapView (from `https://github.com/bigfish24/ABFRealmMapView.git`)
-  - RealmSwift
+  - RealmSwift (= 2.7)
 
 EXTERNAL SOURCES:
   BTNavigationDropdownMenu:
@@ -99,6 +98,6 @@ SPEC CHECKSUMS:
   RealmUtilities: bd4d18141e62a6cdcfa1859f1f090a27ab282628
   TORoundedTableView: 31217495487ec13b9a2750b36e3e49223b0f23cb
 
-PODFILE CHECKSUM: e25c657bbec903e1aa75840b9bde07916042faec
+PODFILE CHECKSUM: 3cb8ce1dd426cfbde089eecf1ae28e997c355a54
 
 COCOAPODS: 1.2.0

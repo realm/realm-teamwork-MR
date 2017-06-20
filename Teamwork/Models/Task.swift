@@ -103,7 +103,7 @@ class Task : Object {
             rv = "Permission error accessing task title"
         } else {
             if isAdmin == true {
-                // this user is an adminf let's jsut get the info from the MasterTasksRealm
+                // this user is an admin let's jsut get the info from the MasterTasksRealm
                 let masterTaskRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
                 if let theTask = masterTaskRealm.objects(Task.self).filter(NSPredicate(format: "id = %@", taskId)).first {
                     rv = theTask.title
@@ -114,20 +114,25 @@ class Task : Object {
                 if teamIds!.contains(teamId!) {
                     // try to open the realm - realmForTeamID does this with AsyncOpen, so its possible it could fail if the 
                     // realm isn;t aready sync'd
-                    let (taskTeamRealm, error) = Team.realmForTeamID(teamId: teamId!)
-                    if  taskTeamRealm != nil {
-                        if let theTask = taskTeamRealm?.objects(Task.self).filter(NSPredicate(format: "id = %@", taskId)).first {
-                            rv = theTask.title
+                    //let (taskTeamRealm, error) = Team.realmForTeamID(teamId: teamId!)
+                    
+                    Team.realmForTeamID(teamId: teamId!, completionHandler: { (taskTeamRealm, error) in
+                        if  taskTeamRealm != nil {
+                            if let theTask = taskTeamRealm?.objects(Task.self).filter(NSPredicate(format: "id = %@", taskId)).first {
+                                rv = theTask.title
+                            } else {
+                                let teamName = Team.teamNameForIdentifier(id: teamId!)
+                                rv = "can't get title for task \(taskId) in team \(teamName)"
+                            }
                         } else {
-                            let teamName = Team.teamNameForIdentifier(id: teamId!)
-                            rv = "can't get title for task \(taskId) in team \(teamName)"
-                        }
-                    } else {
-                        let errorContent = error != nil ? error?.localizedDescription : "Error opening "
-                        Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
-                            .action(.cancel("Cancel"))
-                            .show()
-                    }
+                            //                        let errorContent = error != nil ? error?.localizedDescription : "Error opening "
+                            //                        Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
+                            //                            .action(.cancel("Cancel"))
+                            //                            .show()
+                        }                    })
+                    
+                    
+
                 } else {
                     // whoa! we were asked for info on a tesk in a team this used isn't part of
                     rv = "Can't get task title - user not in team"

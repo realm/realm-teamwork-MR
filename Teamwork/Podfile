@@ -9,8 +9,12 @@ target 'Teamwork' do
 
 # Pods for Teamwork
 
-pod 'RealmSwift'
-pod 'Realm'
+#pod 'RealmSwift'
+#pod 'Realm'
+
+pod 'RealmSwift', '2.7'
+
+
 pod 'RealmMapView', :git => 'https://github.com/bigfish24/ABFRealmMapView.git'
 pod 'RealmLoginKit'
 
