@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBuildDate</key>
-	<date>2017-06-21T00:15:51Z</date>
+	<date>2017-06-21T04:27:51Z</date>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.5</string>
 	<key>CFBundleVersion</key>
-	<string>95</string>
+	<string>99</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

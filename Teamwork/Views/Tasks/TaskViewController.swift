@@ -22,6 +22,7 @@ import MapKit
 
 import Alertift
 import Eureka
+import PKHUD
 import RealmSwift
 import ReachabilitySwift
 
@@ -48,6 +49,9 @@ class TaskViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        HUD.show(.progress)
+
         teams = self.commonRealm.objects(Team.self).sorted(byKeyPath: "name", ascending:true)
         
         // get the right realm config depenidn  on who the user is...
@@ -63,17 +67,25 @@ class TaskViewController: FormViewController {
         if taskRealmConfig != nil {
             openRealmAsync(config: self.taskRealmConfig!, completionHandler: { (realm, error) in
                 if let realm = realm {  // opened the realm
+                    HUD.flash(.success, delay: 1.0)
+                    HUD.hide()
                     self.setupFormAfterOpen(realm:realm)
+                    self.tableView?.reloadData()
                 } else { // an error occurred
+                    HUD.flash(.error, delay: 1.0)
+                    HUD.hide()
+
                     let errorContent = error != nil ? error?.localizedDescription : "Error opening "
                     Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
                         .action(.cancel("Cancel"))
                         .show()
-                } // of ese
+                } // of else
                 
             }) // of AsyncOpen
-            
-        } //of test for a valid config
+        } else { //of test for a valid config
+            PKHUD.sharedHUD.hide()
+            // @TODO Need to show an error here if there is no usable config -- means that the user is on NO tra,s
+        }
     } // of viewDidLoad
     
          func setupFormAfterOpen(realm: Realm?) {

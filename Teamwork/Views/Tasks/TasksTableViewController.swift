@@ -24,7 +24,7 @@ import UIKit
 import UserNotifications
 import BTNavigationDropdownMenu
 import ReachabilitySwift
-
+import PKHUD
 import RealmSwift
 
 let kNewTaskSegue           =   "newTaskSegue"
@@ -61,6 +61,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        HUD.show(.progress)
+
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         myPersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
         isAdmin = (myPersonRecord!.role == Role.Admin || myPersonRecord!.role == Role.Manager)
@@ -103,19 +105,26 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             if self?.teamTasksConfig != nil {
                 openRealmAsync(config: self!.teamTasksConfig!, completionHandler: { (realm, error) in
                     if let realm = realm {
+                        HUD.flash(.success, delay: 1.0)
+                        HUD.hide()
+
                         self?.tasksRealm = realm
                         self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
                         print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm!)), found \(self?.tasks?.count ?? 0) tasks\n\n")
                         self?.tableView.reloadData()
+                    } else {
+                        HUD.flash(.error, delay: 1.0)
+                        HUD.hide()
+
+                        if let error = error {
+                            
+                        }
                     }
                 })
             } else {
+                HUD.hide()
                 print("teamTasksConfig was nil - user has no assigned teams? ...and we can't read the master task realm as a non-Admin user")
             }
-
-            
-            
-            
         } // of menuView selection handler
         
         // lastly, this sets the navitem to actually have the drop down as its title
