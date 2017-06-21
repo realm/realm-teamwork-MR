@@ -26,6 +26,7 @@ import BTNavigationDropdownMenu
 import ReachabilitySwift
 import PKHUD
 import RealmSwift
+import Alertift
 
 let kNewTaskSegue           =   "newTaskSegue"
 let kTaskDetailSegue        =   "taskDetailSegue"
@@ -69,7 +70,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         
         // the sorting menu
         sortDirectionButtonItem = self.navigationItem.leftBarButtonItems![1]
-        sortDirectionButtonItem!.action = #selector(toggleSortDirection)
+        sortDirectionButtonItem.action = #selector(toggleSortDirection)
         sortDirectionButtonItem.title = self.sortAscending ? "↑" : "↓"
         // Date formatter
         df.dateStyle = .short
@@ -87,8 +88,6 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             //print("Did select item at index: \(indexPath)")
             let teamName = self!.teamNameitems[indexPath]
             
-            
-            
             if teamName == "All" {
                 self?.teamTasksConfig = TeamWorkConstants.managerRealmsConfig
                 //self!.tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
@@ -96,10 +95,11 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             } else {
                 if let theTeamRecord = self?.realm.objects(Team.self).filter(NSPredicate(format: "name = %@", teamName)).first {
                     TeamworkPreferences.updateSelectedTeam(id: theTeamRecord.id)
+                
+                    //self?.tasksRealm = Team.realmForTeamName(name: teamName)
+                    //self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
+                    self?.teamTasksConfig = Team.realmConfigForTeamID(theTeamRecord.id)
                 }
-                //self?.tasksRealm = Team.realmForTeamName(name: teamName)
-                //self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
-                self?.teamTasksConfig = Team.realmConfigForTeamID(teamName)
             }
             
             if self?.teamTasksConfig != nil {
@@ -117,7 +117,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
                         HUD.hide()
 
                         if let error = error {
-                            
+                           print ("Error returned on AsyncOpen() attempt: \(error.localizedDescription)")
                         }
                     }
                 })
@@ -136,8 +136,15 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             if let index = self.teamNameitems.index(of: theTeamName) {
                 menuView.selectItem(index)
             }
-        } else {
-            menuView.selectItem(0)
+        } else { // show the 1st tram the users has (will be "all" for Managers; or post an alert if not on any teams
+            if menuView.itemCount() > 0 {
+                menuView.selectItem(0)
+            } else {
+                print("No saved team ID and not a member of any teams")
+                Alertift.alert(title: NSLocalizedString("Not on Any Teams!", comment: "Not on any teams"), message: NSLocalizedString("Please contact an administrator", comment: "contact an admin"))
+                    .action(.default(NSLocalizedString("OK", comment: "OK")))
+                    .show(on: self)
+            }
         }
 
     }

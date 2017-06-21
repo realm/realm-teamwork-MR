@@ -69,7 +69,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BTNavigationDropdownMenu:
-    :commit: 27aa97e7c753750eee41234444a17e7c0c5ecd38
+    :commit: 7aad52087fc8a2e1861d0aa67c5f0a17131809c6
     :git: https://github.com/realm-demos/BTNavigationDropdownMenu
   PermissionScope:
     :commit: b2469e24bca52f14b3af6a19ac8d83abb0c29708
