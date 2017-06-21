@@ -50,7 +50,7 @@ struct TeamWorkConstants {
     static let appID = Bundle.main.bundleIdentifier!
     
     // @TODO: Needs to point to either a local host or give directions to user on how to set up RMP Pro Edition
-    static let syncHost                 = "192.241.218.72"        //"104.131.145.124"  //"127.0.0.1"// "192.241.218.72" //"127.0.0.1"
+    static let syncHost                 = "138.197.205.99"            //"192.241.218.72"        //"104.131.145.124"  //"127.0.0.1"// "192.241.218.72" //"127.0.0.1"
     static let ApplicationName          = "TeamworkMR"
     static let syncRealmPath            = "teamwork"
     static let kSelectedTeamPrefsKey    = "TeamworkSelectedTeam"
