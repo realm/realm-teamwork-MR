@@ -103,6 +103,12 @@ class RKLoginViewController: UIViewController {
             }
         }
         
+        // this is very hacky - it owuld be nice to have the abiity to pre-define groups or roles... but it's a catch-22.
+        if SyncUser.current?.isAdmin == true && myPersonRecord?.role != .Manager {
+            self.setAdminPriv()
+        }
+
+        
         if SyncUser.current?.isAdmin == true {
             setPermissionForRealm(realm, accessLevel: .write, personID: "*" )  // we, as an admin are granting global read/write to the common realm
         }
