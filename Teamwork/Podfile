@@ -29,9 +29,11 @@ pod 'ReachabilitySwift'
 pod 'Alertift', '~> 1.0'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'PKHUD', '~> 4.0'
+
 
 #pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
-# We forked this to support manual selection of menu items - which includes foxes/competion of #code from
+# We forked this to support manual selection of menu items - which includes fixes/competion of #code from
 # commit: https://github.com/PhamBaTho/BTNavigationDropdownMenu/pull/108/commits/0139a13bb1fe4130d5f035da709dcc70f8052177 
 pod 'BTNavigationDropdownMenu', :git => 'https://github.com/realm-demos/BTNavigationDropdownMenu', :branch => 'swift-3.0'
 
