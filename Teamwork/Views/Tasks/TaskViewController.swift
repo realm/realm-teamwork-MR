@@ -128,38 +128,6 @@ class TaskViewController: FormViewController {
             }
             
             form = createForm(editable: formIsEditable(), task: self.task)        // See if this is a new task, or viewing/editing an exsisting one:
-            if self.isAdmin && self.newTaskMode {
-                // new one!
-                // first, set up the UI to the rigt new task configuration...
-                self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .plain, target: self, action: #selector(self.BackCancelPressed) as Selector?)
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Save", comment: "Save"), style: .plain, target: self, action: #selector(self.SavePressed))
-                
-                // now create the actual new task:  This is a three-step process .. make a new task, then a new location, and then  tied the location into the task
-                var newCoord: CLLocationCoordinate2D?
-                self.task = Task.createNewTask()
-                
-                if let deviceCoord = CLManagerShim.sharedInstance.lastLocation { // get the device coordinat, if possible
-                    newCoord = deviceCoord
-                } else {// just make something up...
-                    newCoord = CLLocationCoordinate2D(latitude: 37.787958, longitude: -122.407498) // center of Union Square in SF.
-                }
-                
-                self.location = Location.createNewLocationWithTask(taskId: self.task!.id, coordinate:newCoord!)
-                try! self.tasksRealm?.write {
-                    self.task?.location = self.location!.id // the Location object already refers back to us by the task's id string... so do the same going the other way.
-                }
-                
-            } else {
-                // this is an existing task - so we're in view only mode
-                // if the user has the 'manager' role, the "edit" button will be visible
-                // then we'll let them edit the task location and the assigned agent/worker
-                if self.isAdmin == true {
-                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Edit", comment: "Edit"), style: .plain, target: self, action: #selector(self.EditTaskPressed))
-                }
-                self.task = self.tasksRealm!.objects(Task.self).filter("id = %@", self.taskId!).first
-                self.location = Location.getLocationForLocationID(id:self.task!.location)
-            }
-            self.form = createForm(editable: formIsEditable(), task: self.task)
         }
     
     
