@@ -141,6 +141,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
                 menuView.selectItem(0)
             } else {
                 print("No saved team ID and not a member of any teams")
+                HUD.hide()
                 Alertift.alert(title: NSLocalizedString("Not on Any Teams!", comment: "Not on any teams"), message: NSLocalizedString("Please contact an administrator", comment: "contact an admin"))
                     .action(.default(NSLocalizedString("OK", comment: "OK")))
                     .show(on: self)
