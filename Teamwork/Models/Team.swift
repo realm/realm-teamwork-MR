@@ -51,38 +51,7 @@ class Team : Object  {
         return "id"
     }
   
-    func setPermission(userIdentity: String, enable:Bool) {
-        
-        let managementRealm = try! SyncUser.current!.managementRealm()
-        
-        let permissionChange = SyncPermissionChange(realmURL: self.realmURL,    // The remote Realm URL on which to apply the changes
-            userID: userIdentity,       // The user ID for which these permission changes should be applied
-            mayRead: enable,     // Grant read access
-            mayWrite: enable,    // Grant write access
-            mayManage: false)  // Grant management access
-        
-        let token = managementRealm.objects(SyncPermissionChange.self).filter("id = %@", permissionChange.id).addNotificationBlock { notification in
-            if case .update(let changes, _, _, _) = notification, let change = changes.first {
-                // Object Server processed the permission change operation
-                switch change.status {
-                case .notProcessed:
-                    print("not processed.")
-                case .success:
-                    print("succeeded.")
-                    // basically if you have privs on the sever, set privs in the app.
-                    // this isn't really idea, but until we have the new permission API it'll suffice
-                case .error:
-                    print("Error.")
-                }
-                print("change notification: \(change.debugDescription)")
-            }
-        }
-        
-        try! managementRealm.write {
-            print("Launching permission change request id: \(permissionChange.id)")
-            managementRealm.add(permissionChange)
-        }
-    }
+   
 
     
     // Team Management Utilities
@@ -90,13 +59,17 @@ class Team : Object  {
         // this needs to use a permissionOffer construct to add the person to the TeamTask Realm
         // so in a nutshell this needs to add the user tot he current team, then open the users ~/myTeams realm
         // and add the team ID, team and and TeamTasksURL to that users myTeams Realm.
-        self.setPermission(userIdentity: userIdentity, enable: true)
+        
+        let realmPath  = URL(string:self.realmURL)?.relativePath
+        setPermissionForRealmPath(realmPath!, accessLevel: .write, personID: userIdentity)
         return .successful
     }
     
     func removeMemberPermission(userIdentity: String) -> TeamRealmStatus {
         // this needs to use a permissionOffer construct to add the person to the TeamTask Realm
-        self.setPermission(userIdentity: userIdentity, enable: true)
+        let realmPath  = URL(string:self.realmURL)?.relativePath
+        setPermissionForRealmPath(realmPath!, accessLevel: .none, personID: userIdentity)
+
         return .notPermitted
     }
     

@@ -58,3 +58,20 @@ func setPermissionForRealm(_ realm: Realm?, accessLevel: SyncAccessLevel, person
         }
     }
 }
+
+
+
+func setPermissionForRealmPath(_ path: String, accessLevel: SyncAccessLevel, personID: String) {
+        let permission = SyncPermissionValue(realmPath: path,  // The remote Realm path on which to apply the changes
+            userID: personID,           // The user ID for which these permission changes should be applied, or "*" for wildcard
+            accessLevel: accessLevel)   // The access level to be granted
+        SyncUser.current?.applyPermission(permission) { error in
+            if let error = error {
+                print("Error when attempting to set permissions: \(error.localizedDescription)")
+                return
+            } else {
+                print("Permissions successfully set")
+            }
+        }
+    
+}
