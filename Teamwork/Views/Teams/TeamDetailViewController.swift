@@ -193,7 +193,7 @@ class TeamDetailViewController: FormViewController {
                 }
             } else { // there are no tasks in this TeamTasksRealm. However...
                 if isAdmin { // if you're an admin, perhaps you can assign some from the master tasks list
-                    let masterTaskList = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
+                    let masterTaskList = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
                     let unclaimedTasks = masterTaskList.objects(Task.self).filter("team == nil")
                     
                     form.last!

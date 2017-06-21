@@ -89,7 +89,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             let teamName = self!.teamNameitems[indexPath]
             
             if teamName == "All" {
-                self?.teamTasksConfig = TeamWorkConstants.managerRealmsConfig
+                self?.teamTasksConfig = managerRealmConfig(user: SyncUser.current!)
                 //self!.tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
                 //self!.tasks = self!.tasksRealm?.objects(Task.self).sorted(byKeyPath: self!.sortProperty, ascending: self!.sortAscending ? true : false)
             } else {

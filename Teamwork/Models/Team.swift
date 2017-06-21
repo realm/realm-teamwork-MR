@@ -175,7 +175,7 @@ class Team : Object  {
 
     func addOrUpdateTask(taskId: String) {
         // Open the master task realm and get the origial record we're going to clone into the TeamTaskRealm
-        let masterTaskRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
+        let masterTaskRealm = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
         let taskToCopy = masterTaskRealm.objects(Task.self).filter("id = %@", taskId).first
 
         // Now open this Team's TaskRealm..

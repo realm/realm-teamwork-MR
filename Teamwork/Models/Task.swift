@@ -62,7 +62,7 @@ class Task : Object {
 
     class func createNewTask() -> Task {
         var newTask: Task?
-        let tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
+        let tasksRealm = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
         try! tasksRealm.write {
             newTask = tasksRealm.create(Task.self, value: ["id": NSUUID().uuidString, "creationDate": Date()])
             tasksRealm.add(newTask!, update:true)
@@ -104,7 +104,7 @@ class Task : Object {
         } else {
             if isAdmin == true {
                 // this user is an admin let's jsut get the info from the MasterTasksRealm
-                let masterTaskRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
+                let masterTaskRealm = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
                 if let theTask = masterTaskRealm.objects(Task.self).filter(NSPredicate(format: "id = %@", taskId)).first {
                     rv = theTask.title
                 } else {

@@ -56,7 +56,7 @@ class TaskViewController: FormViewController {
         
         // get the right realm config depenidn  on who the user is...
         if isAdmin {
-            taskRealmConfig = TeamWorkConstants.managerRealmsConfig
+            taskRealmConfig = managerRealmConfig(user: SyncUser.current!)
         } else {
             if let savedTeamId = TeamworkPreferences.selectedTeam() {
                 taskRealmConfig = Team.realmConfigForTeamID(savedTeamId)

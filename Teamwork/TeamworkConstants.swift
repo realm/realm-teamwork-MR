@@ -46,6 +46,12 @@ func commonRealmConfig(user: SyncUser) -> Realm.Configuration  {
     return config
 }
 
+func managerRealmConfig(user: SyncUser) -> Realm.Configuration  {
+    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.managerRealmURL), objectTypes: [Task.self])
+    return config
+}
+
+
 struct TeamWorkConstants {
     static let appID = Bundle.main.bundleIdentifier!
     
@@ -68,8 +74,6 @@ struct TeamWorkConstants {
     
     // This is the master list of People, Teams and Locations - Opened by everyone
     static let commonRealmURL = URL(string: "realm://\(syncHost):9080/\(ApplicationName)-CommonRealm")!
-//    static let commonRealmConfig = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: commonRealmURL),
-//                                                        objectTypes: [Location.self, Person.self, Team.self])
     
     
 
@@ -77,8 +81,6 @@ struct TeamWorkConstants {
     
     // This is the master list of Tasks - only opened by admins/managers
     static let managerRealmURL = URL(string: "realm://\(syncHost):9080/\(ApplicationName)-ManagerRealm")!
-    static let managerRealmsConfig = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: managerRealmURL),
-                                                       objectTypes: [Task.self])
     
     // Lastly, this is a partial path to directories that hold individual TeamTaskRealms that are opened on demand,
     // usually when the user opens a particlar view into a team they're a member of: i.e., "Red Team", "Team Bonzai!" etc
