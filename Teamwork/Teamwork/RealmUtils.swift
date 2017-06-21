@@ -45,7 +45,7 @@ func openRealmAsync(config:Realm.Configuration, completionHandler: @escaping(Rea
 
 func setPermissionForRealm(_ realm: Realm?, accessLevel: SyncAccessLevel, personID: String) {
     if let realm = realm {
-        let permission = SyncPermissionValue(realmPath: realm.configuration.syncConfiguration!.realmURL.absoluteString,  // The remote Realm path on which to apply the changes
+        let permission = SyncPermissionValue(realmPath: realm.configuration.syncConfiguration!.realmURL.path,  // The remote Realm path on which to apply the changes
             userID: personID,           // The user ID for which these permission changes should be applied, or "*" for wildcard
             accessLevel: accessLevel)   // The access level to be granted
         SyncUser.current?.applyPermission(permission) { error in
