@@ -213,3 +213,5 @@ This project adheres to the [Contributor Covenant Code of Conduct](https://realm
 ## License
 
 Distributed under the Apache 2.0 license. See [LICENSE](LICENSE) for more information.
+
+![analytics](https://ga-beacon.appspot.com/UA-50247013-2/realm-teamwork-MR/README?pixel)
