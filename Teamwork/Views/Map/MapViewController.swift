@@ -321,9 +321,7 @@ class MapViewController: UIViewController {
         if let tabBarController = self.tabBarController {
             var viewControllers = tabBarController.viewControllers
             let indexToRemove = TeamWorkConstants.peopleViewTag // Index 0 is the map, index 1 is tasks, index 2 is people
-            
-            let vc = viewControllers?[indexToRemove]
-    
+
             // check to see if we've already removed the people tab
             if viewControllers!.count < 4 {
                 return

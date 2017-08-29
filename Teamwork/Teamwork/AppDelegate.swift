@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
-        let clShim = CLManagerShim.sharedInstance
+        let _ = CLManagerShim.sharedInstance
         UIApplication.shared.isIdleTimerDisabled = true
         return true
     }

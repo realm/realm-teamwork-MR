@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wai-JF-Wl4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wai-JF-Wl4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="hybrid" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-p5-l4G" customClass="RealmMapView" customModule="RealmMapView">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="687"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-p5-l4G" customClass="RealmMapView" customModule="RealmMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="entityName" value="Location"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="latitudeKeyPath" value="latitude"/>
@@ -40,6 +40,9 @@
                             </view>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAG-vR-Mbl">
                                 <rect key="frame" x="37" y="28" width="322" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="GVe-5Y-9Tl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -47,18 +50,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DOs-p5-l4G" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="2Sw-ak-Q4i"/>
-                            <constraint firstItem="HAG-vR-Mbl" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="AD6-SQ-zfU"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="HAG-vR-Mbl" secondAttribute="bottom" constant="638" id="DLb-vG-0Q6"/>
-                            <constraint firstItem="PhK-bL-qqm" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="U8V-W9-yv2"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="PhK-bL-qqm" secondAttribute="bottom" constant="535" id="WKj-cG-oih"/>
-                            <constraint firstItem="PhK-bL-qqm" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="XaC-eh-9xb"/>
-                            <constraint firstItem="DOs-p5-l4G" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" constant="20" id="Zxy-mb-2rk"/>
-                            <constraint firstItem="PhK-bL-qqm" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" constant="-330" id="eMm-pA-Ft2"/>
-                            <constraint firstItem="DOs-p5-l4G" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="jCN-71-fEf"/>
-                            <constraint firstItem="DOs-p5-l4G" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="m58-NP-xbF"/>
-                            <constraint firstItem="HAG-vR-Mbl" firstAttribute="leading" secondItem="PhK-bL-qqm" secondAttribute="trailing" constant="8" id="mAK-bF-hsf"/>
-                            <constraint firstItem="HAG-vR-Mbl" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="mec-qa-AnR"/>
+                            <constraint firstItem="DOs-p5-l4G" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="HbD-y6-0Me"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="PhK-bL-qqm" secondAttribute="bottom" constant="535" id="IvU-17-jta"/>
+                            <constraint firstItem="PhK-bL-qqm" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="J42-1o-7pV"/>
+                            <constraint firstItem="HAG-vR-Mbl" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="ZPn-eo-zgt"/>
+                            <constraint firstItem="PhK-bL-qqm" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="a3V-0g-bQe"/>
+                            <constraint firstAttribute="trailing" secondItem="DOs-p5-l4G" secondAttribute="trailing" id="bW8-YE-Y6t"/>
+                            <constraint firstItem="HAG-vR-Mbl" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" symbolic="YES" id="fmp-YB-cAk"/>
+                            <constraint firstItem="DOs-p5-l4G" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="gnh-gx-Wux"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="DOs-p5-l4G" secondAttribute="bottom" constant="-20" id="iFW-Gj-zGg"/>
+                            <constraint firstItem="HAG-vR-Mbl" firstAttribute="leading" secondItem="PhK-bL-qqm" secondAttribute="trailing" constant="8" symbolic="YES" id="yER-OL-Jdb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="Map_32" id="acW-dT-cKf"/>
@@ -230,7 +231,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="248" tableViewCell="duP-fN-E7c" id="3Wk-Dw-EWb">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="148.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="fk4-tp-2b8">
@@ -388,7 +389,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CH-PZ-wXh" id="0vd-4B-zX6">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="125"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="124.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circled User Male_30" translatesAutoresizingMaskIntoConstraints="NO" id="Qmj-y5-FOV">

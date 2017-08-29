@@ -159,6 +159,7 @@ class RKLoginViewController: UIViewController {
             switch syncError.code {
             case .clientResetError:
                 if let (path, runClientResetNow) = syncError.clientResetInfo() {
+                    print ("Client reset required for Realm at \(path)")
                     //closeRealmSafely()
                     //saveBackupRealmPath(path)
                     runClientResetNow()

@@ -149,8 +149,7 @@ class Team : Object  {
         }
         
         // Lastly, let's update the location record for this task so that it correctly refelects which team it's now assigned to
-        Location.updateTaskLocation(taskId: taskId, teamId: self.id)
-        
+        Location.updateTaskLocation(taskId: taskId, team: self)
     }
 
     
@@ -168,7 +167,7 @@ class Team : Object  {
             }
             // Here too we need to update the location object - this time to remove the team indicator (by passing nil) since this
             // tsk is no longer assocated with this team:
-            Location.updateTaskLocation(taskId: id, teamId: nil)
+            Location.updateTaskLocation(taskId: id, team: nil)
 
         }
     }

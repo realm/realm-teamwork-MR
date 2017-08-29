@@ -210,7 +210,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
                 cell.mapEnclosure.image =   UIImage(data:existingImage as Data)
             } else {
                 if reachability.isReachable == true {
-                    // this will get a new map snapshot if it;s missing, and we're online
+                    // this will get a new map snapshot if it's missing, and we're online
                     // of course if several people do this at the same time the last writer wins.
                     self.makeSnapshot(cell: cell, taskLocation: taskLocation)
                 } else { // else throw in a place holder.
@@ -227,13 +227,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         //let assignee = Person.getPersonForID(id: task.assignee)
         let assignee = task.assignee
         if task.team != nil {
-            //teamName = NSLocalizedString("Team: \(Team.teamNameForIdentifier(id: task.team!.id))/", comment: "formatting for team name")
-            teamName = NSLocalizedString("Team: \(task.team?.name)/", comment: "formatting for team name")
+            teamName = NSLocalizedString("Team: \(task.team!.name)/", comment: "formatting for team name")
         }
         assignee != nil ? (cell.assigneeLabel.text = assignee!.fullName().isEmpty ? "\(teamName)(no name) \(assignee!.id)" : "\(teamName)\(assignee!.fullName())") : (cell.assigneeLabel.text = NSLocalizedString("\(teamName)(unassigned)", comment: "Not yet aassigned"))
-        
-        //task.assignee != nil ? (cell.assigneeLabel.text = task.assignee!.fullName().isEmpty ? "(no name) \(task.assignee!.id)" : "\(task.assignee!.fullName())") : (cell.assigneeLabel.text = NSLocalizedString("(unassigned)", comment: "Not yet aassigned"))
-        
         
         if task.completionDate !=  nil {
             cell.completionDateLabel.text = NSLocalizedString("Complete:", comment: "completion date") + df.string(from:task.completionDate!)
@@ -301,26 +297,28 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kTaskDetailSegue {
             self.notificationToken?.stop()
+            self.notificationToken = nil
 
             let indexPath = tableView.indexPathForSelectedRow
-            self.navigationController?.setNavigationBarHidden(false, animated: false)
             
             let vc = segue.destination as? TaskViewController
             vc!.taskId = tasks![indexPath!.row].id
             vc!.teamId = tasks![indexPath!.row].team?.id ?? ""
             vc!.isAdmin = isAdmin
             vc!.hidesBottomBarWhenPushed = true
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
         }
         
         if segue.identifier == kNewTaskSegue {
             self.notificationToken?.stop()
+            self.notificationToken = nil
 
-            self.navigationController?.setNavigationBarHidden(false, animated: false)
             let vc = segue.destination as? TaskViewController
             vc!.isAdmin = isAdmin
             vc!.newTaskMode = true
             vc?.navigationItem.title = NSLocalizedString("New Task", comment: "New Task")
             vc!.hidesBottomBarWhenPushed = true
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
         }
         
         if segue.identifier == kSortingPopoverSegue {

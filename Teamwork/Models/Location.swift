@@ -31,7 +31,7 @@ private var realm: Realm!
 
 // Note that this Location object serves doube duty - it tracks either a person
 // OR an Task (not both). This way the map componen can simnple show objects
-// and then 
+// and then
 
 class Location : Object {
     dynamic var id = NSUUID().uuidString
@@ -51,14 +51,9 @@ class Location : Object {
     dynamic var subtitle : String?
     dynamic var mapImage: Data?
     dynamic var person : Person?
-    dynamic var task : Task?      // Note - here in the multi-Realm version of Teamwork we have to use the primary key (read: id) of
-                                    // Task objects in order to keep these references since we cannot create cross-Realm object references
-
-    dynamic var teamId : String?    // Next, we also want to keep the teamID of the task IFF it's been assigned.  if nil it's unassigned
-                                    // this means that if we are an Admin/Manager user, we can just pull the master copy of the task
-                                    // from the MasterTasks list; if we're a Worker type user we can look it up in the appropriate
-                                    // TeamTask list (if it's one of ours and we're a member of the relevant team).
-
+    dynamic var task : Task?
+    dynamic var team : Team?     // if this is a task and it's assigned to a team, this is where we keep the reference
+    
     
     
     // Initializers, accessors & cet.
@@ -70,7 +65,7 @@ class Location : Object {
     override static func ignoredProperties() -> [String] {
         return ["compositeTitle, compositeSubtitle, compositeFullName, lastSeenTime"]
     }
-
+    
     
     convenience init(at lat:Double, lon:Double, task: Task?) {
         self.init()
@@ -89,7 +84,7 @@ class Location : Object {
         self.task = task
     }
     
-
+    
     class func stringFromDate(date: Date) -> String {
         return self.stringFormatter.string(from: date as Date)
     }
@@ -99,7 +94,7 @@ class Location : Object {
         formatter.dateStyle = .short
         return formatter
     }()
-
+    
     
     var lastSeenTime: String {
         var rv = ""
@@ -125,7 +120,7 @@ class Location : Object {
             rv = "(No person found?!)"
         }
         return rv
-
+        
     }
     
     
@@ -137,7 +132,7 @@ class Location : Object {
             return self.task!.title
         }
     }
-
+    
     
     var compositeTaskSubtitle: String {
         get {
@@ -154,29 +149,38 @@ class Location : Object {
             return streetAddress ?? "Missing: at \(latitude), \(longitude)"
         }
     }
-
-    class func  createNewLocationWithTask(taskId: String, coordinate:CLLocationCoordinate2D) -> Location {
+    
+    class func  createNewLocationWithTask(_ task: Task?, coordinate:CLLocationCoordinate2D) -> Location? {
+        guard task != nil else {
+            return nil
+        }
         var newLocation: Location?
         let commonRealm = try! Realm()
         try! commonRealm.write {
-            newLocation = commonRealm.create(Location.self, value: ["id": NSUUID().uuidString, "task": taskId, "creationDate": Date(), "haveLatLon": true, "latitude": coordinate.latitude, "longitude": coordinate.longitude])
+            let values = ["id": NSUUID().uuidString,
+                          "task": task as Any,
+                          "creationDate": Date(),
+                          "haveLatLon": true,
+                          "latitude": coordinate.latitude,
+                          "longitude": coordinate.longitude]
+            newLocation = commonRealm.create(Location.self, value: values)
             commonRealm.add(newLocation!, update: true)
         }
         return newLocation!
     }
-
-    class func updateTaskLocation(taskId: String, teamId: String?) {
+    
+    class func updateTaskLocation(taskId: String, team: Team?) {
         let commonRealm = try! Realm()
         if let locationRecordForTask = commonRealm.objects(Location.self).filter(NSPredicate(format: "task = %@", taskId)).first {
             try! commonRealm.write {
-                locationRecordForTask.teamId = teamId // rmember this could also be nil, which removes the team reference from this Task-Location
+                locationRecordForTask.team = team // rmember this could also be nil, which removes the team reference from this Task-Location
             }
         } else {
             // Hmmm... looks lke this task hasn't been assigned a work location ... nothing for us to do then. We could log it like this tho':
             //print("-updateTask:taskId:teamId:  No location record for task ID \(taskId) \ ...skipping")
         }
     }
-
+    
     class func getLocationForID(id: String?) -> Location? {
         guard id == nil else {
             let realm = try! Realm()
@@ -185,40 +189,40 @@ class Location : Object {
         }
         return nil
     }
-
+    
     
     
     class func getLocationForTaskID(id: String?) -> Location? {
-        guard id == nil else {
-            let commonRealm = try! Realm()
-            let identityPredicate = NSPredicate(format: "task = %@", id!)
-            return commonRealm.objects(Location.self).filter(identityPredicate).first //get the person
+        guard id != nil else {
+            return nil
         }
-        return nil
+        let commonRealm = try! Realm()
+        let identityPredicate = NSPredicate(format: "task = %@", id!)
+        return commonRealm.objects(Location.self).filter(identityPredicate).first //get the person
     }
     
     
     class func getLocationForLocationID(id: String?) -> Location? {
-        guard id == nil else {
-            let commonRealm = try! Realm()
-            let identityPredicate = NSPredicate(format: "id = %@", id!)
-            return commonRealm.objects(Location.self).filter(identityPredicate).first //get the person
+        guard id != nil else {
+            return nil
         }
-        return nil
+        let commonRealm = try! Realm()
+        let identityPredicate = NSPredicate(format: "id = %@", id!)
+        return commonRealm.objects(Location.self).filter(identityPredicate).first //get the person
     }
     
     
-    class func deleteTask(taskId: String) {
+    class func deleteTask(_ task: Task) {
         let commonRealm = try! Realm()
-        if let locationRecordForTask = commonRealm.objects(Location.self).filter(NSPredicate(format: "task = %@", taskId)).first {
+        if let locationRecordForTask = commonRealm.objects(Location.self).filter(NSPredicate(format: "task = %@", task)).first {
             try! commonRealm.write {
                 commonRealm.delete(locationRecordForTask)
             }
         }
     }
-
     
-     func UpdateSavedMapImage(image:UIImage?) {
+    
+    func UpdateSavedMapImage(image:UIImage?) {
         if let image = image {
             let commonRealm = try! Realm()
             try! commonRealm.write {

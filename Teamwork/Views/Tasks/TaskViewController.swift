@@ -40,58 +40,19 @@ class TaskViewController: FormViewController {
     
     var task: Task?       // hold the actual task, eitehr one to edit or a new one
     var location: Location? // this is the location referred to by this task - we may need to update it
-    var tasksRealm: Realm? // In a muti-Realm world, the tasks are managed in a separate Realm
     let commonRealm = try! Realm()
-    var taskRealmConfig:  Realm.Configuration?
     let reachability = Reachability()!
 
     var teams: Results<Team>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         teams = self.commonRealm.objects(Team.self).sorted(byKeyPath: "name", ascending:true)
-        let tasksRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
-        self.setupFormAfterOpen(realm:tasksRealm)
+        self.setupFormAfterOpen(realm:self.commonRealm)
         self.tableView?.reloadData()
-
-        // get the right realm config depenidn  on who the user is...
-// TeamWorkMR only
-//        if isAdmin {
-//            //taskRealmConfig = managerRealmConfig(user: SyncUser.current!)
-//            taskRealmConfig = commonRealmConfig(user: SyncUser.current!)
-//        } else {
-//            if let savedTeamId = TeamworkPreferences.selectedTeam() {
-//                taskRealmConfig = Team.realmConfigForTeamID(savedTeamId)
-//            }
-//        }
-// Now, as long as we have a Realm config, try to open it asynchronously...
-//        if taskRealmConfig != nil {
-//            openRealmAsync(config: self.taskRealmConfig!, completionHandler: { (realm, error) in
-//                if let realm = realm {  // opened the realm
-//                    HUD.flash(.success, delay: 1.0)
-//                    HUD.hide()
-//                    self.setupFormAfterOpen(realm:realm)
-//                    self.tableView?.reloadData()
-//                } else { // an error occurred
-//                    HUD.flash(.error, delay: 1.0)
-//                    HUD.hide()
-//
-//                    let errorContent = error != nil ? error?.localizedDescription : "Error opening "
-//                    Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
-//                        .action(.cancel("Cancel"))
-//                        .show()
-//                } // of else
-//                
-//            }) // of AsyncOpen
-//        } else { //of test for a valid config
-//            PKHUD.sharedHUD.hide()
-//            // @TODO Need to show an error here if there is no usable config -- means that the user is on NO tra,s
-//        }
     } // of viewDidLoad
     
          func setupFormAfterOpen(realm: Realm?) {
-            self.tasksRealm = realm
             
             // See if this is a new task, or viewing/editing an exsisting one:
             if self.isAdmin && self.newTaskMode {
@@ -104,7 +65,7 @@ class TaskViewController: FormViewController {
                 
                 // now create the actual new task:  This is a three-step process .. make a new task, then a new location, and then  tied the location into the task
                 var newCoord: CLLocationCoordinate2D?
-                self.task = Task.createNewTask()
+                self.task = Task.createNewTaskinRealm(self.commonRealm)
                 
                 if let deviceCoord = CLManagerShim.sharedInstance.lastLocation { // get the device coordinat, if possible
                     newCoord = deviceCoord
@@ -112,8 +73,8 @@ class TaskViewController: FormViewController {
                     newCoord = CLLocationCoordinate2D(latitude: 37.787958, longitude: -122.407498) // center of Union Square in SF.
                 }
                 
-                self.location = Location.createNewLocationWithTask(taskId: self.task!.id, coordinate:newCoord!)
-                try! self.tasksRealm?.write {
+                self.location = Location.createNewLocationWithTask(self.task, coordinate:newCoord!)
+                try! self.commonRealm.write {
                     self.task?.location = self.location // the Location object already refers back to us by the task's id string... so do the same going the other way.
                 }
                 
@@ -125,7 +86,7 @@ class TaskViewController: FormViewController {
                     let rightButton = UIBarButtonItem(title: NSLocalizedString("Edit", comment: "Edit"), style: .plain, target: self, action: #selector(self.EditTaskPressed))
                     self.navigationItem.rightBarButtonItem = rightButton
                 }
-                self.task = self.tasksRealm!.objects(Task.self).filter("id = %@", self.taskId!).first
+                self.task = self.commonRealm.objects(Task.self).filter("id = %@", self.taskId!).first
                 // TeamWorkMRself.location = Location.getLocationForLocationID(id:self.task!.location)
                 self.location = self.task!.location
             }
@@ -194,7 +155,7 @@ class TaskViewController: FormViewController {
         let titleRow = form.rowBy(tag: "Title") as? TextRow
         let descriptionRow = form.rowBy(tag: "Description") as? TextAreaRow
         
-        try! tasksRealm?.write {
+        try! self.commonRealm.write {
             // everything else is captured by the various actions the user can explictly perform
             // (like picking agents,or entering the work location on the map). Here we want to make
             // sure we capture changes to the title & description as long as they don't leave the
@@ -216,13 +177,6 @@ class TaskViewController: FormViewController {
 
         } // of write to masterTaskList
         
-        // However -team assignment is a different story since it potentially can involve several Realms being modified.
-        // Lastly, if this task has a team assigned,  we need to see if this task already exists in the TeamTaskRalm -- where we keep copies of tasks for teams.
-        // if it does, we need either update the existing record, or create a new one if it's not there yet.
-        if self.task!.team != nil {
-            let team = self.commonRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", self.task!.team!)).first // get the teams task realm
-            team!.addOrUpdateTask(taskId:self.task!.id)
-        }
         // All done ... back to the previous view
         _ = self.navigationController?.popViewController(animated: true)
     }
@@ -400,7 +354,7 @@ class TaskViewController: FormViewController {
                         let oldTeam = task?.team
                         if let id = row.value {
                             let newTeam = self?.commonRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", id)).first
-                            try! self?.tasksRealm?.write {
+                            try! self?.commonRealm.write {
                                 task?.team = newTeam
                             }
                             // if the team has changed, then we need to remove the task copy from the old TeamTaskReam
@@ -443,7 +397,7 @@ class TaskViewController: FormViewController {
                         if let id = row.value {
                             let aRealm = try! Realm()
                             let person = aRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", id)).first
-                            try! self?.tasksRealm?.write {
+                            try! self?.commonRealm.write {
                                 task?.assignee = person
                             }
                         }
@@ -475,7 +429,7 @@ class TaskViewController: FormViewController {
                         row.value = task.dueDate
                     }
                     }.onChange({ (row) in
-                        try! self.tasksRealm?.write {
+                        try! self.commonRealm.write {
                             task?.dueDate = row.value
                         }
                     })
@@ -488,7 +442,7 @@ class TaskViewController: FormViewController {
                     row.value = self?.task?.isCompleted
                     }.onChange({ [weak self] (row) in
                         if let isComplete = row.value {
-                            try! self?.tasksRealm?.write {
+                            try! self?.commonRealm.write {
                                 if isComplete {
                                     self?.task?.isCompleted = true
                                     self?.task?.completionDate = Date()
@@ -546,13 +500,12 @@ class TaskViewController: FormViewController {
     
     // MARK:  the actual task deletion
     func performDeleteTask() {
-        self.task?.deleteTaskFromTeam()                 // first make sure we delete it from any team(s)
-        Location.deleteTask(taskId: self.task!.id)      // and its location record, if any
+        self.task?.deleteTaskFromTeam()
+        Location.deleteTask(self.task!)
         self.location = nil
         
-        
-        try! self.tasksRealm?.write {                   // (Note: this wil be the masterTasksRealm
-            self.tasksRealm?.delete(self.task!)         // and finally delete the master task record itself.
+        try! self.commonRealm.write {
+            self.commonRealm.delete(self.task!)
         }
         self.task = nil
     }

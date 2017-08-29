@@ -150,11 +150,10 @@ class PersonDetails2ViewController: FormViewController {
         }
         return form
     }
+    
     // MARK: Utilties
     func taskRowsForTeam(teamTasks: Results<Task>) -> Array<TextRow> {
-        var rv = Array<TextRow>()
-        
-        return rv
+        return Array<TextRow>()
     }
 
     
