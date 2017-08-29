@@ -42,21 +42,23 @@ enum TeamRealmStatus: Int {
 
 
 func commonRealmConfig(user: SyncUser) -> Realm.Configuration  {
-    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.commonRealmURL), objectTypes: [Location.self, Person.self, Team.self])
+    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.commonRealmURL), objectTypes: [Location.self, Person.self, Task.self, Team.self])
     return config
 }
 
-func managerRealmConfig(user: SyncUser) -> Realm.Configuration  {
-    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.managerRealmURL), objectTypes: [Task.self])
-    return config
-}
+
+// 26-Aug-2017 moving the Task realm back into the common Realm in pref for paretial sync
+//func managerRealmConfig(user: SyncUser) -> Realm.Configuration  {
+//    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.managerRealmURL), objectTypes: [Task.self])
+//    return config
+//}
 
 
 struct TeamWorkConstants {
     static let appID = Bundle.main.bundleIdentifier!
     
     // @TODO: Needs to point to either a local host or give directions to user on how to set up RMP Pro Edition
-    static let syncHost                 = "162.243.137.65" // regular teamwork-MR demo server: "138.197.205.99"
+    static let syncHost                 = "162.243.137.65" 
     static let ApplicationName          = "TeamworkPS"
     static let syncRealmPath            = "teamwork"
     static let kSelectedTeamPrefsKey    = "TeamworkSelectedTeam"
@@ -65,8 +67,8 @@ struct TeamWorkConstants {
     // this is purely for talking to the RMP auth system
     static let syncAuthURL = NSURL(string: "http://\(syncHost):9080")!
     
-    // The following URLs and URI fragments are about talking to the synchronization service and the Realms
-    // it manages on behalf of your application:
+    // The following URLs and URI fragments are about talking to the synchronization service
+    // and the Realms it manages on behalf of your application:
     static let syncServerURL = NSURL(string: "realm://\(syncHost):9080/\(ApplicationName)-\(syncRealmPath)")
     
     // Note: When we say Realm file we mean literally the entire collection of models/schemas inside that Realm...
@@ -80,11 +82,11 @@ struct TeamWorkConstants {
 
     
     // This is the master list of Tasks - only opened by admins/managers
-    static let managerRealmURL = URL(string: "realm://\(syncHost):9080/\(ApplicationName)-ManagerRealm")!
+    //static let managerRealmURL = URL(string: "realm://\(syncHost):9080/\(ApplicationName)-ManagerRealm")!
     
     // Lastly, this is a partial path to directories that hold individual TeamTaskRealms that are opened on demand,
     // usually when the user opens a particlar view into a team they're a member of: i.e., "Red Team", "Team Bonzai!" etc
-    static let TeamTasksPartialPath = "realm://\(syncHost):9080/\(ApplicationName)-TeamTaskRealms-"            ///TeamTaskRealms/"
+    //static let TeamTasksPartialPath = "realm://\(syncHost):9080/\(ApplicationName)-TeamTaskRealms-"            ///TeamTaskRealms/"
     
     // Views in the main UITabBar 
     // Note - these are necessary becuase the stock iOS UITabBar doesn't support any simpleeasy way to add/remove/show/hide tabs... you

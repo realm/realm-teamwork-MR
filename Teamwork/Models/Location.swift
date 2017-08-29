@@ -51,7 +51,7 @@ class Location : Object {
     dynamic var subtitle : String?
     dynamic var mapImage: Data?
     dynamic var person : Person?
-    dynamic var task : String?      // Note - here in the multi-Realm version of Teamwork we have to use the primary key (read: id) of
+    dynamic var task : Task?      // Note - here in the multi-Realm version of Teamwork we have to use the primary key (read: id) of
                                     // Task objects in order to keep these references since we cannot create cross-Realm object references
 
     dynamic var teamId : String?    // Next, we also want to keep the teamID of the task IFF it's been assigned.  if nil it's unassigned
@@ -76,7 +76,7 @@ class Location : Object {
         self.init()
         self.latitude = lat
         self.longitude = lon
-        self.task = task!.id
+        self.task = task
         self.haveLatLon = true
     }
     
@@ -86,8 +86,7 @@ class Location : Object {
         self.city = city
         self.stateProvince = stateProvince
         self.countryCode = countryCode
-        self.task = task!.id
-        
+        self.task = task
     }
     
 
@@ -135,8 +134,7 @@ class Location : Object {
             if self.task == nil {
                 return "Unknown - person was set, LocID: \(self.id)"
             }
-            let taskTitle = Task.getTitleForTask(taskId:self.task!, teamId: self.teamId)
-            return taskTitle!
+            return self.task!.title
         }
     }
 

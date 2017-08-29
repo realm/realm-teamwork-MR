@@ -68,19 +68,16 @@ class TeamDetailViewController: FormViewController {
             // an existing team - all changes are live
             let identityPredicate = NSPredicate(format: "id = %@", teamId!)
             theTeamRecord = realm.objects(Team.self).filter(identityPredicate).first //get the team
-            //rightButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: "Done"), style: .plain, target: self, action: #selector(BackCancelPressed) as Selector?)
         } else {
             // Let's make a new one... (in the case of new teams we allow the user to back out
-            //theTeamRecord = Team()
-            
             let aRandomIndex = Int(arc4random_uniform(UInt32(TeamWorkConstants.realmColorsArray.count)))
             let aRandomRealmColor: UIColor = TeamWorkConstants.realmColorsArray[aRandomIndex]
             let theTeamId = NSUUID().uuidString
             let values: Dictionary<String, Any>  = ["id" : theTeamId,
                                                     "creationDate" : Date(),
                                                     "createdBy": self.myPersonRecord!,
-                                                    "bgcolor" : aRandomRealmColor.hexString(),
-                                                    "realmURL": "\(TeamWorkConstants.TeamTasksPartialPath)\(theTeamId)"]
+                                                    "bgcolor" : aRandomRealmColor.hexString()]
+                                                    //,"realmURL": "\(TeamWorkConstants.TeamTasksPartialPath)\(theTeamId)"]
             try! realm.write {
                 theTeamRecord = realm.create(Team.self, value: values)
             }
@@ -168,7 +165,7 @@ class TeamDetailViewController: FormViewController {
         // If the TeamTasksRealm is already created, show the tasks for this realm, allow adding tasks, etc;
         // if its in the middle of being created we'll skip it.
         
-        if let tasksRealm = theTeamRecord?.openTeamTaskRealm() {
+        if let tasksRealm = theTeamRecord?.realm {
             print("Opened \(tasksRealm.configuration.description)")
             /* let */ tasks = tasksRealm.objects(Task.self).sorted(byKeyPath: "dueDate", ascending: true)
 
@@ -190,10 +187,11 @@ class TeamDetailViewController: FormViewController {
                                 print("Tap in row \(String(describing: row.title))")
                                 self.performSegue(withIdentifier: self.kTeamTaskListToTaskDetails, sender: self)
                     }
-                }
+                } // task in teams...
             } else { // there are no tasks in this TeamTasksRealm. However...
                 if isAdmin { // if you're an admin, perhaps you can assign some from the master tasks list
-                    let masterTaskList = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
+                    //let masterTaskList = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
+                    let masterTaskList = try! Realm(configuration: commonRealmConfig(user: SyncUser.current!))
                     let unclaimedTasks = masterTaskList.objects(Task.self).filter("team == nil")
                     
                     form.last!
@@ -237,7 +235,6 @@ class TeamDetailViewController: FormViewController {
                                 case true:
                                     try! self?.realm.write {
                                         member.teams.append(self!.theTeamRecord!)
-                                        _ = self?.theTeamRecord?.addMemberPermission(userIdentity: member.id)
                                     }
                                 case false:
                                     if member.teams.contains(self!.theTeamRecord!) {
@@ -245,7 +242,6 @@ class TeamDetailViewController: FormViewController {
                                         try! self?.realm.write {
                                             member.teams.remove(objectAtIndex: index!)
                                             self?.realm.add(member, update: true)
-                                            _ = self?.theTeamRecord?.removeMemberPermission(userIdentity: member.id)
                                         }
                                     }
                                 }
@@ -298,13 +294,9 @@ class TeamDetailViewController: FormViewController {
     } // of updatePressed
     
     @IBAction func addPressed(sender: AnyObject) {
-        // here we need to actually create the new team and create the new TaskTeamRealm too - this should be done by
-        // the class methods on Team...
+        //add the new team record to the list of Teams
         let rlm = try! Realm()
-
         try! rlm.write {
-            let status = theTeamRecord!.createRealm()
-            print("Returned \(status) on Realm creation for \(theTeamRecord!.name) at \(theTeamRecord!.realmURL) ")
             rlm.add(theTeamRecord!, update: true)
         }
         navigationController?.popViewController(animated: true)
@@ -344,7 +336,7 @@ class TeamDetailViewController: FormViewController {
     }
 
     
-    //MARK: Navigatiopmn
+    //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kTeamTaskListToTaskDetails {
             let indexPath = self.tableView?.indexPathForSelectedRow
@@ -352,9 +344,9 @@ class TeamDetailViewController: FormViewController {
 
             let vc = segue.destination as! TaskViewController
             vc.taskId = tasks![indexPath!.row].id
-            vc.teamId = tasks![indexPath!.row].team
+            vc.teamId = tasks![indexPath!.row].team?.id ?? ""
             vc.isAdmin = isAdmin
             vc.hidesBottomBarWhenPushed = true
         }
     }
-} // of TeamDetaiulViewController
+} // of TeamDetailViewController

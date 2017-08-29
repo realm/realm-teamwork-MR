@@ -49,43 +49,45 @@ class TaskViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        HUD.show(.progress)
 
         teams = self.commonRealm.objects(Team.self).sorted(byKeyPath: "name", ascending:true)
-        
-        // get the right realm config depenidn  on who the user is...
-        if isAdmin {
-            taskRealmConfig = managerRealmConfig(user: SyncUser.current!)
-        } else {
-            if let savedTeamId = TeamworkPreferences.selectedTeam() {
-                taskRealmConfig = Team.realmConfigForTeamID(savedTeamId)
-            }
-        }
-        
-        // Now, as long as we have a Realm config, try to open it asynchronously...
-        if taskRealmConfig != nil {
-            openRealmAsync(config: self.taskRealmConfig!, completionHandler: { (realm, error) in
-                if let realm = realm {  // opened the realm
-                    HUD.flash(.success, delay: 1.0)
-                    HUD.hide()
-                    self.setupFormAfterOpen(realm:realm)
-                    self.tableView?.reloadData()
-                } else { // an error occurred
-                    HUD.flash(.error, delay: 1.0)
-                    HUD.hide()
+        let tasksRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
+        self.setupFormAfterOpen(realm:tasksRealm)
+        self.tableView?.reloadData()
 
-                    let errorContent = error != nil ? error?.localizedDescription : "Error opening "
-                    Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
-                        .action(.cancel("Cancel"))
-                        .show()
-                } // of else
-                
-            }) // of AsyncOpen
-        } else { //of test for a valid config
-            PKHUD.sharedHUD.hide()
-            // @TODO Need to show an error here if there is no usable config -- means that the user is on NO tra,s
-        }
+        // get the right realm config depenidn  on who the user is...
+// TeamWorkMR only
+//        if isAdmin {
+//            //taskRealmConfig = managerRealmConfig(user: SyncUser.current!)
+//            taskRealmConfig = commonRealmConfig(user: SyncUser.current!)
+//        } else {
+//            if let savedTeamId = TeamworkPreferences.selectedTeam() {
+//                taskRealmConfig = Team.realmConfigForTeamID(savedTeamId)
+//            }
+//        }
+// Now, as long as we have a Realm config, try to open it asynchronously...
+//        if taskRealmConfig != nil {
+//            openRealmAsync(config: self.taskRealmConfig!, completionHandler: { (realm, error) in
+//                if let realm = realm {  // opened the realm
+//                    HUD.flash(.success, delay: 1.0)
+//                    HUD.hide()
+//                    self.setupFormAfterOpen(realm:realm)
+//                    self.tableView?.reloadData()
+//                } else { // an error occurred
+//                    HUD.flash(.error, delay: 1.0)
+//                    HUD.hide()
+//
+//                    let errorContent = error != nil ? error?.localizedDescription : "Error opening "
+//                    Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("\(errorContent!) - please try later", comment: "Code: \(error!) - please try later"))
+//                        .action(.cancel("Cancel"))
+//                        .show()
+//                } // of else
+//                
+//            }) // of AsyncOpen
+//        } else { //of test for a valid config
+//            PKHUD.sharedHUD.hide()
+//            // @TODO Need to show an error here if there is no usable config -- means that the user is on NO tra,s
+//        }
     } // of viewDidLoad
     
          func setupFormAfterOpen(realm: Realm?) {
@@ -112,7 +114,7 @@ class TaskViewController: FormViewController {
                 
                 self.location = Location.createNewLocationWithTask(taskId: self.task!.id, coordinate:newCoord!)
                 try! self.tasksRealm?.write {
-                    self.task?.location = self.location!.id // the Location object already refers back to us by the task's id string... so do the same going the other way.
+                    self.task?.location = self.location // the Location object already refers back to us by the task's id string... so do the same going the other way.
                 }
                 
             } else {
@@ -124,7 +126,8 @@ class TaskViewController: FormViewController {
                     self.navigationItem.rightBarButtonItem = rightButton
                 }
                 self.task = self.tasksRealm!.objects(Task.self).filter("id = %@", self.taskId!).first
-                self.location = Location.getLocationForLocationID(id:self.task!.location)
+                // TeamWorkMRself.location = Location.getLocationForLocationID(id:self.task!.location)
+                self.location = self.task!.location
             }
             
             form = createForm(editable: formIsEditable(), task: self.task)        // See if this is a new task, or viewing/editing an exsisting one:
@@ -389,19 +392,20 @@ class TaskViewController: FormViewController {
                         return ""
                     }
                     
-                    if let assignedTeam = Team.getTeamForID(id: task!.team) {
+                    //if let assignedTeam = Team.getTeamForID(id: task!.team) {
+                    if let assignedTeam = task!.team {
                         row.value = assignedTeam.id
                     }
                     }.onChange({ [weak self] (row) in
-                        let oldTeamId = task?.team
+                        let oldTeam = task?.team
                         if let id = row.value {
                             let newTeam = self?.commonRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", id)).first
                             try! self?.tasksRealm?.write {
-                                task?.team = newTeam!.id
+                                task?.team = newTeam
                             }
                             // if the team has changed, then we need to remove the task copy from the old TeamTaskReam
-                            if oldTeamId != nil && oldTeamId != newTeam!.id {
-                                let oldTeamRealm = self?.commonRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", oldTeamId!)).first
+                            if oldTeam != nil && oldTeam != newTeam {
+                                let oldTeamRealm = self?.commonRealm.objects(Team.self).filter(NSPredicate(format: "id = %@", oldTeam!)).first
                                 oldTeamRealm?.removeTask(id:task!.id)
                             }
                         }
@@ -430,7 +434,8 @@ class TaskViewController: FormViewController {
                         return ""
                     }
                     
-                    if let assignee = Person.getPersonForID(id: task!.assignee) {
+                    //TeamWorkMRif let assignee = Person.getPersonForID(id: task!.assignee) {
+                    if let assignee = task!.assignee {
                         row.value = assignee.id
                     }
                     
@@ -439,7 +444,7 @@ class TaskViewController: FormViewController {
                             let aRealm = try! Realm()
                             let person = aRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", id)).first
                             try! self?.tasksRealm?.write {
-                                task?.assignee = person!.id
+                                task?.assignee = person
                             }
                         }
                     }).cellUpdate { cell, row in

@@ -56,6 +56,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     var sortAscending = true
     var df = DateFormatter()
     let reachability = Reachability()!
+    let commonRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
 
     // Dropdown menu
     var teamNameitems = [String]()
@@ -82,61 +83,47 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         
         // Instantiate the dropdown menu view
         menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: NSLocalizedString("Teams", comment: "Teams"), items: teamNameitems as [AnyObject])
-        
-        // This is the closure that processes changes to the dropdown menu
+
+        // This is the closure that processes dropdown menu selection
+        // 1.0 see what the user selected, then
+        // 1.1 if "All" get all task for all teams records if they're admin, only their own (also for all teams) if not
+        // 2.0 if an individual team, then get the team record
+        // 2.1 if admin, get all records for this team, or only the users's recofds for the selected team
         menuView.didSelectItemAtIndexHandler = {[weak self] (indexPath: Int) -> () in
-            //print("Did select item at index: \(indexPath)")
             let teamName = self!.teamNameitems[indexPath]
-            
             if teamName == "All" {
-                self?.teamTasksConfig = managerRealmConfig(user: SyncUser.current!)
-                //self!.tasksRealm = try! Realm(configuration: TeamWorkConstants.managerRealmsConfig)
-                //self!.tasks = self!.tasksRealm?.objects(Task.self).sorted(byKeyPath: self!.sortProperty, ascending: self!.sortAscending ? true : false)
-            } else {
+                if self?.isAdmin == true { // admins get all records for everone
+                    self?.tasks = self?.commonRealm.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
+                } else { // get all tasks in al teams for this user
+                    self?.tasks = self!.commonRealm.objects(Task.self).filter(NSPredicate(format: "assignee.id = %@", SyncUser.current!.identity!)).sorted(byKeyPath: self!.sortProperty, ascending: self!.sortAscending ? true : false)
+                }
+            } else { // some other team was selected
                 if let theTeamRecord = self?.realm.objects(Team.self).filter(NSPredicate(format: "name = %@", teamName)).first {
                     TeamworkPreferences.updateSelectedTeam(id: theTeamRecord.id)
-                
-                    //self?.tasksRealm = Team.realmForTeamName(name: teamName)
-                    //self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
-                    self?.teamTasksConfig = Team.realmConfigForTeamID(theTeamRecord.id)
+                    var predicate: NSPredicate?
+                    if self?.isAdmin == true { // For the admin, get all records for this team
+                        predicate = NSPredicate(format: "team.id = %@", theTeamRecord.id)
+                    } else { // else just get this user's records for this team
+                        predicate = NSPredicate(format: "team.id = %@ AND assignee.id = %@", theTeamRecord.id, SyncUser.current!.identity!)
+                    }
+                    self?.tasks = self?.commonRealm.objects(Task.self).filter(predicate!).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
                 }
             }
-            
-            if self?.teamTasksConfig != nil {
-                openRealmAsync(config: self!.teamTasksConfig!, completionHandler: { (realm, error) in
-                    if let realm = realm {
-                        HUD.flash(.success, delay: 1.0)
-                        HUD.hide()
-
-                        self?.tasksRealm = realm
-                        self?.tasks = self?.tasksRealm!.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
-                        print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - \(String(describing: self?.tasksRealm!)), found \(self?.tasks?.count ?? 0) tasks\n\n")
-                        self?.tableView.reloadData()
-                    } else {
-                        HUD.flash(.error, delay: 1.0)
-                        HUD.hide()
-
-                        if let error = error {
-                           print ("Error returned on AsyncOpen() attempt: \(error.localizedDescription)")
-                        }
-                    }
-                })
-            } else {
-                HUD.hide()
-                print("teamTasksConfig was nil - user has no assigned teams? ...and we can't read the master task realm as a non-Admin user")
-            }
+ 
+            print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - found \(self?.tasks?.count ?? 0) tasks\n\n")
+            HUD.hide()
+            self?.tableView.reloadData()
         } // of menuView selection handler
         
-        // lastly, this sets the navitem to actually have the drop down as its title
-        self.navigationItem.titleView = menuView
+        self.navigationItem.titleView = menuView // set the navitem to actually have the dropdown as it's title
 
-        // recover saved menu choice of team
+        // recover saved menu choice of team, if any.
         if let savedTeamId = TeamworkPreferences.selectedTeam()  {
             let theTeamName = Team.teamNameForIdentifier(id:savedTeamId)
             if let index = self.teamNameitems.index(of: theTeamName) {
                 menuView.selectItem(index)
             }
-        } else { // show the 1st tram the users has (will be "all" for Managers; or post an alert if not on any teams
+        } else { // show the 1st time the users has (will be "all" for Managers; or post an alert if not on any teams
             if menuView.itemCount() > 0 {
                 menuView.selectItem(0)
             } else {
@@ -215,7 +202,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath as IndexPath) as! TasksTableViewCell
         
         let task = tasks![indexPath.row]
-        let taskLocation = Location.getLocationForID(id: task.location)
+//        let taskLocation = Location.getLocationForID(id: task.location)
+        let taskLocation =  task.location
         if taskLocation != nil && taskLocation?.haveLatLon == true {
             
             if let existingImage = taskLocation?.mapImage {
@@ -236,9 +224,11 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         cell.descriptionLabel.text = task.taskDescription
         task.dueDate != nil ? (cell.dueDatelabel.text = dateStringforDueDate(date: task.dueDate!, isCompleted: task.isCompleted)) :  (cell.dueDatelabel.text = NSLocalizedString("No Due Date", comment: "No Due Date"))
         var teamName = ""
-        let assignee = Person.getPersonForID(id: task.assignee)
+        //let assignee = Person.getPersonForID(id: task.assignee)
+        let assignee = task.assignee
         if task.team != nil {
-            teamName = NSLocalizedString("Team: \(Team.teamNameForIdentifier(id: task.team!))/", comment: "formatting for team name")
+            //teamName = NSLocalizedString("Team: \(Team.teamNameForIdentifier(id: task.team!.id))/", comment: "formatting for team name")
+            teamName = NSLocalizedString("Team: \(task.team?.name)/", comment: "formatting for team name")
         }
         assignee != nil ? (cell.assigneeLabel.text = assignee!.fullName().isEmpty ? "\(teamName)(no name) \(assignee!.id)" : "\(teamName)\(assignee!.fullName())") : (cell.assigneeLabel.text = NSLocalizedString("\(teamName)(unassigned)", comment: "Not yet aassigned"))
         
@@ -315,7 +305,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             
             let vc = segue.destination as? TaskViewController
             vc!.taskId = tasks![indexPath!.row].id
-            vc!.teamId = tasks![indexPath!.row].team
+            vc!.teamId = tasks![indexPath!.row].team?.id ?? ""
             vc!.isAdmin = isAdmin
             vc!.hidesBottomBarWhenPushed = true
             

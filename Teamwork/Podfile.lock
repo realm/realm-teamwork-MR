@@ -7,11 +7,11 @@ PODS:
   - BTNavigationDropdownMenu (0.4.1)
   - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
-  - Eureka (2.0.1)
+  - Eureka (3.0.0)
   - Fabric (1.6.12)
   - ImagePicker (2.1.1)
-  - ImageRow (1.0.0):
-    - Eureka (~> 2.0.0-beta.1)
+  - ImageRow (2.0.0):
+    - Eureka (= 3.0)
   - ISHHoverBar (1.0.1)
   - JVFloatLabeledTextField (1.2.0)
   - PermissionScope (1.1.1)
@@ -20,9 +20,9 @@ PODS:
     - Realm (>= 0.99.1)
     - RealmUtilities (>= 0.2.1)
   - ReachabilitySwift (3)
-  - Realm (2.7.0):
-    - Realm/Headers (= 2.7.0)
-  - Realm/Headers (2.7.0)
+  - Realm (2.10.0):
+    - Realm/Headers (= 2.10.0)
+  - Realm/Headers (2.10.0)
   - RealmLoginKit (0.1.1):
     - Realm
     - RealmLoginKit/Core (= 0.1.1)
@@ -34,8 +34,8 @@ PODS:
     - ABFRealmMapView (>= 2.1.3)
     - RBQSafeRealmObject
     - RealmSwift (>= 2.1.1)
-  - RealmSwift (2.7.0):
-    - Realm (= 2.7.0)
+  - RealmSwift (2.10.0):
+    - Realm (= 2.10.0)
   - RealmUtilities (0.4):
     - Realm (>= 0.95)
   - TORoundedTableView (0.1.3)
@@ -45,10 +45,10 @@ DEPENDENCIES:
   - Alertift (~> 1.0)
   - BTNavigationDropdownMenu (from `https://github.com/realm-demos/BTNavigationDropdownMenu`, branch `swift-3.0`)
   - Crashlytics
-  - Eureka (~> 2.0.0-beta.1)
+  - Eureka (~> 3.0)
   - Fabric
   - ImagePicker
-  - ImageRow (~> 1.0)
+  - ImageRow (~> 2.0)
   - ISHHoverBar
   - JVFloatLabeledTextField
   - PermissionScope (from `https://github.com/nickoneill/PermissionScope.git`)
@@ -56,7 +56,7 @@ DEPENDENCIES:
   - ReachabilitySwift
   - RealmLoginKit
   - RealmMapView (from `https://github.com/bigfish24/ABFRealmMapView.git`)
-  - RealmSwift (= 2.7)
+  - RealmSwift
 
 EXTERNAL SOURCES:
   BTNavigationDropdownMenu:
@@ -84,23 +84,23 @@ SPEC CHECKSUMS:
   Alertift: e9a2d1e31af55f8f44d4153d84fdf0f4657bad24
   BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
   Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
+  Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
   Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
-  ImageRow: 1e37db26f61a0c4ad3bc9a3a803c32d968782857
+  ImageRow: 9dfbfa38c1e62c25d638bc40e97a48c1809443c4
   ISHHoverBar: 44d5161b7c815a60468d181e3ce70fbbfa5bef2a
   JVFloatLabeledTextField: 96c0c1b6739001801340d25b86aff990d67c4181
   PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   RBQSafeRealmObject: 128e6ece2acceeb7dea9d00b8fa40ba4c489c3fa
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
   RealmLoginKit: c904029a7640daae5e83c9ca37d662cfa678f969
   RealmMapView: 78f56f8e8bbcd739832741ea53ef5cbfb674943c
-  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
   RealmUtilities: bd4d18141e62a6cdcfa1859f1f090a27ab282628
   TORoundedTableView: cd1437ef81ab3888dea8c06d2dfe4795bcaac768
 
-PODFILE CHECKSUM: 4db4c0e3a060a0147996ed66f2dcb3718d4a0866
+PODFILE CHECKSUM: b0a6638ce16fcf6ab6e6c775823f7aea090da82c
 
 COCOAPODS: 1.2.1

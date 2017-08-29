@@ -118,13 +118,13 @@ class PersonDetails2ViewController: FormViewController {
                     form.last! <<< TextRow(){ row in
                         row.disabled = true
                         let dueDateString = task.dueDate != nil ? dateFormatter.string(from: task.dueDate! as Date) : NSLocalizedString("TBD", comment: "due date not set")
-                        let annotation = task.assignee == thePersonRecord!.id ? "👤 " : "👥 " // el cheapo way of indicating the task is assigned to this person
+                        let annotation = task.assignee == thePersonRecord ? "👤 " : "👥 " // el cheapo way of indicating the task is assigned to this person
                         row.title = ("\(annotation)\(task.title) due: \(dueDateString)")
                         row.tag = task.id
                         row.disabled = true
                         }.onCellSelection(){ cell, row in
                             print("Tap in row \(String(describing: row.title))")
-                            let dict = ["teamId": task.team, "taskId": task.id]
+                            let dict = ["teamId": task.team?.id, "taskId": task.id]
                             self.performSegue(withIdentifier: self.kPersonTasksDetailToTaskDetail, sender: dict)
                     }
                 }// of task row

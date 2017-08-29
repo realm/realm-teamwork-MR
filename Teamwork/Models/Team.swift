@@ -36,9 +36,9 @@ class Team : Object  {
     dynamic var teamDescription = ""
     dynamic var realmURL = ""
     
-    // We could use a hard list here, however this will enable notificaiton updated to propagate
+    // We could use a hard list here, however this will enable notification updated to propagate
     //dynamic var members = List<Person>()
-    // so it piwd be easier to use Realm's LinkingObject mechanism whihc allows us to get he effect of having
+    // so it would be easier to use Realm's LinkingObject mechanism whihc allows us to get he effect of having
     // a back-link without the hard connetion between models.  HOWEVER since the Person objets and the Team object live
     // in *different realms* we need to store references to their primary keys ... and NOT the actua objects
     
@@ -79,7 +79,7 @@ class Team : Object  {
     
     func totalTasks(pastDue: Bool = false) -> Int {
         var rv = 0
-        if let teamTasksRealm = self.openTeamTaskRealm() {
+        if let teamTasksRealm = self.realm {
             rv = teamTasksRealm.objects(Task.self).count
         }
         return rv
@@ -88,54 +88,16 @@ class Team : Object  {
     
     func pendingTasks() -> Int {
         var rv = 0
-        if let teamTasksRealm = self.openTeamTaskRealm() {
+        if let teamTasksRealm = self.realm {
             rv = teamTasksRealm.objects(Task.self).filter(NSPredicate(format: "isCompleted = false")).count
         }
         return rv
     }
     
-    func createRealm() -> TeamRealmStatus {
-        var status:TeamRealmStatus = .notPermitted
-        // this creates a new Realm that is Yet Another Task Container
-        // (i.e., it hold Task objects.. just like the main tasks list)
-        
-        if SyncUser.current != nil {
-            let defaultRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
-            let identity = (SyncUser.current!.identity)!
-            let myPersonRecord = defaultRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", identity)).first
-            if myPersonRecord!.role == Role.Admin || myPersonRecord!.role == Role.Manager {
-                let exists = Team.checkForTeam(name: self.name)
-                // check to see if the realm exists; if so, return  .alreadyExists
-                if exists == false {
-
-                    let newTeamTasksURL = URL(string: self.realmURL)!
-                    // @FIXME: BUG REPORT: creating a new Realm with this config creates a Ream with every possible model inside it...
-                    let newTeamTasksConfig = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: newTeamTasksURL), objectTypes: [Task.self])
-                    let newTeamTasksRealm = try! Realm(configuration: newTeamTasksConfig)
-                    
-                    status = .successful
-                }
-            }
-        }
-        return status
-    }
-    
-
-    
-
-    func openTeamTaskRealm() -> Realm? {
-        var theTaskRealm: Realm? = nil
-        if self.realmURL.isEmpty == false {
-            let teamURL = URL(string: self.realmURL)
-            let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL!))
-            theTaskRealm = try! Realm(configuration: config)
-        }
-        return theTaskRealm
-    }
     
     func tasksForUser(identity:String? = nil) -> Results<Task>? {
         var rv: Results<Task>? = nil
-        if let teamTasksRealm = self.openTeamTaskRealm() {
+        if let teamTasksRealm = self.realm {
             if identity == nil {
                 rv = teamTasksRealm.objects(Task.self) // all tasks
             } else {
@@ -148,12 +110,13 @@ class Team : Object  {
 
     func addOrUpdateTask(taskId: String) {
         // Open the master task realm and get the origial record we're going to clone into the TeamTaskRealm
-        let masterTaskRealm = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
+        //let masterTaskRealm = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
+        let masterTaskRealm = try! Realm(configuration: commonRealmConfig(user: SyncUser.current!))
         let taskToCopy = masterTaskRealm.objects(Task.self).filter("id = %@", taskId).first
 
         // Now open this Team's TaskRealm..
-        let teamTaskRealm = self.openTeamTaskRealm() // get the teams task realm
-
+        //let teamTaskRealm = self.openTeamTaskRealm() // get the teams task realm
+        let teamTaskRealm = self.realm
         // check to see if this record ID already exists there
         if let taskRecordInTeamTasksRealm = teamTaskRealm?.objects(Task.self).filter("id = %@",taskId).first {
             // Yes! It's already in this TeamTaskRealm; we just need to update is with any changed fields
@@ -194,9 +157,9 @@ class Team : Object  {
     func removeTask(id: String) {
         var theTaskRealm: Realm? = nil
         if id != "" {
-            let teamURL = URL(string: self.realmURL)
-            let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL!))
-            theTaskRealm = try! Realm(configuration: config)
+            //let teamURL = URL(string: self.realmURL)
+            //let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL!))
+            theTaskRealm = self.realm       //try! Realm(configuration: config)
             
             let objectToRemove = theTaskRealm?.objects(Task.self).filter(NSPredicate(format: "id = %@", id))
             
@@ -227,23 +190,25 @@ class Team : Object  {
     }
     
     
-    class func realmConfigForTeamID(_ teamID: String) -> Realm.Configuration? {
-        var rv: Realm.Configuration?
-        
-        if let teamURL = URL(string: "\(TeamWorkConstants.TeamTasksPartialPath)\(teamID)") {
-            rv = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL))
-        }
-        return rv
-    }
+//    class func realmConfigForTeamID(_ teamID: String) -> Realm.Configuration? {
+//        var rv: Realm.Configuration?
+//        
+//        if let teamURL = URL(string: "\(TeamWorkConstants.TeamTasksPartialPath)\(teamID)") {
+//            rv = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL))
+//        }
+//        return rv
+//    }
     
     // given a teamId return the Realm
-    class func realmForTeamID(teamId:String, completionHandler: @escaping(Realm?, Error?) -> Void)  {
-        let teamURL = URL(string: "\(TeamWorkConstants.TeamTasksPartialPath)\(teamId)")
-        let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL!))
-        openRealmAsync(config: config) { (realm, error) in
-            completionHandler(realm, error)
-        }
-    }
+    
+// ** this is a Muti-Realm function only
+//    class func realmForTeamID(teamId:String, completionHandler: @escaping(Realm?, Error?) -> Void)  {
+//        let teamURL = URL(string: "\(TeamWorkConstants.TeamTasksPartialPath)\(teamId)")
+//        let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: teamURL!))
+//        openRealmAsync(config: config) { (realm, error) in
+//            completionHandler(realm, error)
+//        }
+//    }
     
     // given a team name, return the realm
     class func realmForTeamName(name:String, completionHandler: @escaping(Realm?, Error?) -> Void)  {
