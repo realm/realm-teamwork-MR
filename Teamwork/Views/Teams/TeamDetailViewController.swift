@@ -14,7 +14,7 @@ import Eureka
 import ImageRow
 
 
-/* 
+/*
  dynamic var id = NSUUID().uuidString
  dynamic var creationDate = Date()
  dynamic var lastUpdatedDate: Date?
@@ -26,7 +26,7 @@ import ImageRow
 class TeamDetailViewController: FormViewController {
     
     let kTeamTaskListToTaskDetails = "teamTaskListToTaskDetails"
-
+    
     var theTeamRecord: Team?
     var teamId : String?
     
@@ -45,13 +45,13 @@ class TeamDetailViewController: FormViewController {
     var rightButton: UIBarButtonItem!
     var tasks: Results<Task>?
     let realm = try! Realm()
-
+    
     
     // used by the list controller when editing team members
     var teamMembers: Results<Person>!
     var everyoneElse: Results<Person>!
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         teamMembers = realm.objects(Person.self).sorted(byKeyPath: "lastName", ascending: true)
@@ -63,7 +63,7 @@ class TeamDetailViewController: FormViewController {
         
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = editMode == true ? theTeamRecord?.name : NSLocalizedString("New Team", comment:"Teams")
-
+        
         if editMode == true {
             // an existing team - all changes are live
             let identityPredicate = NSPredicate(format: "id = %@", teamId!)
@@ -77,7 +77,7 @@ class TeamDetailViewController: FormViewController {
                                                     "creationDate" : Date(),
                                                     "createdBy": self.myPersonRecord!,
                                                     "bgcolor" : aRandomRealmColor.hexString()]
-                                                    //,"realmURL": "\(TeamWorkConstants.TeamTasksPartialPath)\(theTeamId)"]
+            //,"realmURL": "\(TeamWorkConstants.TeamTasksPartialPath)\(theTeamId)"]
             try! realm.write {
                 theTeamRecord = realm.create(Team.self, value: values)
             }
@@ -89,7 +89,7 @@ class TeamDetailViewController: FormViewController {
             editingInProgress = true
         }
         self.navigationItem.rightBarButtonItem = rightButton
-
+        
         // Build the Eureka Form:
         form +++ Section(NSLocalizedString("Team Information", comment: "Team Information"))
             <<< ImageRow() { row in
@@ -98,7 +98,7 @@ class TeamDetailViewController: FormViewController {
                 row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
                 row.clearAction = .yes(style: UIAlertActionStyle.destructive)
                 }.cellSetup({ (cell, row) in
-                
+                    
                     if self.theTeamRecord!.teamImage == nil {
                         row.value = UIImage(named: "Add_32")
                     } else {
@@ -126,7 +126,7 @@ class TeamDetailViewController: FormViewController {
                     return (rowValue == nil || rowValue!.isEmpty || Team.checkForTeam(name: row.value!)) ? ValidationError(msg: "Field required & must be unique!") : nil
                 }
                 row.add(rule: ruleRequiredViaClosure)
-
+                
                 row.placeholder = NSLocalizedString("Team Name", comment:"placeholder text")
                 if self.theTeamRecord!.name != "" {
                     row.value = self.theTeamRecord!.name
@@ -161,14 +161,13 @@ class TeamDetailViewController: FormViewController {
                         }
                     }
                 })
-
+        
         // If the TeamTasksRealm is already created, show the tasks for this realm, allow adding tasks, etc;
         // if its in the middle of being created we'll skip it.
         
         if let tasksRealm = theTeamRecord?.realm {
-            print("Opened \(tasksRealm.configuration.description)")
-            /* let */ tasks = tasksRealm.objects(Task.self).sorted(byKeyPath: "dueDate", ascending: true)
-
+            tasks = tasksRealm.objects(Task.self).sorted(byKeyPath: "dueDate", ascending: true)
+            
             form +++ Section(NSLocalizedString("Assigned Tasks", comment: "name of this section"))
             if tasks!.count > 0 {
                 let df = DateFormatter()
@@ -229,28 +228,28 @@ class TeamDetailViewController: FormViewController {
                         $0.title = member.fullName()
                         $0.value = member.teams.contains(self.theTeamRecord!) ? true : false
                         }.onChange({  [weak self] row in
-                                switch (row.value!) {
-                                case nil:
-                                    break
-                                case true:
+                            switch (row.value!) {
+                            case nil:
+                                break
+                            case true:
+                                try! self?.realm.write {
+                                    member.teams.append(self!.theTeamRecord!)
+                                }
+                            case false:
+                                if member.teams.contains(self!.theTeamRecord!) {
+                                    let index = member.teams.index(of: self!.theTeamRecord!)
                                     try! self?.realm.write {
-                                        member.teams.append(self!.theTeamRecord!)
-                                    }
-                                case false:
-                                    if member.teams.contains(self!.theTeamRecord!) {
-                                        let index = member.teams.index(of: self!.theTeamRecord!)
-                                        try! self?.realm.write {
-                                            member.teams.remove(objectAtIndex: index!)
-                                            self?.realm.add(member, update: true)
-                                        }
+                                        member.teams.remove(objectAtIndex: index!)
+                                        self?.realm.add(member, update: true)
                                     }
                                 }
+                            }
                             
                         })
             }
         }
-
-
+        
+        
         
         
         // Finally, set up a notifiction token to track ay changes to teams:
@@ -271,7 +270,7 @@ class TeamDetailViewController: FormViewController {
                 tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
                                      with: .automatic)
                 tableView.endUpdates()
-                                
+                
                 break
             case .error(let error):
                 // An error occurred while opening the Realm file on the background worker thread
@@ -280,7 +279,7 @@ class TeamDetailViewController: FormViewController {
             }
         } // of notification block setup
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -321,7 +320,7 @@ class TeamDetailViewController: FormViewController {
             present(alert, animated: true, completion:nil)  // 11
         } else {
             // user wanted to abandon these changes to a new team - so delete the object
-
+            
             
             navigationController?.popViewController(animated: true)
         }
@@ -329,19 +328,19 @@ class TeamDetailViewController: FormViewController {
     
     // MARK: Utils
     func deleteTeam() {
-            let rlm = try! Realm()
-            try! rlm.write {
-                rlm.delete(theTeamRecord!)
-            }
+        let rlm = try! Realm()
+        try! rlm.write {
+            rlm.delete(theTeamRecord!)
+        }
     }
-
+    
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kTeamTaskListToTaskDetails {
             let indexPath = self.tableView?.indexPathForSelectedRow
             self.navigationController?.setNavigationBarHidden(false, animated: false)
-
+            
             let vc = segue.destination as! TaskViewController
             vc.taskId = tasks![indexPath!.row].id
             vc.teamId = tasks![indexPath!.row].team?.id ?? ""

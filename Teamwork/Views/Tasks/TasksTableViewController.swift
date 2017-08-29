@@ -300,6 +300,8 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kTaskDetailSegue {
+            self.notificationToken?.stop()
+
             let indexPath = tableView.indexPathForSelectedRow
             self.navigationController?.setNavigationBarHidden(false, animated: false)
             
@@ -308,19 +310,17 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             vc!.teamId = tasks![indexPath!.row].team?.id ?? ""
             vc!.isAdmin = isAdmin
             vc!.hidesBottomBarWhenPushed = true
-            
-            self.notificationToken?.stop()
         }
         
         if segue.identifier == kNewTaskSegue {
+            self.notificationToken?.stop()
+
             self.navigationController?.setNavigationBarHidden(false, animated: false)
             let vc = segue.destination as? TaskViewController
             vc!.isAdmin = isAdmin
             vc!.newTaskMode = true
             vc?.navigationItem.title = NSLocalizedString("New Task", comment: "New Task")
             vc!.hidesBottomBarWhenPushed = true
-
-            self.notificationToken?.stop()
         }
         
         if segue.identifier == kSortingPopoverSegue {
