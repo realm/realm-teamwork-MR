@@ -79,8 +79,8 @@ class Team : Object  {
     
     func totalTasks(pastDue: Bool = false) -> Int {
         var rv = 0
-        if let teamTasksRealm = self.realm {
-            rv = teamTasksRealm.objects(Task.self).count
+        if let realm = self.realm {
+            rv = realm.objects(Task.self).filter(NSPredicate(format: "team = %@", self)).count
         }
         return rv
 
@@ -88,8 +88,8 @@ class Team : Object  {
     
     func pendingTasks() -> Int {
         var rv = 0
-        if let teamTasksRealm = self.realm {
-            rv = teamTasksRealm.objects(Task.self).filter(NSPredicate(format: "isCompleted = false")).count
+        if let realm = self.realm {
+            rv = realm.objects(Task.self).filter(NSPredicate(format: "isCompleted = false AND team = %@", self)).count
         }
         return rv
     }

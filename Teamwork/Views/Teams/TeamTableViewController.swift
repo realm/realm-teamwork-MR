@@ -49,7 +49,7 @@ class TeamTableViewController: UITableViewController {
             switch changes {
             case .initial:
                 // Results are now populated and can be accessed without blocking the UI
-                tableView.reloadData()
+                //tableView.reloadData()
                 break
             case .update(_, let deletions, let insertions, let modifications):
                 // Query results have changed, so apply them to the UITableView
