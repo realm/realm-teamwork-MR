@@ -251,7 +251,7 @@ class MapViewController: UIViewController {
         }
 
         if self.myPersonRecord?.role == Role.Worker {
-            showTasksPredicate = NSPredicate(format: "task != nil AND team.id = %@", teamID!)
+            showTasksPredicate = NSPredicate(format: "task != nil AND team != nil AND team.id = %@", teamID!)
             
             // ..and for showing peple, that the records actually be for person locations, not tasks.
             // (although at present the hoverbar/selector is only visible to admins, so this is moot)
@@ -277,7 +277,7 @@ class MapViewController: UIViewController {
             //}
 
             // the people predicate is the reverse of the showTasksPredicate:
-            showPeoplePredicate = NSPredicate(format: "person != nil AND team.id = nil")
+            showPeoplePredicate = NSPredicate(format: "person != nil AND team != nil")
         }
         
         // @TODO: if we want to set a label (there is on on the upper right corner of the view in the storyboard) 
