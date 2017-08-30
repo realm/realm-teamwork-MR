@@ -110,8 +110,7 @@ class Person : Object {
                     self.lastLocation?.latitude = coordinate!.latitude
                     self.lastLocation?.longitude = coordinate!.longitude
                     self.lastLocation?.haveLatLon = true
-                    //let lastSeenString = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .medium)
-                    print("Updating location: last seen at \(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .medium)) near (\(coordinate!.latitude), \(coordinate!.longitude)).")
+                    //print("Updating location: last seen at \(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .medium)) near (\(coordinate!.latitude), \(coordinate!.longitude)).")
                 } else {
                     print("CLShim is not running; can't update location, only last seen time.")
                 }
