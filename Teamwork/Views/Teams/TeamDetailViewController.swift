@@ -166,7 +166,7 @@ class TeamDetailViewController: FormViewController {
         // if its in the middle of being created we'll skip it.
         
         if let tasksRealm = theTeamRecord?.realm {
-            tasks = tasksRealm.objects(Task.self).sorted(byKeyPath: "dueDate", ascending: true)
+            tasks = tasksRealm.objects(Task.self).filter(NSPredicate(format: "team = %@", theTeamRecord!)).sorted(byKeyPath: "dueDate", ascending: true)
             
             form +++ Section(NSLocalizedString("Assigned Tasks", comment: "name of this section"))
             if tasks!.count > 0 {
