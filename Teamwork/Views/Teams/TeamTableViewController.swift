@@ -54,12 +54,9 @@ class TeamTableViewController: UITableViewController {
             case .update(_, let deletions, let insertions, let modifications):
                 // Query results have changed, so apply them to the UITableView
                 tableView.beginUpdates()
-                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
-                                     with: .automatic)
-                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
-                                     with: .automatic)
-                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
-                                     with: .automatic)
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+                //tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
                 tableView.endUpdates()
                 break
             case .error(let error):
@@ -69,7 +66,7 @@ class TeamTableViewController: UITableViewController {
             }
         }
 
-    }
+    } // of viewDidLoad
 
     
     deinit {

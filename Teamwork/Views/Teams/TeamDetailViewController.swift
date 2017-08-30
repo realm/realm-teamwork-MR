@@ -162,58 +162,52 @@ class TeamDetailViewController: FormViewController {
                     }
                 })
         
-        // If the TeamTasksRealm is already created, show the tasks for this realm, allow adding tasks, etc;
-        // if its in the middle of being created we'll skip it.
+        tasks = realm.objects(Task.self).filter(NSPredicate(format: "team = %@", theTeamRecord!)).sorted(byKeyPath: "dueDate", ascending: true)
         
-        if let tasksRealm = theTeamRecord?.realm {
-            tasks = tasksRealm.objects(Task.self).filter(NSPredicate(format: "team = %@", theTeamRecord!)).sorted(byKeyPath: "dueDate", ascending: true)
-            
-            form +++ Section(NSLocalizedString("Assigned Tasks", comment: "name of this section"))
-            if tasks!.count > 0 {
-                let df = DateFormatter()
-                df.dateStyle = .short
-                df.timeStyle = .none
-                for task in tasks! {
-                    form.last!
-                        <<< TextRow() {
-                            var dateString = NSLocalizedString("No Due Date", comment: "No due date set")
-                            if task.dueDate != nil {
-                                dateString = df.string(from: task.dueDate!)
-                            }
-                            $0.title = "\(task.title) due: \(dateString)"
-                            $0.disabled = true
-                            }.onCellSelection(){ cell, row in
-                                print("Tap in row \(String(describing: row.title))")
-                                self.performSegue(withIdentifier: self.kTeamTaskListToTaskDetails, sender: self)
-                    }
-                } // task in teams...
-            } else { // there are no tasks in this TeamTasksRealm. However...
-                if isAdmin { // if you're an admin, perhaps you can assign some from the master tasks list
-                    //let masterTaskList = try! Realm(configuration: managerRealmConfig(user: SyncUser.current!))
-                    let masterTaskList = try! Realm(configuration: commonRealmConfig(user: SyncUser.current!))
-                    let unclaimedTasks = masterTaskList.objects(Task.self).filter("team == nil")
-                    
-                    form.last!
-                        <<< ButtonRow() {
-                            if unclaimedTasks.count > 0 {
-                                $0.title = NSLocalizedString("Add/Select Task for Team...", comment: "Add new task")
-                            } else {
-                                $0.title = NSLocalizedString("No Unassigned Tasks in Master List ", comment: "new unclaimed tasks in master list")
-                                $0.disabled = true
-                            }
-                            }.onCellSelection({ (cell, row) in
-                                // build & display a list of all currently unassiged tasks from the master task list
-                                print("\n\n\(unclaimedTasks.count) tasks await!\n\n")
-                            })
-                } else { // if you're just a team member, we'll let you know there are no tasks assigned to this team
-                    form.last!
-                        <<< TextRow() {
-                            $0.title = NSLocalizedString("No tasks currrently assigned to this team", comment: "No Tasks Assigned")
-                    }
+        form +++ Section(NSLocalizedString("Assigned Tasks", comment: "name of this section"))
+        if tasks!.count > 0 {
+            let df = DateFormatter()
+            df.dateStyle = .short
+            df.timeStyle = .none
+            for task in tasks! {
+                form.last!
+                    <<< TextRow() {
+                        var dateString = NSLocalizedString("No Due Date", comment: "No due date set")
+                        if task.dueDate != nil {
+                            dateString = df.string(from: task.dueDate!)
+                        }
+                        $0.title = "\(task.title) due: \(dateString)"
+                        $0.disabled = true
+                        }.onCellSelection(){ cell, row in
+                            print("Tap in row \(String(describing: row.title))")
+                            self.performSegue(withIdentifier: self.kTeamTaskListToTaskDetails, sender: self)
                 }
-            } // of else in tasks.count check
-            
-        } // of opening of the TeamTasksRealm
+            } // task in teams...
+        } else { // there are no tasks in this TeamTasksRealm. However...
+            if isAdmin { // if you're an admin, perhaps you can assign some from the master tasks list
+                let masterTaskList = try! Realm(configuration: commonRealmConfig(user: SyncUser.current!))
+                let unclaimedTasks = masterTaskList.objects(Task.self).filter("team == nil")
+                
+                form.last!
+                    <<< ButtonRow() {
+                        if unclaimedTasks.count > 0 {
+                            $0.title = NSLocalizedString("Add/Select Task for Team...", comment: "Add new task")
+                        } else {
+                            $0.title = NSLocalizedString("No Unassigned Tasks in Master List ", comment: "new unclaimed tasks in master list")
+                            $0.disabled = true
+                        }
+                        }.onCellSelection({ (cell, row) in
+                            // build & display a list of all currently unassiged tasks from the master task list
+                            print("\n\n\(unclaimedTasks.count) tasks await!\n\n")
+                        })
+            } else { // if you're just a team member, we'll let you know there are no tasks assigned to this team
+                form.last!
+                    <<< TextRow() {
+                        $0.title = NSLocalizedString("No tasks currrently assigned to this team", comment: "No Tasks Assigned")
+                }
+            }
+        } // of else in tasks.count check
+
         
         
         
@@ -258,17 +252,14 @@ class TeamDetailViewController: FormViewController {
             switch changes {
             case .initial:
                 // Results are now populated and can be accessed without blocking the UI
-                tableView.reloadData()
+                //tableView.reloadData()
                 break
             case .update(_, let deletions, let insertions, let modifications):
                 // Query results have changed, so apply them to the UITableView
                 tableView.beginUpdates()
-                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
-                                     with: .automatic)
-                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
-                                     with: .automatic)
-                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
-                                     with: .automatic)
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),   with: .automatic)
+                //tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
                 tableView.endUpdates()
                 
                 break
