@@ -90,6 +90,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         // 2.0 if an individual team, then get the team record
         // 2.1 if admin, get all records for this team, or only the users's recofds for the selected team
         menuView.didSelectItemAtIndexHandler = {[weak self] (indexPath: Int) -> () in
+            self?.notificationToken?.stop() // stop watching the updates - we're going to replce the whole list,,,
             let teamName = self!.teamNameitems[indexPath]
             if teamName == "All" {
                 if self?.isAdmin == true { // admins get all records for everone
@@ -113,6 +114,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             print("\n\nSelected realm \(self!.teamNameitems[indexPath]) - found \(self?.tasks?.count ?? 0) tasks\n\n")
             HUD.hide()
             self?.tableView.reloadData()
+            self?.notificationToken = self?.setupNotificationToken()
         } // of menuView selection handler
         
         self.navigationItem.titleView = menuView // set the navitem to actually have the dropdown as it's title
@@ -146,9 +148,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         if let selectedRow = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedRow, animated: true)
         }
-    
         self.restortEntries()
-        tableView.reloadData()
     }
     
     
@@ -202,7 +202,6 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath as IndexPath) as! TasksTableViewCell
         
         let task = tasks![indexPath.row]
-//        let taskLocation = Location.getLocationForID(id: task.location)
         let taskLocation =  task.location
         if taskLocation != nil && taskLocation?.haveLatLon == true {
             
@@ -266,7 +265,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             switch changes {
             case .initial:
                 // Results are now populated and can be accessed without blocking the UI
-                self?.tableView.reloadData()
+                //self?.tableView.reloadData()
                 break
             case .update(_, let deletions, let insertions, let modifications):
                 // Query results have changed, so apply them to the UITableView
