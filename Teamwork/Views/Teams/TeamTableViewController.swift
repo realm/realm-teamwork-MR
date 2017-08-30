@@ -68,6 +68,9 @@ class TeamTableViewController: UITableViewController {
 
     } // of viewDidLoad
 
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     deinit {
         notificationToken?.stop()
