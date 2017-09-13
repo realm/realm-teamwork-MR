@@ -5,10 +5,10 @@ PODS:
   - ActionSheetPicker-3.0 (2.2.0)
   - Alertift (1.3)
   - BTNavigationDropdownMenu (0.4.1)
-  - Crashlytics (3.8.5):
+  - Crashlytics (3.8.6):
     - Fabric (~> 1.6.3)
   - Eureka (3.0.0)
-  - Fabric (1.6.12)
+  - Fabric (1.6.13)
   - ImagePicker (2.1.1)
   - ImageRow (2.0.0):
     - Eureka (= 3.0)
@@ -83,9 +83,9 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Alertift: e9a2d1e31af55f8f44d4153d84fdf0f4657bad24
   BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
+  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
   Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
   ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
   ImageRow: 9dfbfa38c1e62c25d638bc40e97a48c1809443c4
   ISHHoverBar: 44d5161b7c815a60468d181e3ce70fbbfa5bef2a
