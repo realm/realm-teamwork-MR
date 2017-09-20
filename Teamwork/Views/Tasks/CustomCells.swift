@@ -138,8 +138,10 @@ public final class WeekDayRow: Row<WeekDayCell>, RowType {
 //MARK: FloatLabelCell
 
 public class _FloatLabelCell<T>: Cell<T>, UITextFieldDelegate, TextFieldCell where T: Equatable, T: InputTypeInitiable {
+    public var textField: UITextField!
+    
         
-    public var textField : UITextField { return floatLabelTextField }
+   // public var textField : UITextField { return floatLabelTextField }
 
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
