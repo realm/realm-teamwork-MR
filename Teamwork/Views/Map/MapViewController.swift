@@ -24,7 +24,7 @@ import RealmSwift
 import RealmMapView
 import PermissionScope
 import ISHHoverBar
-import ReachabilitySwift
+import Reachability
 
 class MapViewController: UIViewController {
     enum MapDisplayModes {

@@ -12,17 +12,13 @@ target 'Teamwork' do
 #pod 'RealmSwift'
 #pod 'Realm'
 
-pod 'RealmSwift', '2.7'
-
-
+pod 'RealmSwift'
 pod 'RealmMapView', :git => 'https://github.com/bigfish24/ABFRealmMapView.git'
 pod 'RealmLoginKit'
-
 pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'feature/Xcode9-Swift3_2'
-pod 'ImageRow'	      #, '~> 1.0'
+pod 'ImageRow'
 pod 'PermissionScope', :git => 'https://github.com/nickoneill/PermissionScope.git'
 pod 'JVFloatLabeledTextField'
-pod 'ImagePicker'
 pod 'ActionSheetPicker-3.0'
 pod 'ISHHoverBar'
 pod 'ReachabilitySwift'

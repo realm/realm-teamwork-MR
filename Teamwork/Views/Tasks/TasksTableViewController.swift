@@ -23,7 +23,7 @@ import MapKit
 import UIKit
 import UserNotifications
 import BTNavigationDropdownMenu
-import ReachabilitySwift
+import Reachability
 import PKHUD
 import RealmSwift
 import Alertift

@@ -24,7 +24,7 @@ import Alertift
 import Eureka
 import PKHUD
 import RealmSwift
-import ReachabilitySwift
+import Reachability
 
 
 class TaskViewController: FormViewController {
