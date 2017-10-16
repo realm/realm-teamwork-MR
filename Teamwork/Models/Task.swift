@@ -18,9 +18,6 @@
 
 import Foundation
 import CoreLocation
-
-import Alertift
-import Realm
 import RealmSwift
 
 private var realm: Realm!

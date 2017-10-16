@@ -40,25 +40,24 @@ enum TeamRealmStatus: Int {
 }
 
 
-
 func commonRealmConfig(user: SyncUser) -> Realm.Configuration  {
-    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.commonRealmURL), objectTypes: [Location.self, Person.self, Task.self, Team.self])
-    return config
+    let syncConfig = SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.commonRealmURL, enableSSLValidation: false, isPartial: true)
+    let realmConfig = Realm.Configuration(syncConfiguration: syncConfig, objectTypes: [Location.self, Person.self, Task.self, Team.self])
+    return realmConfig
 }
 
-
-// 26-Aug-2017 moving the Task realm back into the common Realm in pref for paretial sync
-//func managerRealmConfig(user: SyncUser) -> Realm.Configuration  {
-//    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.managerRealmURL), objectTypes: [Task.self])
+//func commonRealmConfig(user: SyncUser) -> Realm.Configuration  {
+//    let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: TeamWorkConstants.commonRealmURL), objectTypes: [Location.self, Person.self, Task.self, Team.self])
 //    return config
 //}
+
 
 
 struct TeamWorkConstants {
     static let appID = Bundle.main.bundleIdentifier!
     
     // @TODO: Needs to point to either a local host or give directions to user on how to set up RMP Pro Edition
-    static let syncHost                 = "162.243.137.65" 
+    static let syncHost                 = "127.0.0.1"        //162.243.137.65" 
     static let ApplicationName          = "TeamworkPS"
     static let syncRealmPath            = "teamwork"
     static let kSelectedTeamPrefsKey    = "TeamworkSelectedTeam"

@@ -24,7 +24,7 @@ import RealmSwift
 import RealmMapView
 import PermissionScope
 import ISHHoverBar
-import ReachabilitySwift
+//import ReachabilitySwift
 
 class MapViewController: UIViewController {
     enum MapDisplayModes {
@@ -43,7 +43,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var hoverBar: ISHHoverBar!
     @IBOutlet weak var teamLabel: UILabel!
     
-    var commonRealm = try! Realm()
+    var commonRealm: Realm?         //      in a partial sync world, we need to pass the realm in   Was:  = try! Realm()
     let currentUser = SyncUser.current
     var myPersonRecord: Person?
     var nearMeBarButton: UIBarButtonItem!
@@ -52,8 +52,9 @@ class MapViewController: UIViewController {
     var tasksBarButton: UIBarButtonItem!
     
     let pscope = PermissionScope()
-    let reachability = Reachability()!
+    //let reachability = Reachability()!
 
+    var locations: Results<Location>?
     var mapDisplayMode = MapDisplayModes.tasks
     var showTasksPredicate:NSPredicate?
     var showPeoplePredicate: NSPredicate?
@@ -63,10 +64,23 @@ class MapViewController: UIViewController {
     
     var adminTabViews = [UIViewController]()
     var workerTabViews = [UIViewController]()
+
+    
+//    func doAsyncLoads(completion: (() -> Void)?) {
+    func doAsyncLoads() {
+        self.commonRealm?.subscribe(to: Location.self, where: "id != \"\"", completion: { (results, error) in
+            //
+            if let error = error {
+                // throw up an error HUD - could not get list of tasks connected to myPersonRecord
+                print("an error occurred: \(error.localizedDescription)")
+            }
+        }) // of inner partial subscription
+    } // doAsyncLoad()
+    
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        self.locations = self.commonRealm?.objects(Location.self) // this is just to get the locaitons result-set to be valid, even if empty.
+        self.doAsyncLoads()
         self.saveTabBarViews()
         
         mapView.delegate = self
@@ -79,7 +93,11 @@ class MapViewController: UIViewController {
         pscope.addPermission(PhotosPermission(), message: NSLocalizedString("Used to pick a profile image", comment:"photo perms text"))
         pscope.addPermission(LocationAlwaysPermission(), message: NSLocalizedString("Used to check that work is completed at its designated location", comment:"loction perms text"))
         
-        myPersonRecord = commonRealm.objects(Person.self).filter(NSPredicate(format: "id = %@", currentUser!.identity!)).first
+        if myPersonRecord == nil {
+            if let pplRecs = commonRealm?.objects(Person.self).filter(NSPredicate(format: "id = %@", currentUser!.identity!)) {
+                myPersonRecord  = pplRecs.first
+            }
+        }
         
         setupHoverBar()
         setupPredicates()
@@ -145,7 +163,7 @@ class MapViewController: UIViewController {
     }
     
     deinit {
-        self.notificationToken?.stop()
+        self.notificationToken?.invalidate()
     }
     
     // MARK: HoverBar actions
@@ -227,13 +245,13 @@ class MapViewController: UIViewController {
     
     func toggleOrientation(sender: UIControl) {
         let isHorizontal = self.hoverBar.orientation == .horizontal
-        
         self.hoverBar.orientation = isHorizontal ? .vertical : .horizontal
     }
     
     
     //MARK: Team/People selection
     func setupPredicates() {
+        
         var teamID: String?
 
         // In this new multi-realm work we need to know what team someone is on, or if they're an admin.
@@ -246,7 +264,6 @@ class MapViewController: UIViewController {
             } else {
                 teamID = "THIS-is-A-Bugus-ID-that-Will-Result-In-No-Records"
                 print("\n\n MapView:  No team found - ensuring we get no data...\n\n")
-
             }
         }
 
@@ -259,6 +276,7 @@ class MapViewController: UIViewController {
 
             self.mapView.basePredicate = showTasksPredicate
             self.mapView.refreshMapView()
+            
             
         } else { // .Admin and .Manager users
             
@@ -285,11 +303,10 @@ class MapViewController: UIViewController {
         //         self.defaultTeam != nil ? teamLabel.text = Team.teamNameForIdentifier(id:self.defaultTeam!) : ()
 
         // lastly, let's get notification on these objects as they change:
-        let locations = try! Realm().objects(Location.self)
-        self.notificationToken = locations.addNotificationBlock({ [weak self] (results) in
+        // self.locations = try! Realm().objects(Location.self)
+        self.notificationToken = locations!.observe({ [weak self] (results) in
             self?.mapView.refreshMapView()
         })
-        
     }
     
     

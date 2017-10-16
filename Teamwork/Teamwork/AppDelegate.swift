@@ -22,8 +22,8 @@ import RealmSwift
 import CoreLocation
 import UserNotifications
 
-import Fabric
-import Crashlytics
+//import Fabric
+//import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Crashlytics.self])
+        //Fabric.with([Crashlytics.self])
 
         let _ = CLManagerShim.sharedInstance
         UIApplication.shared.isIdleTimerDisabled = true

@@ -43,7 +43,7 @@ class PeopleViewController: UITableViewController {
         
         people = realm.objects(Person.self)
         
-        notificationToken = people?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+        notificationToken = people?.observe { [weak self] (changes: RealmCollectionChange) in
             guard let tableView = self?.tableView else { return }
             switch changes {
             case .initial:
@@ -72,7 +72,7 @@ class PeopleViewController: UITableViewController {
     
     // When this controller is disposed, of we want to make sure we stop the notifications
     deinit {
-        notificationToken?.stop()
+        notificationToken?.invalidate()
     }
     
     

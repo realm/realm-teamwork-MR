@@ -23,7 +23,7 @@ import MapKit
 import UIKit
 import UserNotifications
 import BTNavigationDropdownMenu
-import ReachabilitySwift
+import Reachability
 import PKHUD
 import RealmSwift
 import Alertift
@@ -39,10 +39,6 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     var teamTasksConfig: Realm.Configuration?
     var tasksRealm: Realm?
     var notificationToken: NotificationToken? = nil
-    
-    // this will cache the map image snapshots so we're not constantly recreating iamges
-    //let mapCache = NSCache<NSString, UIImage>()
-    
     
     let center = UNUserNotificationCenter.current()
     
@@ -60,13 +56,19 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
 
     // Dropdown menu
     var teamNameitems = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         HUD.show(.progress)
+        self.doAsyncLoad()
+    }// of ViewDidLoad()
+
+    
+            
+     func finalizeViewDidLoad() {
 
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        myPersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
+        // @FIXME: do we need to keep partial sync resultsof all of the Person records?
+        //myPersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
         isAdmin = (myPersonRecord!.role == Role.Admin || myPersonRecord!.role == Role.Manager)
         
         // the sorting menu
@@ -90,7 +92,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         // 2.0 if an individual team, then get the team record
         // 2.1 if admin, get all records for this team, or only the users's recofds for the selected team
         menuView.didSelectItemAtIndexHandler = {[weak self] (indexPath: Int) -> () in
-            self?.notificationToken?.stop() // stop watching the updates - we're going to replce the whole list,,,
+            self?.notificationToken?.invalidate() // stop watching the updates - we're going to replce the whole list,,,
             let teamName = self!.teamNameitems[indexPath]
             if teamName == "All" {
                 if self?.isAdmin == true { // admins get all records for everone
@@ -172,7 +174,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     // When this controller is disposed, of we want to make sure we stop the notifications
     deinit {
-        notificationToken?.stop()
+        notificationToken?.invalidate()
     }
     
     
@@ -258,9 +260,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     func setupNotificationToken() -> NotificationToken? {
         
-        self.notificationToken != nil ? self.notificationToken?.stop() : ()    // make sure we stop any old token
+        self.notificationToken != nil ? self.notificationToken?.invalidate() : ()    // make sure we stop any old token
 
-        return tasks?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+        return tasks?.observe { [weak self] (changes: RealmCollectionChange) in
             guard (self?.tableView) != nil else { return }
             switch changes {
             case .initial:
@@ -295,7 +297,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kTaskDetailSegue {
-            self.notificationToken?.stop()
+            self.notificationToken?.invalidate()
             self.notificationToken = nil
 
             let indexPath = tableView.indexPathForSelectedRow
@@ -309,7 +311,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         }
         
         if segue.identifier == kNewTaskSegue {
-            self.notificationToken?.stop()
+            self.notificationToken?.invalidate()
             self.notificationToken = nil
 
             let vc = segue.destination as? TaskViewController
@@ -447,6 +449,38 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
         // need some clever placeholder image here...
         cell.mapEnclosure.image = UIImage(named: "Map-Location_32")
     }
-}
+
+
+    func  doAsyncLoad() {
+        commonRealm.subscribe(to: Person.self, where: "id = \(myIdentity!)", completion: { (results, error) in
+            if let results = results {
+                print("Person results returned from partial sync request were: \(results)")
+                self.myPersonRecord = results.first
+                
+                self.commonRealm.subscribe(to: Task.self, where: "assignee = \(self.myIdentity!)", completion: { (results, error) in
+                    if let results = results {
+                        print("Task results returned from parial sync request were: \(results)")
+                        self.tasks = results
+                        
+                        // Now that we're really & truly loaded everything have the
+                        // view controller take down the HUD and actually display stuff.
+                        self.finalizeViewDidLoad()
+                    }
+                    if let error = error {
+                        // throw up an error HUD - could not get list of tasks connected to myPersonRecord
+                        print("an error occurred: \(error.localizedDescription)")
+                    }
+                }) // of inner partial subscription
+                
+                
+                if let error = error {
+                    // throw up an error HUD - cound not get my own identity
+                    print("an error occured: \(error.localizedDescription)")
+                }
+            }
+        }) // of outtermost partial subscription
+    } // doAsyncLoad()
+
+}// of TasksTableViewController
 
 

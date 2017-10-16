@@ -55,7 +55,7 @@ class Person : Object {
     dynamic var rawRole = Role.Worker.rawValue // Backing value for role property
     
     
-    // Yu might be wondering: "Where are the refernces to the Tasks that people are assigned?"
+    // You might be wondering: "Where are the referneces to the Tasks that people are assigned?"
     // In this version of Teamwork, Tasks as kept in a separate Realm from the Person object and there's
     // not a way to do cross-Reralm back liks. Instead we have a Teams summary model which manages teams;
     // these teams have members (Persons) and the each Team entry refeerences a stand-alone Realm that 

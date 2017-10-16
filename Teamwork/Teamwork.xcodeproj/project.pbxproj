@@ -34,6 +34,8 @@
 		8B77AF6A1DB7F4A5004A2877 /* View+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF661DB7F4A5004A2877 /* View+Utilities.swift */; };
 		8B77AF6C1DB81636004A2877 /* TextField+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */; };
 		8B77AF7A1DB98BB5004A2877 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B77AF791DB98BB5004A2877 /* UIKit.framework */; };
+		8B7A6A1D1F901268000211FF /* ABFRealmMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7A6A1B1F901267000211FF /* ABFRealmMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B7A6A1E1F901268000211FF /* RealmMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7A6A1C1F901267000211FF /* RealmMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B80EF441ECE62900026CD0F /* RealmUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80EF431ECE62900026CD0F /* RealmUtils.swift */; };
 		8B983AA81E328D63004E78AC /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B983AA71E328D63004E78AC /* UserProfileTableViewController.swift */; };
 		8B9FA3AC1DD3D32D00FA29C3 /* CLManagerShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FA3AB1DD3D32D00FA29C3 /* CLManagerShim.swift */; };
@@ -64,6 +66,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8B7A6A1D1F901268000211FF /* ABFRealmMapView.framework in Embed Frameworks */,
+				8B7A6A1E1F901268000211FF /* RealmMapView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +110,11 @@
 		8B77AF661DB7F4A5004A2877 /* View+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Utilities.swift"; sourceTree = "<group>"; };
 		8B77AF6B1DB81636004A2877 /* TextField+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Utilities.swift"; sourceTree = "<group>"; };
 		8B77AF791DB98BB5004A2877 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8B7A6A161F8FEA07000211FF /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		8B7A6A1B1F901267000211FF /* ABFRealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ABFRealmMapView.framework; path = Carthage/Build/iOS/ABFRealmMapView.framework; sourceTree = "<group>"; };
+		8B7A6A1C1F901267000211FF /* RealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmMapView.framework; path = Carthage/Build/iOS/RealmMapView.framework; sourceTree = "<group>"; };
+		8B7A6A1F1F90126E000211FF /* ABFRealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ABFRealmMapView.framework; path = Carthage/Build/iOS/ABFRealmMapView.framework; sourceTree = "<group>"; };
+		8B7A6A201F90126E000211FF /* RealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmMapView.framework; path = Carthage/Build/iOS/RealmMapView.framework; sourceTree = "<group>"; };
 		8B80EF431ECE62900026CD0F /* RealmUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUtils.swift; sourceTree = "<group>"; };
 		8B983AA71E328D63004E78AC /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileTableViewController.swift; path = Views/Settings/UserProfileTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		8B9FA3AB1DD3D32D00FA29C3 /* CLManagerShim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLManagerShim.swift; sourceTree = "<group>"; };
@@ -162,6 +171,9 @@
 		8B5CB3591DB2DF1F00319DB1 = {
 			isa = PBXGroup;
 			children = (
+				8B7A6A1B1F901267000211FF /* ABFRealmMapView.framework */,
+				8B7A6A1C1F901267000211FF /* RealmMapView.framework */,
+				8B7A6A161F8FEA07000211FF /* Cartfile */,
 				8BD404541DDBAD96005E9C4B /* README.md */,
 				8B77AF621DB7F4A5004A2877 /* Extensions */,
 				8B77AF461DB7E76F004A2877 /* Views */,
@@ -210,6 +222,8 @@
 		8B5CB38C1DB3020100319DB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B7A6A1F1F90126E000211FF /* ABFRealmMapView.framework */,
+				8B7A6A201F90126E000211FF /* RealmMapView.framework */,
 				8B77AF791DB98BB5004A2877 /* UIKit.framework */,
 				8B5CB38D1DB3020100319DB1 /* Foundation.framework */,
 				868A4DBA58769BDB02410D11 /* Pods_Teamwork.framework */,
@@ -447,9 +461,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Teamwork/Pods-Teamwork-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Alertift/Alertift.framework",
+				"${BUILT_PRODUCTS_DIR}/BTNavigationDropdownMenu/BTNavigationDropdownMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/ISHHoverBar/ISHHoverBar.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
+				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/PermissionScope/PermissionScope.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmLoginKit/RealmLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TORoundedTableView/TORoundedTableView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alertift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTNavigationDropdownMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISHHoverBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PermissionScope.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TORoundedTableView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -462,13 +505,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Teamwork-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4F7FD13FDB1AAEBDECE39464 /* [CP] Embed Pods Frameworks */ = {
@@ -550,13 +596,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeamworkUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -743,6 +792,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Teamwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -765,6 +815,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Teamwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
