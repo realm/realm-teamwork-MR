@@ -3,7 +3,10 @@
 
 <center> <img src="Graphics/Teamwork-loop.gif" width="310" height="552"/><br/></center> <br/>
 
-
+# NB: This branch includes support for ROS 2.0 / Realm-Cocoa 3.0 and
+  is, as such, incompatible with ROS 1.x servers.  For more informtion
+  on ROS2, please see the [Realm Platform Product
+  Page](https://realm.io/products/realm-platform/)
 
 ## Intro
 
