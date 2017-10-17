@@ -35,7 +35,7 @@ let kSortingPopoverSegue    =   "SortByPopover"
 
 class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate, SortOptionsSelectionProtocol {
     
-    var realm = try! Realm()
+    //var realm = try! Realm()
     var teamTasksConfig: Realm.Configuration?
     var tasksRealm: Realm?
     var notificationToken: NotificationToken? = nil
@@ -52,23 +52,24 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     var sortAscending = true
     var df = DateFormatter()
     let reachability = Reachability()!
-    let commonRealm = try! Realm() // this should contain the default Realm - which includes the Person objects
+    
+    
+    var commonRealm:    Realm?          // = try! Realm() // this should contain the default Realm - which includes the Person objects
 
     // Dropdown menu
     var teamNameitems = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        HUD.show(.progress)
-        self.doAsyncLoad()
-    }// of ViewDidLoad()
-
-    
-            
-     func finalizeViewDidLoad() {
-
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        // @FIXME: do we need to keep partial sync resultsof all of the Person records?
-        //myPersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
+
+        // @FIXME: Once partial sync is final, this needs to go!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.commonRealm = appDelegate.commonRealm
+        self.myPersonRecord = appDelegate.myPersonRecord
+        
+        HUD.show(.progress)
         isAdmin = (myPersonRecord!.role == Role.Admin || myPersonRecord!.role == Role.Manager)
         
         // the sorting menu
@@ -96,12 +97,12 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             let teamName = self!.teamNameitems[indexPath]
             if teamName == "All" {
                 if self?.isAdmin == true { // admins get all records for everone
-                    self?.tasks = self?.commonRealm.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
+                    self?.tasks = self?.commonRealm?.objects(Task.self).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
                 } else { // get all tasks in al teams for this user
-                    self?.tasks = self!.commonRealm.objects(Task.self).filter(NSPredicate(format: "assignee.id = %@", SyncUser.current!.identity!)).sorted(byKeyPath: self!.sortProperty, ascending: self!.sortAscending ? true : false)
+                    self?.tasks = self!.commonRealm?.objects(Task.self).filter(NSPredicate(format: "assignee.id = %@", SyncUser.current!.identity!)).sorted(byKeyPath: self!.sortProperty, ascending: self!.sortAscending ? true : false)
                 }
             } else { // some other team was selected
-                if let theTeamRecord = self?.realm.objects(Team.self).filter(NSPredicate(format: "name = %@", teamName)).first {
+                if let theTeamRecord = self?.commonRealm?.objects(Team.self).filter(NSPredicate(format: "name = %@", teamName)).first {
                     TeamworkPreferences.updateSelectedTeam(id: theTeamRecord.id)
                     var predicate: NSPredicate?
                     if self?.isAdmin == true { // For the admin, get all records for this team
@@ -109,7 +110,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
                     } else { // else just get this user's records for this team
                         predicate = NSPredicate(format: "team.id = %@ AND assignee.id = %@", theTeamRecord.id, SyncUser.current!.identity!)
                     }
-                    self?.tasks = self?.commonRealm.objects(Task.self).filter(predicate!).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
+                    self?.tasks = self?.commonRealm?.objects(Task.self).filter(predicate!).sorted(byKeyPath: (self?.sortProperty)!, ascending: (self?.sortAscending)! ? true : false)
                 }
             }
  
@@ -452,19 +453,18 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
 
 
     func  doAsyncLoad() {
-        commonRealm.subscribe(to: Person.self, where: "id = \(myIdentity!)", completion: { (results, error) in
+        self.commonRealm?.subscribe(to: Person.self, where: "id = \(myIdentity!)", completion: { (results, error) in
             if let results = results {
                 print("Person results returned from partial sync request were: \(results)")
                 self.myPersonRecord = results.first
                 
-                self.commonRealm.subscribe(to: Task.self, where: "assignee = \(self.myIdentity!)", completion: { (results, error) in
+                self.commonRealm?.subscribe(to: Task.self, where: "assignee = \(self.myIdentity!)", completion: { (results, error) in
                     if let results = results {
                         print("Task results returned from parial sync request were: \(results)")
                         self.tasks = results
                         
                         // Now that we're really & truly loaded everything have the
                         // view controller take down the HUD and actually display stuff.
-                        self.finalizeViewDidLoad()
                     }
                     if let error = error {
                         // throw up an error HUD - could not get list of tasks connected to myPersonRecord

@@ -1,0 +1,13 @@
+{
+  "name": "TeamWork",
+  "version": "0.0.1",
+  "description": "A skinnet back end server for TeamWork - a Realm Demo applicaiton",
+  "main": "index.js",
+  "author": "David HM Spector, ds@realm.io",
+  "repository": "https://github.com/realm-demos/Teamwork",
+  "license": "MIT",
+  "dependencies": {
+    "realm": "2.0.0-rc22",
+    "winston": "*"
+  }
+}

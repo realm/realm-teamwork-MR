@@ -66,7 +66,6 @@ class MapViewController: UIViewController {
     var workerTabViews = [UIViewController]()
 
     
-//    func doAsyncLoads(completion: (() -> Void)?) {
     func doAsyncLoads() {
         self.commonRealm?.subscribe(to: Location.self, where: "id != \"\"", completion: { (results, error) in
             //
@@ -120,7 +119,6 @@ class MapViewController: UIViewController {
         }
         
         if (myPersonRecord?.role == Role.Worker) || SyncUser.current?.isAdmin == false {
-            //removePeopleTab()
             self.tabBarController?.viewControllers = self.workerTabViews
         } else {
             print("need to replace the people bar")

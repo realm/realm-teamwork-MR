@@ -24,7 +24,7 @@ import RealmSwift
 let kPersonDetailSegue                    = "personDetailSegue"
 
 class PeopleViewController: UITableViewController {
-    var realm = try! Realm()
+    var realm: Realm?       // = try! Realm()
     var notificationToken: NotificationToken? = nil
     var myIdentity = SyncUser.current?.identity!
     let genericAvatarImage = UIImage(named: "Circled User Male_30")
@@ -37,11 +37,23 @@ class PeopleViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // @FIXME: Once partial sync is final, this needs to go!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.realm = appDelegate.commonRealm
+
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.navigationItem.title = NSLocalizedString("People", comment: "People")
         
-        people = realm.objects(Person.self)
+        people = realm?.objects(Person.self)
+        realm?.subscribe(to: Person.self, where: "id != \"\"", completion: { (results, error) in
+            if let results = results {
+                self.people = results
+            }
+            if let error = error {
+                print("An error occured processing pratuial sync subscription:  \(error.localizedDescription)")
+            }
+        })
         
         notificationToken = people?.observe { [weak self] (changes: RealmCollectionChange) in
             guard let tableView = self?.tableView else { return }

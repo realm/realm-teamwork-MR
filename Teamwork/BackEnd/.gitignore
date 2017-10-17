@@ -1,0 +1,8 @@
+.DS_Store
+realm-object-server
+*~
+build
+Pods
+\#*
+
+*.xcuserdatad

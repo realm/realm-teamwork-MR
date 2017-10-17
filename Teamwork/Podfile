@@ -11,9 +11,9 @@ target 'Teamwork' do
 
 
 pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :submodules => true #:branch => 'master'
-pod 'RealmLoginKit', :path => '../../realm-loginkit/RealmLoginKit Apple'
+pod 'RealmLoginKit'	#, :path => '../../realm-loginkit/RealmLoginKit Apple'
 
-#pod 'RealmMapView',  :git => 'https://github.com/bigfish24/ABFRealmMapView.git', :branch => 'af/realm-3.0'
+#pod 'RealmMapView',  :git => 'https://github.com/bigfish24/ABFRealmMapView.git', :branch => 'af/realm-3.0'
 
 pod 'Eureka',  :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'feature/Xcode9-Swift3_2'
 pod 'ImageRow'	#, '~> 2.0'

@@ -1,0 +1,13 @@
+*.orig
+
+**/build/
+
+/object-store/**/*.cmake
+/object-store/**/*.dylib
+/object-store/**/*.sh
+/object-store/**/CMake*
+/object-store/**/Makefile
+/object-store/external/catch/
+/object-store/external/pegtl/examples/
+/object-store/external/pegtl/unit_tests/
+/object-store/tests/

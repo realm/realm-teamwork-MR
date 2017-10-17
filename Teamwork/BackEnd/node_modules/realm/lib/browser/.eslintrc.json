@@ -1,0 +1,19 @@
+{
+  "env": {
+    "worker": true,
+    "node": false
+  },
+  "globals": {
+    "global": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "forOf": false
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": 0,
+    "strict": 0
+  }
+}

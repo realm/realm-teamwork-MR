@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest-cli": "^13.2.3",
+    "realm": "../../.."
+  },
+  "jest": {
+      "testEnvironment": "node",
+      "unmockedModulePathPatterns": [
+          "realm"
+      ],
+      "testRegex": "test.js"
+  }
+}

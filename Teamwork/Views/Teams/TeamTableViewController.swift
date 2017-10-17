@@ -24,16 +24,20 @@ class TeamTableViewController: UITableViewController {
     var sortAscending = true
     
     var teams: Results<Team>?
-    let realm = try! Realm()
+    var realm: Realm?
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myPersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
+        // @FIXME: Once partial sync is final, this needs to go!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.realm = appDelegate.commonRealm
+
+        let myPersonRecord = realm?.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
         if myPersonRecord!.role == Role.Admin || myPersonRecord!.role == Role.Manager {
-            teams = realm.objects(Team.self).sorted(byKeyPath: sortProperty, ascending: sortAscending ? true : false)
+            teams = realm?.objects(Team.self).sorted(byKeyPath: sortProperty, ascending: sortAscending ? true : false)
             isAdmin = true
         } else {
             teams = myPersonRecord?.teams.sorted(byKeyPath: sortProperty, ascending: sortAscending ? true : false)

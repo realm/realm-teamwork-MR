@@ -30,19 +30,23 @@ class UserProfileViewController: FormViewController {
     var myIdentity = SyncUser.current?.identity!
     var targetIdentity: String?
     var thePersonRecord: Person?
-    let realm = try! Realm()
+    var realm: Realm?   // = try! Realm()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let currrentUser = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
+
+        // @FIXME: Once partial sync is final, this needs to go!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.realm = appDelegate.commonRealm
+
+        let currrentUser = realm?.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
         currentUserIsAdmin = (currrentUser!.role == Role.Admin || currrentUser!.role == Role.Manager)
         
         if targetIdentity != nil {// We're (presumably an Admin) looking at someone else's profile.
-            thePersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", targetIdentity!)).first
+            thePersonRecord = realm?.objects(Person.self).filter(NSPredicate(format: "id = %@", targetIdentity!)).first
         } else {// it's us, the logged in user.
-            thePersonRecord = realm.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
+            thePersonRecord = realm?.objects(Person.self).filter(NSPredicate(format: "id = %@", myIdentity!)).first
         }
         
         
@@ -61,7 +65,7 @@ class UserProfileViewController: FormViewController {
                         row.value = UIImage(data:imageData! as Data)!       //  this image row for Eureka seems to scale for us.  (was:  .scaleToSize(size: profileImage!.frame.size)  )
                     }
                 }).onChange({ (row) in
-                    try! self.realm.write {
+                    try! self.realm?.write {
                         if row.value != nil {
                             let resizedImage = row.value!.resizeImage(targetSize: CGSize(width: 128, height: 128))
                             self.thePersonRecord?.avatar = UIImagePNGRepresentation(resizedImage) as Data?
@@ -79,7 +83,7 @@ class UserProfileViewController: FormViewController {
                     row.value = self.thePersonRecord!.firstName
                 }
                 }.onChange({ (row) in
-                    try! self.realm.write {
+                    try! self.realm?.write {
                         if row.value != nil {
                             self.thePersonRecord!.firstName = row.value!
                             
@@ -95,7 +99,7 @@ class UserProfileViewController: FormViewController {
                     row.value = self.thePersonRecord!.lastName
                 }
                 }.onChange({ (row) in
-                    try! self.realm.write {
+                    try! self.realm?.write {
                         if row.value != nil {
                             self.thePersonRecord!.lastName = row.value!
                         } else {
@@ -110,7 +114,7 @@ class UserProfileViewController: FormViewController {
                     }.onChange { row in
                         row.title = (row.value ?? false) ? NSLocalizedString("User is an Manager", comment: "is manager string") : NSLocalizedString("User is a Field Agent", comment:"is worker string")
                         row.updateCell()
-                        try! self.realm.write {
+                        try! self.realm?.write {
                             self.thePersonRecord!.role = row.value == false ? Role.Worker : Role.Manager
                         }
                     }.cellSetup { cell, row in

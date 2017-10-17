@@ -29,6 +29,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var clShim: CLManagerShim?
+    var commonRealm: Realm?
+    var myPersonRecord: Person?
     var window: UIWindow?
     
     

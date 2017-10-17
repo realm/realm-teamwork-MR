@@ -28,24 +28,28 @@ class RKLoginViewController: UIViewController {
     var token: NotificationToken!
     var commonRealm: Realm?
     var myPersonRecord: Person?
-    
+    var appDelegate: AppDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+
         self.view.backgroundColor = .darkGray
         
         // Do any additional setup after loading the view.
         self.setupErrorHandler()
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
+        print("RKLoginViewController: viewDidAppear")
+        
         if (SyncUser.current != nil) {
             // yup - we've got a stored session, so just go right to the UITabView
             setDefaultRealmConfigurationWithUser(user: SyncUser.current!)
-            DispatchQueue.main.async {
+            if self.commonRealm == nil {
+                // for soem reason viewDidAppear seems to be getting called twice - let's guard against calling the asynOpen more than needed.
                 self.doAsyncOpen(SyncUser.current!)
-            } // of DispatchAsync
+            }
         } else {
             // show the RealmLoginKit controller
             loginViewController = LoginViewController(style: .lightOpaque)
@@ -59,6 +63,7 @@ class RKLoginViewController: UIViewController {
             }
             self.present(loginViewController, animated: true, completion: nil)
         }
+
     } // of viewDidAppear
     
     
@@ -77,6 +82,9 @@ class RKLoginViewController: UIViewController {
                 self.commonRealm?.subscribe(to: Person.self, where: queryString, completion: { (results, error) in
                     if let results = results {
                         self.myPersonRecord = results.first
+                        self.appDelegate?.myPersonRecord = self.myPersonRecord  // @FIXME remove once PartialSync API is final
+                        
+                        
                         self.performSegue(withIdentifier: self.loginToTabViewSegue, sender: nil)
                     }
                     //
@@ -125,6 +133,15 @@ class RKLoginViewController: UIViewController {
         
         // Next, see if our default Realm has a profile record for this user identity; make one if necessary, and update its presence time/date
         let rlm = self.commonRealm      // try! Realm()
+        
+        // Mortal Sin Zone
+        // yes, I know this (stashing globals in the AppDelegate) is a mortal sin... but for the moment until we nail down the
+        // partial sync interactons with parent Realm this allows us to get access to the common realm without always calling
+        // asyncOpen() over and over and over..
+        self.appDelegate?.commonRealm = self.commonRealm
+        // End: Mortal Sin Zone
+        
+        
         let identity = (user!.identity)!
         myPersonRecord = rlm?.objects(Person.self).filter(NSPredicate(format: "id = %@", identity)).first
         

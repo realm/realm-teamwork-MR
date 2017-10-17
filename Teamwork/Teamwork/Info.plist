@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBuildDate</key>
-	<date>2017-10-15T19:54:44Z</date>
+	<date>2017-10-16T22:13:18Z</date>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>2.0</string>
 	<key>CFBundleVersion</key>
-	<string>389</string>
+	<string>402</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -44,13 +44,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Fieldwork accesses your camera to allow you to take/set a profile image</string>
+	<string>Teamwork accesses your camera to allow you to take/set a profile image</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Teamwork needs your location in order to show you work/task locations</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Fieldwork needs your locaton in order to show you work/task locations</string>
+	<string>Teamwork needs your locaton in order to show you work/task locations</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Fieldwork needs your locaton in order to show you work/task locations</string>
+	<string>Teamwork needs your location in order to show you work/task locations</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Fieldwork accesses your photo library so you can pick a profile image</string>
+	<string>Teamwork accesses your photo library so you can pick a profile image</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
