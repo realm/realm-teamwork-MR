@@ -185,7 +185,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     // When this controller is disposed, of we want to make sure we stop the notifications
     deinit {
-        notificationToken?.stop()
+        notificationToken?.invalidate()
     }
     
     
@@ -273,9 +273,9 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
     
     func setupNotificationToken() -> NotificationToken? {
         
-        self.notificationToken != nil ? self.notificationToken?.stop() : ()    // make sure we stop any old token
+        self.notificationToken != nil ? self.notificationToken?.invalidate() : ()    // make sure we stop any old token
 
-        return tasks?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+        return tasks?.observe { [weak self] (changes: RealmCollectionChange) in
             guard (self?.tableView) != nil else { return }
             switch changes {
             case .initial:
@@ -319,7 +319,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             vc!.isAdmin = isAdmin
             vc!.hidesBottomBarWhenPushed = true
             
-            self.notificationToken?.stop()
+            self.notificationToken?.invalidate()
         }
         
         if segue.identifier == kNewTaskSegue {
@@ -330,7 +330,7 @@ class TasksTableViewController: UITableViewController, MKMapViewDelegate, UIPopo
             vc?.navigationItem.title = NSLocalizedString("New Task", comment: "New Task")
             vc!.hidesBottomBarWhenPushed = true
 
-            self.notificationToken?.stop()
+            self.notificationToken?.invalidate()
         }
         
         if segue.identifier == kSortingPopoverSegue {

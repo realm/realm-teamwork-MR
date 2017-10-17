@@ -27,6 +27,10 @@
 		8B5CB39C1DB3480800319DB1 /* TeamworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CB39B1DB3480800319DB1 /* TeamworkConstants.swift */; };
 		8B620DC21E8447B100C161DF /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B620DC11E8447B100C161DF /* TeamDetailViewController.swift */; };
 		8B620DC41E849C5700C161DF /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B620DC31E849C5700C161DF /* TeamTableViewController.swift */; };
+		8B6212871F96735500505721 /* RealmMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F67851F966EEC0038BBB5 /* RealmMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B6212891F96737100505721 /* ABFRealmMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6212881F96737000505721 /* ABFRealmMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B6F67861F966EED0038BBB5 /* RealmMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F67851F966EEC0038BBB5 /* RealmMapView.framework */; };
+		8B6F67891F9670CE0038BBB5 /* RealmMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F67851F966EEC0038BBB5 /* RealmMapView.framework */; };
 		8B777E2C1E0313D700762355 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B777E2B1E0313D700762355 /* PersonTableViewCell.swift */; };
 		8B77AF521DB7E76F004A2877 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF4C1DB7E76F004A2877 /* MapViewController.swift */; };
 		8B77AF681DB7F4A5004A2877 /* Image+Utilties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77AF641DB7F4A5004A2877 /* Image+Utilties.swift */; };
@@ -64,6 +68,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8B6212891F96737100505721 /* ABFRealmMapView.framework in Embed Frameworks */,
+				8B6212871F96735500505721 /* RealmMapView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +105,10 @@
 		8B5CB39B1DB3480800319DB1 /* TeamworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamworkConstants.swift; sourceTree = SOURCE_ROOT; };
 		8B620DC11E8447B100C161DF /* TeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 		8B620DC31E849C5700C161DF /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewController.swift; path = Views/Teams/TeamTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		8B6212881F96737000505721 /* ABFRealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ABFRealmMapView.framework; path = Carthage/Build/iOS/ABFRealmMapView.framework; sourceTree = "<group>"; };
+		8B62128A1F96738400505721 /* RealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmMapView.framework; path = Carthage/Build/iOS/RealmMapView.framework; sourceTree = "<group>"; };
+		8B62128B1F96738400505721 /* ABFRealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ABFRealmMapView.framework; path = Carthage/Build/iOS/ABFRealmMapView.framework; sourceTree = "<group>"; };
+		8B6F67851F966EEC0038BBB5 /* RealmMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmMapView.framework; path = Carthage/Build/iOS/RealmMapView.framework; sourceTree = "<group>"; };
 		8B777E2B1E0313D700762355 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		8B77AF4C1DB7E76F004A2877 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B77AF641DB7F4A5004A2877 /* Image+Utilties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Utilties.swift"; sourceTree = "<group>"; };
@@ -129,8 +139,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6F67861F966EED0038BBB5 /* RealmMapView.framework in Frameworks */,
 				8B77AF7A1DB98BB5004A2877 /* UIKit.framework in Frameworks */,
 				8B5CB38E1DB3020100319DB1 /* Foundation.framework in Frameworks */,
+				8B6F67891F9670CE0038BBB5 /* RealmMapView.framework in Frameworks */,
 				8806B2F24B7886B78FBBF9D6 /* Pods_Teamwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +174,8 @@
 		8B5CB3591DB2DF1F00319DB1 = {
 			isa = PBXGroup;
 			children = (
+				8B6212881F96737000505721 /* ABFRealmMapView.framework */,
+				8B6F67851F966EEC0038BBB5 /* RealmMapView.framework */,
 				8BD404541DDBAD96005E9C4B /* README.md */,
 				8B77AF621DB7F4A5004A2877 /* Extensions */,
 				8B77AF461DB7E76F004A2877 /* Views */,
@@ -210,6 +224,8 @@
 		8B5CB38C1DB3020100319DB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B62128B1F96738400505721 /* ABFRealmMapView.framework */,
+				8B62128A1F96738400505721 /* RealmMapView.framework */,
 				8B77AF791DB98BB5004A2877 /* UIKit.framework */,
 				8B5CB38D1DB3020100319DB1 /* Foundation.framework */,
 				868A4DBA58769BDB02410D11 /* Pods_Teamwork.framework */,
@@ -448,7 +464,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Teamwork/Pods-Teamwork-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ABFRealmMapView/ABFRealmMapView.framework",
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alertift/Alertift.framework",
 				"${BUILT_PRODUCTS_DIR}/BTNavigationDropdownMenu/BTNavigationDropdownMenu.framework",
@@ -458,18 +473,14 @@
 				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PermissionScope/PermissionScope.framework",
-				"${BUILT_PRODUCTS_DIR}/RBQSafeRealmObject/RBQSafeRealmObject.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmLoginKit/RealmLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmMapView/RealmMapView.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmUtilities/RealmUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/TORoundedTableView/TORoundedTableView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABFRealmMapView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alertift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTNavigationDropdownMenu.framework",
@@ -479,13 +490,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PermissionScope.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RBQSafeRealmObject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmMapView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TORoundedTableView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -786,6 +794,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Teamwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -808,6 +817,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Teamwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

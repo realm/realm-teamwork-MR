@@ -145,7 +145,7 @@ class MapViewController: UIViewController {
     }
     
     deinit {
-        self.notificationToken?.stop()
+        self.notificationToken?.invalidate()
     }
     
     // MARK: HoverBar actions
@@ -286,7 +286,7 @@ class MapViewController: UIViewController {
 
         // lastly, let's get notification on htese objects as they change:
         let locations = try! Realm().objects(Location.self)
-        self.notificationToken = locations.addNotificationBlock({ [weak self] (results) in
+        self.notificationToken = locations.observe({ [weak self] (results) in
             self?.mapView.refreshMapView()
         })
         

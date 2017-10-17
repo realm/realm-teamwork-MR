@@ -161,7 +161,7 @@ class RKLoginViewController: UIViewController {
                 if let (path, runClientResetNow) = syncError.clientResetInfo() {
                     //closeRealmSafely()
                     //saveBackupRealmPath(path)
-                    runClientResetNow()
+                    //runClientResetNow()
                 }
             default: break
                 // Handle other errors

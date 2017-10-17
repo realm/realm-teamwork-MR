@@ -243,7 +243,7 @@ class TeamDetailViewController: FormViewController {
                                     if member.teams.contains(self!.theTeamRecord!) {
                                         let index = member.teams.index(of: self!.theTeamRecord!)
                                         try! self?.realm.write {
-                                            member.teams.remove(objectAtIndex: index!)
+                                            member.teams.remove(at: index!)
                                             self?.realm.add(member, update: true)
                                             _ = self?.theTeamRecord?.removeMemberPermission(userIdentity: member.id)
                                         }
@@ -258,7 +258,7 @@ class TeamDetailViewController: FormViewController {
         
         
         // Finally, set up a notifiction token to track ay changes to teams:
-        notificationToken = tasks?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+        notificationToken = tasks?.observe { [weak self] (changes: RealmCollectionChange) in
             guard let tableView = self?.tableView else { return }
             switch changes {
             case .initial:

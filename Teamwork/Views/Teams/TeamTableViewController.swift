@@ -44,7 +44,7 @@ class TeamTableViewController: UITableViewController {
         
         
         // lastly, set up a notifiction token to track any changes to teams:
-        notificationToken = teams?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+        notificationToken = teams?.observe { [weak self] (changes: RealmCollectionChange) in
             guard let tableView = self?.tableView else { return }
             switch changes {
             case .initial:
@@ -73,7 +73,7 @@ class TeamTableViewController: UITableViewController {
 
     
     deinit {
-        notificationToken?.stop()
+        notificationToken?.invalidate()
     }
     
     override func didReceiveMemoryWarning() {
