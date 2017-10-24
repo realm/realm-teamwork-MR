@@ -86,7 +86,7 @@ Before attempting to compile the project, install all of its dependencies using 
 This process will create a ``Pods`` directory which contains all of the compiled resources needed by the app, along with an Xcode xcworkspace file which you will open and work with instead
 of the `TeamWork.xcproject` file when building/running this application.
 
-Once the cocoapods have been retrieved, open the ``TeamWork.xcworkspace`` file and press build.  The app should compile cleanly.
+Once the cocoapods have been retrieved, open the ``TeamWork.xcworkspace`` file.  From here, you'll want to navigate to the ``TeamworkConstants.swift`` file.  Inside this file we declare a variable called ``syncHost`` which contains the IP Address of our Realm Object Server.  If the Realm Object Server is installed locally, you should not need to change the file.  If not, provide the appropriate location of your Realm Object Server.  Once this has been completed, you should be able to press build and compile the app.  
 
 ### First Login
 
