@@ -24,7 +24,7 @@ Some of the goals for this app are:
     - A location which defines a specific place the task is to be performed
     - A due-date for the task
     - A completed date (the date a task was marked as done)
-    - A team to which this task is assigned.  If not assigned to a specific team it's a "free floating" task.
+    - A team to which this task is assigned.  If not assigned to a specific team, it's a "free floating" task.
     - An assigned worker/field agent who is tasked with "completing" this task - if not assigned to a specific worker, yet is assigned to the team it's a "team task" that can be worked on by any team member (these distinctions show up in the various views of tasks).
 
 1. Ability to have workers receive new tasks that show up in their list of assigned tasks.
@@ -43,7 +43,7 @@ This app uses [Cocoapods](https://www.cocoapods.org) to set up the project's 3rd
 
 ### Realm Mobile Platform
 
-This application demonstrates features of the [Realm Mobile Platform](http://lrealm.io) and needs to have a working instance of the Realm Object Server available to make tasks, and other data available between instances of the TeamWork app. The Realm Mobile Platform can be downloaded from [Realm Mobile Platform](http://realm.io) and exists in two forms, a ready-to-run macOS version of the server, and a Linux version that runs on RHEL/CentOS versions 6/7 and Ununtu as well as several Amazon AMIs and Digital Ocean Droplets. The macOS version can be run with the TeamWork right out of the box; the Linux version will require access to a Linux server.
+This application demonstrates features of the [Realm Mobile Platform](http://lrealm.io) and needs to have a working instance of the Realm Object Server available to make tasks, and other data available between instances of the TeamWork app. The Realm Mobile Platform can be downloaded from [Realm Mobile Platform](http://realm.io) and exists in two forms, a ready-to-run macOS version of the server, and a Linux version that runs on RHEL/CentOS versions 6/7 and Ubuntu as well as several Amazon AMIs and Digital Ocean Droplets. The macOS version can be run with the TeamWork right out of the box; the Linux version will require access to a Linux server.
 
 
 ### 3rd Party Modules
@@ -86,7 +86,7 @@ Before attempting to compile the project, install all of its dependencies using 
 This process will create a ``Pods`` directory which contains all of the compiled resources needed by the app, along with an Xcode xcworkspace file which you will open and work with instead
 of the `TeamWork.xcproject` file when building/running this application.
 
-Once the cocoapods have been retrieved, open the ``TeamWork.xcworkspace`` file and press build.  The app should compile cleanly.
+Once the cocoapods have been retrieved, open the ``TeamWork.xcworkspace`` file.  From here, you'll want to navigate to the ``TeamworkConstants.swift`` file.  Inside this file we declare a variable called ``syncHost`` which contains the IP Address of our Realm Object Server.  If the Realm Object Server is installed locally, you should not need to change the file.  If not, provide the appropriate location of your Realm Object Server.  Once this has been completed, you should be able to press build and compile the app.  
 
 ### First Login
 
@@ -135,8 +135,8 @@ The task list shows the tasks assigned to a given field worker, or, if the user 
 <center> <img src="Graphics/TeamWork-Tasks-Manager.png" width="310" height="552" />  <img src="Graphics/TeamWork-TaskDetail.png" width="310" height="552" /><br/>Tasks - Manager's View</center><br>
 
 
-alternatively a specific team vuew can be selected:
-<center><img src="Graphics/Teamwork-tasks-master-list.png" width="310" height="552" /><img src="Graphics/Teamwork-Tasks-selectTeam.png" width="310" height="552" /><br>Task Vew Selection</br></center>
+alternatively a specific team view can be selected:
+<center><img src="Graphics/Teamwork-tasks-master-list.png" width="310" height="552" /><img src="Graphics/Teamwork-Tasks-selectTeam.png" width="310" height="552" /><br>Task View Selection</br></center>
 
 
 ## New Task Creation
