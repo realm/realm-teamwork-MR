@@ -4,7 +4,7 @@
 ##github "realm-demos/realm-loginkit"
 #github "sgr-ksmt/Alertift" ~> 1.3
 ##github "bigfish24/ABFRealmMapView.git"
-github "bigfish24/ABFRealmMapView" "af/realm-3.0"
+github "bigfish24/ABFRealmMapView"
 #github "nickoneill/PermissionScope.git"
 #github "jverdi/JVFloatLabeledTextField"
 #github "skywinder/ActionSheetPicker-3.0"
