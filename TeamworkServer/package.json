@@ -1,0 +1,21 @@
+{
+    "name": "TeamworkServer",
+    "version": "1.0.0",
+    "description": "Teamwork Demo Server ",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "JSONStream": "^1.3.1",
+        "bfj": "^4.2.4",
+        "event-stream": "^3.3.4",
+        "fs-extra": "^4.0.2",
+        "glob": "*",
+        "glob-fs": "*",
+        "realm-object-server": "2.0.6",
+        "strip-bom": "^3.0.0",
+        "uuid": "*",
+        "winston": "*"
+    }
+}

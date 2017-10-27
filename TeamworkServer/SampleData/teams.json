@@ -1,0 +1,50 @@
+[
+    {
+        "name" : "Team 1",
+        "description" : "",
+        "teamImage" : "TeamImages/Team1.jpg",
+        "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
+        "members" : [
+        ]
+    },
+    {
+        "name" : "Team 2",
+        "description" : "",
+        "teamImage" : "TeamImages/Team3.jpg",
+        "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
+        "members" : [
+        ]
+    },
+    {
+        "name" : "Team 3",
+        "description" : "",
+        "teamImage" : "TeamImages/Team3.jpg",
+        "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
+        "members" : [
+        ]
+    },
+    {
+        "name" : "Team 4",
+        "description" : "",
+        "teamImage" : "TeamImages/Team4.jpg",
+        "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
+        "members" : [
+        ]
+    },
+    {
+        "name" : "Team 5",
+        "description" : "",
+        "teamImage" : "TeamImages/Team5.jpg",
+        "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
+        "members" : [
+        ]
+    },
+    {
+        "name" : "Team 6",
+        "description" : "",
+        "teamImage" : "TeamImages/Team6.jpg",
+        "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
+        "members" : [
+        ]
+    }
+]

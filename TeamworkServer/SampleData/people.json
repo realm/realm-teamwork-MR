@@ -1,0 +1,75 @@
+[
+    {
+        "lastName" : "Spector",
+        "firstName" : "David",
+        "avatarFile" : "Avatars/dhmspector.png",
+        "password" : "password",
+        "id" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
+        "isAdmin" : true
+      },
+      {
+        "lastName" : "Ward",
+        "firstName" : "Ian",
+        "avatarFile" : "Avatars/ian.png",
+        "password" : "password",
+        "id" : "78c58b02-b3f5-4648-a47d-fad0381565b0",
+        "isAdmin" : true
+      },
+    {
+        "lastName" : "Simpson",
+        "firstName" : "Lisa",
+        "avatarFile" : "Avatars/LisaSimpson.png",
+        "password" : "password",
+        "id" : "58819f42-47a2-4de3-aa51-2a27d9b7239f",
+        "isAdmin" : false
+      },
+      {
+        "lastName" : "Jones",
+        "firstName" : "Jeffrey",
+        "avatarFile" : "Avatars/Krustytheclown.png",
+        "password" : "password",
+        "id" : "fb972b57-0fe8-4710-977f-f29c03fd4b17",
+        "isAdmin" : false
+      },
+      {
+        "lastName" : "Williams",
+        "firstName" : "Danielle",
+        "avatarFile" : "Avatars/flower.png",
+        "password" : "password",
+        "id" : "8fb32d9d-671e-4f55-a3b6-5aace301451c",
+        "isAdmin" : false
+      },
+      {
+        "lastName" : "Baer",
+        "firstName" : "Theodore",
+        "avatarFile" : "Avatars/stuffies.png",
+        "password" : "password",
+        "id" : "031df00d-36db-4530-9dbd-a966a3b6e142",
+        "isAdmin" : false
+      },    
+      {
+        "lastName" : "Fushión",
+        "firstName" : "Con",
+        "avatarFile" : "Avatars/waffle.png",
+        "password" : "password",
+        "id" : "cb26e1a8-280d-4242-b94e-865e9cab2077",
+        "isAdmin" : false
+      },
+    
+      {
+        "lastName" : "Ferris",
+        "firstName" : "Michael",
+        "avatarFile" : "Avatars/mickeywheel.png",
+        "password" : "password",
+        "id" : "fb824e35-0491-4fb5-afc6-65a4cd1e8c2c",
+        "isAdmin" : false
+      },
+      {
+        "lastName" : "Carp",
+        "firstName" : "Edward",
+        "avatarFile" : "Avatars/goldfish.png",
+        "password" : "password",
+        "id" : "2cb72aa3-e31e-4cf3-8403-0176bc471fe4",
+        "isAdmin" : false
+      }
+  ]
