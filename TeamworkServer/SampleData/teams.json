@@ -1,31 +1,34 @@
 [
     {
         "name" : "Team 1",
-        "description" : "",
+        "description" : "This is a description of team one",
         "teamImage" : "TeamImages/Team1.jpg",
         "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
         "members" : [
+            "96d40981-6cab-4f3f-8ac9-623c905209b5"
         ]
     },
     {
         "name" : "Team 2",
-        "description" : "",
+        "description" : "Some info about team 2 goes here",
         "teamImage" : "TeamImages/Team3.jpg",
         "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
         "members" : [
+            "78c58b02-b3f5-4648-a47d-fad0381565b0"
         ]
     },
     {
         "name" : "Team 3",
-        "description" : "",
+        "description" : "let's not forget about team 3.",
         "teamImage" : "TeamImages/Team3.jpg",
         "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
         "members" : [
+            "59119f42-47a2-4de3-aa51-2a44d9b72333"
         ]
     },
     {
         "name" : "Team 4",
-        "description" : "",
+        "description" : "Team 4 is also here.  They're nice folks.",
         "teamImage" : "TeamImages/Team4.jpg",
         "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
         "members" : [
@@ -33,7 +36,7 @@
     },
     {
         "name" : "Team 5",
-        "description" : "",
+        "description" : "Team 5 - dont count them out; they're wily and smart",
         "teamImage" : "TeamImages/Team5.jpg",
         "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
         "members" : [
@@ -41,7 +44,7 @@
     },
     {
         "name" : "Team 6",
-        "description" : "",
+        "description" : "Team 6 - what a wonderful team. Yay Team 6!!",
         "teamImage" : "TeamImages/Team6.jpg",
         "createdBy" : "96d40981-6cab-4f3f-8ac9-623c905209b5",
         "members" : [

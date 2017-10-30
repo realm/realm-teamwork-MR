@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "0.12"
+install:
+  - npm install -g mocha
+  - npm install
+before_script:
+  - mocha --version
+script:
+  - mocha

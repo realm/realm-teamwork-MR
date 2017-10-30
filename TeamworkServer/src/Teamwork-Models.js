@@ -19,8 +19,8 @@ const LocationSchema = {
     subtitle: { type: 'string',  optional: true },
     mapImage: { type: 'data',  optional: true },
     person: { type: 'Person',  optional: true },
-    task: { type: 'string',  optional: true },
-    teamId: { type: 'string',  optional: true }
+    task: { type: 'Task',  optional: true },
+    teamId: { type: 'Team',  optional: true }
   }
 };
 
