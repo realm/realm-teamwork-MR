@@ -75,10 +75,10 @@ const TaskSchema = {
         title: 'string',
         taskDescription: 'string',
         isCompleted: 'bool',
-        assignee: { type: 'string', optional: true },
-        signedOffBy: { type: 'string', optional: true },
-        location: { type: 'string', optional: true },
-        team: { type: 'string', optional: true }
+        assignee: { type: 'Person', optional: true },
+        signedOffBy: { type: 'Person', optional: true },
+        location: { type: 'Location', optional: true },
+        team: { type: 'Person', optional: true }
     }
 };
 
