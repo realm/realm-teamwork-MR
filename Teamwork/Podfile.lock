@@ -61,7 +61,7 @@ CHECKOUT OPTIONS:
     :commit: 05acfb04c24a480f1868e671d19b39e0f22fc265
     :git: https://github.com/xmartlabs/Eureka.git
   PermissionScope:
-    :commit: 2638819d22efda1c3a335004bd977de587843831
+    :commit: 156eb08d1123b68a9f129e9780dcb73b20b894a5
     :git: https://github.com/nickoneill/PermissionScope.git
 
 SPEC CHECKSUMS:
