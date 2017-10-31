@@ -24,7 +24,6 @@ import RealmSwift
 import RealmMapView
 import PermissionScope
 import ISHHoverBar
-//import ReachabilitySwift
 
 class MapViewController: UIViewController {
     enum MapDisplayModes {
@@ -43,6 +42,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var hoverBar: ISHHoverBar!
     @IBOutlet weak var teamLabel: UILabel!
     
+    var appDelegate: AppDelegate?
+    
     var commonRealm: Realm?         //      in a partial sync world, we need to pass the realm in   Was:  = try! Realm()
     let currentUser = SyncUser.current
     var myPersonRecord: Person?
@@ -52,8 +53,7 @@ class MapViewController: UIViewController {
     var tasksBarButton: UIBarButtonItem!
     
     let pscope = PermissionScope()
-    //let reachability = Reachability()!
-
+    
     var locations: Results<Location>?
     var mapDisplayMode = MapDisplayModes.tasks
     var showTasksPredicate:NSPredicate?
@@ -64,22 +64,19 @@ class MapViewController: UIViewController {
     
     var adminTabViews = [UIViewController]()
     var workerTabViews = [UIViewController]()
-
     
-    func doAsyncLoads() {
-        self.commonRealm?.subscribe(to: Location.self, where: "id != \"\"", completion: { (results, error) in
-            //
-            if let error = error {
-                // throw up an error HUD - could not get list of tasks connected to myPersonRecord
-                print("an error occurred: \(error.localizedDescription)")
-            }
-        }) // of inner partial subscription
-    } // doAsyncLoad()
+    
     
     
     override func viewDidLoad() {
-        self.locations = self.commonRealm?.objects(Location.self) // this is just to get the locaitons result-set to be valid, even if empty.
-        self.doAsyncLoads()
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        if appDelegate?.myLocations != nil {
+            self.locations = appDelegate?.myLocations
+        } else {
+            self.locations = self.commonRealm?.objects(Location.self) // this is just to get the locaitons result-set to be valid, even if empty.
+            self.doPartialSyncSubscriptions()
+        }
         self.saveTabBarViews()
         
         mapView.delegate = self
@@ -163,6 +160,20 @@ class MapViewController: UIViewController {
     deinit {
         self.notificationToken?.invalidate()
     }
+    
+    
+    // MARK: partial sync subscriptions
+    func doPartialSyncSubscriptions() {
+        self.commonRealm?.subscribe(to: Location.self, where: "id != \"\"", completion: { (results, error) in
+            if let results = results {
+                self.locations = results
+            }
+            if let error = error {
+                // throw up an error HUD - could not get list of tasks connected to myPersonRecord
+                print("doPartialSyncSubscriptions: an error occurred: \(error.localizedDescription)")
+            }
+        }) // of inner partial subscription
+    } // doPartialSyncSubscriptions()
     
     // MARK: HoverBar actions
     func setupHoverBar(){
@@ -251,7 +262,7 @@ class MapViewController: UIViewController {
     func setupPredicates() {
         
         var teamID: String?
-
+        
         // In this new multi-realm work we need to know what team someone is on, or if they're an admin.
         teamID = TeamworkPreferences.selectedTeam()
         if teamID == nil {
@@ -264,14 +275,14 @@ class MapViewController: UIViewController {
                 print("\n\n MapView:  No team found - ensuring we get no data...\n\n")
             }
         }
-
+        
         if self.myPersonRecord?.role == Role.Worker {
             showTasksPredicate = NSPredicate(format: "task != nil AND team != nil AND team.id = %@", teamID!)
             
             // ..and for showing peple, that the records actually be for person locations, not tasks.
             // (although at present the hoverbar/selector is only visible to admins, so this is moot)
             showPeoplePredicate = NSPredicate(format: "person != nil AND task = nil")
-
+            
             self.mapView.basePredicate = showTasksPredicate
             self.mapView.refreshMapView()
             
@@ -280,7 +291,7 @@ class MapViewController: UIViewController {
             
             // While debugging this predicate issue, let's keep it simple - for the showTasksPredicat just get all the 
             // location objects for all tasks, which means that the person property IS nil and the team property is NOT:
-               showTasksPredicate = NSPredicate(format: "person = nil AND task != nil")
+            showTasksPredicate = NSPredicate(format: "person = nil AND task != nil")
             
             
             // The version below checks to see if the user has a team selected and the predicate should then only return
@@ -291,7 +302,7 @@ class MapViewController: UIViewController {
             //} else { // else show all tasks
             //    showTasksPredicate = NSPredicate(format: "person = nil AND task != nil AND person = nil")
             //}
-
+            
             // the people predicate is the reverse of the showTasksPredicate:
             showPeoplePredicate = NSPredicate(format: "person != nil AND team != nil")
         }
@@ -299,7 +310,7 @@ class MapViewController: UIViewController {
         // @TODO: if we want to set a label (there is on on the upper right corner of the view in the storyboard) 
         // that tells what the default team name is
         //         self.defaultTeam != nil ? teamLabel.text = Team.teamNameForIdentifier(id:self.defaultTeam!) : ()
-
+        
         // lastly, let's get notification on these objects as they change:
         // self.locations = try! Realm().objects(Location.self)
         self.notificationToken = locations!.observe({ [weak self] (results) in
@@ -328,7 +339,7 @@ class MapViewController: UIViewController {
         if indexToRemove < self.workerTabViews.count {
             self.workerTabViews.remove(at: indexToRemove)
         }
-
+        
     }
     
     
@@ -336,7 +347,7 @@ class MapViewController: UIViewController {
         if let tabBarController = self.tabBarController {
             var viewControllers = tabBarController.viewControllers
             let indexToRemove = TeamWorkConstants.peopleViewTag // Index 0 is the map, index 1 is tasks, index 2 is people
-
+            
             // check to see if we've already removed the people tab
             if viewControllers!.count < 4 {
                 return
@@ -348,8 +359,8 @@ class MapViewController: UIViewController {
             }
         }
     }
-
-
+    
+    
     
     // MARK: PScope
     func requestDevicePermissions(containingView: UIViewController) {

@@ -32,7 +32,7 @@ class RKLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
 
         self.view.backgroundColor = .darkGray
         
@@ -47,7 +47,8 @@ class RKLoginViewController: UIViewController {
             // yup - we've got a stored session, so just go right to the UITabView
             setDefaultRealmConfigurationWithUser(user: SyncUser.current!)
             if self.commonRealm == nil {
-                // for soem reason viewDidAppear seems to be getting called twice - let's guard against calling the asynOpen more than needed.
+                // for some reason viewDidAppear seems to be getting called twice
+                // let's guard against calling the asynOpen more than needed.
                 self.doAsyncOpen(SyncUser.current!)
             }
         } else {
@@ -63,35 +64,15 @@ class RKLoginViewController: UIViewController {
             }
             self.present(loginViewController, animated: true, completion: nil)
         }
-
     } // of viewDidAppear
     
     
     func doAsyncOpen(_ user: SyncUser) {
         Realm.asyncOpen(configuration: commonRealmConfig(user:SyncUser.current!)) { realm, error in
             if let realm = realm {
-                self.commonRealm = realm
-                self.completeLogin(user: user, realm: realm) //  connects the realm and looks up or creates a profile
-                
-                // Now, register for a query against the Person data to get our down person record
-                
-                // was: let queryString = NSPredicate(format: "id = %@", SyncUser.current!.identity!).description // returns the "id == <SyncUser identity value>" version created  by the NSPredicate
-                
-                let queryString = "id = \"\(SyncUser.current!.identity!)\""
-                print("Query string is \(queryString)")
-                self.commonRealm?.subscribe(to: Person.self, where: queryString, completion: { (results, error) in
-                    if let results = results {
-                        self.myPersonRecord = results.first
-                        self.appDelegate?.myPersonRecord = self.myPersonRecord  // @FIXME remove once PartialSync API is final
-                        
-                        
-                        self.performSegue(withIdentifier: self.loginToTabViewSegue, sender: nil)
-                    }
-                    //
-                    if let error = error {
-                        print("an error occurred: \(error.localizedDescription)")
-                    }
-                }) // of inner partial subscription
+                self.commonRealm = realm // gets used in the subscription method
+                self.appDelegate?.commonRealm = realm // savingin for uise in the rest of the app
+                self.doPartialSyncSubscriptions(realm: realm, identity: user.identity!)
             } else if let error = error {
                 print("Error while traing to AsyncOpen) the commom realm. Error: \(error.localizedDescription)")
                 Alertift.alert(title:NSLocalizedString( "Unable to login...", comment:  "Unable to login..."), message: NSLocalizedString("Code: \(error) - please try later", comment: "Code: \(error) - please try later"))
@@ -99,7 +80,6 @@ class RKLoginViewController: UIViewController {
                     .show()
             } // of error case
         } // of asyncOpen()
-        
     } //of doAsyncOpen
     
     
@@ -118,10 +98,6 @@ class RKLoginViewController: UIViewController {
                 if let childVC = tabController.viewControllers?.first as? MapViewController {
                     childVC.commonRealm = self.commonRealm
                     childVC.myPersonRecord = self.myPersonRecord
-                    
-                    // if we have a login controller (i.e., we didn't have an existing session so we had to present one
-                    // then dismiss it. Else we're already good to go.
-                    loginViewController != nil ? loginViewController.dismiss(animated: true, completion: nil) : ()
                 }
             }
         }
@@ -129,31 +105,13 @@ class RKLoginViewController: UIViewController {
     
     
     func completeLogin(user: SyncUser?, realm: Realm?) {
-        setDefaultRealmConfigurationWithUser(user: user!)
-        
-        // Next, see if our default Realm has a profile record for this user identity; make one if necessary, and update its presence time/date
-        let rlm = self.commonRealm      // try! Realm()
-        
-        // Mortal Sin Zone
-        // yes, I know this (stashing globals in the AppDelegate) is a mortal sin... but for the moment until we nail down the
-        // partial sync interactons with parent Realm this allows us to get access to the common realm without always calling
-        // asyncOpen() over and over and over..
-        self.appDelegate?.commonRealm = self.commonRealm
-        // End: Mortal Sin Zone
-        
-        
-        let identity = (user!.identity)!
-        myPersonRecord = rlm?.objects(Person.self).filter(NSPredicate(format: "id = %@", identity)).first
-        
-        try! rlm?.write {
-            if myPersonRecord == nil {
-                print("\n\nCreating new user record for user id: \(identity)\n")
-                myPersonRecord = rlm?.create(Person.self, value: ["id": identity, "creationDate": Date()])
-                rlm?.add(myPersonRecord!, update: true)
-            } else {
-                print("Found user record, details: \(String(describing: myPersonRecord))\n")
-            }
+        guard user != nil else {
+            print("completeLogin: User was nil - that shouldnever happen here")
+            return
         }
+        
+        setDefaultRealmConfigurationWithUser(user: user!)
+        let identity = (user!.identity)!
         
         // this is very hacky - it owuld be nice to have the abiity to pre-define groups or roles... but it's a catch-22.
         if SyncUser.current?.isAdmin == true && myPersonRecord?.role != .Manager {
@@ -164,27 +122,30 @@ class RKLoginViewController: UIViewController {
         if SyncUser.current?.isAdmin == true {
             setPermissionForRealm(realm, accessLevel: .write, personID: "*" )  // we, as an admin are granting global read/write to the common realm
         }
-        // the CoreLocation shim will periodically get the users location, if they allowed the acces;
-        // setting the identity property tells it which person record to update
+        
+        // This is the CoreLocation shim will periodically get the users location,
+        // if they allowed the access; setting the identity property tells it which person record to update
         if CLManagerShim.sharedInstance.currentState != .running {
             let locationShim = CLManagerShim.sharedInstance
             if locationShim.identity == nil {
                 locationShim.identity = identity
             }
         }
-    }
+    } // of completeLogin
     
     
     
 
     
-    // MARK: Admin Settinng
+    // MARK: Admin Setting
     func setAdminPriv() {
-        let rlm = try! Realm()
-        let myPersonRecord = rlm.objects(Person.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first
-        try! rlm.write {
-            myPersonRecord?.role = .Manager
-            rlm.add(myPersonRecord!, update: true)
+        guard self.myPersonRecord != nil else {
+            print("setAdminPriv: self.myPersonRecord was nil - shoud never happen here")
+            return
+        }
+        try! self.commonRealm?.write {
+            self.myPersonRecord?.role = .Manager
+            self.commonRealm?.add(myPersonRecord!, update: true)
         }
     }
     
@@ -202,12 +163,9 @@ class RKLoginViewController: UIViewController {
         Realm.Configuration.defaultConfiguration = commonRealmConfig(user: user)
     }
     
-
-    
     
     // MARK: Error Handlers
-    
-    func setupErrorHandler(){
+    func setupErrorHandler() {
         SyncManager.shared.errorHandler = { error, session in
             let syncError = error as! SyncError
             switch syncError.code {
@@ -221,6 +179,85 @@ class RKLoginViewController: UIViewController {
                 // Handle other errors
             }
         }
-    }
+    } // of setupErrorHandler
+
     
+    // MARK: -  Partial Sync Subscriptions
+    func doPartialSyncSubscriptions(realm: Realm, identity: String) {
+        let group = DispatchGroup()
+
+        group.enter()
+        realm.subscribe(to: Person.self, where: "id = '\(identity)'") { results, error in
+            if let results = results {
+                if results.count > 0 {
+                    self.myPersonRecord = results.first
+                    self.appDelegate?.myPersonRecord = self.myPersonRecord
+                } else {
+                    try! realm.write { // make a new user record for this user
+                            print("\nCreating new user record for user id: \(identity)\n")
+                            self.myPersonRecord = self.commonRealm?.create(Person.self, value: ["id": identity, "creationDate": Date()])
+                            realm.add(self.myPersonRecord!, update: true)
+                            self.appDelegate?.myPersonRecord = self.myPersonRecord // save the new record with the app
+                    } // of the realm write
+                }
+            } // of results check
+            
+            if let error = error {
+                print("Error subscribing to the Person record(s): \(error.localizedDescription)")
+            }
+            group.leave()
+        }
+        
+        group.enter()
+        realm.subscribe(to: Task.self, where: "id = '\(identity)' ") { (results, error) in
+            if let results = results {
+                self.appDelegate?.myTasks = results
+            }
+            if let error = error {
+                print("Subscription error fetching Tasks: \(error.localizedDescription)")
+            }
+            group.leave()
+        }
+        
+        group.enter()
+        realm.subscribe(to: Location.self, where: "id = '\(identity)' ") { (results, error) in
+            if let results = results {
+                self.appDelegate?.myLocations = results
+            }
+            if let error = error {
+                print("Subscription error fetching locations: \(error.localizedDescription)")
+            }
+            group.leave()
+        }
+        
+        group.enter()
+        realm.subscribe(to: Team.self, where: "id = '\(identity)' ") { (results, error) in
+            if let results = results {
+                self.appDelegate?.myTeams = results
+            }
+            if let error = error {
+                print("Subscription error fetching locations: \(error.localizedDescription)")
+            }
+            group.leave()
+        }
+
+        
+        // Now we  need to block until these complete or they timeout.
+        group.wait(timeout: DispatchTime.now() + 10)
+        
+        // all the tasks have completed, so...
+        group.notify(queue:DispatchQueue.main )  {
+            // ... set various privs on the Realm
+            self.completeLogin(user: SyncUser.current!, realm: realm)
+            
+            // ... take down the login panel - if it doesn't exist (i.e., we were already logged in)
+            // that's OK - calling an optional nil controller reference doesn't break anything.
+            self.loginViewController?.dismiss(animated: true, completion: nil)
+            
+            // ...and, finally, let's segue to the next view controller.
+            self.performSegue(withIdentifier: self.loginToTabViewSegue, sender: nil)
+        } // of grouop notify
+    } // of doSubscriptions
+    
+
 }

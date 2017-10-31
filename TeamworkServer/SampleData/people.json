@@ -15,6 +15,17 @@
         "id" : "78c58b02-b3f5-4648-a47d-fad0381565b0",
         "isAdmin" : true
       },
+
+      {
+        "lastName" : "Fish",
+        "firstName" : "Adam",
+        "avatarFile" : "Avatars/AdamFish.png",
+        "password" : "password",
+        "id" : "17358b02-b3f5-4648-a47d-fcc938156345",
+        "isAdmin" : true
+      },
+
+
     {
         "lastName" : "Simpson",
         "firstName" : "Lisa",

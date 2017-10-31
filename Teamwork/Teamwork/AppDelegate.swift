@@ -31,6 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var clShim: CLManagerShim?
     var commonRealm: Realm?
     var myPersonRecord: Person?
+    
+    // Partial Sync Results
+    var myTasks: Results<Task>?
+    var myTeams: Results<Team>?
+    var myLocations: Results<Location>?
+    
+    
     var window: UIWindow?
     
     

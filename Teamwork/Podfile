@@ -10,7 +10,7 @@ target 'Teamwork' do
 # Pods for Teamwork
 
 
-pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :submodules => true #:branch => 'master'
+pod 'RealmSwift'	#, :git => 'https://github.com/realm/realm-cocoa.git', :submodules => true #:branch => 'master'
 pod 'RealmLoginKit'	#, :path => '../../realm-loginkit/RealmLoginKit Apple'
 
 #pod 'RealmMapView',  :git => 'https://github.com/bigfish24/ABFRealmMapView.git', :branch => 'af/realm-3.0'
