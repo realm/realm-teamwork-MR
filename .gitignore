@@ -4,5 +4,6 @@ build
 Pods
 \#*
 
+node_modules
 *.xcuserdatad
 *.xcworkspacedata

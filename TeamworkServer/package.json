@@ -1,7 +1,12 @@
 {
-    "name": "my-ros-app",
+    "name": "teamworkdemoserver",
     "version": "1.0.0",
-    "description": "My new ROS App",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/realm-demos/realm-teamwork-MR.git"
+    },
+    "description": "Demo Server for the teamwork App",
     "main": "src/index.js",
     "scripts": {
         "build": "rm -rf dist; ./node_modules/.bin/tsc",
@@ -9,6 +14,9 @@
         "start": "npm run build && node dist/index.js"
     },
     "devDependencies": {
+        "gulp": "*",
+        "gulp-cli": "*",
+        "ts-node": "^3.3.0",
         "typescript": "2.5.3"
     },
     "dependencies": {

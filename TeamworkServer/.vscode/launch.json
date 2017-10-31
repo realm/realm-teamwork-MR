@@ -5,14 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug src/index.ts",
+            "name": "Debug app.ts",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/src/index.ts",
-            "stopOnEntry": false,
+            "program": "${workspaceRoot}/node_modules/ts-node/dist/_bin.js",
+            "args": ["./src/index.ts"],
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
-            "outFiles": ["${workspaceRoot}/**/*.js"],            
+            "preLaunchTask": "build",
             "skipFiles": [
                 "<node_internals>"
             ]

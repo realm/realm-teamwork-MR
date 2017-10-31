@@ -11,7 +11,7 @@ import { BasicServer } from 'realm-object-server'
 const server = new BasicServer()
 var theRealm: Realm = null
 
-
+const RealmName = "TeamworkPS-CommonRealm"
 // Stuff for finding and loading the sample data
 const SampleDataDir = "SampleData";
 const DataLoadedFile = "DataLoaded.txt";
@@ -124,7 +124,7 @@ server.start({
         return Realm.open({
             sync: {
                 user: user,
-                url: 'realm://localhost:9080/TeamworkPS'
+                url: `realm://localhost:9080/${RealmName}`
             },
             schema: [LocationSchema, PersonSchema, TaskSchema, TeamSchema, TaskHistorySchema],
         });

@@ -7,6 +7,7 @@ const Realm = require("realm");
 const realm_object_server_1 = require("realm-object-server");
 const server = new realm_object_server_1.BasicServer();
 var theRealm = null;
+const RealmName = "TeamworkPS-CommonRealm";
 const SampleDataDir = "SampleData";
 const DataLoadedFile = "DataLoaded.txt";
 const dataLoadedFilePath = path.join(__dirname, `../${DataLoadedFile}`);
@@ -110,21 +111,16 @@ server.start({
     return Realm.open({
         sync: {
             user: user,
-            url: 'realm://localhost:9080/TeamworkPS'
+            url: `realm://localhost:9080/${RealmName}`
         },
-        schema: [TeamworkModels.LocationSchema,
-            TeamworkModels.PersonSchema,
-            TeamworkModels.TaskSchema,
-            TeamworkModels.TeamSchema,
-            TeamworkModels.TaskHistorySchema
-        ],
+        schema: [LocationSchema, PersonSchema, TaskSchema, TeamSchema, TaskHistorySchema],
     });
 })
     .then(realm => {
     theRealm = realm;
     let param = process.argv[2];
     if ((typeof param != 'undefined') && param == "--load-sample-data") {
-        if (theRealm.objects(TeamworkModels.PersonSchema.name).length > 0 || fs.existsSync(dataLoadedFilePath) == true) {
+        if (theRealm.objects(PersonSchema.name).length > 0 || fs.existsSync(dataLoadedFilePath) == true) {
             console.log("Data already loaded... skipping.");
             return;
         }

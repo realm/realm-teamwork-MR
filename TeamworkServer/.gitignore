@@ -1,11 +1,10 @@
 .DS_Store
 DataLoaded.txt
-node_modules
+./node_modules
 data 
 realm-object-server
 *~
-build
-Pods
+dist/*
 \#*
 
 *.xcuserdatad
