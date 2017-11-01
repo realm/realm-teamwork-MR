@@ -209,7 +209,7 @@ class RKLoginViewController: UIViewController {
         }
         
         group.enter()
-        realm.subscribe(to: Task.self, where: "id = '\(identity)' ") { (results, error) in
+        realm.subscribe(to: Task.self, where: "assignee = '\(self.myPersonRecord!)' ") { (results, error) in
             if let results = results {
                 self.appDelegate?.myTasks = results
             }
@@ -220,7 +220,7 @@ class RKLoginViewController: UIViewController {
         }
         
         group.enter()
-        realm.subscribe(to: Location.self, where: "id = '\(identity)' ") { (results, error) in
+        realm.subscribe(to: Location.self, where: "task != null AND person = '\(self.myPersonRecord!)' ") { (results, error) in
             if let results = results {
                 self.appDelegate?.myLocations = results
             }
@@ -229,17 +229,19 @@ class RKLoginViewController: UIViewController {
             }
             group.leave()
         }
-        
-        group.enter()
-        realm.subscribe(to: Team.self, where: "id = '\(identity)' ") { (results, error) in
-            if let results = results {
-                self.appDelegate?.myTeams = results
-            }
-            if let error = error {
-                print("Subscription error fetching locations: \(error.localizedDescription)")
-            }
-            group.leave()
-        }
+
+        // *** Note: Teams are in fact a list applicated to users and back liked to the teams... so a user's
+        // ***       reocrd inheerent contains a liat of their teams.
+//        group.enter()
+//        realm.subscribe(to: Team.self, where: "id = '\(identity)' ") { (results, error) in
+//            if let results = results {
+//                self.appDelegate?.myTeams = results
+//            }
+//            if let error = error {
+//                print("Subscription error fetching locations: \(error.localizedDescription)")
+//            }
+//            group.leave()
+//        }
 
         
         // Now we  need to block until these complete or they timeout.

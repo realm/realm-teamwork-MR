@@ -14,7 +14,7 @@
             "protocol": "inspector",
             "preLaunchTask": "build",
             "skipFiles": [
-                "<node_internals>"
+                "<node_internals>/**"
             ]
         }
 //,

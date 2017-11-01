@@ -78,7 +78,7 @@ const TaskSchema = {
         assignee: { type: 'Person', optional: true },
         signedOffBy: { type: 'Person', optional: true },
         location: { type: 'Location', optional: true },
-        team: { type: 'Person', optional: true }
+        team: { type: 'Team', optional: true }
     }
 };
 
